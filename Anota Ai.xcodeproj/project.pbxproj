@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D782289AF04B006B3D90 /* AppDelegate.swift */; };
+		3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78B289AF04E006B3D90 /* Assets.xcassets */; };
+		3CA3D78F289AF04E006B3D90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */; };
+		3CA3D79A289AF04E006B3D90 /* Anota_AiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D799289AF04E006B3D90 /* Anota_AiTests.swift */; };
+		3CA3D7A4289AF04E006B3D90 /* Anota_AiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */; };
+		3CA3D7A6289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3CA3D796289AF04E006B3D90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CA3D777289AF04B006B3D90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CA3D77E289AF04B006B3D90;
+			remoteInfo = "Anota Ai";
+		};
+		3CA3D7A0289AF04E006B3D90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CA3D777289AF04B006B3D90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CA3D77E289AF04B006B3D90;
+			remoteInfo = "Anota Ai";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3CA3D77F289AF04B006B3D90 /* Anota Ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anota Ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA3D782289AF04B006B3D90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3CA3D78B289AF04E006B3D90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CA3D78E289AF04E006B3D90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3CA3D790289AF04E006B3D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CA3D795289AF04E006B3D90 /* Anota AiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anota AiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA3D799289AF04E006B3D90 /* Anota_AiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiTests.swift; sourceTree = "<group>"; };
+		3CA3D79F289AF04E006B3D90 /* Anota AiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anota AiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiUITests.swift; sourceTree = "<group>"; };
+		3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CA3D77C289AF04B006B3D90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CA3D792289AF04E006B3D90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CA3D79C289AF04E006B3D90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3CA3D776289AF04B006B3D90 = {
+			isa = PBXGroup;
+			children = (
+				3CA3D781289AF04B006B3D90 /* Anota Ai */,
+				3CA3D798289AF04E006B3D90 /* Anota AiTests */,
+				3CA3D7A2289AF04E006B3D90 /* Anota AiUITests */,
+				3CA3D780289AF04B006B3D90 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3CA3D780289AF04B006B3D90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D77F289AF04B006B3D90 /* Anota Ai.app */,
+				3CA3D795289AF04E006B3D90 /* Anota AiTests.xctest */,
+				3CA3D79F289AF04E006B3D90 /* Anota AiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CA3D781289AF04B006B3D90 /* Anota Ai */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D7B5289AF17D006B3D90 /* Supporting Files */,
+				3CA3D7B4289AF177006B3D90 /* Support */,
+				3CA3D7B3289AF172006B3D90 /* Coordinator */,
+				3CA3D7B2289AF168006B3D90 /* Features */,
+				3CA3D782289AF04B006B3D90 /* AppDelegate.swift */,
+				3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */,
+			);
+			path = "Anota Ai";
+			sourceTree = "<group>";
+		};
+		3CA3D798289AF04E006B3D90 /* Anota AiTests */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D799289AF04E006B3D90 /* Anota_AiTests.swift */,
+			);
+			path = "Anota AiTests";
+			sourceTree = "<group>";
+		};
+		3CA3D7A2289AF04E006B3D90 /* Anota AiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */,
+				3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */,
+			);
+			path = "Anota AiUITests";
+			sourceTree = "<group>";
+		};
+		3CA3D7B2289AF168006B3D90 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3CA3D7B3289AF172006B3D90 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3CA3D7B4289AF177006B3D90 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3CA3D7B5289AF17D006B3D90 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D790289AF04E006B3D90 /* Info.plist */,
+				3CA3D78B289AF04E006B3D90 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3CA3D77E289AF04B006B3D90 /* Anota Ai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CA3D7A9289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota Ai" */;
+			buildPhases = (
+				3CA3D77B289AF04B006B3D90 /* Sources */,
+				3CA3D77C289AF04B006B3D90 /* Frameworks */,
+				3CA3D77D289AF04B006B3D90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Anota Ai";
+			productName = "Anota Ai";
+			productReference = 3CA3D77F289AF04B006B3D90 /* Anota Ai.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3CA3D794289AF04E006B3D90 /* Anota AiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CA3D7AC289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota AiTests" */;
+			buildPhases = (
+				3CA3D791289AF04E006B3D90 /* Sources */,
+				3CA3D792289AF04E006B3D90 /* Frameworks */,
+				3CA3D793289AF04E006B3D90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CA3D797289AF04E006B3D90 /* PBXTargetDependency */,
+			);
+			name = "Anota AiTests";
+			productName = "Anota AiTests";
+			productReference = 3CA3D795289AF04E006B3D90 /* Anota AiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3CA3D79E289AF04E006B3D90 /* Anota AiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CA3D7AF289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota AiUITests" */;
+			buildPhases = (
+				3CA3D79B289AF04E006B3D90 /* Sources */,
+				3CA3D79C289AF04E006B3D90 /* Frameworks */,
+				3CA3D79D289AF04E006B3D90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CA3D7A1289AF04E006B3D90 /* PBXTargetDependency */,
+			);
+			name = "Anota AiUITests";
+			productName = "Anota AiUITests";
+			productReference = 3CA3D79F289AF04E006B3D90 /* Anota AiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3CA3D777289AF04B006B3D90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					3CA3D77E289AF04B006B3D90 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					3CA3D794289AF04E006B3D90 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 3CA3D77E289AF04B006B3D90;
+					};
+					3CA3D79E289AF04E006B3D90 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 3CA3D77E289AF04B006B3D90;
+					};
+				};
+			};
+			buildConfigurationList = 3CA3D77A289AF04B006B3D90 /* Build configuration list for PBXProject "Anota Ai" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3CA3D776289AF04B006B3D90;
+			productRefGroup = 3CA3D780289AF04B006B3D90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3CA3D77E289AF04B006B3D90 /* Anota Ai */,
+				3CA3D794289AF04E006B3D90 /* Anota AiTests */,
+				3CA3D79E289AF04E006B3D90 /* Anota AiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3CA3D77D289AF04B006B3D90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CA3D78F289AF04E006B3D90 /* LaunchScreen.storyboard in Resources */,
+				3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CA3D793289AF04E006B3D90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CA3D79D289AF04E006B3D90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3CA3D77B289AF04B006B3D90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CA3D791289AF04E006B3D90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CA3D79A289AF04E006B3D90 /* Anota_AiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CA3D79B289AF04E006B3D90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CA3D7A6289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift in Sources */,
+				3CA3D7A4289AF04E006B3D90 /* Anota_AiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3CA3D797289AF04E006B3D90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CA3D77E289AF04B006B3D90 /* Anota Ai */;
+			targetProxy = 3CA3D796289AF04E006B3D90 /* PBXContainerItemProxy */;
+		};
+		3CA3D7A1289AF04E006B3D90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CA3D77E289AF04B006B3D90 /* Anota Ai */;
+			targetProxy = 3CA3D7A0289AF04E006B3D90 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3CA3D78E289AF04E006B3D90 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3CA3D7A7289AF04E006B3D90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3CA3D7A8289AF04E006B3D90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CA3D7AA289AF04E006B3D90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77PUJX2KMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Anota Ai/Supporting Files/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinicius.Anota-Ai";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3CA3D7AB289AF04E006B3D90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77PUJX2KMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Anota Ai/Supporting Files/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinicius.Anota-Ai";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3CA3D7AD289AF04E006B3D90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77PUJX2KMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinicius.Anota-AiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Anota Ai.app/Anota Ai";
+			};
+			name = Debug;
+		};
+		3CA3D7AE289AF04E006B3D90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77PUJX2KMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinicius.Anota-AiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Anota Ai.app/Anota Ai";
+			};
+			name = Release;
+		};
+		3CA3D7B0289AF04E006B3D90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77PUJX2KMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinicius.Anota-AiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Anota Ai";
+			};
+			name = Debug;
+		};
+		3CA3D7B1289AF04E006B3D90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 77PUJX2KMA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinicius.Anota-AiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Anota Ai";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CA3D77A289AF04B006B3D90 /* Build configuration list for PBXProject "Anota Ai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA3D7A7289AF04E006B3D90 /* Debug */,
+				3CA3D7A8289AF04E006B3D90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CA3D7A9289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota Ai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA3D7AA289AF04E006B3D90 /* Debug */,
+				3CA3D7AB289AF04E006B3D90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CA3D7AC289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota AiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA3D7AD289AF04E006B3D90 /* Debug */,
+				3CA3D7AE289AF04E006B3D90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CA3D7AF289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota AiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA3D7B0289AF04E006B3D90 /* Debug */,
+				3CA3D7B1289AF04E006B3D90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3CA3D777289AF04B006B3D90 /* Project object */;
+}
