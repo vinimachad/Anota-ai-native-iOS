@@ -13,6 +13,10 @@
 		3CA3D79A289AF04E006B3D90 /* Anota_AiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D799289AF04E006B3D90 /* Anota_AiTests.swift */; };
 		3CA3D7A4289AF04E006B3D90 /* Anota_AiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */; };
 		3CA3D7A6289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */; };
+		3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7B7289AFC0A006B3D90 /* CoordinatorProtocol.swift */; };
+		3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7B9289AFC10006B3D90 /* AppCoordinator.swift */; };
+		3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7BB289AFEAF006B3D90 /* OnboardingCoordinator.swift */; };
+		3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7BE289AFEF4006B3D90 /* OnboardingFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		3CA3D79F289AF04E006B3D90 /* Anota AiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anota AiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiUITests.swift; sourceTree = "<group>"; };
 		3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3CA3D7B7289AFC0A006B3D90 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		3CA3D7B9289AFC10006B3D90 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3CA3D7BB289AFEAF006B3D90 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		3CA3D7BE289AFEF4006B3D90 /* OnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,8 @@
 		3CA3D7B3289AF172006B3D90 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				3CA3D7B6289AFBF6006B3D90 /* Setup */,
+				3CA3D7BB289AFEAF006B3D90 /* OnboardingCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -137,6 +147,7 @@
 		3CA3D7B4289AF177006B3D90 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				3CA3D7BD289AFEE7006B3D90 /* Factories */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -148,6 +159,23 @@
 				3CA3D78B289AF04E006B3D90 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CA3D7B6289AFBF6006B3D90 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D7B7289AFC0A006B3D90 /* CoordinatorProtocol.swift */,
+				3CA3D7B9289AFC10006B3D90 /* AppCoordinator.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		3CA3D7BD289AFEE7006B3D90 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				3CA3D7BE289AFEF4006B3D90 /* OnboardingFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
+				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
+				3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */,
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
+				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
