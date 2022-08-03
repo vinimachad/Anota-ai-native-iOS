@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116E9C92E16EB341DB2C79C7 /* Pods_Anota_Ai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */; };
 		3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D782289AF04B006B3D90 /* AppDelegate.swift */; };
 		3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78B289AF04E006B3D90 /* Assets.xcassets */; };
 		3CA3D78F289AF04E006B3D90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,8 @@
 		3CA3D7D0289B0686006B3D90 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */; };
 		3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */; };
 		3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7D2289B0764006B3D90 /* Colors.xcassets */; };
+		7C7FBFFD6CE3910323682ADF /* Pods_Anota_Ai_Anota_AiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */; };
+		C3F92169F0B4B816E2AFA303 /* Pods_Anota_AiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB99B75D499EDAB84F4B2FF2 /* Pods_Anota_AiTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CD804ADB3B689A09E433037 /* Pods-Anota Ai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai.release.xcconfig"; path = "Target Support Files/Pods-Anota Ai/Pods-Anota Ai.release.xcconfig"; sourceTree = "<group>"; };
+		1C54D6CF8835E1901568DB37 /* Pods-Anota Ai-Anota AiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.debug.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.release.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_Ai_Anota_AiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA3D77F289AF04B006B3D90 /* Anota Ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anota Ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA3D782289AF04B006B3D90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CA3D78B289AF04E006B3D90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +72,11 @@
 		3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		3CA3D7D2289B0764006B3D90 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.debug.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.release.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8D567694951592B1C97791D /* Pods-Anota Ai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai.debug.xcconfig"; path = "Target Support Files/Pods-Anota Ai/Pods-Anota Ai.debug.xcconfig"; sourceTree = "<group>"; };
+		D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_Ai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB99B75D499EDAB84F4B2FF2 /* Pods_Anota_AiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_AiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116E9C92E16EB341DB2C79C7 /* Pods_Anota_Ai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F92169F0B4B816E2AFA303 /* Pods_Anota_AiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C7FBFFD6CE3910323682ADF /* Pods_Anota_Ai_Anota_AiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +114,8 @@
 				3CA3D798289AF04E006B3D90 /* Anota AiTests */,
 				3CA3D7A2289AF04E006B3D90 /* Anota AiUITests */,
 				3CA3D780289AF04B006B3D90 /* Products */,
+				F5960D73116B832C258B4512 /* Pods */,
+				718C20EB4408128BFCE0F441 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +240,30 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		718C20EB4408128BFCE0F441 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */,
+				325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */,
+				FB99B75D499EDAB84F4B2FF2 /* Pods_Anota_AiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5960D73116B832C258B4512 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8D567694951592B1C97791D /* Pods-Anota Ai.debug.xcconfig */,
+				0CD804ADB3B689A09E433037 /* Pods-Anota Ai.release.xcconfig */,
+				1C54D6CF8835E1901568DB37 /* Pods-Anota Ai-Anota AiUITests.debug.xcconfig */,
+				245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */,
+				565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */,
+				96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,9 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CA3D7A9289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota Ai" */;
 			buildPhases = (
+				CD8C8D8DA8BA2C66F9731DF5 /* [CP] Check Pods Manifest.lock */,
 				3CA3D77B289AF04B006B3D90 /* Sources */,
 				3CA3D77C289AF04B006B3D90 /* Frameworks */,
 				3CA3D77D289AF04B006B3D90 /* Resources */,
+				813381A995FA3DEEAA853541 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +290,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CA3D7AC289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota AiTests" */;
 			buildPhases = (
+				3FF90F63FB3032E78EAD21A6 /* [CP] Check Pods Manifest.lock */,
 				3CA3D791289AF04E006B3D90 /* Sources */,
 				3CA3D792289AF04E006B3D90 /* Frameworks */,
 				3CA3D793289AF04E006B3D90 /* Resources */,
@@ -265,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CA3D7AF289AF04E006B3D90 /* Build configuration list for PBXNativeTarget "Anota AiUITests" */;
 			buildPhases = (
+				384DF0DE78EAF154B5EB7CF1 /* [CP] Check Pods Manifest.lock */,
 				3CA3D79B289AF04E006B3D90 /* Sources */,
 				3CA3D79C289AF04E006B3D90 /* Frameworks */,
 				3CA3D79D289AF04E006B3D90 /* Resources */,
+				0F5D69C88F17C0B23E374C48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +397,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F5D69C88F17C0B23E374C48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		384DF0DE78EAF154B5EB7CF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Anota Ai-Anota AiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FF90F63FB3032E78EAD21A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Anota AiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		813381A995FA3DEEAA853541 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anota Ai/Pods-Anota Ai-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anota Ai/Pods-Anota Ai-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anota Ai/Pods-Anota Ai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8C8D8DA8BA2C66F9731DF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Anota Ai-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CA3D77B289AF04B006B3D90 /* Sources */ = {
@@ -528,6 +677,7 @@
 		};
 		3CA3D7AA289AF04E006B3D90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8D567694951592B1C97791D /* Pods-Anota Ai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +705,7 @@
 		};
 		3CA3D7AB289AF04E006B3D90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CD804ADB3B689A09E433037 /* Pods-Anota Ai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -582,6 +733,7 @@
 		};
 		3CA3D7AD289AF04E006B3D90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -602,6 +754,7 @@
 		};
 		3CA3D7AE289AF04E006B3D90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -622,6 +775,7 @@
 		};
 		3CA3D7B0289AF04E006B3D90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C54D6CF8835E1901568DB37 /* Pods-Anota Ai-Anota AiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -640,6 +794,7 @@
 		};
 		3CA3D7B1289AF04E006B3D90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
