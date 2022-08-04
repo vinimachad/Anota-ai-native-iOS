@@ -8,5 +8,5 @@
 import Foundation
 
 struct ExplanationCellViewModel: ExplanationCellViewModelProtocol {
-    
+    var name: String
 }

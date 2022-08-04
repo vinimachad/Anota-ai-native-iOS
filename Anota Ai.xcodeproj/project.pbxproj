@@ -30,6 +30,7 @@
 		3CA3D7D0289B0686006B3D90 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */; };
 		3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */; };
 		3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7D2289B0764006B3D90 /* Colors.xcassets */; };
+		3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */; };
 		7C7FBFFD6CE3910323682ADF /* Pods_Anota_Ai_Anota_AiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */; };
 		C3F92169F0B4B816E2AFA303 /* Pods_Anota_AiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB99B75D499EDAB84F4B2FF2 /* Pods_Anota_AiTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		3CA3D7D2289B0764006B3D90 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilderSections.swift; sourceTree = "<group>"; };
 		565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.debug.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.release.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8D567694951592B1C97791D /* Pods-Anota Ai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai.debug.xcconfig"; path = "Target Support Files/Pods-Anota Ai/Pods-Anota Ai.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		3C9EA711289B102100C300B8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				3CD35D52289C08B90012480E /* BuilderSections */,
 				3C9EA718289B15BD00C300B8 /* Cells */,
 				3C9EA714289B104900C300B8 /* OnboardingView.swift */,
 				3C9EA716289B105200C300B8 /* OnboardingController.swift */,
@@ -269,6 +272,14 @@
 				3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3CD35D52289C08B90012480E /* BuilderSections */ = {
+			isa = PBXGroup;
+			children = (
+				3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */,
+			);
+			path = BuilderSections;
 			sourceTree = "<group>";
 		};
 		718C20EB4408128BFCE0F441 /* Frameworks */ = {
@@ -548,6 +559,7 @@
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
 				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,
+				3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */,
 				3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

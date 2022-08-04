@@ -10,7 +10,9 @@ import UIKit
 import CollectionDS_SDK
 import SnapKit
 
-protocol ExplanationCellViewModelProtocol: CollectionViewModelProtocol {}
+protocol ExplanationCellViewModelProtocol: CollectionViewModelProtocol {
+    var name: String { get set }
+}
 
 class ExplanationCell: UICollectionViewCell, CollectionViewProtocol {
     
@@ -22,12 +24,13 @@ class ExplanationCell: UICollectionViewCell, CollectionViewProtocol {
     
     // MARK: - Private properties
     
-    private var viewModel: ExplanationCellViewModelProtocol?
+    private(set) var viewModel: ExplanationCellViewModelProtocol?
     
     // MARK: Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.clipsToBounds = true
         setup()
     }
     
@@ -46,6 +49,12 @@ class ExplanationCell: UICollectionViewCell, CollectionViewProtocol {
 // MARK: - Setup view
 
 extension ExplanationCell {
+    
+    static func size(width: CGFloat) -> CGSize {
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let width = width - (padding.left + padding.right)
+        return CGSize(width: width, height: 400)
+    }
     
     private func setup() {
         setupConstraints()
@@ -78,30 +87,28 @@ extension ExplanationCell {
         viewHierarchy()
         
         coverImageView.snp.makeConstraints {
-            $0.centerX.equalTo(snp.centerX)
-            $0.top.equalTo(snp.top)
+            $0.centerX.equalTo(contentView.snp.centerX)
+            $0.top.equalTo(contentView.snp.top)
             $0.height.equalTo(271)
         }
         
         titleLabel.snp.makeConstraints {
-            $0.left.equalTo(snp.leftMargin)
-            $0.right.equalTo(snp.rightMargin)
+            $0.left.equalTo(contentView.snp.leftMargin)
+            $0.right.equalTo(contentView.snp.rightMargin)
             $0.top.equalTo(coverImageView.snp.bottom).offset(24)
         }
 
         bodyLabel.snp.makeConstraints {
-            $0.left.equalTo(snp.leftMargin)
-            $0.right.equalTo(snp.rightMargin)
+            $0.left.equalTo(contentView.snp.leftMargin)
+            $0.right.equalTo(contentView.snp.rightMargin)
             $0.top.equalTo(titleLabel.snp.bottom).offset(16)
-            $0.bottom.equalTo(snp.bottomMargin)
+            $0.bottom.equalTo(contentView.snp.bottomMargin)
         }
-        
-        print(bounds)
     }
     
     private func viewHierarchy() {
-        addSubview(coverImageView)
-        addSubview(titleLabel)
-        addSubview(bodyLabel)
+        contentView.addSubview(coverImageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(bodyLabel)
     }
 }

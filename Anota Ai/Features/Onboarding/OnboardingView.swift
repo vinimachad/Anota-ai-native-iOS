@@ -10,13 +10,17 @@ import UIKit
 import SnapKit
 import CollectionDS_SDK
 
-protocol OnboardingViewModelProtocol {}
+protocol OnboardingViewModelProtocol {
+    var sections: [CollectionSectionProtocol] { get }
+}
 
 class OnboardingView: UIView {
     
     // MARK: - UI Components
 
-    private lazy var collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
+    private lazy var pageControl = UIPageControl()
     
     // MARK: - Private properties
     
@@ -40,15 +44,7 @@ class OnboardingView: UIView {
     func bindIn(viewModel: OnboardingViewModelProtocol) {
         self.viewModel = viewModel
         
-        collectionDataSource.sections = [
-            CollectionSection<ExplanationCell>(
-                items: [
-                    ExplanationCellViewModel(),
-                    ExplanationCellViewModel()
-                ],
-                size: CGSize(width: 400, height: 400)
-            )
-        ]
+        collectionDataSource.sections = viewModel.sections
     }
 }
 
@@ -59,11 +55,20 @@ extension OnboardingView {
     private func setup() {
         setupConstraints()
         setupCollectionView()
+        setupPageControl()
         backgroundColor = .Shapes.shape
     }
     
     private func setupCollectionView() {
         collectionDataSource.collectionView = collectionView
+        collectionViewFlowLayout.scrollDirection = .horizontal
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    private func setupPageControl() {
+        pageControl.numberOfPages = 3
+        pageControl.currentPage = 0
     }
 }
 
@@ -78,12 +83,26 @@ extension OnboardingView {
             $0.top.equalTo(snp.topMargin)
             $0.left.equalTo(snp.left)
             $0.right.equalTo(snp.right)
-            $0.bottom.equalTo(snp.bottomMargin)
+        }
+        
+        pageControl.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom).offset(22)
+            $0.left.equalTo(snp.leftMargin)
+            $0.bottom.equalTo(snp.bottomMargin )
         }
     }
     
     private func viewHierarchy() {
         addSubview(collectionView)
+        addSubview(pageControl)
     }
 }
 
+extension OnboardingView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell = cell as? ExplanationCell {
+            print(cell.viewModel?.name)
+        }
+    }
+}
