@@ -6,6 +6,7 @@ target 'Anota Ai' do
   use_frameworks!
 
   pod "SnapKit"
+  pod "CollectionDS-SDK/Debug", :path => "/Users/vinimachad/Developer/mobile/CollectionDS-SDK"
 
   target 'Anota AiTests' do
     inherit! :search_paths

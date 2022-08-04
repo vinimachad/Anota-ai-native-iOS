@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		116E9C92E16EB341DB2C79C7 /* Pods_Anota_Ai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */; };
+		3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */; };
+		3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA714289B104900C300B8 /* OnboardingView.swift */; };
+		3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA716289B105200C300B8 /* OnboardingController.swift */; };
+		3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA719289B15ED00C300B8 /* ExplanationCell.swift */; };
+		3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA71B289B1ABE00C300B8 /* ExplanationCellViewModel.swift */; };
 		3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D782289AF04B006B3D90 /* AppDelegate.swift */; };
 		3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78B289AF04E006B3D90 /* Assets.xcassets */; };
 		3CA3D78F289AF04E006B3D90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */; };
@@ -51,6 +56,11 @@
 		1C54D6CF8835E1901568DB37 /* Pods-Anota Ai-Anota AiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.debug.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.release.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_Ai_Anota_AiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		3C9EA714289B104900C300B8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3C9EA716289B105200C300B8 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		3C9EA719289B15ED00C300B8 /* ExplanationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationCell.swift; sourceTree = "<group>"; };
+		3C9EA71B289B1ABE00C300B8 /* ExplanationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationCellViewModel.swift; sourceTree = "<group>"; };
 		3CA3D77F289AF04B006B3D90 /* Anota Ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anota Ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA3D782289AF04B006B3D90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CA3D78B289AF04E006B3D90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +117,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C9EA711289B102100C300B8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3C9EA718289B15BD00C300B8 /* Cells */,
+				3C9EA714289B104900C300B8 /* OnboardingView.swift */,
+				3C9EA716289B105200C300B8 /* OnboardingController.swift */,
+				3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3C9EA718289B15BD00C300B8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3C9EA719289B15ED00C300B8 /* ExplanationCell.swift */,
+				3C9EA71B289B1ABE00C300B8 /* ExplanationCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3CA3D776289AF04B006B3D90 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +192,7 @@
 		3CA3D7B2289AF168006B3D90 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3C9EA711289B102100C300B8 /* Onboarding */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -260,7 +291,6 @@
 				565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */,
 				96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -508,12 +538,17 @@
 			files = (
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
+				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
+				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
+				3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
 				3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */,
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
+				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,
+				3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
