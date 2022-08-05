@@ -50,6 +50,7 @@ class OnboardingView: UIView {
         collectionDataSource.sections = viewModel.sections
         
         self.viewModel?.onExplanationWillDisplay = { [weak self] index in
+            self?.layoutIfNeeded()
             self?.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
             self?.pageControl.currentPage = index.row
         }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		116E9C92E16EB341DB2C79C7 /* Pods_Anota_Ai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */; };
 		3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06AD3C289C72F500E7621F /* Explanations.swift */; };
+		3C648DE4289D67AC0091B3D8 /* OnboardingViewSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */; };
+		3C648DE6289D68210091B3D8 /* Anota AiSnapshots in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DE5289D68210091B3D8 /* Anota AiSnapshots */; };
 		3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */; };
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
@@ -68,6 +70,8 @@
 		245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.release.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_Ai_Anota_AiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C06AD3C289C72F500E7621F /* Explanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanations.swift; sourceTree = "<group>"; };
+		3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewSnapshot.swift; sourceTree = "<group>"; };
+		3C648DE5289D68210091B3D8 /* Anota AiSnapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Anota AiSnapshots"; sourceTree = "<group>"; };
 		3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactoryTests.swift; sourceTree = "<group>"; };
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				3C698757289D4DE400901CE7 /* Mocks */,
 				3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */,
 				3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */,
+				3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				3CA3D781289AF04B006B3D90 /* Anota Ai */,
 				3CA3D798289AF04E006B3D90 /* Anota AiTests */,
 				3CA3D7A2289AF04E006B3D90 /* Anota AiUITests */,
+				3C648DE5289D68210091B3D8 /* Anota AiSnapshots */,
 				3CA3D780289AF04B006B3D90 /* Products */,
 				F5960D73116B832C258B4512 /* Pods */,
 				718C20EB4408128BFCE0F441 /* Frameworks */,
@@ -477,6 +483,7 @@
 				3CA3D791289AF04E006B3D90 /* Sources */,
 				3CA3D792289AF04E006B3D90 /* Frameworks */,
 				3CA3D793289AF04E006B3D90 /* Resources */,
+				B3BDFBD01D62D959F2DBA4C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -570,6 +577,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C648DE6289D68210091B3D8 /* Anota AiSnapshots in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +669,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anota Ai/Pods-Anota Ai-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3BDFBD01D62D959F2DBA4C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CD8C8D8DA8BA2C66F9731DF5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,6 +747,7 @@
 				3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */,
 				3CBBBA8C289CBB73006BFF95 /* FontTests.swift in Sources */,
 				3CBBBA8A289CB932006BFF95 /* ColorsTests.swift in Sources */,
+				3C648DE4289D67AC0091B3D8 /* OnboardingViewSnapshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
