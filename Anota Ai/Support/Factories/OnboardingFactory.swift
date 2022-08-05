@@ -11,8 +11,7 @@ import UIKit
 enum OnboardingFactory {
     
     static func onboarding() -> UIViewController {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .orange
-        return controller
+        let viewModel = OnboardingViewModel()
+        return OnboardingController(viewModel: viewModel)
     }
 }

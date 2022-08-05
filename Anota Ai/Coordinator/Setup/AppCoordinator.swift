@@ -12,8 +12,8 @@ class AppCoordinator {
     
     // MARK: - Private properties
     
-    private var window: UIWindow
-    private var childCoordinator: CoordinatorProtocol?
+    private(set) var window: UIWindow
+    private(set) var childCoordinator: CoordinatorProtocol?
     
     // MARK: - Init
     
