@@ -89,13 +89,13 @@ extension OnboardingView {
     }
     
     private func setupSignUpButton() {
-        signUpButton.title = "Criar uma conta"
+        signUpButton.title = "sign_up_title_btn".localize(.onboarding)
         signUpButton.titleColor = .Shapes.shape
         signUpButton.backgroundColor = .Brand.primary
     }
     
     private func setupLoginButton() {
-        loginButton.title = "Entrar"
+        loginButton.title = "login_title_btn".localize(.onboarding)
         loginButton.titleColor = .Shapes.shape
         loginButton.backgroundColor = .Brand.secondary
     }

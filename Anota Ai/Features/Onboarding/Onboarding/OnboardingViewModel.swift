@@ -44,7 +44,6 @@ extension OnboardingViewModel: OnboardingProtocol {
         }
         
         let index = IndexPath(row: self.carouselCount, section: 0)
-        print(index)
         self.onExplanationWillDisplay?(index)
         self.carouselCount += 1
     }

@@ -1,0 +1,18 @@
+/* 
+  Onboarding.strings
+  Anota Ai
+
+  Created by Vinicius Galhardo Machado on 05/08/22.
+  
+*/
+
+"control_title_label" = "É você \nquem comanda";
+"calculating_title_label" = "Não perca tempo dividindo as contas";
+"test_title_label" = "Lorem Ipsum is simply dummy text of the";
+
+"control_body_label" = "Você controla todos seus pedidos e também consegue verificar os pedidos da sua mesa.";
+"calculating_body_label" = "A gente divide o que e quais itens você irá pagar, não tenha mais estresse no caixa.";
+"test_body_label" = "and typesetting industry. Lorem Ipsum has beenand typesetting industry. Lorem Ipsum has been.";
+
+"sign_up_title_btn" = "Criar uma conta";
+"login_title_btn" = "Entrar";
