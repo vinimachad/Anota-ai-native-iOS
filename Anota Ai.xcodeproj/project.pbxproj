@@ -12,6 +12,8 @@
 		3C648DE4289D67AC0091B3D8 /* OnboardingViewSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */; };
 		3C648DE6289D68210091B3D8 /* Anota AiSnapshots in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DE5289D68210091B3D8 /* Anota AiSnapshots */; };
 		3C648DEA289D6DA30091B3D8 /* ButtonSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */; };
+		3C648DED289D72F30091B3D8 /* ExplanationCellSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DEC289D72F30091B3D8 /* ExplanationCellSnapshot.swift */; };
+		3C648DF0289D731F0091B3D8 /* ExplanationCellViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DEF289D731F0091B3D8 /* ExplanationCellViewModelMock.swift */; };
 		3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */; };
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
@@ -74,6 +76,8 @@
 		3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewSnapshot.swift; sourceTree = "<group>"; };
 		3C648DE5289D68210091B3D8 /* Anota AiSnapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Anota AiSnapshots"; sourceTree = "<group>"; };
 		3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSnapshot.swift; sourceTree = "<group>"; };
+		3C648DEC289D72F30091B3D8 /* ExplanationCellSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationCellSnapshot.swift; sourceTree = "<group>"; };
+		3C648DEF289D731F0091B3D8 /* ExplanationCellViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationCellViewModelMock.swift; sourceTree = "<group>"; };
 		3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactoryTests.swift; sourceTree = "<group>"; };
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
@@ -179,6 +183,23 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		3C648DEB289D72DC0091B3D8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3C648DEE289D73190091B3D8 /* Mocks */,
+				3C648DEC289D72F30091B3D8 /* ExplanationCellSnapshot.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3C648DEE289D73190091B3D8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3C648DEF289D731F0091B3D8 /* ExplanationCellViewModelMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		3C69874D289D43F000901CE7 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +219,7 @@
 		3C698751289D465C00901CE7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				3C648DEB289D72DC0091B3D8 /* Cells */,
 				3C698752289D466700901CE7 /* Onboarding */,
 			);
 			path = Onboarding;
@@ -760,6 +782,8 @@
 				3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */,
 				3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */,
 				3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */,
+				3C648DF0289D731F0091B3D8 /* ExplanationCellViewModelMock.swift in Sources */,
+				3C648DED289D72F30091B3D8 /* ExplanationCellSnapshot.swift in Sources */,
 				3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */,
 				3CBBBA88289CB747006BFF95 /* ImageTests.swift in Sources */,
 				3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */,
