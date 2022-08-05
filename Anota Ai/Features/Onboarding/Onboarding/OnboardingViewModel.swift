@@ -10,7 +10,7 @@ import CollectionDS_SDK
 
 
 protocol OnboardingProtocol: OnboardingViewModelProtocol {
-    func explanationWillDisplay(_ index: IndexPath)
+    func didChangeCurrentExplanation(_ index: IndexPath)
 }
 
 class OnboardingViewModel {
@@ -30,23 +30,17 @@ class OnboardingViewModel {
     
     // MARK: - Init
     
-    init() {
-        
-    }
-    
     // MARK: - Action
     
-    func explanationWillDisplay(_ index: IndexPath) {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1.5) { [weak self] in
-
-            self?.carouselCount += 1
-            if self?.carouselCount ?? 0 >= 3 {
-                self?.carouselCount = 0
-            }
-            
-            let index = IndexPath(row: self?.carouselCount ?? 0, section: index.section)
-            self?.onExplanationWillDisplay?(index)
+    func didChangeCurrentExplanation(_ index: IndexPath) {
+                
+        if self.carouselCount > 2 {
+            self.carouselCount = 0
         }
+        
+        let index = IndexPath(row: self.carouselCount, section: index.section)
+        self.onExplanationWillDisplay?(index)
+        self.carouselCount += 1
     }
 }
 

@@ -38,22 +38,27 @@ class OnboardingController<ViewModel: OnboardingProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        startDisplayLoop()
+        startExplanationLoop()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopExplanationLoop()
     }
     
     // MARK: - Loop
     
-    private func startDisplayLoop() {
-        viewModel.explanationWillDisplay(IndexPath(row: 1, section: 0))
+    private func startExplanationLoop() {
+        viewModel.didChangeCurrentExplanation(IndexPath(row: 1, section: 0))
         perform(#selector(displayExplanation), with: nil, afterDelay: 5)
     }
     
-    private func stopDisplayLoop() {
+    private func stopExplanationLoop() {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
     }
     
     @objc private func displayExplanation() {
-        startDisplayLoop()
+        startExplanationLoop()
     }
 }
 

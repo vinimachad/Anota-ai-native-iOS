@@ -50,10 +50,8 @@ class OnboardingView: UIView {
         collectionDataSource.sections = viewModel.sections
         
         self.viewModel?.onExplanationWillDisplay = { [weak self] index in
-            DispatchQueue.main.async { [weak self] in
-                self?.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-                self?.pageControl.currentPage = index.row
-            }
+            self?.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            self?.pageControl.currentPage = index.row
         }
     }
 }
@@ -77,6 +75,7 @@ extension OnboardingView {
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .Shapes.shape
+        collectionView.isUserInteractionEnabled = false
     }
     
     private func setupPageControl() {
