@@ -12,15 +12,18 @@ import CollectionDS_SDK
 
 protocol OnboardingViewModelProtocol {
     var sections: [CollectionSectionProtocol] { get }
+    var onExplanationWillDisplay: ((IndexPath) -> Void)? { get set }
 }
 
 class OnboardingView: UIView {
     
     // MARK: - UI Components
-
+    
     private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
     private lazy var pageControl = UIPageControl()
+    private lazy var signUpButton = Button()
+    private lazy var loginButton = Button()
     
     // MARK: - Private properties
     
@@ -45,6 +48,13 @@ class OnboardingView: UIView {
         self.viewModel = viewModel
         
         collectionDataSource.sections = viewModel.sections
+        
+        self.viewModel?.onExplanationWillDisplay = { [weak self] index in
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+                self?.pageControl.currentPage = index.row
+            }
+        }
     }
 }
 
@@ -56,6 +66,8 @@ extension OnboardingView {
         setupConstraints()
         setupCollectionView()
         setupPageControl()
+        setupSignUpButton()
+        setupLoginButton()
         backgroundColor = .Shapes.shape
     }
     
@@ -64,11 +76,28 @@ extension OnboardingView {
         collectionViewFlowLayout.scrollDirection = .horizontal
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .Shapes.shape
     }
     
     private func setupPageControl() {
         pageControl.numberOfPages = 3
         pageControl.currentPage = 0
+        pageControl.pageIndicatorTintColor = .Shapes.stroke
+        pageControl.currentPageIndicatorTintColor = .Brand.primary
+        pageControl.backgroundStyle = .minimal
+        pageControl.allowsContinuousInteraction = false
+    }
+    
+    private func setupSignUpButton() {
+        signUpButton.title = "Criar uma conta"
+        signUpButton.titleColor = .Shapes.shape
+        signUpButton.backgroundColor = .Brand.primary
+    }
+    
+    private func setupLoginButton() {
+        loginButton.title = "Entrar"
+        loginButton.titleColor = .Shapes.shape
+        loginButton.backgroundColor = .Brand.secondary
     }
 }
 
@@ -83,26 +112,34 @@ extension OnboardingView {
             $0.top.equalTo(snp.topMargin)
             $0.left.equalTo(snp.left)
             $0.right.equalTo(snp.right)
+            $0.height.equalTo(500)
         }
         
         pageControl.snp.makeConstraints {
-            $0.top.equalTo(collectionView.snp.bottom).offset(22)
-            $0.left.equalTo(snp.leftMargin)
-            $0.bottom.equalTo(snp.bottomMargin )
+            $0.top.equalTo(collectionView.snp.bottom)
+            $0.left.equalTo(snp.left).offset(16)
+        }
+        
+        signUpButton.snp.makeConstraints {
+            $0.top.equalTo(pageControl.snp.bottom).offset(54)
+            $0.left.equalTo(snp.left).offset(16)
+            $0.right.equalTo(snp.right).offset(-16)
+            $0.height.equalTo(48)
+        }
+        
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(24)
+            $0.left.equalTo(snp.left).offset(16)
+            $0.right.equalTo(snp.right).offset(-16)
+            $0.bottom.equalTo(snp.bottomMargin)
+            $0.height.equalTo(48)
         }
     }
     
     private func viewHierarchy() {
         addSubview(collectionView)
         addSubview(pageControl)
-    }
-}
-
-extension OnboardingView: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell = cell as? ExplanationCell {
-            print(cell.viewModel?.name)
-        }
+        addSubview(signUpButton)
+        addSubview(loginButton)
     }
 }

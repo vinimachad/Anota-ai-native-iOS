@@ -6,7 +6,17 @@
 //
 
 import Foundation
+import UIKit
 
-struct ExplanationCellViewModel: ExplanationCellViewModelProtocol {
-    var name: String
+class ExplanationCellViewModel: ExplanationCellViewModelProtocol {
+    
+    var title: String?
+    var body: String?
+    var cover: UIImage?
+    
+    init(title: String?, body: String?, cover: UIImage?) {
+        self.title = title
+        self.body = body
+        self.cover = cover
+    }
 }

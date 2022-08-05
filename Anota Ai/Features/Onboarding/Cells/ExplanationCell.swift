@@ -11,7 +11,9 @@ import CollectionDS_SDK
 import SnapKit
 
 protocol ExplanationCellViewModelProtocol: CollectionViewModelProtocol {
-    var name: String { get set }
+    var title: String? { get }
+    var body: String? { get }
+    var cover: UIImage? { get }
 }
 
 class ExplanationCell: UICollectionViewCell, CollectionViewProtocol {
@@ -43,6 +45,10 @@ class ExplanationCell: UICollectionViewCell, CollectionViewProtocol {
     
     func bindIn(viewModel: ExplanationCellViewModelProtocol) {
         self.viewModel = viewModel
+        
+        titleLabel.text = viewModel.title
+        bodyLabel.text = viewModel.body
+        coverImageView.image = viewModel.cover
     }
 }
 
@@ -53,7 +59,7 @@ extension ExplanationCell {
     static func size(width: CGFloat) -> CGSize {
         let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let width = width - (padding.left + padding.right)
-        return CGSize(width: width, height: 400)
+        return CGSize(width: width, height: 498)
     }
     
     private func setup() {
@@ -64,17 +70,18 @@ extension ExplanationCell {
     }
     
     private func setupCoverImage() {
-        coverImageView.image = .Images.mobilePosts
         coverImageView.contentMode = .scaleAspectFit
     }
     
     private func setupTitleLabel() {
-        titleLabel.text = "É você quem comanda"
-        bodyLabel.numberOfLines = 0
+        titleLabel.font = .default(type: .bold, ofSize: 32)
+        titleLabel.textColor = .Texts.heading
+        titleLabel.numberOfLines = 0
     }
     
     private func setupBodyLabel() {
-        bodyLabel.text = "Você controla todos seus pedidos e também consegue verificar os pedidos da sua mesa."
+        bodyLabel.font = .default(type: .regular, ofSize: 20)
+        bodyLabel.textColor = .Texts.body
         bodyLabel.numberOfLines = 0
     }
 }
@@ -93,16 +100,16 @@ extension ExplanationCell {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.left.equalTo(contentView.snp.leftMargin)
-            $0.right.equalTo(contentView.snp.rightMargin)
-            $0.top.equalTo(coverImageView.snp.bottom).offset(24)
+            $0.left.equalTo(contentView.snp.left).offset(16)
+            $0.right.equalTo(contentView.snp.right).offset(-16)
+            $0.top.equalTo(coverImageView.snp.bottom).offset(44)
         }
-
+        
         bodyLabel.snp.makeConstraints {
-            $0.left.equalTo(contentView.snp.leftMargin)
-            $0.right.equalTo(contentView.snp.rightMargin)
+            $0.left.equalTo(contentView.snp.left).offset(16)
+            $0.right.equalTo(contentView.snp.right).offset(-16)
             $0.top.equalTo(titleLabel.snp.bottom).offset(16)
-            $0.bottom.equalTo(contentView.snp.bottomMargin)
+            $0.bottom.lessThanOrEqualTo(contentView.snp.bottomMargin)
         }
     }
     

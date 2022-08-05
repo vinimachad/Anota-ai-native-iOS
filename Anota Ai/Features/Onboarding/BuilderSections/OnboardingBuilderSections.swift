@@ -10,19 +10,15 @@ import CollectionDS_SDK
 
 class OnboardingBuilderSections {
     
-    // MARK: - Private properties
-    
     // MARK: - Init
     
     // MARK: - Sections
     
     private func explanationSection() -> CollectionSectionProtocol {
-        CollectionSection<ExplanationCell>(
-            items: [
-                ExplanationCellViewModel(name: "1"), ExplanationCellViewModel(name: "2"),
-                ExplanationCellViewModel(name: "3"), ExplanationCellViewModel(name: "4")
-            ], lineGap: 0
-        )
+        let viewModels = Explanations.allCases.map {
+            ExplanationCellViewModel(title: $0.title, body: $0.body, cover: $0.cover)
+        }
+        return CollectionSection<ExplanationCell>(items: viewModels, lineGap: 0)
     }
     
     // MARK: - Builder
