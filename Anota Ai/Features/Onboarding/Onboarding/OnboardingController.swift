@@ -49,7 +49,7 @@ class OnboardingController<ViewModel: OnboardingProtocol>: UIViewController {
     // MARK: - Loop
     
     private func startExplanationLoop() {
-        viewModel.didChangeCurrentExplanation(IndexPath(row: 1, section: 0))
+        viewModel.didChangeCurrentExplanation()
         perform(#selector(displayExplanation), with: nil, afterDelay: 5)
     }
     
