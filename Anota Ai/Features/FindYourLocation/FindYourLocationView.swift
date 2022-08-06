@@ -13,7 +13,8 @@ import MapKit
 import CoreLocation
 
 protocol FindYourLocationViewModelProtocol {
-    func requestLocationAuthorization(delegate: CLLocationManagerDelegate?)
+    var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
+    func requestLocationAuthorization()
 }
 
 class FindYourLocationView: UIView {
@@ -43,7 +44,12 @@ class FindYourLocationView: UIView {
     
     func bindIn(viewModel: FindYourLocationViewModelProtocol) {
         self.viewModel = viewModel
-        viewModel.requestLocationAuthorization(delegate: self)
+        
+        self.viewModel?.onUpdateUserCurrentLocation = { [weak self] coordinate in
+            self?.updateMapView(coordinate)
+        }
+        
+        viewModel.requestLocationAuthorization()
     }
 }
 
@@ -97,14 +103,3 @@ extension FindYourLocationView {
         addSubview(confirmYourLocationButton)
     }
 }
-
-// MARK: - CLLocationManagerDelegate
-
-extension FindYourLocationView: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        updateMapView(coordinate)
-    }
-}
-

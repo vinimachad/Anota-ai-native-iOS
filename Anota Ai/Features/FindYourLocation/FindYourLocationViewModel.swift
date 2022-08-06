@@ -12,40 +12,36 @@ protocol FindYourLocationProtocol: FindYourLocationViewModelProtocol {
     
 }
 
-class FindYourLocationViewModel {
+class FindYourLocationViewModel: NSObject {
     
     // MARK: - Public properties
     
+    var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)?
+    
     // MARK: - Private properties
     
-    private let locationManager = CLLocationManager()
+    private var location: LocationProtocol = Location()
     
-    // MARK: - Init
+    // MARK: - Methods
+    
+    private func updateCoordinate(_ coordinate: CLLocationCoordinate2D) {
+        onUpdateUserCurrentLocation?(coordinate)
+    }
 }
 
 // MARK: - FindYourLocationProtocol
 
 extension FindYourLocationViewModel: FindYourLocationProtocol {
     
-    func requestLocationAuthorization(delegate: CLLocationManagerDelegate?) {
-        requestAlwaysAuthorization()
-        requestWhenInUseAuthorization()
-        startUpdatingLocation(delegate: delegate)
+    func requestLocationAuthorization() {
+        location.requestLocationAuthorization(delegate: self)
     }
+}
+
+extension FindYourLocationViewModel: CLLocationManagerDelegate {
     
-    private func requestAlwaysAuthorization() {
-        locationManager.requestAlwaysAuthorization()
-    }
-    
-    private func requestWhenInUseAuthorization() {
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
-    private func startUpdatingLocation(delegate: CLLocationManagerDelegate?) {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = delegate
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        updateCoordinate(coordinate)
     }
 }
