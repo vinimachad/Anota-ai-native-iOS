@@ -83,10 +83,18 @@ extension FindYourLocationView {
         mapView.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
+        
+        confirmYourLocationButton.snp.makeConstraints {
+            $0.left.equalTo(snp.left).offset(16)
+            $0.right.equalTo(snp.right).offset(-16)
+            $0.bottom.equalTo(snp.bottomMargin)
+            $0.height.equalTo(48)
+        }
     }
     
     private func viewHierarchy() {
         addSubview(mapView)
+        addSubview(confirmYourLocationButton)
     }
 }
 

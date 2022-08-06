@@ -11,6 +11,7 @@ enum LocalizableFiles: String {
     case `default` = "Default"
     case error = "Error"
     case onboarding = "Onboarding"
+    case findYourLocation = "FindYourLocation"
 }
 
 extension String {
