@@ -11,7 +11,6 @@ import UIKit
 extension UIViewController {
     
     func setupDefaultNavigation(title: String = "") {
-        guard let navBar = navigationController?.navigationBar else { return }
         self.title = title
     }
     

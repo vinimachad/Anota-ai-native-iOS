@@ -87,7 +87,7 @@ extension FindYourLocationView {
         confirmYourLocationButton.snp.makeConstraints {
             $0.left.equalTo(snp.left).offset(16)
             $0.right.equalTo(snp.right).offset(-16)
-            $0.bottom.equalTo(snp.bottomMargin)
+            $0.bottom.equalTo(snp.bottomMargin).offset(-34)
             $0.height.equalTo(48)
         }
     }

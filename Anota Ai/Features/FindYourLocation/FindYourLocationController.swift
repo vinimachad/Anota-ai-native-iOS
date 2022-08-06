@@ -10,7 +10,7 @@ import CoreLocation
 import Foundation
 import UIKit
 
-class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewController, CLLocationManagerDelegate {
+class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewController, Loadable {
     
     // MARK: - Private properties
     
@@ -46,6 +46,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
         super.viewDidLoad()
         bind()
         setupNavigation()
+        showLoading()
     }
     
     // MARK: - Navigation
@@ -73,5 +74,9 @@ extension FindYourLocationController {
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.hideLoading()
+        }
     }
 }
