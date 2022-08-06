@@ -45,11 +45,25 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-//        viewModel.requestLocationAuthorization(delegate: self)
+        setupNavigation()
     }
     
+    // MARK: - Navigation
+    
     private func setupNavigation() {
-        navigationController?.modalPresentationStyle = .pageSheet
+        setBackButton()
+        changeNavigationTintColor(tintColor: .Shapes.shape)
+        setupDefaultNavigation(title: "Confirmar sua localização")
+    }
+    
+    private func setBackButton() {
+        setLeftNavigationButton(action: #selector(didTapReturnNavigation))
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapReturnNavigation() {
+        print("as")
     }
 }
 

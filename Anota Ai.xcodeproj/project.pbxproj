@@ -23,6 +23,7 @@
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
+		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
 		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
 		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
@@ -97,6 +98,7 @@
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
+		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,22 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		3C7A4383289ECD3F00DA1E36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C7A4384289ECD4400DA1E36 /* UI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3C7A4384289ECD4400DA1E36 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		3C91274E289DD668008AA594 /* FindYourLocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +410,7 @@
 		3CA3D7B4289AF177006B3D90 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				3C7A4383289ECD3F00DA1E36 /* Extensions */,
 				3C648DF1289DA09B0091B3D8 /* String */,
 				3CA3D7C0289B0133006B3D90 /* UI */,
 				3CA3D7BD289AFEE7006B3D90 /* Factories */,
@@ -827,6 +846,7 @@
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
 				3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
+				3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */,
 				3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */,
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CD35D58289C41F60012480E /* Button.swift in Sources */,
