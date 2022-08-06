@@ -13,6 +13,7 @@ import CollectionDS_SDK
 protocol OnboardingViewModelProtocol {
     var sections: [CollectionSectionProtocol] { get }
     var onExplanationWillDisplay: ((IndexPath) -> Void)? { get set }
+    func didTapToCreateAccount()
 }
 
 class OnboardingView: UIView {
@@ -92,12 +93,19 @@ extension OnboardingView {
         signUpButton.title = "sign_up_title_btn".localize(.onboarding)
         signUpButton.titleColor = .Shapes.shape
         signUpButton.backgroundColor = .Brand.primary
+        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchDown)
     }
     
     private func setupLoginButton() {
         loginButton.title = "login_title_btn".localize(.onboarding)
         loginButton.titleColor = .Shapes.shape
         loginButton.backgroundColor = .Brand.secondary
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapSignUp() {
+        viewModel?.didTapToCreateAccount()
     }
 }
 

@@ -49,4 +49,15 @@ class OnboardingViewModelTests: XCTestCase {
         XCTAssertEqual(invokedOnExplanationWillDisplay.count, 4)
         XCTAssertEqual(invokedOnExplanationWillDisplay.indexPath, expectedIndexPath)
     }
+    
+    func test_didTapToCreateAccount_whenCalled_expectInvokeOnTapToCreateAccount() {
+        var invokedOnTapToCreateAccountCount = 0
+        
+        sut.onTapToCreateAccount = {
+            invokedOnTapToCreateAccountCount += 1
+        }
+        
+        sut.didTapToCreateAccount()
+        XCTAssertEqual(invokedOnTapToCreateAccountCount, 1)
+    }
 }

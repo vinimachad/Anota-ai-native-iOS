@@ -22,6 +22,11 @@
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
+		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
+		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
+		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
+		3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C912751289DD688008AA594 /* FindYourLocationController.swift */; };
+		3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */; };
 		3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */; };
 		3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA714289B104900C300B8 /* OnboardingView.swift */; };
 		3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA716289B105200C300B8 /* OnboardingController.swift */; };
@@ -90,6 +95,11 @@
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
+		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
+		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
+		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
+		3C912751289DD688008AA594 /* FindYourLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationController.swift; sourceTree = "<group>"; };
+		3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModel.swift; sourceTree = "<group>"; };
 		3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		3C9EA714289B104900C300B8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3C9EA716289B105200C300B8 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -267,8 +277,19 @@
 			isa = PBXGroup;
 			children = (
 				3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */,
+				3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3C91274E289DD668008AA594 /* FindYourLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3C91274F289DD67D008AA594 /* FindYourLocationView.swift */,
+				3C912751289DD688008AA594 /* FindYourLocationController.swift */,
+				3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */,
+			);
+			path = FindYourLocation;
 			sourceTree = "<group>";
 		};
 		3C9EA711289B102100C300B8 /* Onboarding */ = {
@@ -349,6 +370,7 @@
 		3CA3D7B2289AF168006B3D90 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3C91274E289DD668008AA594 /* FindYourLocation */,
 				3C9EA711289B102100C300B8 /* Onboarding */,
 			);
 			path = Features;
@@ -359,6 +381,7 @@
 			children = (
 				3CA3D7B6289AFBF6006B3D90 /* Setup */,
 				3CA3D7BB289AFEAF006B3D90 /* OnboardingCoordinator.swift */,
+				3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -788,12 +811,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
+				3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */,
+				3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
+				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
 				3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
@@ -801,6 +827,7 @@
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CD35D58289C41F60012480E /* Button.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
+				3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */,
 				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,
 				3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */,
 				3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */,
@@ -820,6 +847,7 @@
 				3CBBBA88289CB747006BFF95 /* ImageTests.swift in Sources */,
 				3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */,
 				3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */,
+				3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */,
 				3CBBBA8C289CBB73006BFF95 /* FontTests.swift in Sources */,
 				3CBBBA8A289CB932006BFF95 /* ColorsTests.swift in Sources */,
 				3C648DEA289D6DA30091B3D8 /* ButtonSnapshot.swift in Sources */,

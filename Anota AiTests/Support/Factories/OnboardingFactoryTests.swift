@@ -12,6 +12,6 @@ import XCTest
 class OnboardingFactoryTests: XCTestCase {
     
     func test_onboarding_whenOnboardingIsCalled_expectedReturnsOnboardingController() {
-        XCTAssertTrue(OnboardingFactory.onboarding() is OnboardingController<OnboardingViewModel>)
+        XCTAssertTrue(OnboardingFactory.onboarding(delegate: nil) is OnboardingController<OnboardingViewModel>)
     }
 }
