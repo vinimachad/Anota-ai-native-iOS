@@ -10,17 +10,23 @@ import CoreLocation
 import Foundation
 import UIKit
 
+protocol FindYourLocationControllerDelegate: AnyObject {
+    func returnNavigation()
+}
+
 class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewController, Loadable {
     
     // MARK: - Private properties
     
     private let contentView: FindYourLocationView
     private var viewModel: ViewModel
+    private weak var delegate: FindYourLocationControllerDelegate?
     
     // MARK: - Init
     
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, delegate: FindYourLocationControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         contentView = FindYourLocationView()
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +70,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     // MARK: - Actions
     
     @objc private func didTapReturnNavigation() {
-        print("as")
+        self.delegate?.returnNavigation()
     }
 }
 

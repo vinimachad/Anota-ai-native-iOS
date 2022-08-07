@@ -36,7 +36,7 @@ extension OnboardingCoordinator: OnboardingControllerDelegate {
     
     func presentFindYourLocation() {
         let coordinator = FindYourLocationCoordinator()
-        childCoordinator = coordinator
         navigationController.present(coordinator.start(), animated: true)
+        childCoordinator = coordinator
     }
 }
