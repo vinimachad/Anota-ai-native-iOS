@@ -14,7 +14,7 @@ protocol FindYourLocationProtocol: FindYourLocationViewModelProtocol {
     var onFailureGetAuthorization: (() -> Void)? { get set }
 }
 
-class FindYourLocationViewModel: NSObject {
+class FindYourLocationViewModel {
     
     // MARK: - Public properties
     
@@ -24,10 +24,13 @@ class FindYourLocationViewModel: NSObject {
     
     // MARK: - Private properties
     
-    lazy var location: LocalizationProtocol = Localization(
-        onAuthorizedLocalization: self.didAuthorizedLocalization,
-        onNotAuthorizedLocalization: self.didNotAuthorizedLocalization
-    )
+    lazy var location: LocalizationProtocol = Localization()
+    
+    // MARK: - Init
+    
+    init() {
+        location.delegate = self
+    }
     
     // MARK: - Methods
     
@@ -41,22 +44,25 @@ class FindYourLocationViewModel: NSObject {
 extension FindYourLocationViewModel: FindYourLocationProtocol {
     
     func requestLocationAuthorization() {
-        location.requestLocationAuthorization(delegate: self)
+        location.requestLocationAuthorization()
+        didAuthorizedLocalization()
+        didNotAuthorizedLocalization()
     }
     
     private func didAuthorizedLocalization() {
-        onSuccessGetAuthorization?()
+        location.onAuthorizedLocalization = { [weak self] in self?.onSuccessGetAuthorization?() }
     }
     
     private func didNotAuthorizedLocalization() {
-        onFailureGetAuthorization?()
+        location.onNotAuthorizedLocalization = { [weak self] in self?.onFailureGetAuthorization?()}
     }
 }
 
-extension FindYourLocationViewModel: CLLocationManagerDelegate {
+extension FindYourLocationViewModel: LocalizationDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         updateCoordinate(coordinate)
     }
 }
+                                                                        

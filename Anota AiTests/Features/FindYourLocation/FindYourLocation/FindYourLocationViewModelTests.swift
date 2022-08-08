@@ -15,6 +15,12 @@ class FindYourLocationViewModelTests: XCTestCase {
     var sut: FindYourLocationViewModel!
     var localizationMock: LocalizationMock!
     
+    override func setUp() {
+        sut = FindYourLocationViewModel()
+        self.localizationMock = LocalizationMock()
+        sut.location = localizationMock
+    }
+    
     func test_requestLocationAuthorization_whenWeHaveAuthorizedWhenInUseAndLocationServicesIsEnabled_expectedInvokeOnSuccessGetAuthorization() {
         
         var invokedOnSuccessGetAuthorizationCount = 0
@@ -33,15 +39,20 @@ class FindYourLocationViewModelTests: XCTestCase {
         XCTAssertEqual(invokedOnSuccessGetAuthorizationCount, 1)
     }
     
-    func test_requestLocationAuthorization_whenWeHaveAuthorizedAlwaysToUseLocalization_expectedInvokeOnSuccessGetAuthorization() {
-        localizationMock.authorizationStatus = .authorizedAlways
+    func test_requestLocationAuthorization_whenWeHaveAuthorizationDenied_expectedInvokeOnFailureGetAuthorization() {
+        var invokedOnFailureGetAuthorizationCount = 0
+        
+        sut.onFailureGetAuthorization = {
+            invokedOnFailureGetAuthorizationCount += 1
+        }
+        
+        localizationMock.locationServiceIsEnabled = true
+        localizationMock.authorizationStatus = .denied
+        
         sut.requestLocationAuthorization()
-        XCTAssertEqual(sut.location.getAuthorizationStatus(), CLAuthorizationStatus.authorizedAlways)
-    }
-    
-    private func makeSUT(localizationMock: LocalizationMock) {
-        sut = FindYourLocationViewModel()
-        self.localizationMock = localizationMock
-        sut.location = localizationMock
+        
+        XCTAssertEqual(sut.location.locationServicesEnabled(), true)
+        XCTAssertEqual(sut.location.getAuthorizationStatus(), CLAuthorizationStatus.denied)
+        XCTAssertEqual(invokedOnFailureGetAuthorizationCount, 1)
     }
 }

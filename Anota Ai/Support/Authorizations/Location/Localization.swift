@@ -10,29 +10,28 @@ import CoreLocation
 
 protocol LocalizationProtocol {
     var locationManager: CLLocationManager { get }
+    var delegate: LocalizationDelegate? { get set }
     
     var onAuthorizedLocalization: (() -> Void)? { get set }
     var onNotAuthorizedLocalization: (() -> Void)? { get set }
     
-    func requestLocationAuthorization(delegate: CLLocationManagerDelegate?)
+    func requestLocationAuthorization()
     func getAuthorizationStatus() -> CLAuthorizationStatus
     func locationServicesEnabled() -> Bool
 }
 
-class Localization {
+protocol LocalizationDelegate: AnyObject {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+}
+
+class Localization: NSObject {
     
     // MARK: - Public properties
     
+    weak var delegate: LocalizationDelegate?
     let locationManager = CLLocationManager()
     var onAuthorizedLocalization: (() -> Void)?
     var onNotAuthorizedLocalization: (() -> Void)?
-    
-    // MARK: - Init
-    
-    init(onAuthorizedLocalization: (() -> Void)? = nil, onNotAuthorizedLocalization: (() -> Void)? = nil) {
-        self.onAuthorizedLocalization = onAuthorizedLocalization
-        self.onNotAuthorizedLocalization = onNotAuthorizedLocalization
-    }
     
     // MARK: - Request authorization
     
@@ -44,18 +43,18 @@ class Localization {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    private func startUpdatingLocation(delegate: CLLocationManagerDelegate?) {
+    private func startUpdatingLocation() {
         if locationServicesEnabled() {
-            checkStatus(delegate: delegate)
+            checkStatus()
         }
     }
     
     // MARK: - Status
     
-    private func checkStatus(delegate: CLLocationManagerDelegate?) {
+    private func checkStatus() {
         switch getAuthorizationStatus() {
         case .notDetermined, .denied, .restricted: notAuthorizedLocalization()
-        case .authorizedAlways, .authorizedWhenInUse: authorizedLocalization(delegate: delegate)
+        case .authorizedAlways, .authorizedWhenInUse: authorizedLocalization()
         @unknown default: break
         }
     }
@@ -64,9 +63,9 @@ class Localization {
         onNotAuthorizedLocalization?()
     }
     
-    private func authorizedLocalization(delegate: CLLocationManagerDelegate?) {
+    private func authorizedLocalization() {
         onAuthorizedLocalization?()
-        locationManager.delegate = delegate
+        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
     }
@@ -76,10 +75,10 @@ class Localization {
 
 extension Localization: LocalizationProtocol {
     
-    func requestLocationAuthorization(delegate: CLLocationManagerDelegate?) {
+    func requestLocationAuthorization() {
         requestAlwaysAuthorization()
         requestWhenInUseAuthorization()
-        startUpdatingLocation(delegate: delegate)
+        startUpdatingLocation()
     }
     
     func getAuthorizationStatus() -> CLAuthorizationStatus {
@@ -88,5 +87,15 @@ extension Localization: LocalizationProtocol {
     
     func locationServicesEnabled() -> Bool {
         CLLocationManager.locationServicesEnabled()
+    }
+}
+
+
+// MARK: - CLLocationManagerDelegate
+
+extension Localization: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        delegate?.locationManager(manager, didUpdateLocations: locations)
     }
 }

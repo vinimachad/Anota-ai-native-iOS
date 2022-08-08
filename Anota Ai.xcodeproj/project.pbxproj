@@ -23,6 +23,7 @@
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
+		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
 		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
 		3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */; };
@@ -107,6 +108,7 @@
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
+		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
 		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 				3CBA5B6C289F42CC0049F55E /* FindYourLocationViewModelMock.swift */,
 				3CBA5B6E289F46070049F55E /* FindYourLocationControllerDelegateMock.swift */,
 				3C731AB928A140AE00BCE107 /* LocalizationMock.swift */,
+				3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */,
 				3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */,
 				3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */,
+				3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */,
 				3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */,
 				3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */,
 				3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */,

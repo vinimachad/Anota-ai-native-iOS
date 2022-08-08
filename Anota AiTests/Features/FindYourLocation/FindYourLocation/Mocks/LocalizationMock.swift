@@ -19,15 +19,12 @@ class LocalizationMock: LocalizationProtocol {
     var locationServiceIsEnabled: Bool = false
     
     var locationManager: CLLocationManager = CLLocationManager()
+    var delegate: LocalizationDelegate?
+    
     var onAuthorizedLocalization: (() -> Void)?
     var onNotAuthorizedLocalization: (() -> Void)?
     
-    init(onAuthorizedLocalization: (() -> Void)? = nil, onNotAuthorizedLocalization: (() -> Void)? = nil) {
-        self.onAuthorizedLocalization = onAuthorizedLocalization
-        self.onNotAuthorizedLocalization = onNotAuthorizedLocalization
-    }
-    
-    func requestLocationAuthorization(delegate: CLLocationManagerDelegate?) {
+    func requestLocationAuthorization() {
         invokedRequestLocationAuthorizationCount += 1
     }
     
