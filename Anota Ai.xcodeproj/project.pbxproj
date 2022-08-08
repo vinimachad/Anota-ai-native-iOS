@@ -22,11 +22,12 @@
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
+		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
 		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
 		3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */; };
 		3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A438B289EDF7D00DA1E36 /* Loadable.swift */; };
-		3C7A4392289EE96E00DA1E36 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4391289EE96E00DA1E36 /* Location.swift */; };
+		3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4391289EE96E00DA1E36 /* Localization.swift */; };
 		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
 		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
@@ -53,6 +54,11 @@
 		3CA3D7D0289B0686006B3D90 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */; };
 		3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */; };
 		3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7D2289B0764006B3D90 /* Colors.xcassets */; };
+		3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */; };
+		3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */; };
+		3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */; };
+		3CBA5B6D289F42CC0049F55E /* FindYourLocationViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B6C289F42CC0049F55E /* FindYourLocationViewModelMock.swift */; };
+		3CBA5B6F289F46070049F55E /* FindYourLocationControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B6E289F46070049F55E /* FindYourLocationControllerDelegateMock.swift */; };
 		3CBBBA88289CB747006BFF95 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA87289CB747006BFF95 /* ImageTests.swift */; };
 		3CBBBA8A289CB932006BFF95 /* ColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA89289CB932006BFF95 /* ColorsTests.swift */; };
 		3CBBBA8C289CBB73006BFF95 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8B289CBB73006BFF95 /* FontTests.swift */; };
@@ -100,11 +106,12 @@
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
+		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
 		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3C7A438B289EDF7D00DA1E36 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
-		3C7A4391289EE96E00DA1E36 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		3C7A4391289EE96E00DA1E36 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
@@ -135,6 +142,11 @@
 		3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		3CA3D7D2289B0764006B3D90 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationSnapshot.swift; sourceTree = "<group>"; };
+		3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationControllerTests.swift; sourceTree = "<group>"; };
+		3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModelTests.swift; sourceTree = "<group>"; };
+		3CBA5B6C289F42CC0049F55E /* FindYourLocationViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModelMock.swift; sourceTree = "<group>"; };
+		3CBA5B6E289F46070049F55E /* FindYourLocationControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3CBBBA87289CB747006BFF95 /* ImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 		3CBBBA89289CB932006BFF95 /* ColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTests.swift; sourceTree = "<group>"; };
 		3CBBBA8B289CBB73006BFF95 /* FontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
@@ -259,6 +271,7 @@
 		3C698750289D465800901CE7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3CBA5B63289F422F0049F55E /* FindYourLocation */,
 				3C698751289D465C00901CE7 /* Onboarding */,
 			);
 			path = Features;
@@ -337,7 +350,7 @@
 		3C7A4390289EE95400DA1E36 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				3C7A4391289EE96E00DA1E36 /* Location.swift */,
+				3C7A4391289EE96E00DA1E36 /* Localization.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -514,6 +527,35 @@
 				3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3CBA5B63289F422F0049F55E /* FindYourLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3CBA5B64289F42420049F55E /* FindYourLocation */,
+			);
+			path = FindYourLocation;
+			sourceTree = "<group>";
+		};
+		3CBA5B64289F42420049F55E /* FindYourLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3CBA5B6B289F428E0049F55E /* Mocks */,
+				3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */,
+				3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */,
+				3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */,
+			);
+			path = FindYourLocation;
+			sourceTree = "<group>";
+		};
+		3CBA5B6B289F428E0049F55E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3CBA5B6C289F42CC0049F55E /* FindYourLocationViewModelMock.swift */,
+				3CBA5B6E289F46070049F55E /* FindYourLocationControllerDelegateMock.swift */,
+				3C731AB928A140AE00BCE107 /* LocalizationMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		3CBBBA84289CB714006BFF95 /* Support */ = {
@@ -881,7 +923,7 @@
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,
-				3C7A4392289EE96E00DA1E36 /* Location.swift in Sources */,
+				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
@@ -906,16 +948,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */,
+				3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */,
 				3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */,
 				3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */,
+				3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */,
+				3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */,
 				3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */,
 				3C648DF0289D731F0091B3D8 /* ExplanationCellViewModelMock.swift in Sources */,
 				3C648DED289D72F30091B3D8 /* ExplanationCellSnapshot.swift in Sources */,
 				3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */,
+				3CBA5B6F289F46070049F55E /* FindYourLocationControllerDelegateMock.swift in Sources */,
 				3CBBBA88289CB747006BFF95 /* ImageTests.swift in Sources */,
 				3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */,
 				3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */,
 				3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */,
+				3CBA5B6D289F42CC0049F55E /* FindYourLocationViewModelMock.swift in Sources */,
 				3CBBBA8C289CBB73006BFF95 /* FontTests.swift in Sources */,
 				3CBBBA8A289CB932006BFF95 /* ColorsTests.swift in Sources */,
 				3C648DEA289D6DA30091B3D8 /* ButtonSnapshot.swift in Sources */,

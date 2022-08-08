@@ -9,7 +9,9 @@ import Foundation
 import CoreLocation
 
 protocol FindYourLocationProtocol: FindYourLocationViewModelProtocol {
-    
+    var location: LocalizationProtocol { get set }
+    var onSuccessGetAuthorization: (() -> Void)? { get set }
+    var onFailureGetAuthorization: (() -> Void)? { get set }
 }
 
 class FindYourLocationViewModel: NSObject {
@@ -17,10 +19,15 @@ class FindYourLocationViewModel: NSObject {
     // MARK: - Public properties
     
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)?
+    var onSuccessGetAuthorization: (() -> Void)?
+    var onFailureGetAuthorization: (() -> Void)?
     
     // MARK: - Private properties
     
-    private var location: LocationProtocol = Location()
+    lazy var location: LocalizationProtocol = Localization(
+        onAuthorizedLocalization: self.didAuthorizedLocalization,
+        onNotAuthorizedLocalization: self.didNotAuthorizedLocalization
+    )
     
     // MARK: - Methods
     
@@ -35,6 +42,14 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
     
     func requestLocationAuthorization() {
         location.requestLocationAuthorization(delegate: self)
+    }
+    
+    private func didAuthorizedLocalization() {
+        onSuccessGetAuthorization?()
+    }
+    
+    private func didNotAuthorizedLocalization() {
+        onFailureGetAuthorization?()
     }
 }
 

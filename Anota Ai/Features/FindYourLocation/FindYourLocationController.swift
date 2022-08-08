@@ -50,9 +50,9 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLoading()
         bind()
         setupNavigation()
-        showLoading()
     }
     
     // MARK: - Navigation
