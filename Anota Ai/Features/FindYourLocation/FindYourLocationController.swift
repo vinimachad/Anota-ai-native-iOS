@@ -21,6 +21,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     private let contentView: FindYourLocationView
     private var viewModel: ViewModel
     private weak var delegate: FindYourLocationControllerDelegate?
+    lazy var transitionDelegate = AlertCustomPresentation()
     
     // MARK: - Init
     
@@ -53,6 +54,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
         showLoading()
         bind()
         setupNavigation()
+        viewModel.requestLocationAuthorization()
     }
     
     // MARK: - Navigation
@@ -83,6 +85,14 @@ extension FindYourLocationController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.hideLoading()
+        }
+        
+        viewModel.onFailureGetAuthorization = {
+            self.navigationController?.present(AlertController(viewModel: AlertViewModel()), animated: true)
+        }
+        
+        viewModel.onSuccessGetAuthorization = {
+            self.showModal(alertCustomPresentation: self.transitionDelegate)
         }
     }
 }

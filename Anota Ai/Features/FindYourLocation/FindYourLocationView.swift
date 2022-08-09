@@ -14,7 +14,6 @@ import CoreLocation
 
 protocol FindYourLocationViewModelProtocol {
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
-    func requestLocationAuthorization()
 }
 
 class FindYourLocationView: UIView {
@@ -48,8 +47,6 @@ class FindYourLocationView: UIView {
         self.viewModel?.onUpdateUserCurrentLocation = { [weak self] coordinate in
             self?.updateMapView(coordinate)
         }
-        
-        viewModel.requestLocationAuthorization()
     }
 }
 

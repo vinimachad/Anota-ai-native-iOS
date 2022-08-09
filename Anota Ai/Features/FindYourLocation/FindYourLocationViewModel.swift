@@ -12,6 +12,7 @@ protocol FindYourLocationProtocol: FindYourLocationViewModelProtocol {
     var location: LocalizationProtocol { get set }
     var onSuccessGetAuthorization: (() -> Void)? { get set }
     var onFailureGetAuthorization: (() -> Void)? { get set }
+    func requestLocationAuthorization()
 }
 
 class FindYourLocationViewModel {
@@ -44,17 +45,25 @@ class FindYourLocationViewModel {
 extension FindYourLocationViewModel: FindYourLocationProtocol {
     
     func requestLocationAuthorization() {
-        location.requestLocationAuthorization()
         didAuthorizedLocalization()
         didNotAuthorizedLocalization()
+        location.requestLocationAuthorization()
     }
     
     private func didAuthorizedLocalization() {
-        location.onAuthorizedLocalization = { [weak self] in self?.onSuccessGetAuthorization?() }
+        location.onAuthorizedLocalization = { [weak self] in
+            self?.suas()
+        }
+    }
+    
+    func suas() {
+        self.onSuccessGetAuthorization?()
     }
     
     private func didNotAuthorizedLocalization() {
-        location.onNotAuthorizedLocalization = { [weak self] in self?.onFailureGetAuthorization?()}
+        location.onNotAuthorizedLocalization = { [weak self] in
+            self?.onFailureGetAuthorization?()
+        }
     }
 }
 

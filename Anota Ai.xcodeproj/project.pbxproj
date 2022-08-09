@@ -24,6 +24,9 @@
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
+		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
+		3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC228A16D5A00BCE107 /* AlertView.swift */; };
+		3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC428A16DC900BCE107 /* AlertViewModel.swift */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
 		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
 		3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */; };
@@ -34,6 +37,8 @@
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
 		3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C912751289DD688008AA594 /* FindYourLocationController.swift */; };
 		3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */; };
+		3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */; };
+		3C9D34D228A178040023F77A /* AlertCusomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D34D128A178040023F77A /* AlertCusomPresentation.swift */; };
 		3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */; };
 		3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA714289B104900C300B8 /* OnboardingView.swift */; };
 		3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA716289B105200C300B8 /* OnboardingController.swift */; };
@@ -67,6 +72,7 @@
 		3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */; };
 		3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */; };
 		3CD35D58289C41F60012480E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D57289C41F60012480E /* Button.swift */; };
+		3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */; };
 		7C7FBFFD6CE3910323682ADF /* Pods_Anota_Ai_Anota_AiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */; };
 		C3F92169F0B4B816E2AFA303 /* Pods_Anota_AiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB99B75D499EDAB84F4B2FF2 /* Pods_Anota_AiTests.framework */; };
 /* End PBXBuildFile section */
@@ -109,6 +115,9 @@
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
+		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		3C731AC228A16D5A00BCE107 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		3C731AC428A16DC900BCE107 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
 		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -119,6 +128,8 @@
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
 		3C912751289DD688008AA594 /* FindYourLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationController.swift; sourceTree = "<group>"; };
 		3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModel.swift; sourceTree = "<group>"; };
+		3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Modal.swift"; sourceTree = "<group>"; };
+		3C9D34D128A178040023F77A /* AlertCusomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCusomPresentation.swift; sourceTree = "<group>"; };
 		3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		3C9EA714289B104900C300B8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3C9EA716289B105200C300B8 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -156,6 +167,7 @@
 		3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilderSections.swift; sourceTree = "<group>"; };
 		3CD35D57289C41F60012480E /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
 		565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.debug.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.release.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8D567694951592B1C97791D /* Pods-Anota Ai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai.debug.xcconfig"; path = "Target Support Files/Pods-Anota Ai/Pods-Anota Ai.debug.xcconfig"; sourceTree = "<group>"; };
@@ -308,6 +320,26 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		3C731ABE28A16D3500BCE107 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				3C731ABF28A16D4200BCE107 /* Alert */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		3C731ABF28A16D4200BCE107 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				3C731AC028A16D5100BCE107 /* AlertController.swift */,
+				3C731AC228A16D5A00BCE107 /* AlertView.swift */,
+				3C731AC428A16DC900BCE107 /* AlertViewModel.swift */,
+				3C9D34D128A178040023F77A /* AlertCusomPresentation.swift */,
+				3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		3C7A4383289ECD3F00DA1E36 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */,
+				3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -503,6 +536,7 @@
 		3CA3D7C0289B0133006B3D90 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3C731ABE28A16D3500BCE107 /* Modals */,
 				3C7A4387289EDF5400DA1E36 /* States */,
 				3CD35D55289C41E90012480E /* Components */,
 				3CA3D7C8289B054A006B3D90 /* Fonts */,
@@ -919,7 +953,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */,
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
+				3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */,
+				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
+				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
+				3C9D34D228A178040023F77A /* AlertCusomPresentation.swift in Sources */,
 				3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */,
 				3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
@@ -932,6 +971,7 @@
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
+				3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */,
 				3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
 				3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */,
