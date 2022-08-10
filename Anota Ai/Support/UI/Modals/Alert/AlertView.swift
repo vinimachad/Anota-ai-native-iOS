@@ -9,7 +9,12 @@ import Foundation
 import UIKit
 import SnapKit
 
-protocol AlertViewModelProtocol { }
+protocol AlertViewModelProtocol {
+    var title: String { get }
+    var description: String { get }
+    func didTapCancel()
+    func didTapConfirm()
+}
 
 class AlertView: UIView {
     
@@ -39,6 +44,8 @@ class AlertView: UIView {
     
     func bindIn(viewModel: AlertViewModelProtocol) {
         self.viewModel = viewModel
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
     }
 }
 
@@ -58,7 +65,6 @@ extension AlertView {
     }
     
     private func setupTitleLabel() {
-        titleLabel.text = "teste"
         titleLabel.font = .default(type: .bold, ofSize: 19)
         titleLabel.textColor = .Texts.heading
         titleLabel.textAlignment = .center
@@ -66,7 +72,6 @@ extension AlertView {
     }
     
     private func setupDescriptionLabel() {
-        descriptionLabel.text = "description"
         descriptionLabel.font = .default(type: .regular, ofSize: 14)
         descriptionLabel.textColor = .Texts.body
         descriptionLabel.textAlignment = .center
@@ -84,6 +89,7 @@ extension AlertView {
         confirmButton.title = "Confirmar"
         confirmButton.titleColor = .Shapes.shape
         confirmButton.backgroundColor = .Brand.primary
+        confirmButton.addTarget(self, action: #selector(didTapConfirm), for: .touchDown)
     }
     
     private func setupCancelButton() {
@@ -91,6 +97,15 @@ extension AlertView {
         cancelButton.titleColor = .Texts.heading
         cancelButton.backgroundColor = .Shapes.shape
         cancelButton.setBorder(color: .Shapes.stroke)
+        cancelButton.addTarget(self, action: #selector(didTapCancel), for: .touchDown)
+    }
+    
+    @objc private func didTapConfirm() {
+        viewModel?.didTapConfirm()
+    }
+    
+    @objc private func didTapCancel() {
+        viewModel?.didTapCancel()
     }
 }
 

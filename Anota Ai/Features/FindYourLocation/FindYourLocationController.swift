@@ -21,7 +21,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     private let contentView: FindYourLocationView
     private var viewModel: ViewModel
     private weak var delegate: FindYourLocationControllerDelegate?
-    lazy var transitionDelegate = AlertCustomPresentation()
+    lazy var transitionDelegate = AlertPresentationManager()
     
     // MARK: - Init
     
@@ -88,11 +88,17 @@ extension FindYourLocationController {
         }
         
         viewModel.onFailureGetAuthorization = {
-            self.navigationController?.present(AlertController(viewModel: AlertViewModel()), animated: true)
+
         }
         
         viewModel.onSuccessGetAuthorization = {
-            self.showModal(alertCustomPresentation: self.transitionDelegate)
+            let viewModel = AlertViewModel(
+                title: "Não encontramos sua localização",
+                description: "Tente ativar permissão para usarmos a sua localização ",
+                onCancel: { print("testecancel") },
+                onConfirm: {print("testeconfirm")}
+            )
+            self.showModal(delegate: self.transitionDelegate, viewModel: viewModel)
         }
     }
 }

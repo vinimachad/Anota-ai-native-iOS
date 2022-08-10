@@ -12,8 +12,6 @@ import UIKit
 
 class AlertController<ViewModel: AlertProtocol>: UIViewController {
     
-    // MARK: - Public properties
-    
     // MARK: - Private properties
     
     private let contentView: AlertView
