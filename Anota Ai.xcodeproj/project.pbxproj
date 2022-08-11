@@ -72,6 +72,7 @@
 		3CBBBA8C289CBB73006BFF95 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8B289CBB73006BFF95 /* FontTests.swift */; };
 		3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */; };
 		3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */; };
+		3CCA0DAE28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */; };
 		3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */; };
 		3CD35D58289C41F60012480E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D57289C41F60012480E /* Button.swift */; };
 		3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */; };
@@ -169,6 +170,7 @@
 		3CBBBA8B289CBB73006BFF95 /* FontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
 		3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinatorTests.swift; sourceTree = "<group>"; };
+		3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilderSections.swift; sourceTree = "<group>"; };
 		3CD35D57289C41F60012480E /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 			children = (
 				3CBBBA8E289CBCD6006BFF95 /* Setup */,
 				3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */,
+				3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1012,6 +1015,7 @@
 				3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */,
 				3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */,
 				3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */,
+				3CCA0DAE28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift in Sources */,
 				3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */,
 				3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */,
 				3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */,

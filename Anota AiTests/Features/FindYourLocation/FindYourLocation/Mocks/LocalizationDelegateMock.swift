@@ -13,6 +13,6 @@ import XCTest
 class LocalizationDelegateMock: LocalizationDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
     }
 }
