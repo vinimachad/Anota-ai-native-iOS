@@ -61,8 +61,8 @@ extension FindYourLocationView {
     
     private func setupConfirmYourLocationButton() {
         confirmYourLocationButton.title = "confirm_location_title_button".localize(.findYourLocation)
-        confirmYourLocationButton.titleColor = .Shapes.shape
-        confirmYourLocationButton.backgroundColor = .Brand.primary
+        confirmYourLocationButton.kind = .confirm
+        confirmYourLocationButton.addTarget(self, action: #selector(didConfirmLocation), for: .touchDown)
     }
     
     private func updateMapView(_ coordinate: CLLocationCoordinate2D) {
@@ -73,6 +73,10 @@ extension FindYourLocationView {
         let marker = MKPointAnnotation()
         marker.coordinate = coordinate
         mapView.addAnnotation(marker)
+    }
+    
+    @objc private func didConfirmLocation() {
+        print("confirmou localization")
     }
 }
 

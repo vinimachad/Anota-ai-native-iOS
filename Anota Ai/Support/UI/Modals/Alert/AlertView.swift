@@ -12,8 +12,7 @@ import SnapKit
 protocol AlertViewModelProtocol {
     var title: String { get }
     var description: String { get }
-    func didTapCancel()
-    func didTapConfirm()
+    var actions: [Button] { get }
 }
 
 class AlertView: UIView {
@@ -23,8 +22,6 @@ class AlertView: UIView {
     private lazy var titleLabel = UILabel()
     private lazy var descriptionLabel = UILabel()
     private lazy var containerButtonsStackView = UIStackView()
-    private lazy var confirmButton = Button()
-    private lazy var cancelButton = Button()
     
     // MARK: - Private properties
     
@@ -46,6 +43,16 @@ class AlertView: UIView {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
+        
+        viewModel.actions.forEach {
+            containerButtonsStackView.addArrangedSubview($0)
+            
+            $0.snp.makeConstraints {
+                $0.left.equalTo(containerButtonsStackView.snp.left)
+                $0.right.equalTo(containerButtonsStackView.snp.right)
+                $0.height.equalTo(48)
+            }
+        }
     }
 }
 
@@ -58,8 +65,6 @@ extension AlertView {
         setupTitleLabel()
         setupDescriptionLabel()
         setupContainerButtonsStackView()
-        setupConfirmButton()
-        setupCancelButton()
         backgroundColor = .Shapes.shape
         layer.cornerRadius = 8
     }
@@ -82,30 +87,7 @@ extension AlertView {
         containerButtonsStackView.distribution = .equalSpacing
         containerButtonsStackView.axis = .vertical
         containerButtonsStackView.alignment = .center
-        containerButtonsStackView.spacing = 3
-    }
-    
-    private func setupConfirmButton() {
-        confirmButton.title = "Confirmar"
-        confirmButton.titleColor = .Shapes.shape
-        confirmButton.backgroundColor = .Brand.primary
-        confirmButton.addTarget(self, action: #selector(didTapConfirm), for: .touchDown)
-    }
-    
-    private func setupCancelButton() {
-        cancelButton.title = "Cancelar"
-        cancelButton.titleColor = .Texts.heading
-        cancelButton.backgroundColor = .Shapes.shape
-        cancelButton.setBorder(color: .Shapes.stroke)
-        cancelButton.addTarget(self, action: #selector(didTapCancel), for: .touchDown)
-    }
-    
-    @objc private func didTapConfirm() {
-        viewModel?.didTapConfirm()
-    }
-    
-    @objc private func didTapCancel() {
-        viewModel?.didTapCancel()
+        containerButtonsStackView.spacing = 16
     }
 }
 
@@ -134,27 +116,12 @@ extension AlertView {
             $0.right.equalTo(snp.right).offset(-16)
             $0.bottom.equalTo(snp.bottom).offset(-27)
         }
-        
-        confirmButton.snp.makeConstraints {
-            $0.left.equalTo(containerButtonsStackView.snp.left)
-            $0.right.equalTo(containerButtonsStackView.snp.right)
-            $0.bottom.equalTo(cancelButton.snp.top).offset(-16)
-            $0.height.equalTo(48)
-        }
-        
-        cancelButton.snp.makeConstraints {
-            $0.left.equalTo(containerButtonsStackView.snp.left)
-            $0.right.equalTo(containerButtonsStackView.snp.right)
-            $0.height.equalTo(48)
-        }
     }
     
     private func viewHierarchy() {
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         addSubview(containerButtonsStackView)
-        containerButtonsStackView.addArrangedSubview(confirmButton)
-        containerButtonsStackView.addArrangedSubview(cancelButton)
     }
 }
 

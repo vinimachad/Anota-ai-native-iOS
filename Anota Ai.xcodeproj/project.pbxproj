@@ -21,6 +21,7 @@
 		3C648DF6289DA1000091B3D8 /* Default.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DF5289DA1000091B3D8 /* Default.strings */; };
 		3C648DF8289DA1090091B3D8 /* Onboarding.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DF7289DA1090091B3D8 /* Onboarding.strings */; };
 		3C648DFA289DA1130091B3D8 /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DF9289DA1130091B3D8 /* Error.strings */; };
+		3C68042F28A535D2008F7EE5 /* ButtonKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C68042E28A535D2008F7EE5 /* ButtonKind.swift */; };
 		3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */; };
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
@@ -115,6 +116,7 @@
 		3C648DF5289DA1000091B3D8 /* Default.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Default.strings; sourceTree = "<group>"; };
 		3C648DF7289DA1090091B3D8 /* Onboarding.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Onboarding.strings; sourceTree = "<group>"; };
 		3C648DF9289DA1130091B3D8 /* Error.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Error.strings; sourceTree = "<group>"; };
+		3C68042E28A535D2008F7EE5 /* ButtonKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonKind.swift; sourceTree = "<group>"; };
 		3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactoryTests.swift; sourceTree = "<group>"; };
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				3CD35D57289C41F60012480E /* Button.swift */,
+				3C68042E28A535D2008F7EE5 /* ButtonKind.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1004,6 +1007,7 @@
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
 				3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */,
 				3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */,
+				3C68042F28A535D2008F7EE5 /* ButtonKind.swift in Sources */,
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CD35D58289C41F60012480E /* Button.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,

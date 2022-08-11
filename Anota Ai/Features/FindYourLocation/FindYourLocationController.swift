@@ -69,10 +69,23 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
         setLeftNavigationButton(action: #selector(didTapReturnNavigation))
     }
     
+    private func showFailureModal() {
+        let viewModel = AlertViewModel(
+            title: "localization_permission_error_title".localize(.error),
+            description: "localization_permission_error_body".localize(.error),
+            actions: [Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
+        )
+        showModal(delegate: transitionDelegate, viewModel: viewModel)
+    }
+    
     // MARK: - Actions
     
     @objc private func didTapReturnNavigation() {
         self.delegate?.returnNavigation()
+    }
+    
+    @objc private func didConfirm() {
+        navigationController?.dismiss(animated: true)
     }
 }
 
@@ -88,17 +101,11 @@ extension FindYourLocationController {
         }
         
         viewModel.onFailureGetAuthorization = {
-
+            
         }
         
         viewModel.onSuccessGetAuthorization = {
-            let viewModel = AlertViewModel(
-                title: "Não encontramos sua localização",
-                description: "Tente ativar permissão para usarmos a sua localização ",
-                onCancel: { print("testecancel") },
-                onConfirm: {print("testeconfirm")}
-            )
-            self.showModal(delegate: self.transitionDelegate, viewModel: viewModel)
+            self.showFailureModal()
         }
     }
 }
