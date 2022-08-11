@@ -12,6 +12,7 @@ protocol FindYourLocationProtocol: FindYourLocationViewModelProtocol {
     var location: LocalizationProtocol { get set }
     var onSuccessGetAuthorization: (() -> Void)? { get set }
     var onFailureGetAuthorization: (() -> Void)? { get set }
+    var onSuccessGetLocalization: ((CLLocationCoordinate2D) -> Void)? { get set }
     func requestLocationAuthorization()
 }
 
@@ -22,10 +23,12 @@ class FindYourLocationViewModel {
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)?
     var onSuccessGetAuthorization: (() -> Void)?
     var onFailureGetAuthorization: (() -> Void)?
+    var onSuccessGetLocalization: ((CLLocationCoordinate2D) -> Void)?
     
     // MARK: - Private properties
     
     lazy var location: LocalizationProtocol = Localization()
+    private var currentLocation: CLLocationCoordinate2D?
     
     // MARK: - Init
     
@@ -36,6 +39,7 @@ class FindYourLocationViewModel {
     // MARK: - Methods
     
     private func updateCoordinate(_ coordinate: CLLocationCoordinate2D) {
+        currentLocation = coordinate
         onUpdateUserCurrentLocation?(coordinate)
     }
 }
@@ -50,14 +54,15 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
         location.requestLocationAuthorization()
     }
     
-    private func didAuthorizedLocalization() {
-        location.onAuthorizedLocalization = { [weak self] in
-            self?.suas()
-        }
+    func didConfirmLocation() {
+        guard let currentLocation = currentLocation else { return }
+        onSuccessGetLocalization?(currentLocation)
     }
     
-    func suas() {
-        self.onSuccessGetAuthorization?()
+    private func didAuthorizedLocalization() {
+        location.onAuthorizedLocalization = { [weak self] in
+            self?.onSuccessGetAuthorization?()
+        }
     }
     
     private func didNotAuthorizedLocalization() {

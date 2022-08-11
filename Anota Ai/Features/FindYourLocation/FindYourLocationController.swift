@@ -12,6 +12,7 @@ import UIKit
 
 protocol FindYourLocationControllerDelegate: AnyObject {
     func returnNavigation()
+    func pushConfirmLocalization(_ location: CLLocationCoordinate2D)
 }
 
 class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewController, Loadable {
@@ -86,6 +87,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     
     @objc private func didConfirm() {
         navigationController?.dismiss(animated: true)
+        self.delegate?.returnNavigation()
     }
 }
 
@@ -104,8 +106,8 @@ extension FindYourLocationController {
             self?.showFailureModal()
         }
         
-        viewModel.onSuccessGetAuthorization = {
-            
+        viewModel.onSuccessGetLocalization = { [weak self] location in
+            self?.delegate?.pushConfirmLocalization(location)
         }
     }
 }

@@ -14,6 +14,7 @@ import CoreLocation
 
 protocol FindYourLocationViewModelProtocol {
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
+    func didConfirmLocation()
 }
 
 class FindYourLocationView: UIView {
@@ -76,7 +77,7 @@ extension FindYourLocationView {
     }
     
     @objc private func didConfirmLocation() {
-        print("confirmou localization")
+        viewModel?.didConfirmLocation()
     }
 }
 

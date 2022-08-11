@@ -34,4 +34,9 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
     }
 }
 
-extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {}
+extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {
+    
+    func pushConfirmLocalization(_ location: CLLocationCoordinate2D) {
+        let vc = UIViewController()
+    }
+}
