@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 class FindYourLocationCoordinator: CoordinatorProtocol {
     
     // MARK: - Public properties

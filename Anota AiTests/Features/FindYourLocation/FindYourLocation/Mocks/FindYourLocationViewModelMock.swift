@@ -12,13 +12,19 @@ import CoreLocation
 class FindYourLocationViewModelMock: FindYourLocationProtocol {
     
     var invokedRequestLocationAuthorizationCount = 0
+    var invokedDidConfirmLocationCount = 0
     
     var location: LocalizationProtocol = Localization()
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)?
     var onSuccessGetAuthorization: (() -> Void)?
     var onFailureGetAuthorization: (() -> Void)?
+    var onSuccessGetLocalization: ((CLLocationCoordinate2D) -> Void)?
     
     func requestLocationAuthorization() {
         invokedRequestLocationAuthorizationCount += 1
+    }
+    
+    func didConfirmLocation() {
+        invokedDidConfirmLocationCount += 1
     }
 }

@@ -38,16 +38,6 @@
                ReferencedContainer = "container:Anota Ai.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3CA3D79E289AF04E006B3D90"
-               BuildableName = "Anota AiUITests.xctest"
-               BlueprintName = "Anota AiUITests"
-               ReferencedContainer = "container:Anota Ai.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

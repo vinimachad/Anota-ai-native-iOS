@@ -51,8 +51,6 @@
 		3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D782289AF04B006B3D90 /* AppDelegate.swift */; };
 		3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78B289AF04E006B3D90 /* Assets.xcassets */; };
 		3CA3D78F289AF04E006B3D90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */; };
-		3CA3D7A4289AF04E006B3D90 /* Anota_AiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */; };
-		3CA3D7A6289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */; };
 		3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7B7289AFC0A006B3D90 /* CoordinatorProtocol.swift */; };
 		3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7B9289AFC10006B3D90 /* AppCoordinator.swift */; };
 		3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D7BB289AFEAF006B3D90 /* OnboardingCoordinator.swift */; };
@@ -150,8 +148,6 @@
 		3CA3D790289AF04E006B3D90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CA3D795289AF04E006B3D90 /* Anota AiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anota AiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA3D79F289AF04E006B3D90 /* Anota AiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anota AiUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiUITests.swift; sourceTree = "<group>"; };
-		3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anota_AiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3CA3D7B7289AFC0A006B3D90 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		3CA3D7B9289AFC10006B3D90 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3CA3D7BB289AFEAF006B3D90 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -450,7 +446,6 @@
 			children = (
 				3CA3D781289AF04B006B3D90 /* Anota Ai */,
 				3CA3D798289AF04E006B3D90 /* Anota AiTests */,
-				3CA3D7A2289AF04E006B3D90 /* Anota AiUITests */,
 				3C648DE5289D68210091B3D8 /* Anota AiSnapshots */,
 				3CA3D780289AF04B006B3D90 /* Products */,
 				F5960D73116B832C258B4512 /* Pods */,
@@ -489,15 +484,6 @@
 				3CBBBA84289CB714006BFF95 /* Support */,
 			);
 			path = "Anota AiTests";
-			sourceTree = "<group>";
-		};
-		3CA3D7A2289AF04E006B3D90 /* Anota AiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3CA3D7A3289AF04E006B3D90 /* Anota_AiUITests.swift */,
-				3CA3D7A5289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift */,
-			);
-			path = "Anota AiUITests";
 			sourceTree = "<group>";
 		};
 		3CA3D7B2289AF168006B3D90 /* Features */ = {
@@ -1051,8 +1037,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CA3D7A6289AF04E006B3D90 /* Anota_AiUITestsLaunchTests.swift in Sources */,
-				3CA3D7A4289AF04E006B3D90 /* Anota_AiUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

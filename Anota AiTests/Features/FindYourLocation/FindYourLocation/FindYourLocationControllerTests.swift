@@ -8,6 +8,7 @@
 import Foundation
 @testable import Anota_Ai
 import XCTest
+import CoreLocation
 
 class FindYourLocationControllerTests: XCTestCase {
     
@@ -32,5 +33,17 @@ class FindYourLocationControllerTests: XCTestCase {
         
         let loadingView = sut.view.subviews.compactMap { $0 as? LoadingView }
         XCTAssertEqual(loadingView.count, 1)
+    }
+    
+    func test_bind_whenViewModelCallOnFailureGetAuthorization_expectedPresentAlertModal() {
+        sut.viewDidLoad()
+        viewModelMock.onFailureGetAuthorization?()
+        XCTAssertTrue(sut.navigationController?.presentedViewController is AlertController<AlertViewModel>)
+    }
+    
+    func test_bind_whenViewModelCallOnSuccessGetLocalization_expectedInvokedPushConfirmLocalization() {
+        sut.viewDidLoad()
+        viewModelMock.onSuccessGetLocalization?(CLLocationCoordinate2D(latitude: 0, longitude: 0))
+        XCTAssertEqual(delegateMock.invokedPushConfirmLocalizationCount, 1)
     }
 }
