@@ -100,12 +100,12 @@ extension FindYourLocationController {
             self?.hideLoading()
         }
         
-        viewModel.onFailureGetAuthorization = {
-            
+        viewModel.onFailureGetAuthorization = { [weak self] in
+            self?.showFailureModal()
         }
         
         viewModel.onSuccessGetAuthorization = {
-            self.showFailureModal()
+            
         }
     }
 }
