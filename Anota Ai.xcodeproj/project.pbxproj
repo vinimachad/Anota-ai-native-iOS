@@ -39,6 +39,7 @@
 		3C769A4D28A6B689001DA6E6 /* ConfirmLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A4C28A6B689001DA6E6 /* ConfirmLocationView.swift */; };
 		3C769A4F28A6B694001DA6E6 /* ConfirmLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */; };
 		3C769A5128A6BAA1001DA6E6 /* ConfirmLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */; };
+		3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A5428A6C60F001DA6E6 /* TextField.swift */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
 		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
 		3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */; };
@@ -141,6 +142,7 @@
 		3C769A4C28A6B689001DA6E6 /* ConfirmLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationView.swift; sourceTree = "<group>"; };
 		3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationViewModel.swift; sourceTree = "<group>"; };
 		3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ConfirmLocation.strings; sourceTree = "<group>"; };
+		3C769A5428A6C60F001DA6E6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
 		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -430,6 +432,14 @@
 				3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */,
 			);
 			path = ConfirmLocation;
+			sourceTree = "<group>";
+		};
+		3C769A5328A6C602001DA6E6 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				3C769A5428A6C60F001DA6E6 /* TextField.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		3C7A4383289ECD3F00DA1E36 /* Extensions */ = {
@@ -738,6 +748,7 @@
 		3CD35D55289C41E90012480E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C769A5328A6C602001DA6E6 /* TextField */,
 				3C544DBF28A2CD1300C7CD9B /* Dimming */,
 				3CD35D56289C41ED0012480E /* Buttons */,
 			);
@@ -1061,6 +1072,7 @@
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
+				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,

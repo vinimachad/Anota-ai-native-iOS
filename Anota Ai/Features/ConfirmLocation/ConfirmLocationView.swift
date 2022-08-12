@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 import SnapKit
 import MapKit
+import SkyFloatingLabelTextField
 
 protocol ConfirmLocationViewModelProtocol {
     var region: MKCoordinateRegion { get }
     var street: String { get }
     var city: String { get }
+    
+    func didChangeNumber()
+    func didChangeComplement()
 }
 
 class ConfirmLocationView: UIView {
@@ -23,6 +27,10 @@ class ConfirmLocationView: UIView {
     private lazy var mapView = MKMapView()
     private lazy var streetDetailsLabel = UILabel()
     private lazy var cityDetailLabel = UILabel()
+    private lazy var numberTextField = TextField()
+    private lazy var complementTextField = TextField()
+    private lazy var textFieldContainerStackView = UIStackView()
+    private lazy var confirmButton = Button()
     
     // MARK: - Private properties
     
@@ -60,6 +68,9 @@ extension ConfirmLocationView {
         setupMapView()
         setupStreetDetailsLabel()
         setupCityDetailLabel()
+        setupTextFields()
+        setupTextFieldsContainerStackView()
+        setupConfirmButton()
         backgroundColor = .Shapes.box
     }
     
@@ -89,6 +100,33 @@ extension ConfirmLocationView {
         marker.coordinate = region.center
         mapView.addAnnotation(marker)
     }
+    
+    private func setupTextFieldsContainerStackView() {
+        textFieldContainerStackView.alignment = .fill
+        textFieldContainerStackView.distribution = .fill
+        textFieldContainerStackView.axis = .horizontal
+        textFieldContainerStackView.spacing = 16
+    }
+    
+    private func setupTextFields() {
+        numberTextField.setTitle("Número")
+        complementTextField.setTitle("Complemento")
+        numberTextField.addTarget(self, action: #selector(didChangeNumber), for: .editingChanged)
+        complementTextField.addTarget(self, action: #selector(didChangeComplement), for: .editingChanged)
+    }
+    
+    private func setupConfirmButton() {
+        confirmButton.kind = .primary
+        confirmButton.title = "Salvar endereço"
+    }
+    
+    @objc private func didChangeNumber() {
+        viewModel.didChangeNumber()
+    }
+    
+    @objc private func didChangeComplement() {
+        viewModel.didChangeComplement()
+    }
 }
 
 // MARK: - Setup constraints
@@ -115,7 +153,21 @@ extension ConfirmLocationView {
             $0.top.equalTo(streetDetailsLabel.snp.bottom).offset(4)
             $0.left.equalTo(snp.left).offset(16)
             $0.right.equalTo(snp.right).offset(-16)
-            $0.bottom.lessThanOrEqualTo(snp.bottomMargin)
+        }
+        
+        textFieldContainerStackView.snp.makeConstraints {
+            $0.top.equalTo(cityDetailLabel.snp.bottom).offset(24)
+            $0.left.equalTo(snp.left).offset(16)
+            $0.right.equalTo(snp.right).offset(-16)
+        }
+        
+        numberTextField.snp.makeConstraints {
+            $0.height.equalTo(48)
+            $0.width.lessThanOrEqualTo(74)
+        }
+        
+        complementTextField.snp.makeConstraints {
+            $0.height.equalTo(48)
         }
     }
     
@@ -123,6 +175,9 @@ extension ConfirmLocationView {
         addSubview(mapView)
         addSubview(streetDetailsLabel)
         addSubview(cityDetailLabel)
+        addSubview(textFieldContainerStackView)
+        textFieldContainerStackView.addArrangedSubview(numberTextField)
+        textFieldContainerStackView.addArrangedSubview(complementTextField)
     }
 }
 
