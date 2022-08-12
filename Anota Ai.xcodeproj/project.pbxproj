@@ -38,6 +38,7 @@
 		3C769A4B28A6B682001DA6E6 /* ConfirmLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A4A28A6B682001DA6E6 /* ConfirmLocationController.swift */; };
 		3C769A4D28A6B689001DA6E6 /* ConfirmLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A4C28A6B689001DA6E6 /* ConfirmLocationView.swift */; };
 		3C769A4F28A6B694001DA6E6 /* ConfirmLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */; };
+		3C769A5128A6BAA1001DA6E6 /* ConfirmLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
 		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
 		3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */; };
@@ -139,6 +140,7 @@
 		3C769A4A28A6B682001DA6E6 /* ConfirmLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationController.swift; sourceTree = "<group>"; };
 		3C769A4C28A6B689001DA6E6 /* ConfirmLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationView.swift; sourceTree = "<group>"; };
 		3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationViewModel.swift; sourceTree = "<group>"; };
+		3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ConfirmLocation.strings; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
 		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				3C648DF7289DA1090091B3D8 /* Onboarding.strings */,
 				3C648DF9289DA1130091B3D8 /* Error.strings */,
 				3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */,
+				3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */,
 				3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */,
 				3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */,
+				3C769A5128A6BAA1001DA6E6 /* ConfirmLocation.strings in Resources */,
 				3CA3D7D0289B0686006B3D90 /* Roboto-Bold.ttf in Resources */,
 				3C648DF8289DA1090091B3D8 /* Onboarding.strings in Resources */,
 				3C648DFA289DA1130091B3D8 /* Error.strings in Resources */,

@@ -46,7 +46,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     // MARK: - Navigation
     
     private func setupNavigation() {
-        setupDefaultNavigation(title: "confirm_location_title".localize(.findYourLocation))
+        setupDefaultNavigation(title: "confirm_location_title".localize(.confirmLocation))
         changeNavigationTintColor(tintColor: .Brand.secondary)
     }
 }
