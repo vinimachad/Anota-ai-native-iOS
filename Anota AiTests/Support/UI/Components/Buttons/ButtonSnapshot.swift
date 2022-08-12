@@ -34,4 +34,28 @@ class ButtonSnapshot: FBSnapshotTestCase {
         sut.titleColor = .Shapes.shape
         FBSnapshotVerifyView(containerView)
     }
+    
+    func test_kind_whenKindIsEqualToPrimary_expectValidSnapshot() {
+        sut.kind = .primary
+        sut.title = "Primary button"
+        FBSnapshotVerifyView(containerView)
+    }
+    
+    func test_kind_whenKindIsEqualToOutlined_expectValidSnapshot() {
+        sut.kind = .outlined
+        sut.title = "Outlined button"
+        FBSnapshotVerifyView(containerView)
+    }
+    
+    func test_kind_whenKindIsEqualToConfirm_expectValidSnapshot() {
+        sut.kind = .confirm
+        sut.title = "Confirm button"
+        FBSnapshotVerifyView(containerView)
+    }
+    
+    func test_kind_whenKindIsEqualToCancel_expectValidSnapshot() {
+        sut.kind = .cancel
+        sut.title = "Cancel button"
+        FBSnapshotVerifyView(containerView)
+    }
 }

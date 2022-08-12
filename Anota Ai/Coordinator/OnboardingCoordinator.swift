@@ -25,9 +25,18 @@ class OnboardingCoordinator: CoordinatorProtocol {
     // MARK: - Start
     
     func start() -> UIViewController {
-        let vc = OnboardingFactory.onboarding()
+        let vc = OnboardingFactory.onboarding(delegate: self)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
+    }
+}
+
+extension OnboardingCoordinator: OnboardingControllerDelegate {
+    
+    func presentFindYourLocation() {
+        let coordinator = FindYourLocationCoordinator()
+        navigationController.present(coordinator.start(), animated: true)
+        childCoordinator = coordinator
     }
 }

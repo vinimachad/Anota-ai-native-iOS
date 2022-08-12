@@ -10,6 +10,7 @@ import CollectionDS_SDK
 
 
 protocol OnboardingProtocol: OnboardingViewModelProtocol {
+    var onTapToCreateAccount: (() -> Void)? { get set }
     func didChangeCurrentExplanation()
 }
 
@@ -18,6 +19,7 @@ class OnboardingViewModel {
     // MARK: - Public properties
     
     var onExplanationWillDisplay: ((IndexPath) -> Void)?
+    var onTapToCreateAccount: (() -> Void)?
     
     lazy var sections: [CollectionSectionProtocol] = {
         onboardingBuilderSections.builder()
@@ -46,5 +48,9 @@ extension OnboardingViewModel: OnboardingProtocol {
         let index = IndexPath(row: self.carouselCount, section: 0)
         self.onExplanationWillDisplay?(index)
         self.carouselCount += 1
+    }
+    
+    func didTapToCreateAccount() {
+        onTapToCreateAccount?()
     }
 }

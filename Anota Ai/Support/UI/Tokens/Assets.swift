@@ -24,4 +24,11 @@ extension UIImage {
             UIImage(named: "img_mobile_login") ?? UIImage()
         }
     }
+    
+    enum Icons {
+        
+        static var back: UIImage {
+            UIImage(systemName: "chevron.backward") ?? UIImage()
+        }
+    }
 }

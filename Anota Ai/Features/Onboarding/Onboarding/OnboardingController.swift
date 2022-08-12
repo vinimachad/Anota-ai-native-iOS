@@ -8,17 +8,23 @@
 import Foundation
 import UIKit
 
+protocol OnboardingControllerDelegate: AnyObject {
+    func presentFindYourLocation()
+}
+
 class OnboardingController<ViewModel: OnboardingProtocol>: UIViewController {
     
     // MARK: - Private properties
     
     private let contentView: OnboardingView
+    private weak var delegate: OnboardingControllerDelegate?
     private var viewModel: ViewModel
     
     // MARK: - Init
     
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, delegate: OnboardingControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         contentView = OnboardingView()
         super.init(nibName: nil, bundle: nil)
     }
@@ -68,5 +74,9 @@ extension OnboardingController {
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onTapToCreateAccount = { [weak self] in
+            self?.delegate?.presentFindYourLocation()
+        }
     }
 }

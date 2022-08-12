@@ -13,10 +13,12 @@ class OnboardingControllerTests: XCTestCase {
     
     var sut: OnboardingController<OnboardingViewModelMock>!
     var viewModelMock: OnboardingViewModelMock!
+    var delegateMock: OnboardingControllerDelegateMock!
     
     override func setUp() {
         viewModelMock = OnboardingViewModelMock()
-        sut = OnboardingController(viewModel: viewModelMock)
+        delegateMock = OnboardingControllerDelegateMock()
+        sut = OnboardingController(viewModel: viewModelMock, delegate: delegateMock)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UINavigationController(rootViewController: sut)
@@ -29,6 +31,11 @@ class OnboardingControllerTests: XCTestCase {
         sut.viewDidLoad()
         
         XCTAssertEqual(viewModelMock.invokedDidChangeCurrentExplanationCount, 2)
+    }
+    
+    func test_bind_whenViewModelInvokeOnTapToCreateAccount_expectInvokePresentFindYourLocation() {
+        viewModelMock.onTapToCreateAccount?()
+        XCTAssertEqual(delegateMock.invokedPresentFindYourLocationCount, 1)
     }
     
 }

@@ -5,3 +5,5 @@
   Created by Vinicius Galhardo Machado on 05/08/22.
   
 */
+"localization_permission_error_body" = "Não conseguimos encontrar a sua localização, tente habilitar a permissão para te encontrarmos";
+"localization_permission_error_title" = "Você está escondido";

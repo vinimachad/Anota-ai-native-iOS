@@ -22,4 +22,9 @@ class OnboardingCoordinatorTests: XCTestCase {
         let result = sut.containerViewController as! UINavigationController
         XCTAssertTrue(result.topViewController is OnboardingController<OnboardingViewModel>)
     }
+    
+    func test_presentFindYourLocation_whenIsCalled_expectedChildCoordinatorIsEqualToFindYourLocationCoordinator() {
+        sut.presentFindYourLocation()
+        XCTAssertTrue(sut.childCoordinator is FindYourLocationCoordinator)
+    }
 }

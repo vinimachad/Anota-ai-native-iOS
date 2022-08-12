@@ -10,8 +10,13 @@ import UIKit
 
 enum OnboardingFactory {
     
-    static func onboarding() -> UIViewController {
+    static func onboarding(delegate: OnboardingControllerDelegate?) -> UIViewController {
         let viewModel = OnboardingViewModel()
-        return OnboardingController(viewModel: viewModel)
+        return OnboardingController(viewModel: viewModel, delegate: delegate)
+    }
+    
+    static func findYourLocation(delegate: FindYourLocationControllerDelegate?) -> UIViewController {
+        let viewModel = FindYourLocationViewModel()
+        return FindYourLocationController(viewModel: viewModel, delegate: delegate)
     }
 }
