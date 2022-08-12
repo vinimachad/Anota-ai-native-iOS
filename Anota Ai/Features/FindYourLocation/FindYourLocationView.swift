@@ -58,6 +58,16 @@ extension FindYourLocationView {
     private func setup() {
         setupConstraints()
         setupConfirmYourLocationButton()
+        setupMapView()
+    }
+    
+    private func setupMapView() {
+        mapView.setCameraZoomRange(
+            MKMapView.CameraZoomRange(
+                minCenterCoordinateDistance: 100,
+                maxCenterCoordinateDistance: 500
+            ),animated: true
+        )
     }
     
     private func setupConfirmYourLocationButton() {
@@ -68,7 +78,7 @@ extension FindYourLocationView {
     
     private func updateMapView(_ coordinate: CLLocationCoordinate2D) {
         mapView.setRegion(
-            MKCoordinateRegion(center: coordinate, latitudinalMeters: CLLocationDistance(400), longitudinalMeters: CLLocationDistance(400)),
+            MKCoordinateRegion(center: coordinate, latitudinalMeters: 400, longitudinalMeters: 400),
             animated: true
         )
         let marker = MKPointAnnotation()

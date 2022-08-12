@@ -28,13 +28,6 @@ class FindYourLocationControllerTests: XCTestCase {
         _ = sut.view
     }
     
-    func test_viewDidLoad_whenIsCalled_expectedHasLoadingView() {
-        sut.viewDidLoad()
-        
-        let loadingView = sut.view.subviews.compactMap { $0 as? LoadingView }
-        XCTAssertEqual(loadingView.count, 1)
-    }
-    
     func test_bind_whenViewModelCallOnFailureGetAuthorization_expectedPresentAlertModal() {
         sut.viewDidLoad()
         viewModelMock.onFailureGetAuthorization?()

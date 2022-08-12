@@ -52,7 +52,6 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showLoading()
         bind()
         setupNavigation()
         viewModel.requestLocationAuthorization()
@@ -63,7 +62,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     private func setupNavigation() {
         setBackButton()
         changeNavigationTintColor(tintColor: .Shapes.shape)
-        setupDefaultNavigation(title: "Confirmar sua localização")
+        setupDefaultNavigation(title: "your_location_title".localize(.findYourLocation))
     }
     
     private func setBackButton() {
@@ -97,10 +96,6 @@ extension FindYourLocationController {
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.hideLoading()
-        }
         
         viewModel.onFailureGetAuthorization = { [weak self] in
             self?.showFailureModal()
