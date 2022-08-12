@@ -75,6 +75,7 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
 extension FindYourLocationViewModel: LocalizationDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
         guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         updateCoordinate(coordinate)
     }

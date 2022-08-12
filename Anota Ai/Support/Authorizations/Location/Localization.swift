@@ -98,4 +98,8 @@ extension Localization: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         delegate?.locationManager(manager, didUpdateLocations: locations)
     }
+    
+    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
+        print("pause")
+    }
 }
