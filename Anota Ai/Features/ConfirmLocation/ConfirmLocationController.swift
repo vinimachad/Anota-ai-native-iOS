@@ -40,6 +40,14 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        setupNavigation()
+    }
+    
+    // MARK: - Navigation
+    
+    private func setupNavigation() {
+        setupDefaultNavigation(title: "confirm_location_title".localize(.findYourLocation))
+        changeNavigationTintColor(tintColor: .Brand.secondary)
     }
 }
 
