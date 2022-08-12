@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 enum OnboardingFactory {
     
@@ -20,8 +21,8 @@ enum OnboardingFactory {
         return FindYourLocationController(viewModel: viewModel, delegate: delegate)
     }
     
-    static func confirmLocation() -> UIViewController {
-        let viewModel = ConfirmLocationViewModel()
+    static func confirmLocation(coordinate: CLLocationCoordinate2D) -> UIViewController {
+        let viewModel = ConfirmLocationViewModel(coordinate: coordinate)
         return ConfirmLocationController(viewModel: viewModel)
     }
 }
