@@ -12,6 +12,7 @@
 		3C08DABE28A696C20043D78A /* AlertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABD28A696C20043D78A /* AlertSnapshot.swift */; };
 		3C08DAC028A697260043D78A /* AlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABF28A697260043D78A /* AlertControllerTests.swift */; };
 		3C08DAC328A6974E0043D78A /* AlertViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */; };
+		3C08DAC728A699B30043D78A /* LoadingSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -109,6 +110,7 @@
 		3C08DABD28A696C20043D78A /* AlertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSnapshot.swift; sourceTree = "<group>"; };
 		3C08DABF28A697260043D78A /* AlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerTests.swift; sourceTree = "<group>"; };
 		3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelMock.swift; sourceTree = "<group>"; };
+		3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSnapshot.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -262,8 +264,17 @@
 		3C08DAC428A699930043D78A /* States */ = {
 			isa = PBXGroup;
 			children = (
+				3C08DAC528A699A70043D78A /* Loading */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		3C08DAC528A699A70043D78A /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		3C544DBA28A2CB7800C7CD9B /* Presentation */ = {
@@ -1053,6 +1064,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C08DAC728A699B30043D78A /* LoadingSnapshot.swift in Sources */,
 				3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */,
 				3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */,
 				3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */,
