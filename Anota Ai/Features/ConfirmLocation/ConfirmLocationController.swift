@@ -39,6 +39,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
         super.viewDidLoad()
         bind()
         setupNavigation()
+        viewModel.validateFields()
     }
     
     // MARK: - Navigation

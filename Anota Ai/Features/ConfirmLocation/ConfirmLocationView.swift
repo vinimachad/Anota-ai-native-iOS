@@ -16,8 +16,11 @@ protocol ConfirmLocationViewModelProtocol {
     var street: String { get }
     var city: String { get }
     
-    func didChangeNumber()
-    func didChangeComplement()
+    var onButtonStateIsEnable: ((Bool) -> Void)? { get set }
+    
+    func didChangeNumber(text: String?)
+    func didChangeComplement(text: String?)
+    func didSaveAddress()
 }
 
 class ConfirmLocationView: UIView {
@@ -30,7 +33,7 @@ class ConfirmLocationView: UIView {
     private lazy var numberTextField = TextField()
     private lazy var complementTextField = TextField()
     private lazy var textFieldContainerStackView = UIStackView()
-    private lazy var confirmButton = Button()
+    private lazy var saveAddressButton = Button()
     
     // MARK: - Private properties
     
@@ -56,6 +59,10 @@ class ConfirmLocationView: UIView {
         updateMapView(region: viewModel.region)
         streetDetailsLabel.text = viewModel.street
         cityDetailLabel.text = viewModel.city
+        
+        self.viewModel?.onButtonStateIsEnable = { [weak self] isEnable in
+            self?.saveAddressButton.isEnabled = isEnable
+        }
     }
 }
 
@@ -70,7 +77,7 @@ extension ConfirmLocationView {
         setupCityDetailLabel()
         setupTextFields()
         setupTextFieldsContainerStackView()
-        setupConfirmButton()
+        setupSaveAddressButton()
         backgroundColor = .Shapes.box
     }
     
@@ -115,17 +122,22 @@ extension ConfirmLocationView {
         complementTextField.addTarget(self, action: #selector(didChangeComplement), for: .editingChanged)
     }
     
-    private func setupConfirmButton() {
-        confirmButton.kind = .primary
-        confirmButton.title = "Salvar endereço"
+    private func setupSaveAddressButton() {
+        saveAddressButton.kind = .primary
+        saveAddressButton.title = "Salvar endereço"
+        saveAddressButton.addTarget(self, action: #selector(didTapSaveAddress), for: .touchDown)
     }
     
     @objc private func didChangeNumber() {
-        viewModel.didChangeNumber()
+        viewModel?.didChangeNumber(text: numberTextField.text)
     }
     
     @objc private func didChangeComplement() {
-        viewModel.didChangeComplement()
+        viewModel?.didChangeComplement(text: complementTextField.text)
+    }
+    
+    @objc private func didTapSaveAddress() {
+        viewModel?.didSaveAddress()
     }
 }
 
@@ -169,6 +181,13 @@ extension ConfirmLocationView {
         complementTextField.snp.makeConstraints {
             $0.height.equalTo(48)
         }
+        
+        saveAddressButton.snp.makeConstraints {
+            $0.left.equalTo(snp.left).offset(16)
+            $0.right.equalTo(snp.right).offset(-16)
+            $0.bottom.equalTo(snp.bottomMargin)
+            $0.height.equalTo(48)
+        }
     }
     
     private func viewHierarchy() {
@@ -178,6 +197,7 @@ extension ConfirmLocationView {
         addSubview(textFieldContainerStackView)
         textFieldContainerStackView.addArrangedSubview(numberTextField)
         textFieldContainerStackView.addArrangedSubview(complementTextField)
+        addSubview(saveAddressButton)
     }
 }
 

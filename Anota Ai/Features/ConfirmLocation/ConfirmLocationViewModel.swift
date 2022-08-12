@@ -9,21 +9,36 @@ import Foundation
 import MapKit
 
 protocol ConfirmLocationProtocol: ConfirmLocationViewModelProtocol {
-    
+    func validateFields()
 }
 
 class ConfirmLocationViewModel {
     
     // MARK: - Public properties
     
+    var onButtonStateIsEnable: ((Bool) -> Void)?
+    
     // MARK: - Private properties
     
     private var coordinate: CLLocationCoordinate2D
+    private var numberField: String?
+    private var complementField: String?
     
     // MARK: - Init
     
     init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
+        validateFields()
+    }
+    
+    // MARK: - Validation
+    
+    func validateFields() {
+        if let numberField = numberField, !numberField.isEmpty {
+            onButtonStateIsEnable?(true)
+            return
+        }
+        onButtonStateIsEnable?(false)
     }
 }
 
@@ -41,5 +56,20 @@ extension ConfirmLocationViewModel: ConfirmLocationProtocol {
     
     var city: String {
         "Campo Grande - MS, 79118-040"
+    }
+    
+    // MARK: - Methods
+    
+    func didChangeNumber(text: String?) {
+        numberField = text
+        validateFields()
+    }
+    
+    func didChangeComplement(text: String?) {
+        complementField = text
+    }
+    
+    func didSaveAddress() {
+        print("save address")
     }
 }
