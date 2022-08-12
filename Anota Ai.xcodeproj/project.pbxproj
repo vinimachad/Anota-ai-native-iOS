@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		116E9C92E16EB341DB2C79C7 /* Pods_Anota_Ai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */; };
 		3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06AD3C289C72F500E7621F /* Explanations.swift */; };
+		3C08DABE28A696C20043D78A /* AlertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABD28A696C20043D78A /* AlertSnapshot.swift */; };
+		3C08DAC028A697260043D78A /* AlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABF28A697260043D78A /* AlertControllerTests.swift */; };
+		3C08DAC328A6974E0043D78A /* AlertViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -103,6 +106,9 @@
 		245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.release.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_Ai_Anota_AiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C06AD3C289C72F500E7621F /* Explanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanations.swift; sourceTree = "<group>"; };
+		3C08DABD28A696C20043D78A /* AlertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSnapshot.swift; sourceTree = "<group>"; };
+		3C08DABF28A697260043D78A /* AlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerTests.swift; sourceTree = "<group>"; };
+		3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelMock.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -225,6 +231,39 @@
 				3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3C08DABB28A696A70043D78A /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				3C08DABC28A696AF0043D78A /* Alert */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		3C08DABC28A696AF0043D78A /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				3C08DAC128A697490043D78A /* Mock */,
+				3C08DABD28A696C20043D78A /* AlertSnapshot.swift */,
+				3C08DABF28A697260043D78A /* AlertControllerTests.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		3C08DAC128A697490043D78A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		3C08DAC428A699930043D78A /* States */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		3C544DBA28A2CB7800C7CD9B /* Presentation */ = {
@@ -621,6 +660,8 @@
 		3CBBBA85289CB721006BFF95 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3C08DAC428A699930043D78A /* States */,
+				3C08DABB28A696A70043D78A /* Modals */,
 				3C648DE7289D6D910091B3D8 /* Components */,
 				3CBBBA86289CB724006BFF95 /* Tokens */,
 			);
@@ -1020,11 +1061,14 @@
 				3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */,
 				3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */,
 				3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */,
+				3C08DAC328A6974E0043D78A /* AlertViewModelMock.swift in Sources */,
 				3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */,
 				3C648DF0289D731F0091B3D8 /* ExplanationCellViewModelMock.swift in Sources */,
 				3C648DED289D72F30091B3D8 /* ExplanationCellSnapshot.swift in Sources */,
 				3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */,
+				3C08DAC028A697260043D78A /* AlertControllerTests.swift in Sources */,
 				3CBA5B6F289F46070049F55E /* FindYourLocationControllerDelegateMock.swift in Sources */,
+				3C08DABE28A696C20043D78A /* AlertSnapshot.swift in Sources */,
 				3CBBBA88289CB747006BFF95 /* ImageTests.swift in Sources */,
 				3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */,
 				3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */,
