@@ -45,6 +45,7 @@ extension ConfirmLocationView {
     
     private func setup() {
         setupConstraints()
+        backgroundColor = .Shapes.box
     }
 }
 

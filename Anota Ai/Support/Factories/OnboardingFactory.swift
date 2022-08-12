@@ -19,4 +19,9 @@ enum OnboardingFactory {
         let viewModel = FindYourLocationViewModel()
         return FindYourLocationController(viewModel: viewModel, delegate: delegate)
     }
+    
+    static func confirmLocation() -> UIViewController {
+        let viewModel = ConfirmLocationViewModel()
+        return ConfirmLocationController(viewModel: viewModel)
+    }
 }

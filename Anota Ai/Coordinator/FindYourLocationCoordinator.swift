@@ -38,6 +38,7 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
 extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {
     
     func pushConfirmLocalization(_ location: CLLocationCoordinate2D) {
-        let vc = UIViewController()
+        let vc = OnboardingFactory.confirmLocation()
+        navigationController.pushViewController(vc, animated: true)
     }
 }
