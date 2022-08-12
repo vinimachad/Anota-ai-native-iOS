@@ -25,4 +25,9 @@ class ImageTests: XCTestCase {
         let expected = UIImage(named: "img_mobile_login")
         XCTAssertEqual(UIImage.Images.mobileLogin, expected)
     }
+    
+    func test_back_expectedIconIsBack() {
+        let expected = UIImage(systemName: "chevron.backward")
+        XCTAssertEqual(UIImage.Icons.back, expected)
+    }
 }
