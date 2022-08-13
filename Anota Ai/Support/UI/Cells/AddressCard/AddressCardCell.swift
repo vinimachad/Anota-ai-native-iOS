@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 import Reusable
 import CollectionDS_SDK
+import SnapKit
 
 protocol AddressCardCellViewModelProtocol: CollectionViewModelProtocol {}
 
-class AddressCardCell: UICollectionViewCell {
+class AddressCardCell: UICollectionViewCell, CollectionViewProtocol {
     
     // MARK: - UI Components
     
@@ -87,13 +88,40 @@ extension AddressCardCell {
 
 extension AddressCardCell {
     
+    static func size(width: CGFloat) -> CGSize {
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let width = width - (padding.left + padding.right)
+        return CGSize(width: width, height: 150)
+    }
+    
     private func setupConstraints() {
         viewHierarchy()
         
+        titleLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalTo(contentView.snp.horizontalEdges).offset(16)
+            $0.top.equalTo(contentView.snp.top).offset(16)
+        }
         
+        subtitleLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalTo(contentView.snp.horizontalEdges).offset(16)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(28)
+        }
+        
+        streetLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalTo(contentView.snp.horizontalEdges).offset(16)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(10)
+        }
+        
+        cityLabel.snp.makeConstraints {
+            $0.horizontalEdges.equalTo(contentView.snp.horizontalEdges).offset(16)
+            $0.top.equalTo(streetLabel.snp.bottom).offset(4)
+        }
     }
     
     private func viewHierarchy() {
-        
+        addSubview(titleLabel)
+        addSubview(subtitleLabel)
+        addSubview(streetLabel)
+        addSubview(cityLabel)
     }
 }
