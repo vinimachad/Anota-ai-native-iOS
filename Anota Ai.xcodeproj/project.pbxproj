@@ -23,6 +23,7 @@
 		3C5CD98A28A81AD1002C20F9 /* ConfirmLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD98928A81AD1002C20F9 /* ConfirmLocationViewModelTests.swift */; };
 		3C5CD98D28A81AEE002C20F9 /* ConfirmLocationViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD98C28A81AEE002C20F9 /* ConfirmLocationViewModelMock.swift */; };
 		3C5CD98F28A81DEC002C20F9 /* ConfirmLocationControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD98E28A81DEC002C20F9 /* ConfirmLocationControllerDelegateMock.swift */; };
+		3C5CD99328A82337002C20F9 /* TextFieldSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD99228A82337002C20F9 /* TextFieldSnapshot.swift */; };
 		3C648DE4289D67AC0091B3D8 /* OnboardingViewSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */; };
 		3C648DE6289D68210091B3D8 /* Anota AiSnapshots in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DE5289D68210091B3D8 /* Anota AiSnapshots */; };
 		3C648DEA289D6DA30091B3D8 /* ButtonSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */; };
@@ -135,6 +136,7 @@
 		3C5CD98928A81AD1002C20F9 /* ConfirmLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationViewModelTests.swift; sourceTree = "<group>"; };
 		3C5CD98C28A81AEE002C20F9 /* ConfirmLocationViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationViewModelMock.swift; sourceTree = "<group>"; };
 		3C5CD98E28A81DEC002C20F9 /* ConfirmLocationControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationControllerDelegateMock.swift; sourceTree = "<group>"; };
+		3C5CD99228A82337002C20F9 /* TextFieldSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSnapshot.swift; sourceTree = "<group>"; };
 		3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewSnapshot.swift; sourceTree = "<group>"; };
 		3C648DE5289D68210091B3D8 /* Anota AiSnapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Anota AiSnapshots"; sourceTree = "<group>"; };
 		3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSnapshot.swift; sourceTree = "<group>"; };
@@ -351,9 +353,18 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		3C5CD99128A8231D002C20F9 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CD99228A82337002C20F9 /* TextFieldSnapshot.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		3C648DE7289D6D910091B3D8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C5CD99128A8231D002C20F9 /* TextField */,
 				3C648DE8289D6D950091B3D8 /* Buttons */,
 			);
 			path = Components;
@@ -1174,6 +1185,7 @@
 				3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */,
 				3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */,
 				3C08DAC328A6974E0043D78A /* AlertViewModelMock.swift in Sources */,
+				3C5CD99328A82337002C20F9 /* TextFieldSnapshot.swift in Sources */,
 				3C5CD98F28A81DEC002C20F9 /* ConfirmLocationControllerDelegateMock.swift in Sources */,
 				3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */,
 				3C648DF0289D731F0091B3D8 /* ExplanationCellViewModelMock.swift in Sources */,
