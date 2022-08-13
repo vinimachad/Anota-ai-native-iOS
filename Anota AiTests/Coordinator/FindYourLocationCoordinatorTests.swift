@@ -8,6 +8,7 @@
 import Foundation
 @testable import Anota_Ai
 import XCTest
+import CoreLocation
 
 class FindYourLocationCoordinatorTests: XCTestCase {
     
@@ -21,5 +22,11 @@ class FindYourLocationCoordinatorTests: XCTestCase {
         _ = sut.start()
         let result = sut.containerViewController as! UINavigationController
         XCTAssertTrue(result.topViewController is FindYourLocationController<FindYourLocationViewModel>)
+    }
+    
+    func test_pushConfirmLocalization_expectedNavigationControllerIsEqualToConfirmLocationController() {
+        sut.pushConfirmLocalization(CLLocationCoordinate2D(latitude: 0, longitude: 0))
+        let result = sut.containerViewController as! UINavigationController
+        XCTAssertTrue(result.topViewController is ConfirmLocationController<ConfirmLocationViewModel>)
     }
 }
