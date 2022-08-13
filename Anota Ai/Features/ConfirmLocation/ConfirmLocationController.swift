@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol ConfirmLocationControllerDelegate: AnyObject {
+    func pushCreateAccount()
+}
+
 class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewController {
     
     // MARK: - Private properties
@@ -15,11 +19,13 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     private let scrollView: ScrollView
     private let contentView: ConfirmLocationView
     private var viewModel: ViewModel
+    private weak var delegate: ConfirmLocationControllerDelegate?
     
     // MARK: - Init
     
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, delegate: ConfirmLocationControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         contentView = ConfirmLocationView()
         self.scrollView = ScrollView(contentView: self.contentView)
         super.init(nibName: nil, bundle: nil)
@@ -62,5 +68,9 @@ extension ConfirmLocationController {
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onSaveAddress = { [weak self] in
+            self?.delegate?.pushCreateAccount()
+        }
     }
 }

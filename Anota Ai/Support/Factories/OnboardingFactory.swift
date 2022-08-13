@@ -21,8 +21,13 @@ enum OnboardingFactory {
         return FindYourLocationController(viewModel: viewModel, delegate: delegate)
     }
     
-    static func confirmLocation(coordinate: CLLocationCoordinate2D) -> UIViewController {
+    static func confirmLocation(coordinate: CLLocationCoordinate2D, delegate: ConfirmLocationControllerDelegate?) -> UIViewController {
         let viewModel = ConfirmLocationViewModel(coordinate: coordinate)
-        return ConfirmLocationController(viewModel: viewModel)
+        return ConfirmLocationController(viewModel: viewModel, delegate: delegate)
+    }
+    
+    static func createAccount() -> UIViewController {
+        let viewModel = CreateAccountViewModel()
+        return CreateAccountController(viewModel: viewModel)
     }
 }

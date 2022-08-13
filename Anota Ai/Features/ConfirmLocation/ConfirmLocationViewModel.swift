@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 
 protocol ConfirmLocationProtocol: ConfirmLocationViewModelProtocol {
+    var onSaveAddress: (() -> Void)? { get set }
     func validateFields()
 }
 
@@ -17,6 +18,7 @@ class ConfirmLocationViewModel {
     // MARK: - Public properties
     
     var onButtonStateIsEnable: ((Bool) -> Void)?
+    var onSaveAddress: (() -> Void)?
     
     // MARK: - Private properties
     
@@ -70,6 +72,6 @@ extension ConfirmLocationViewModel: ConfirmLocationProtocol {
     }
     
     func didSaveAddress() {
-        print("save address")
+        onSaveAddress?()
     }
 }

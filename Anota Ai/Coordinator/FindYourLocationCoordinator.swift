@@ -38,7 +38,15 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
 extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {
     
     func pushConfirmLocalization(_ location: CLLocationCoordinate2D) {
-        let vc = OnboardingFactory.confirmLocation(coordinate: location)
+        let vc = OnboardingFactory.confirmLocation(coordinate: location, delegate: self)
+        navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+extension FindYourLocationCoordinator: ConfirmLocationControllerDelegate {
+    
+    func pushCreateAccount() {
+        let vc = OnboardingFactory.createAccount()
         navigationController.pushViewController(vc, animated: true)
     }
 }
