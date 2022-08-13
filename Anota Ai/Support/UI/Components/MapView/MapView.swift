@@ -66,9 +66,8 @@ extension MapView {
         let coordinate = convert(location, toCoordinateFrom: self)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        if annotations.count == 1 {
-            guard let lastAnnotation = annotations.last else { return }
-            removeAnnotation(lastAnnotation)
+        if annotations.count >= 1 {
+            removeAnnotations(annotations)
         }
         addAnnotation(annotation)
         viewModel?.didUpdateCoordinate(coordinate: coordinate)
