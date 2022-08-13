@@ -13,6 +13,7 @@
 		3C08DAC028A697260043D78A /* AlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABF28A697260043D78A /* AlertControllerTests.swift */; };
 		3C08DAC328A6974E0043D78A /* AlertViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */; };
 		3C08DAC728A699B30043D78A /* LoadingSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */; };
+		3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A61A528A7EFE4000D177D /* MapView.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -118,6 +119,7 @@
 		3C08DABF28A697260043D78A /* AlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerTests.swift; sourceTree = "<group>"; };
 		3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelMock.swift; sourceTree = "<group>"; };
 		3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSnapshot.swift; sourceTree = "<group>"; };
+		3C0A61A528A7EFE4000D177D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,14 @@
 				3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		3C0A61A728A7EFE7000D177D /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3C0A61A528A7EFE4000D177D /* MapView.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		3C544DBA28A2CB7800C7CD9B /* Presentation */ = {
@@ -761,6 +771,7 @@
 		3CD35D55289C41E90012480E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C0A61A728A7EFE7000D177D /* MapView */,
 				3C769A5628A7150A001DA6E6 /* ScrollView */,
 				3C769A5328A6C602001DA6E6 /* TextField */,
 				3C544DBF28A2CD1300C7CD9B /* Dimming */,
@@ -1087,6 +1098,7 @@
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
+				3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
