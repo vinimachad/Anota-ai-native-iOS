@@ -24,6 +24,16 @@ extension UIViewController {
         changeNavigationBackgroundColor(appearance: navBarAppearance, color: bgColor)
     }
     
+    func setLeftNavigationButton(action: Selector) {
+        let barButtonItem = UIBarButtonItem(image: .Icons.back, style: .plain, target: self, action: action)
+        navigationController?.navigationBar.topItem?.setLeftBarButton(barButtonItem, animated: true)
+    }
+    
+    func setupDefaultBackButton() {
+        navigationItem.backButtonTitle = ""
+    }
+    
+    
     private func changeNavigationTintColor(appearance: UINavigationBarAppearance, tintColor: UIColor) {
         appearance.titleTextAttributes = [.foregroundColor: tintColor]
         appearance.largeTitleTextAttributes = [.foregroundColor: tintColor]
@@ -38,14 +48,5 @@ extension UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-    
-    func setLeftNavigationButton(action: Selector) {
-        let barButtonItem = UIBarButtonItem(image: .Icons.back, style: .plain, target: self, action: action)
-        navigationController?.navigationBar.topItem?.setLeftBarButton(barButtonItem, animated: true)
-    }
-    
-    func setupDefaultBackButton() {
-        navigationItem.backButtonTitle = ""
     }
 }

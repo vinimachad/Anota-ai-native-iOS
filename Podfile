@@ -7,6 +7,7 @@ target 'Anota Ai' do
 
   pod "SnapKit"
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'IQKeyboardManagerSwift'
   pod "CollectionDS-SDK/Debug", :path => "/Users/vinimachad/Developer/mobile/CollectionDS-SDK"
 
   target 'Anota AiTests' do

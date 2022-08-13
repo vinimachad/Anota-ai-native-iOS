@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         self.appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
+        IQKeyboardManager.shared.enable = true
         
         return true
     }
