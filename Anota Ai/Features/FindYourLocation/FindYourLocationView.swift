@@ -68,6 +68,8 @@ extension FindYourLocationView {
                 maxCenterCoordinateDistance: 500
             ),animated: true
         )
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didAddNewMark))
+        mapView.addGestureRecognizer(tapGesture)
     }
     
     private func setupConfirmYourLocationButton() {
@@ -88,6 +90,18 @@ extension FindYourLocationView {
     
     @objc private func didConfirmLocation() {
         viewModel?.didConfirmLocation()
+    }
+    
+    @objc private func didAddNewMark(gestureRecognizer: UITapGestureRecognizer) {
+        let location = gestureRecognizer.location(in: mapView)
+        let coordinate = mapView.convert(location,toCoordinateFrom: mapView)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        if mapView.annotations.count == 1 {
+            guard let lastAnnotation = mapView.annotations.last else { return }
+            mapView.removeAnnotation(lastAnnotation)
+        }
+        mapView.addAnnotation(annotation)
     }
 }
 
@@ -113,5 +127,12 @@ extension FindYourLocationView {
     private func viewHierarchy() {
         addSubview(mapView)
         addSubview(confirmYourLocationButton)
+    }
+}
+
+extension FindYourLocationView: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        print(views)
     }
 }
