@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import CollectionDS_SDK
 
 protocol CreateAccountViewModelProtocol {}
 
@@ -15,9 +16,13 @@ class CreateAccountView: UIView {
     
     // MARK: - UI Components
     
+    private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
+    
     // MARK: - Private properties
     
     private var viewModel: CreateAccountViewModelProtocol?
+    private var collectionViewDataSource = CollectionViewDataSource()
     
     // MARK: Init
     
@@ -44,7 +49,6 @@ extension CreateAccountView {
     
     private func setup() {
         setupConstraints()
-        backgroundColor = .blue
     }
 }
 

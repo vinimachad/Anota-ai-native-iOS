@@ -27,6 +27,9 @@
 		3C5CD99628A8309E002C20F9 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD99528A8309E002C20F9 /* CreateAccountView.swift */; };
 		3C5CD99828A830A6002C20F9 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD99728A830A6002C20F9 /* CreateAccountController.swift */; };
 		3C5CD99A28A830B4002C20F9 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD99928A830B4002C20F9 /* CreateAccountViewModel.swift */; };
+		3C5CD99E28A833C1002C20F9 /* CreateAccountSectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD99D28A833C1002C20F9 /* CreateAccountSectionBuilder.swift */; };
+		3C5CD9A528A834F8002C20F9 /* AddressCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD9A428A834F8002C20F9 /* AddressCardCell.swift */; };
+		3C5CD9A728A837F1002C20F9 /* UILabel+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD9A628A837F1002C20F9 /* UILabel+Setup.swift */; };
 		3C648DE4289D67AC0091B3D8 /* OnboardingViewSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */; };
 		3C648DE6289D68210091B3D8 /* Anota AiSnapshots in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DE5289D68210091B3D8 /* Anota AiSnapshots */; };
 		3C648DEA289D6DA30091B3D8 /* ButtonSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */; };
@@ -143,6 +146,9 @@
 		3C5CD99528A8309E002C20F9 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3C5CD99728A830A6002C20F9 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		3C5CD99928A830B4002C20F9 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		3C5CD99D28A833C1002C20F9 /* CreateAccountSectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSectionBuilder.swift; sourceTree = "<group>"; };
+		3C5CD9A428A834F8002C20F9 /* AddressCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCardCell.swift; sourceTree = "<group>"; };
+		3C5CD9A628A837F1002C20F9 /* UILabel+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Setup.swift"; sourceTree = "<group>"; };
 		3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewSnapshot.swift; sourceTree = "<group>"; };
 		3C648DE5289D68210091B3D8 /* Anota AiSnapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Anota AiSnapshots"; sourceTree = "<group>"; };
 		3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSnapshot.swift; sourceTree = "<group>"; };
@@ -370,11 +376,44 @@
 		3C5CD99428A83090002C20F9 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				3C5CD99C28A833A5002C20F9 /* Builder */,
+				3C5CD99B28A83398002C20F9 /* CreateAccount */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		3C5CD99B28A83398002C20F9 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
 				3C5CD99528A8309E002C20F9 /* CreateAccountView.swift */,
 				3C5CD99728A830A6002C20F9 /* CreateAccountController.swift */,
 				3C5CD99928A830B4002C20F9 /* CreateAccountViewModel.swift */,
 			);
 			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		3C5CD99C28A833A5002C20F9 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CD99D28A833C1002C20F9 /* CreateAccountSectionBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		3C5CD9A228A834EA002C20F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CD9A328A834EC002C20F9 /* AddressCard */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3C5CD9A328A834EC002C20F9 /* AddressCard */ = {
+			isa = PBXGroup;
+			children = (
+				3C5CD9A428A834F8002C20F9 /* AddressCardCell.swift */,
+			);
+			path = AddressCard;
 			sourceTree = "<group>";
 		};
 		3C648DE7289D6D910091B3D8 /* Components */ = {
@@ -539,6 +578,7 @@
 			children = (
 				3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */,
 				3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */,
+				3C5CD9A628A837F1002C20F9 /* UILabel+Setup.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -714,6 +754,7 @@
 		3CA3D7C0289B0133006B3D90 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3C5CD9A228A834EA002C20F9 /* Cells */,
 				3C544DBA28A2CB7800C7CD9B /* Presentation */,
 				3C731ABE28A16D3500BCE107 /* Modals */,
 				3C7A4387289EDF5400DA1E36 /* States */,
@@ -1150,6 +1191,7 @@
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
 				3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */,
 				3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */,
+				3C5CD9A728A837F1002C20F9 /* UILabel+Setup.swift in Sources */,
 				3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
@@ -1168,6 +1210,7 @@
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
+				3C5CD9A528A834F8002C20F9 /* AddressCardCell.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
 				3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */,
 				3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */,
@@ -1179,6 +1222,7 @@
 				3C5CD99828A830A6002C20F9 /* CreateAccountController.swift in Sources */,
 				3CA3D7B8289AFC0A006B3D90 /* CoordinatorProtocol.swift in Sources */,
 				3C68042F28A535D2008F7EE5 /* ButtonKind.swift in Sources */,
+				3C5CD99E28A833C1002C20F9 /* CreateAccountSectionBuilder.swift in Sources */,
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CD35D58289C41F60012480E /* Button.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
