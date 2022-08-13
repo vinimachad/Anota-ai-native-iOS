@@ -39,14 +39,22 @@ class FindYourLocationViewModel {
     // MARK: - Methods
     
     private func updateCoordinate(_ coordinate: CLLocationCoordinate2D) {
-        currentLocation = coordinate
+        updateCurrentLocation(coordinate)
         onUpdateUserCurrentLocation?(coordinate)
+    }
+    
+    private func updateCurrentLocation(_ coordinate: CLLocationCoordinate2D) {
+        currentLocation = coordinate
     }
 }
 
 // MARK: - FindYourLocationProtocol
 
 extension FindYourLocationViewModel: FindYourLocationProtocol {
+    
+    var mapViewModel: MapViewModelProtocol {
+        MapViewModel(onUpdateCoordinate: updateCurrentLocation(_:))
+    }
     
     func requestLocationAuthorization() {
         didAuthorizedLocalization()
@@ -75,6 +83,7 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
 extension FindYourLocationViewModel: LocalizationDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
         guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         updateCoordinate(coordinate)
     }

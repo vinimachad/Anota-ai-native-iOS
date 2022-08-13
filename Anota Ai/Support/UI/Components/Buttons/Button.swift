@@ -36,6 +36,16 @@ class Button: UIButton {
         }
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            if isEnabled {
+                alpha = 1
+                return
+            }
+            alpha = 0.4
+        }
+    }
+    
     // MARK: - Init
     
     init(title: String?, kind: ButtonKind = .confirm, onTapButton: (() -> Void)? = nil) {

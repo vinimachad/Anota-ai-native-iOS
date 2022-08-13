@@ -53,7 +53,6 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        setupNavigation()
         viewModel.requestLocationAuthorization()
     }
     
@@ -61,8 +60,8 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     
     private func setupNavigation() {
         setBackButton()
-        changeNavigationTintColor(tintColor: .Shapes.shape)
-        setupDefaultNavigation(title: "your_location_title".localize(.findYourLocation))
+        setupDefaultNavigation(title: "your_location_title".localize(.findYourLocation), isTranslucent: true)
+        changeColorsOfNavigation(tintColor: .Shapes.shape, bgColor: .clear)
     }
     
     private func setBackButton() {

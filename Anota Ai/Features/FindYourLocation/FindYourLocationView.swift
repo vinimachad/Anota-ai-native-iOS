@@ -9,10 +9,10 @@ import Foundation
 
 import UIKit
 import SnapKit
-import MapKit
 import CoreLocation
 
 protocol FindYourLocationViewModelProtocol {
+    var mapViewModel: MapViewModelProtocol { get }
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
     func didConfirmLocation()
 }
@@ -21,7 +21,7 @@ class FindYourLocationView: UIView {
     
     // MARK: - UI Components
     
-    private lazy var mapView = MKMapView()
+    private lazy var mapView = MapView()
     private lazy var confirmYourLocationButton = Button()
     
     // MARK: - Private properties
@@ -45,8 +45,10 @@ class FindYourLocationView: UIView {
     func bindIn(viewModel: FindYourLocationViewModelProtocol) {
         self.viewModel = viewModel
         
+        self.mapView.bindIn(viewModel: viewModel.mapViewModel)
+        
         self.viewModel?.onUpdateUserCurrentLocation = { [weak self] coordinate in
-            self?.updateMapView(coordinate)
+            self?.mapView.updateMapView(coordinate)
         }
     }
 }
@@ -58,32 +60,13 @@ extension FindYourLocationView {
     private func setup() {
         setupConstraints()
         setupConfirmYourLocationButton()
-        setupMapView()
-    }
-    
-    private func setupMapView() {
-        mapView.setCameraZoomRange(
-            MKMapView.CameraZoomRange(
-                minCenterCoordinateDistance: 100,
-                maxCenterCoordinateDistance: 500
-            ),animated: true
-        )
+//        setupMapView()
     }
     
     private func setupConfirmYourLocationButton() {
         confirmYourLocationButton.title = "confirm_location_title_button".localize(.findYourLocation)
         confirmYourLocationButton.kind = .confirm
         confirmYourLocationButton.addTarget(self, action: #selector(didConfirmLocation), for: .touchDown)
-    }
-    
-    private func updateMapView(_ coordinate: CLLocationCoordinate2D) {
-        mapView.setRegion(
-            MKCoordinateRegion(center: coordinate, latitudinalMeters: 400, longitudinalMeters: 400),
-            animated: true
-        )
-        let marker = MKPointAnnotation()
-        marker.coordinate = coordinate
-        mapView.addAnnotation(marker)
     }
     
     @objc private func didConfirmLocation() {
