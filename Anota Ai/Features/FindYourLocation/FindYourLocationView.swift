@@ -12,6 +12,7 @@ import SnapKit
 import CoreLocation
 
 protocol FindYourLocationViewModelProtocol {
+    var mapViewModel: MapViewModelProtocol { get }
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
     func didConfirmLocation()
 }
@@ -44,6 +45,8 @@ class FindYourLocationView: UIView {
     func bindIn(viewModel: FindYourLocationViewModelProtocol) {
         self.viewModel = viewModel
         
+        self.mapView.bindIn(viewModel: viewModel.mapViewModel)
+        
         self.viewModel?.onUpdateUserCurrentLocation = { [weak self] coordinate in
             self?.mapView.updateMapView(coordinate)
         }
@@ -57,11 +60,7 @@ extension FindYourLocationView {
     private func setup() {
         setupConstraints()
         setupConfirmYourLocationButton()
-        setupMapView()
-    }
-    
-    private func setupMapView() {
-        
+//        setupMapView()
     }
     
     private func setupConfirmYourLocationButton() {

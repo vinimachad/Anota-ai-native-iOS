@@ -39,14 +39,22 @@ class FindYourLocationViewModel {
     // MARK: - Methods
     
     private func updateCoordinate(_ coordinate: CLLocationCoordinate2D) {
-        currentLocation = coordinate
+        updateCurrentLocation(coordinate)
         onUpdateUserCurrentLocation?(coordinate)
+    }
+    
+    private func updateCurrentLocation(_ coordinate: CLLocationCoordinate2D) {
+        currentLocation = coordinate
     }
 }
 
 // MARK: - FindYourLocationProtocol
 
 extension FindYourLocationViewModel: FindYourLocationProtocol {
+    
+    var mapViewModel: MapViewModelProtocol {
+        MapViewModel(onUpdateCoordinate: updateCurrentLocation(_:))
+    }
     
     func requestLocationAuthorization() {
         didAuthorizedLocalization()

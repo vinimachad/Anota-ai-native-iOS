@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 import SnapKit
 import MapKit
-import SkyFloatingLabelTextField
 
 protocol ConfirmLocationViewModelProtocol {
     var region: MKCoordinateRegion { get }
@@ -27,7 +26,7 @@ class ConfirmLocationView: UIView {
     
     // MARK: - UI Components
     
-    private lazy var mapView = MKMapView()
+    private lazy var mapView = MapView()
     private lazy var streetDetailsLabel = UILabel()
     private lazy var cityDetailLabel = UILabel()
     private lazy var numberTextField = TextField()
@@ -83,10 +82,7 @@ extension ConfirmLocationView {
     
     private func setupMapView() {
         mapView.layer.cornerRadius = 8
-        mapView.setCameraZoomRange(
-            MKMapView.CameraZoomRange(minCenterCoordinateDistance: 100, maxCenterCoordinateDistance: 100),
-            animated: true
-        )
+        mapView.isUserInteractionEnabled = false
     }
     
     private func setupStreetDetailsLabel() {

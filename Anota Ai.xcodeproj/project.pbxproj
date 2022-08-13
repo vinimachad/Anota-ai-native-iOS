@@ -14,6 +14,7 @@
 		3C08DAC328A6974E0043D78A /* AlertViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */; };
 		3C08DAC728A699B30043D78A /* LoadingSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */; };
 		3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A61A528A7EFE4000D177D /* MapView.swift */; };
+		3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A61A828A7F3A2000D177D /* MapViewModel.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -120,6 +121,7 @@
 		3C08DAC228A6974E0043D78A /* AlertViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModelMock.swift; sourceTree = "<group>"; };
 		3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSnapshot.swift; sourceTree = "<group>"; };
 		3C0A61A528A7EFE4000D177D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3C0A61A828A7F3A2000D177D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				3C0A61A528A7EFE4000D177D /* MapView.swift */,
+				3C0A61A828A7F3A2000D177D /* MapViewModel.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -1091,6 +1094,7 @@
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
+				3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,
 				3C769A5828A71517001DA6E6 /* ScrollView.swift in Sources */,

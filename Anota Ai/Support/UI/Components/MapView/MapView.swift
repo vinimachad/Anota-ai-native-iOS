@@ -9,11 +9,15 @@ import UIKit
 import SnapKit
 import MapKit
 
+protocol MapViewModelProtocol {
+    func didUpdateCoordinate(coordinate: CLLocationCoordinate2D)
+}
+
 class MapView: MKMapView {
     
-    // MARK: - UI Components
-    
     // MARK: - Private properties
+    
+    private var viewModel: MapViewModelProtocol?
     
     // MARK: Init
     
@@ -26,6 +30,10 @@ class MapView: MKMapView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func bindIn(viewModel: MapViewModelProtocol) {
+        self.viewModel = viewModel
+    }
 }
 
 // MARK: - Setup view
@@ -33,8 +41,6 @@ class MapView: MKMapView {
 extension MapView {
     
     private func setup() {
-        setupConstraints()
-        
         setCameraZoomRange(
             MKMapView.CameraZoomRange(
                 minCenterCoordinateDistance: 100,
@@ -65,19 +71,6 @@ extension MapView {
             removeAnnotation(lastAnnotation)
         }
         addAnnotation(annotation)
+        viewModel?.didUpdateCoordinate(coordinate: coordinate)
     }
 }
-
-// MARK: - Setup constraints
-
-extension MapView {
-    
-    private func setupConstraints() {
-        viewHierarchy()
-    }
-    
-    private func viewHierarchy() {
-        
-    }
-}
-
