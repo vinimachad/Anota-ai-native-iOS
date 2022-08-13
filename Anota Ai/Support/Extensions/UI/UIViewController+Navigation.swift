@@ -10,15 +10,34 @@ import UIKit
 
 extension UIViewController {
     
-    func setupDefaultNavigation(title: String = "") {
+    func setupDefaultNavigation(title: String = "", navColor: UIColor = .Shapes.shape, isTranslucent: Bool = false) {
         self.title = title
+        navigationController?.navigationBar.isTranslucent = isTranslucent
+        navigationController?.navigationBar.shadowImage = nil
         setupDefaultBackButton()
     }
     
-    func changeNavigationTintColor(tintColor: UIColor) {
-        guard let navBar = navigationController?.navigationBar else { return }
-        navBar.tintColor = tintColor
-        navBar.titleTextAttributes = [.foregroundColor: tintColor]
+    func changeColorsOfNavigation(tintColor: UIColor, bgColor: UIColor) {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        changeNavigationTintColor(appearance: navBarAppearance, tintColor: tintColor)
+        changeNavigationBackgroundColor(appearance: navBarAppearance, color: bgColor)
+    }
+    
+    private func changeNavigationTintColor(appearance: UINavigationBarAppearance, tintColor: UIColor) {
+        appearance.titleTextAttributes = [.foregroundColor: tintColor]
+        appearance.largeTitleTextAttributes = [.foregroundColor: tintColor]
+        navigationController?.navigationBar.tintColor = tintColor
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    private func changeNavigationBackgroundColor(appearance: UINavigationBarAppearance, color: UIColor) {
+        appearance.backgroundColor = color
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     func setLeftNavigationButton(action: Selector) {
@@ -27,6 +46,6 @@ extension UIViewController {
     }
     
     func setupDefaultBackButton() {
-        navigationController?.navigationBar.topItem?.title = ""
+        navigationItem.backButtonTitle = ""
     }
 }

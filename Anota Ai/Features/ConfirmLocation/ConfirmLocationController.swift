@@ -12,6 +12,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     
     // MARK: - Private properties
     
+    private let scrollView: ScrollView
     private let contentView: ConfirmLocationView
     private var viewModel: ViewModel
     
@@ -20,6 +21,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
         contentView = ConfirmLocationView()
+        self.scrollView = ScrollView(contentView: self.contentView)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,13 +34,17 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     
     override func loadView() {
         super.loadView()
-        view = contentView
+        view = scrollView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        setupNavigation()
         viewModel.validateFields()
     }
     
@@ -46,7 +52,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     
     private func setupNavigation() {
         setupDefaultNavigation(title: "confirm_location_title".localize(.confirmLocation))
-        changeNavigationTintColor(tintColor: .Brand.secondary)
+        changeColorsOfNavigation(tintColor: .Brand.secondary, bgColor: .Shapes.shape)
     }
 }
 

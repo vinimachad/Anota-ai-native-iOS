@@ -78,7 +78,7 @@ extension ConfirmLocationView {
         setupTextFields()
         setupTextFieldsContainerStackView()
         setupSaveAddressButton()
-        backgroundColor = .Shapes.box
+        backgroundColor = .Shapes.shape
     }
     
     private func setupMapView() {
