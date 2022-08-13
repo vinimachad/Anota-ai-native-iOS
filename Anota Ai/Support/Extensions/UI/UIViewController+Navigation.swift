@@ -13,7 +13,6 @@ extension UIViewController {
     func setupDefaultNavigation(title: String = "", navColor: UIColor = .Shapes.shape, isTranslucent: Bool = false) {
         self.title = title
         navigationController?.navigationBar.isTranslucent = isTranslucent
-        navigationController?.navigationBar.shadowImage = nil
         setupDefaultBackButton()
     }
     
@@ -45,6 +44,8 @@ extension UIViewController {
     
     private func changeNavigationBackgroundColor(appearance: UINavigationBarAppearance, color: UIColor) {
         appearance.backgroundColor = color
+        appearance.shadowColor = .clear
+        appearance.shadowImage = UIImage()
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
