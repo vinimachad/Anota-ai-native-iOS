@@ -19,13 +19,20 @@ class CreateAccountSectionBuilder: BuilderSectionProtocol {
     private func nameAndLastNameCellSection() -> CollectionSectionProtocol {
         return CollectionSection<TextFieldCell>(items: [
             TextFieldCellViewModel(title: "Nome", onChangeText: nil), TextFieldCellViewModel(title: "Sobrenome", onChangeText: nil)
-        ], interItemGap: 16, columns: 2
+        ], interItemGap: 0, columns: 2
+        )
+    }
+    
+    private func emailAndPasswordCellSection() -> CollectionSectionProtocol {
+        return CollectionSection<TextFieldCell>(items: [
+            TextFieldCellViewModel(title: "Email", onChangeText: nil), TextFieldCellViewModel(title: "Senha", onChangeText: nil)
+        ], lineGap: 16, columns: 1
         )
     }
     
     // MARK: - Builder
     
     func builder() -> [CollectionSectionProtocol] {
-        [addressCardCellSection(), nameAndLastNameCellSection()]
+        [addressCardCellSection(), nameAndLastNameCellSection(), emailAndPasswordCellSection()]
     }
 }

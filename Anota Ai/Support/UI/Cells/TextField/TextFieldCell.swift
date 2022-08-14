@@ -81,6 +81,7 @@ extension TextFieldCell {
         
         textField.snp.makeConstraints {
             $0.edges.equalTo(contentView.snp.edges)
+            $0.height.equalTo(48)
         }
     }
     
