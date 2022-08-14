@@ -20,11 +20,18 @@ class CreateAccountSectionBuilder: BuilderSectionProtocol {
     // MARK: - Private properties
     
     private var fields = Fields()
+    private var onButtonStateIsEnable: ((Bool) -> Void)?
     private var nameAndLastName: [CreateAccountTextFields] {
         [.name, .lastName]
     }
     private var emailAndPassword: [CreateAccountTextFields] {
         [.email, .password]
+    }
+    
+    // MARK: - Init
+    
+    init(onButtonStateIsEnable: ((Bool) -> Void)?) {
+        self.onButtonStateIsEnable = onButtonStateIsEnable
     }
     
     // MARK: - Builder
@@ -99,18 +106,18 @@ extension CreateAccountSectionBuilder {
     // MARK: - Validator
     
     func validator() {
-        guard let name = fields.name, let lastName = fields.name,
+        guard let name = fields.name, let lastName = fields.lastName,
               let email = fields.email, let password = fields.password
         else {
-            print("vazio1")
+            onButtonStateIsEnable?(false)
             return
         }
         
         if !name.isEmpty && !lastName.isEmpty && !email.isEmpty && !password.isEmpty {
-            print("não vazio")
+            onButtonStateIsEnable?(true)
             return
         }
-        print("vazio2")
+        onButtonStateIsEnable?(false)
     }
 }
 

@@ -12,6 +12,7 @@ import CollectionDS_SDK
 
 protocol CreateAccountViewModelProtocol {
     var sections: [CollectionSectionProtocol] { get }
+    var onButtonStateIsEnable: ((Bool) -> Void)? { get set }
 }
 
 class CreateAccountView: UIView {
@@ -44,6 +45,10 @@ class CreateAccountView: UIView {
     func bindIn(viewModel: CreateAccountViewModelProtocol) {
         self.viewModel = viewModel
         collectionViewDataSource.sections = viewModel.sections
+        
+        self.viewModel?.onButtonStateIsEnable = { [weak self] isEnable in
+            self?.createAccountButton.isEnabled = isEnable
+        }
     }
 }
 
@@ -68,6 +73,7 @@ extension CreateAccountView {
     private func setupCreateAccountButton() {
         createAccountButton.title = "Criar conta"
         createAccountButton.kind = .primary
+        createAccountButton.isEnabled = false
     }
 }
 

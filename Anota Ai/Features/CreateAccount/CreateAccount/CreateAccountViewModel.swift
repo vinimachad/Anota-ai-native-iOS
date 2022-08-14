@@ -17,18 +17,23 @@ class CreateAccountViewModel {
     
     // MARK: - Public properties
     
+    public var onButtonStateIsEnable: ((Bool) -> Void)?
     lazy var sections: [CollectionSectionProtocol] = {
         sectionBuilder.builder()
     }()
     
     // MARK: - Private properties
     
-    private lazy var sectionBuilder = CreateAccountSectionBuilder()
+    private lazy var sectionBuilder = CreateAccountSectionBuilder(onButtonStateIsEnable: self.didButtonStateIsEnable(_:))
     
     // MARK: - Init
     
     init() {
         
+    }
+    
+    private func didButtonStateIsEnable(_ isEnable: Bool) {
+        onButtonStateIsEnable?(isEnable)
     }
 }
 
