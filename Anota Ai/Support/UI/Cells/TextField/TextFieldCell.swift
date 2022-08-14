@@ -13,7 +13,8 @@ import CollectionDS_SDK
 import SnapKit
 
 protocol TextFieldCellViewModelProtocol: CollectionViewModelProtocol {
-    var title: String { get }
+    var title: String? { get }
+    var type: UIKeyboardType { get }
     func didChangeText(text: String?)
 }
 
@@ -43,7 +44,8 @@ class TextFieldCell: UICollectionViewCell, CollectionViewProtocol {
     
     func bindIn(viewModel: TextFieldCellViewModelProtocol) {
         self.viewModel = viewModel
-        textField.setTitle(viewModel.title)
+        textField.setTitle(viewModel.title ?? "")
+        textField.keyboardType = viewModel.type
     }
 }
 

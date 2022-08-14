@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 class TextFieldCellViewModel {
     
     // MARK: - Public properties
     
-    var title: String
+    var title: String?
+    var type: UIKeyboardType
     
     // MARK: - Private properties
     
@@ -19,8 +21,9 @@ class TextFieldCellViewModel {
     
     // MARK: - Init
     
-    init(title: String, onChangeText: ((String?) -> Void)?) {
+    init(title: String?, type: UIKeyboardType, onChangeText: ((String?) -> Void)?) {
         self.title = title
+        self.type = type
         self.onChangeText = onChangeText
     }
 }

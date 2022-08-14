@@ -64,6 +64,7 @@
 		3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */; };
 		3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A438B289EDF7D00DA1E36 /* Loadable.swift */; };
 		3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4391289EE96E00DA1E36 /* Localization.swift */; };
+		3C7FA18328A93B72001A5CBE /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FA18228A93B72001A5CBE /* Fields.swift */; };
 		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
 		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
@@ -186,6 +187,7 @@
 		3C7A4389289EDF6F00DA1E36 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3C7A438B289EDF7D00DA1E36 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		3C7A4391289EE96E00DA1E36 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		3C7FA18228A93B72001A5CBE /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 		3C5CD99428A83090002C20F9 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				3C7FA18128A93B66001A5CBE /* Models */,
 				3C5CD99C28A833A5002C20F9 /* Builder */,
 				3C5CD99B28A83398002C20F9 /* CreateAccount */,
 			);
@@ -631,6 +634,14 @@
 				3C7A4391289EE96E00DA1E36 /* Localization.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		3C7FA18128A93B66001A5CBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C7FA18228A93B72001A5CBE /* Fields.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3C91274E289DD668008AA594 /* FindYourLocation */ = {
@@ -1234,6 +1245,7 @@
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
 				3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */,
 				3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */,
+				3C7FA18328A93B72001A5CBE /* Fields.swift in Sources */,
 				3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */,
 				3C769A4F28A6B694001DA6E6 /* ConfirmLocationViewModel.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
