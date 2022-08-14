@@ -20,6 +20,7 @@ class CreateAccountView: UIView {
     
     private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
+    private lazy var createAccountButton = Button()
     
     // MARK: - Private properties
     
@@ -53,6 +54,7 @@ extension CreateAccountView {
     private func setup() {
         setupConstraints()
         setupCollectionView()
+        setupCreateAccountButton()
         backgroundColor = .Shapes.shape
     }
     
@@ -61,6 +63,11 @@ extension CreateAccountView {
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .Shapes.shape
+    }
+    
+    private func setupCreateAccountButton() {
+        createAccountButton.title = "Criar conta"
+        createAccountButton.kind = .primary
     }
 }
 
@@ -74,12 +81,20 @@ extension CreateAccountView {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(snp.topMargin)
             $0.horizontalEdges.equalTo(snp.horizontalEdges)
+        }
+        
+        createAccountButton.snp.makeConstraints {
+            $0.left.equalTo(16)
+            $0.right.equalTo(-16)
+            $0.top.lessThanOrEqualTo(collectionView.snp.bottom).offset(16)
             $0.bottom.equalTo(snp.bottomMargin)
+            $0.height.equalTo(48)
         }
     }
     
     private func viewHierarchy() {
         addSubview(collectionView)
+        addSubview(createAccountButton)
     }
 }
 
