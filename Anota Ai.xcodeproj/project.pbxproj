@@ -45,6 +45,8 @@
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
 		3C698756289D4BD100901CE7 /* OnboardingControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */; };
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
+		3C6D511228A896A1009883A1 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511128A896A1009883A1 /* TextFieldCell.swift */; };
+		3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
@@ -165,6 +167,8 @@
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		3C698755289D4BD100901CE7 /* OnboardingControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerTests.swift; sourceTree = "<group>"; };
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
+		3C6D511128A896A1009883A1 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 		3C5CD9A228A834EA002C20F9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3C6D510F28A8968D009883A1 /* TextField */,
 				3C5CD9A328A834EC002C20F9 /* AddressCard */,
 			);
 			path = Cells;
@@ -519,6 +524,15 @@
 				3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3C6D510F28A8968D009883A1 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				3C6D511128A896A1009883A1 /* TextFieldCell.swift */,
+				3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		3C731ABE28A16D3500BCE107 /* Modals */ = {
@@ -1197,6 +1211,7 @@
 				3C5CD9A728A837F1002C20F9 /* UILabel+Setup.swift in Sources */,
 				3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
+				3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
@@ -1205,6 +1220,7 @@
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,
 				3C769A5828A71517001DA6E6 /* ScrollView.swift in Sources */,
 				3C5CD99A28A830B4002C20F9 /* CreateAccountViewModel.swift in Sources */,
+				3C6D511228A896A1009883A1 /* TextFieldCell.swift in Sources */,
 				3C769A4D28A6B689001DA6E6 /* ConfirmLocationView.swift in Sources */,
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,

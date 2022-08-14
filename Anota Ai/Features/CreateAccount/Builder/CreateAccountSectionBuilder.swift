@@ -16,9 +16,16 @@ class CreateAccountSectionBuilder: BuilderSectionProtocol {
         return CollectionSection<AddressCardCell>(items: [AddressCardCellViewModel()])
     }
     
+    private func nameAndLastNameCellSection() -> CollectionSectionProtocol {
+        return CollectionSection<TextFieldCell>(items: [
+            TextFieldCellViewModel(title: "Nome", onChangeText: nil), TextFieldCellViewModel(title: "Sobrenome", onChangeText: nil)
+        ], interItemGap: 16, columns: 2
+        )
+    }
+    
     // MARK: - Builder
     
     func builder() -> [CollectionSectionProtocol] {
-        [addressCardCellSection()]
+        [addressCardCellSection(), nameAndLastNameCellSection()]
     }
 }

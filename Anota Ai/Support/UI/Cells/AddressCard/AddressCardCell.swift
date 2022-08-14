@@ -98,9 +98,13 @@ extension AddressCardCell {
 extension AddressCardCell {
     
     static func size(width: CGFloat) -> CGSize {
-        let padding = UIEdgeInsets(top: 24, left: 16, bottom: 24, right: 16)
+        let padding = sectionPadding()
         let width = width - (padding.left + padding.right)
         return CGSize(width: width, height: 150)
+    }
+    
+    static func sectionPadding() -> UIEdgeInsets {
+        UIEdgeInsets(top: 24, left: 16, bottom: 42, right: 16)
     }
     
     private func setupConstraints() {

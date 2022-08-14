@@ -61,7 +61,7 @@ extension CreateAccountView {
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .Shapes.shape
-        collectionView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 24, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 24, left: 16, bottom: 24, right: 16)
     }
 }
 

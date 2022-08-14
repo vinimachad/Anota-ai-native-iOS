@@ -31,8 +31,9 @@ class AppCoordinator {
     // MARK: - Start methods
     
     private func startCoordinator() -> UIViewController {
-        let coordinator = OnboardingCoordinator()
-        childCoordinator = coordinator
-        return coordinator.start()
+//        let coordinator = OnboardingCoordinator()
+//        childCoordinator = coordinator
+//        return coordinator.start()
+        OnboardingFactory.createAccount()
     }
 }
