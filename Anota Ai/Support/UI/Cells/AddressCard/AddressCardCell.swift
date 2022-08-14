@@ -11,7 +11,10 @@ import Reusable
 import CollectionDS_SDK
 import SnapKit
 
-protocol AddressCardCellViewModelProtocol: CollectionViewModelProtocol {}
+protocol AddressCardCellViewModelProtocol: CollectionViewModelProtocol {
+    var street: String { get }
+    var city: String { get }
+}
 
 class AddressCardCell: UICollectionViewCell, CollectionViewProtocol {
     
@@ -43,6 +46,9 @@ class AddressCardCell: UICollectionViewCell, CollectionViewProtocol {
     
     func bindIn(viewModel: AddressCardCellViewModelProtocol) {
         self.viewModel = viewModel
+        
+        streetLabel.text = viewModel.street
+        cityLabel.text = viewModel.city
     }
 }
 
@@ -60,16 +66,19 @@ extension AddressCardCell {
         backgroundColor = .Shapes.shape
         layer.cornerRadius = 8
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 1
+        layer.shadowOpacity = 0.3
         layer.shadowOffset = .zero
-        layer.shadowRadius = 10
+        layer.shadowRadius = 4
+        layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 4, width: bounds.width, height: bounds.height)).cgPath
     }
     
     private func setupTitleLabel() {
+        titleLabel.text = "Endereço"
         titleLabel.setupLabel(type: .bold, size: 20, color: .Texts.heading)
     }
     
     private func setupSubtitleLabel() {
+        subtitleLabel.text = "Sua localização"
         subtitleLabel.setupLabel(type: .medium, size: 16, color: .Texts.heading)
     }
     
@@ -89,7 +98,7 @@ extension AddressCardCell {
 extension AddressCardCell {
     
     static func size(width: CGFloat) -> CGSize {
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let padding = UIEdgeInsets(top: 24, left: 16, bottom: 24, right: 16)
         let width = width - (padding.left + padding.right)
         return CGSize(width: width, height: 150)
     }

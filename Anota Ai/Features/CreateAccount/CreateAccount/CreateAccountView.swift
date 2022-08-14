@@ -10,7 +10,9 @@ import UIKit
 import SnapKit
 import CollectionDS_SDK
 
-protocol CreateAccountViewModelProtocol {}
+protocol CreateAccountViewModelProtocol {
+    var sections: [CollectionSectionProtocol] { get }
+}
 
 class CreateAccountView: UIView {
     
@@ -40,6 +42,7 @@ class CreateAccountView: UIView {
     
     func bindIn(viewModel: CreateAccountViewModelProtocol) {
         self.viewModel = viewModel
+        collectionViewDataSource.sections = viewModel.sections
     }
 }
 
@@ -49,6 +52,16 @@ extension CreateAccountView {
     
     private func setup() {
         setupConstraints()
+        setupCollectionView()
+        backgroundColor = .Shapes.shape
+    }
+    
+    private func setupCollectionView() {
+        collectionViewDataSource.collectionView = collectionView
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .Shapes.shape
+        collectionView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 24, right: 0)
     }
 }
 
@@ -58,10 +71,16 @@ extension CreateAccountView {
     
     private func setupConstraints() {
         viewHierarchy()
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(snp.topMargin)
+            $0.horizontalEdges.equalTo(snp.horizontalEdges)
+            $0.bottom.equalTo(snp.bottomMargin)
+        }
     }
     
     private func viewHierarchy() {
-        
+        addSubview(collectionView)
     }
 }
 

@@ -30,6 +30,7 @@
 		3C5CD99E28A833C1002C20F9 /* CreateAccountSectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD99D28A833C1002C20F9 /* CreateAccountSectionBuilder.swift */; };
 		3C5CD9A528A834F8002C20F9 /* AddressCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD9A428A834F8002C20F9 /* AddressCardCell.swift */; };
 		3C5CD9A728A837F1002C20F9 /* UILabel+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD9A628A837F1002C20F9 /* UILabel+Setup.swift */; };
+		3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5CD9A828A83BCA002C20F9 /* AddressCardCellViewModel.swift */; };
 		3C648DE4289D67AC0091B3D8 /* OnboardingViewSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */; };
 		3C648DE6289D68210091B3D8 /* Anota AiSnapshots in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DE5289D68210091B3D8 /* Anota AiSnapshots */; };
 		3C648DEA289D6DA30091B3D8 /* ButtonSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */; };
@@ -149,6 +150,7 @@
 		3C5CD99D28A833C1002C20F9 /* CreateAccountSectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountSectionBuilder.swift; sourceTree = "<group>"; };
 		3C5CD9A428A834F8002C20F9 /* AddressCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCardCell.swift; sourceTree = "<group>"; };
 		3C5CD9A628A837F1002C20F9 /* UILabel+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Setup.swift"; sourceTree = "<group>"; };
+		3C5CD9A828A83BCA002C20F9 /* AddressCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCardCellViewModel.swift; sourceTree = "<group>"; };
 		3C648DE3289D67AC0091B3D8 /* OnboardingViewSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewSnapshot.swift; sourceTree = "<group>"; };
 		3C648DE5289D68210091B3D8 /* Anota AiSnapshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Anota AiSnapshots"; sourceTree = "<group>"; };
 		3C648DE9289D6DA30091B3D8 /* ButtonSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSnapshot.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				3C5CD9A428A834F8002C20F9 /* AddressCardCell.swift */,
+				3C5CD9A828A83BCA002C20F9 /* AddressCardCellViewModel.swift */,
 			);
 			path = AddressCard;
 			sourceTree = "<group>";
@@ -1196,6 +1199,7 @@
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
+				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
 				3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,

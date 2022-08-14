@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CollectionDS_SDK
 
 
 protocol CreateAccountProtocol: CreateAccountViewModelProtocol {
@@ -16,7 +17,13 @@ class CreateAccountViewModel {
     
     // MARK: - Public properties
     
+    lazy var sections: [CollectionSectionProtocol] = {
+        sectionBuilder.builder()
+    }()
+    
     // MARK: - Private properties
+    
+    private lazy var sectionBuilder = CreateAccountSectionBuilder()
     
     // MARK: - Init
     

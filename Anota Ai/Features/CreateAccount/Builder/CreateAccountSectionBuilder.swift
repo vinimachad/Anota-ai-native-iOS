@@ -13,12 +13,12 @@ class CreateAccountSectionBuilder: BuilderSectionProtocol {
     // MARK: - Sections
     
     private func addressCardCellSection() -> CollectionSectionProtocol {
-        return CollectionSection<>()
+        return CollectionSection<AddressCardCell>(items: [AddressCardCellViewModel()])
     }
     
     // MARK: - Builder
     
     func builder() -> [CollectionSectionProtocol] {
-        []
+        [addressCardCellSection()]
     }
 }
