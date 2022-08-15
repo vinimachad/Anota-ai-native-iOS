@@ -61,9 +61,13 @@ extension CreateAccountSectionBuilder {
     
     private func emailAndPasswordCellSection() -> CollectionSectionProtocol {
         let viewModels = emailAndPassword.map { kind in
-            TextFieldCellViewModel(title: kind.title, type: kind.kind, onChangeText: { text in
-                self.updateTextFields(kind: kind, text: text)
-            })
+            TextFieldCellViewModel(
+                title: kind.title,
+                type: kind.kind,
+                isPassword: kind == .password ? true : false,
+                onChangeText: { text in
+                    self.updateTextFields(kind: kind, text: text)
+                })
         }
         
         return CollectionSection<TextFieldCell>(items: viewModels, lineGap: 16, columns: 1)

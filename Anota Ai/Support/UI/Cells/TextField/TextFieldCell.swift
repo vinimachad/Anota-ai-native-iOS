@@ -15,7 +15,7 @@ import SnapKit
 protocol TextFieldCellViewModelProtocol: CollectionViewModelProtocol {
     var title: String? { get }
     var type: UIKeyboardType { get }
-    var isSecureTextEntry: Bool { get }
+    var isPassword: Bool { get }
     func didChangeText(text: String?)
 }
 
@@ -47,8 +47,7 @@ class TextFieldCell: UICollectionViewCell, CollectionViewProtocol {
         self.viewModel = viewModel
         textField.setTitle(viewModel.title ?? "")
         textField.keyboardType = viewModel.type
-        textField.isSecureTextEntry = viewModel.isSecureTextEntry
-        addHidePasswordIfNeeded()
+        textField.isSecureTextEntry = viewModel.isPassword
     }
 }
 
@@ -60,13 +59,6 @@ extension TextFieldCell {
         setupConstraints()
         clipsToBounds = true
         textField.addTarget(self, action: #selector(didChangeTextValue), for: .editingChanged)
-    }
-    
-    private func addHidePasswordIfNeeded() {
-        guard let viewModel = viewModel else { return }
-        if viewModel.isSecureTextEntry {
-            textField.addSubview(<#T##view: UIView##UIView#>)
-        }
     }
     
     @objc private func didChangeTextValue() {

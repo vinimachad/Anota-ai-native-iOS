@@ -14,7 +14,7 @@ class TextFieldCellViewModel {
     
     var title: String?
     var type: UIKeyboardType
-    var isSecureTextEntry: Bool
+    var isPassword: Bool
     
     // MARK: - Private properties
     
@@ -22,11 +22,11 @@ class TextFieldCellViewModel {
     
     // MARK: - Init
     
-    init(title: String?, type: UIKeyboardType, isSecureTextEntry: Bool = false, onChangeText: ((String?) -> Void)?) {
+    init(title: String?, type: UIKeyboardType, isPassword: Bool = false, onChangeText: ((String?) -> Void)?) {
         self.title = title
         self.type = type
         self.onChangeText = onChangeText
-        self.isSecureTextEntry = false
+        self.isPassword = isPassword
     }
 }
 
