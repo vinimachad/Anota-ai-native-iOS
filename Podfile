@@ -9,6 +9,7 @@ target 'Anota Ai' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'IQKeyboardManagerSwift'
   pod "CollectionDS-SDK/Debug", :path => "/Users/vinimachad/Developer/mobile/CollectionDS-SDK"
+  pod 'Moya'
 
   target 'Anota AiTests' do
     inherit! :search_paths
