@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		116E9C92E16EB341DB2C79C7 /* Pods_Anota_Ai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6610A2ED315104010C4559C /* Pods_Anota_Ai.framework */; };
+		3C04157028AD871300077EF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04156F28AD871300077EF4 /* User.swift */; };
+		3C04157228AD873200077EF4 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04157128AD873200077EF4 /* UserSession.swift */; };
 		3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06AD3C289C72F500E7621F /* Explanations.swift */; };
 		3C08DABE28A696C20043D78A /* AlertSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABD28A696C20043D78A /* AlertSnapshot.swift */; };
 		3C08DAC028A697260043D78A /* AlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DABF28A697260043D78A /* AlertControllerTests.swift */; };
@@ -131,6 +133,8 @@
 		1C54D6CF8835E1901568DB37 /* Pods-Anota Ai-Anota AiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.debug.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		245CED7C5DB5C0356E9B8866 /* Pods-Anota Ai-Anota AiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota Ai-Anota AiUITests.release.xcconfig"; path = "Target Support Files/Pods-Anota Ai-Anota AiUITests/Pods-Anota Ai-Anota AiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anota_Ai_Anota_AiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C04156F28AD871300077EF4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3C04157128AD873200077EF4 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		3C06AD3C289C72F500E7621F /* Explanations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Explanations.swift; sourceTree = "<group>"; };
 		3C08DABD28A696C20043D78A /* AlertSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSnapshot.swift; sourceTree = "<group>"; };
 		3C08DABF28A697260043D78A /* AlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerTests.swift; sourceTree = "<group>"; };
@@ -280,6 +284,29 @@
 			children = (
 			);
 			path = Setup;
+			sourceTree = "<group>";
+		};
+		3C04156D28AD86F100077EF4 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				3C04157128AD873200077EF4 /* UserSession.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		3C04156E28AD870500077EF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C04156F28AD871300077EF4 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3C04157328AD88CE00077EF4 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		3C06AD3A289C72D000E7621F /* Model */ = {
@@ -603,6 +630,7 @@
 		3C7A4383289ECD3F00DA1E36 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3C04157328AD88CE00077EF4 /* Foundation */,
 				3C7A4384289ECD4400DA1E36 /* UI */,
 			);
 			path = Extensions;
@@ -716,6 +744,7 @@
 			children = (
 				3C04156B28AD77B400077EF4 /* API */,
 				3CA3D7B5289AF17D006B3D90 /* Supporting Files */,
+				3C04156E28AD870500077EF4 /* Models */,
 				3CA3D7B4289AF177006B3D90 /* Support */,
 				3CA3D7B3289AF172006B3D90 /* Coordinator */,
 				3CA3D7B2289AF168006B3D90 /* Features */,
@@ -759,6 +788,7 @@
 		3CA3D7B4289AF177006B3D90 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				3C04156D28AD86F100077EF4 /* Session */,
 				3C7A438F289EE94800DA1E36 /* Authorizations */,
 				3C7A4383289ECD3F00DA1E36 /* Extensions */,
 				3C648DF1289DA09B0091B3D8 /* String */,
@@ -1257,6 +1287,7 @@
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
+				3C04157028AD871300077EF4 /* User.swift in Sources */,
 				3C5CD9A528A834F8002C20F9 /* AddressCardCell.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
 				3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */,
@@ -1277,6 +1308,7 @@
 				3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */,
 				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,
 				3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */,
+				3C04157228AD873200077EF4 /* UserSession.swift in Sources */,
 				3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */,
 				3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */,
 			);
