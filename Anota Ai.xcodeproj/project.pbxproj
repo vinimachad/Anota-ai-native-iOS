@@ -23,6 +23,9 @@
 		3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0B28AE71E1008B602D /* APIHosts.swift */; };
 		3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0D28AE71E8008B602D /* APITarget.swift */; };
 		3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0F28AE76EE008B602D /* APIProvider.swift */; };
+		3C530F1328AE7986008B602D /* UserRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1228AE7986008B602D /* UserRoutes.swift */; };
+		3C530F1528AE7B0B008B602D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1428AE7B0B008B602D /* Address.swift */; };
+		3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1628AE7B71008B602D /* Coordinate.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -154,6 +157,9 @@
 		3C530F0B28AE71E1008B602D /* APIHosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHosts.swift; sourceTree = "<group>"; };
 		3C530F0D28AE71E8008B602D /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
 		3C530F0F28AE76EE008B602D /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		3C530F1228AE7986008B602D /* UserRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoutes.swift; sourceTree = "<group>"; };
+		3C530F1428AE7B0B008B602D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		3C530F1628AE7B71008B602D /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -286,6 +292,7 @@
 		3C04156B28AD77B400077EF4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3C530F1128AE7934008B602D /* Routes */,
 				3C04156C28AD77B700077EF4 /* Setup */,
 			);
 			path = API;
@@ -314,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				3C04156F28AD871300077EF4 /* User.swift */,
+				3C530F1428AE7B0B008B602D /* Address.swift */,
+				3C530F1628AE7B71008B602D /* Coordinate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -394,6 +403,14 @@
 				3C0A61A828A7F3A2000D177D /* MapViewModel.swift */,
 			);
 			path = MapView;
+			sourceTree = "<group>";
+		};
+		3C530F1128AE7934008B602D /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				3C530F1228AE7986008B602D /* UserRoutes.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		3C544DBA28A2CB7800C7CD9B /* Presentation */ = {
@@ -1287,7 +1304,9 @@
 				3C5CD9A728A837F1002C20F9 /* UILabel+Setup.swift in Sources */,
 				3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
+				3C530F1328AE7986008B602D /* UserRoutes.swift in Sources */,
 				3C04157728AD8A0700077EF4 /* UserDefaults+Session.swift in Sources */,
+				3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */,
 				3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
@@ -1300,6 +1319,7 @@
 				3C5CD99A28A830B4002C20F9 /* CreateAccountViewModel.swift in Sources */,
 				3C6D511228A896A1009883A1 /* TextFieldCell.swift in Sources */,
 				3C769A4D28A6B689001DA6E6 /* ConfirmLocationView.swift in Sources */,
+				3C530F1528AE7B0B008B602D /* Address.swift in Sources */,
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,

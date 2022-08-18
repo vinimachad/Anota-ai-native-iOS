@@ -7,6 +7,18 @@
 
 import Foundation
 
-class User: Codable {
-    
+struct User: Decodable {
+    var email: String
+    var name: String
+    var lastName: String
+    var password: String
+    var coordinate: Coordinate
+}
+
+struct UserRequest: Encodable {
+    var email: String
+    var name: String
+    var lastName: String
+    var password: String
+    var coordinate: Coordinate
 }
