@@ -34,9 +34,7 @@ class OnboardingCoordinator: CoordinatorProtocol {
 
 extension OnboardingCoordinator: OnboardingControllerDelegate {
     
-    func presentFindYourLocation() {
-        let coordinator = FindYourLocationCoordinator()
-        navigationController.present(coordinator.start(), animated: true)
-        childCoordinator = coordinator
+    func pushCreateAccount() {
+        navigationController.pushViewController(OnboardingFactory.createAccount(), animated: true)
     }
 }

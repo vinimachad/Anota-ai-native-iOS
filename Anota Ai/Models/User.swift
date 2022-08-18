@@ -12,13 +12,11 @@ struct User: Decodable {
     var name: String
     var lastName: String
     var password: String
-    var coordinate: Coordinate
 }
 
 struct UserRequest: Encodable {
-    var email: String
-    var name: String
-    var lastName: String
-    var password: String
-    var coordinate: Coordinate
+    var email: String = ""
+    var name: String = ""
+    var lastName: String = ""
+    var password: String = ""
 }

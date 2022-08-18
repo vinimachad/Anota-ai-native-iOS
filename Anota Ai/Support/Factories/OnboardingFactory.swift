@@ -27,7 +27,8 @@ enum OnboardingFactory {
     }
     
     static func createAccount() -> UIViewController {
-        let viewModel = CreateAccountViewModel()
+        let createUserAccountUseCase = CreateUserAccountUseCase(api: UserRoutes())
+        let viewModel = CreateAccountViewModel(createUserAccountUseCase: createUserAccountUseCase)
         return CreateAccountController(viewModel: viewModel)
     }
 }

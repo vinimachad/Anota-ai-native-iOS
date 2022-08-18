@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol OnboardingControllerDelegate: AnyObject {
-    func presentFindYourLocation()
+    func pushCreateAccount()
 }
 
 class OnboardingController<ViewModel: OnboardingProtocol>: UIViewController {
@@ -76,7 +76,7 @@ extension OnboardingController {
         contentView.bindIn(viewModel: viewModel)
         
         viewModel.onTapToCreateAccount = { [weak self] in
-            self?.delegate?.presentFindYourLocation()
+            self?.delegate?.pushCreateAccount()
         }
     }
 }

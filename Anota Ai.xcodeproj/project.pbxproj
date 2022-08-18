@@ -26,6 +26,7 @@
 		3C530F1328AE7986008B602D /* UserRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1228AE7986008B602D /* UserRoutes.swift */; };
 		3C530F1528AE7B0B008B602D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1428AE7B0B008B602D /* Address.swift */; };
 		3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1628AE7B71008B602D /* Coordinate.swift */; };
+		3C530F1A28AED84E008B602D /* CreateUserAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1928AED84E008B602D /* CreateUserAccountUseCase.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -160,6 +161,7 @@
 		3C530F1228AE7986008B602D /* UserRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRoutes.swift; sourceTree = "<group>"; };
 		3C530F1428AE7B0B008B602D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3C530F1628AE7B71008B602D /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		3C530F1928AED84E008B602D /* CreateUserAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountUseCase.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -413,6 +415,14 @@
 			path = Routes;
 			sourceTree = "<group>";
 		};
+		3C530F1828AED83D008B602D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3C530F1928AED84E008B602D /* CreateUserAccountUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		3C544DBA28A2CB7800C7CD9B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +471,7 @@
 		3C5CD99428A83090002C20F9 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				3C530F1828AED83D008B602D /* Domain */,
 				3C7FA18128A93B66001A5CBE /* Models */,
 				3C5CD99C28A833A5002C20F9 /* Builder */,
 				3C5CD99B28A83398002C20F9 /* CreateAccount */,
@@ -1326,6 +1337,7 @@
 				3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */,
 				3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
+				3C530F1A28AED84E008B602D /* CreateUserAccountUseCase.swift in Sources */,
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,

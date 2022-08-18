@@ -8,10 +8,11 @@
 import Foundation
 
 extension CreateAccountSectionBuilder {
+    
     struct Fields {
-        var name: String?
-        var lastName: String?
-        var email: String?
-        var password: String?
+        var name: String = ""
+        var lastName: String = ""
+        var email: String = ""
+        var password: String = ""
     }
 }

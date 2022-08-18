@@ -21,6 +21,8 @@ class CreateAccountSectionBuilder: BuilderSectionProtocol {
     
     private var fields = Fields()
     private var onButtonStateIsEnable: ((Bool) -> Void)?
+    private var onCreateAccountFields: ((Fields) -> Void)?
+    
     private var nameAndLastName: [CreateAccountTextFields] {
         [.name, .lastName]
     }
@@ -30,24 +32,21 @@ class CreateAccountSectionBuilder: BuilderSectionProtocol {
     
     // MARK: - Init
     
-    init(onButtonStateIsEnable: ((Bool) -> Void)?) {
+    init(onButtonStateIsEnable: ((Bool) -> Void)?, onCreateAccountFields: ((Fields) -> Void)?) {
         self.onButtonStateIsEnable = onButtonStateIsEnable
+        self.onCreateAccountFields = onCreateAccountFields
     }
     
     // MARK: - Builder
     
     func builder() -> [CollectionSectionProtocol] {
-        [addressCardCellSection(), nameAndLastNameCellSection(), emailAndPasswordCellSection()]
+        [nameAndLastNameCellSection(), emailAndPasswordCellSection()]
     }
 }
 
 // MARK: - Sections
 
 extension CreateAccountSectionBuilder {
-    
-    private func addressCardCellSection() -> CollectionSectionProtocol {
-        return CollectionSection<AddressCardCell>(items: [AddressCardCellViewModel()])
-    }
     
     private func nameAndLastNameCellSection() -> CollectionSectionProtocol {
         let viewModels = nameAndLastName.map { kind in
@@ -88,36 +87,34 @@ extension CreateAccountSectionBuilder {
     }
     
     private func didUpdateName(_ text: String?) {
-        fields.name = text
+        fields.name = text ?? ""
+        onCreateAccountFields?(fields)
         validator()
     }
     
     private func didUpdateLastName(_ text: String?) {
-        fields.lastName = text
+        fields.lastName = text ?? ""
+        onCreateAccountFields?(fields)
         validator()
     }
     
     private func didUpdateEmail(_ text: String?) {
-        fields.email = text
+        fields.email = text ?? ""
+        onCreateAccountFields?(fields)
         validator()
     }
     
     private func didUpdatePassword(_ text: String?) {
-        fields.password = text
+        fields.password = text ?? ""
+        onCreateAccountFields?(fields)
         validator()
     }
     
     // MARK: - Validator
     
     func validator() {
-        guard let name = fields.name, let lastName = fields.lastName,
-              let email = fields.email, let password = fields.password
-        else {
-            onButtonStateIsEnable?(false)
-            return
-        }
         
-        if !name.isEmpty && !lastName.isEmpty && !email.isEmpty && !password.isEmpty {
+        if !fields.name.isEmpty && !fields.lastName.isEmpty && !fields.email.isEmpty && !fields.password.isEmpty {
             onButtonStateIsEnable?(true)
             return
         }

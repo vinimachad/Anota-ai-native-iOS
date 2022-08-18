@@ -37,6 +37,12 @@ class CreateAccountController<ViewModel: CreateAccountProtocol>: UIViewControlle
         view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupDefaultNavigation()
+        changeColorsOfNavigation(tintColor: .Brand.secondary, bgColor: .Shapes.shape)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
