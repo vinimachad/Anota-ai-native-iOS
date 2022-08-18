@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol ConfirmLocationControllerDelegate: AnyObject {
-    func pushCreateAccount()
+    
 }
 
 class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewController {
@@ -70,7 +70,7 @@ extension ConfirmLocationController {
         contentView.bindIn(viewModel: viewModel)
         
         viewModel.onSaveAddress = { [weak self] in
-            self?.delegate?.pushCreateAccount()
+            
         }
     }
 }

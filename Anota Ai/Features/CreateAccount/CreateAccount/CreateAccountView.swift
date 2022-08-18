@@ -72,7 +72,7 @@ extension CreateAccountView {
     }
     
     private func setupCreateAccountButton() {
-        createAccountButton.title = "Criar conta"
+        createAccountButton.title = "Buscar pelo seu endereço"
         createAccountButton.kind = .primary
         createAccountButton.isEnabled = false
         createAccountButton.addTarget(self, action: #selector(didCreateAccount), for: .touchDown)

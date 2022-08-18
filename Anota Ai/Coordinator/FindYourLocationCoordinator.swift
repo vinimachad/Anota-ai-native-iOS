@@ -25,7 +25,6 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
     
     func start() -> UIViewController {
         let vc = OnboardingFactory.findYourLocation(delegate: self)
-        navigationController.modalPresentationStyle = .pageSheet
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
     }
@@ -45,8 +44,4 @@ extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {
 
 extension FindYourLocationCoordinator: ConfirmLocationControllerDelegate {
     
-    func pushCreateAccount() {
-        let vc = OnboardingFactory.createAccount()
-        navigationController.pushViewController(vc, animated: true)
-    }
 }

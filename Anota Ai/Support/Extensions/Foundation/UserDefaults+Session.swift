@@ -12,6 +12,7 @@ extension UserDefaults {
     private enum UserDefaultsKeys: String {
         case isLoggedIn
         case userSession
+        case userHasAddress
     }
     
     // MARK: - Login status
@@ -22,6 +23,15 @@ extension UserDefaults {
     
     func setIsLoggedIn(isLoggedIn: Bool) {
         set(isLoggedIn, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
+        synchronize()
+    }
+    
+    func userHasAddress() -> Bool {
+        bool(forKey: UserDefaultsKeys.userHasAddress.rawValue)
+    }
+    
+    func setUserHasAddress(userHasAddress: Bool) {
+        set(userHasAddress, forKey: UserDefaultsKeys.userHasAddress.rawValue)
         synchronize()
     }
     

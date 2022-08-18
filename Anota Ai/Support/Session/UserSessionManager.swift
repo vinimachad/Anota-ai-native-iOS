@@ -11,6 +11,10 @@ protocol UserSessionManagerProtocol {
     static var shared: UserSessionManagerProtocol { get }
     func createUserSession(user: UserSession) throws
     func getUserSession() -> UserSession?
+    func setUserHasAddress(_ hasAddress: Bool)
+    func userHasAddress() -> Bool
+    func isLoggedIn() -> Bool
+    func setIsLoggedIn(_ isLoggedIn: Bool)
 }
 
 class UserSessionManager: UserSessionManagerProtocol {
@@ -19,11 +23,35 @@ class UserSessionManager: UserSessionManagerProtocol {
     
     private init() { }
     
+    var hasSession: Bool {
+        getUserSession() != nil
+    }
+    
     func createUserSession(user: UserSession) {
         UserDefaults.standard.createUserSession(user: user)
     }
     
     func getUserSession() -> UserSession? {
         UserDefaults.standard.getUserSession()
+    }
+    
+    // MARK: - Logged in
+    
+    func isLoggedIn() -> Bool {
+        UserDefaults.standard.isLoggedIn()
+    }
+    
+    func setIsLoggedIn(_ isLoggedIn: Bool) {
+        UserDefaults.standard.setIsLoggedIn(isLoggedIn: isLoggedIn)
+    }
+    
+    // MARK: - Address
+    
+    func userHasAddress() -> Bool {
+        UserDefaults.standard.userHasAddress()
+    }
+    
+    func setUserHasAddress(_ hasAddress: Bool) {
+        UserDefaults.standard.setUserHasAddress(userHasAddress: hasAddress)
     }
 }

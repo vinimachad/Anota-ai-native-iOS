@@ -26,9 +26,9 @@ enum OnboardingFactory {
         return ConfirmLocationController(viewModel: viewModel, delegate: delegate)
     }
     
-    static func createAccount() -> UIViewController {
+    static func createAccount(delegate: CreateAccountControllerDelegate?) -> UIViewController {
         let createUserAccountUseCase = CreateUserAccountUseCase(api: UserRoutes())
         let viewModel = CreateAccountViewModel(createUserAccountUseCase: createUserAccountUseCase)
-        return CreateAccountController(viewModel: viewModel)
+        return CreateAccountController(viewModel: viewModel, delegate: delegate)
     }
 }
