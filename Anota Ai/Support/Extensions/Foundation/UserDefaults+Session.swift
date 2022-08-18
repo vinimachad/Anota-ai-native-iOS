@@ -35,12 +35,8 @@ extension UserDefaults {
     }
     
     func getUserSession() -> UserSession? {
-        let decoder = JSONDecoder()
         guard let data = data(forKey: UserDefaultsKeys.userSession.rawValue) else { return nil }
-        do {
-            return try decoder.decode(UserSession.self, from: data)
-        } catch {
-            return nil
-        }
+       
+        return try? data.decode(type: UserSession.self)
     }
 }
