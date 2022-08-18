@@ -8,8 +8,8 @@
 import Foundation
 
 struct UserSession: Codable {
-    var id: String
-    var email: String
-    var name: String
-    var refreshToken: String
+    var id: String = ""
+    var email: String = ""
+    var name: String = ""
+    var refreshToken: String = ""
 }
