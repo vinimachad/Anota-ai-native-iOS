@@ -11,6 +11,8 @@ import UIKit
 import SnapKit
 
 protocol LoginViewModelProtocol {
+    var onButtonStateIsEnable: ((Bool) -> Void)? { get set }
+    
     func didLogin()
     func didChangePassword(_ text: String?)
     func didChangeEmail(_ text: String?)
@@ -46,6 +48,10 @@ class LoginView: UIView {
     
     func bindIn(viewModel: LoginViewModelProtocol) {
         self.viewModel = viewModel
+        
+        self.viewModel?.onButtonStateIsEnable = { [weak self] isEnable in
+            self?.loginButton.isEnabled = isEnable
+        }
     }
 }
 
@@ -81,6 +87,7 @@ extension LoginView {
         loginButton.backgroundColor = .Brand.secondary
         loginButton.titleColor = .Shapes.shape
         loginButton.addTarget(self, action: #selector(didLogin), for: .touchUpInside)
+        loginButton.isEnabled = false
     }
     
     @objc private func didChangeEmail() {

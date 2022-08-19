@@ -89,12 +89,8 @@ extension CreateAccountViewModel {
     }
     
     private func saveUserInSession(_ userSession: UserSession) {
-        do {
-            try UserSessionManager.shared.createUserSession(user: userSession)
-            UserSessionManager.shared.setUserHasAddress(false)
-            UserSessionManager.shared.setIsLoggedIn(true)
-        } catch {
-            onFailureSaveUserInSession?("not_possible_save_session".localize(.error))
-        }
+        UserSessionManager.shared.saveUserInSession(userSession, failure: { [weak self] message in
+            self?.onFailureSaveUserInSession?(message)
+        })
     }
 }

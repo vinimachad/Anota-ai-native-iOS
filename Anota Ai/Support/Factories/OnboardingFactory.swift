@@ -41,7 +41,8 @@ enum OnboardingFactory {
     }
     
     static func login(delegate: LoginControllerDelegate?) -> UIViewController {
-        let viewModel = LoginViewModel()
+        let authenticateUseCase = AuthenticateUseCase(api: UserRoutes())
+        let viewModel = LoginViewModel(authenticateUseCase: authenticateUseCase)
         return LoginController(viewModel: viewModel, delegate: delegate)
     }
 }

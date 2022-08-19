@@ -56,6 +56,7 @@
 		3C6639BA28AFDBBF00CBE73F /* FindLocalizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6639B928AFDBBF00CBE73F /* FindLocalizationUseCase.swift */; };
 		3C6639BC28B00E6D00CBE73F /* CreateAddressUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6639BB28B00E6D00CBE73F /* CreateAddressUseCase.swift */; };
 		3C6639BE28B01BD900CBE73F /* CreateAccount.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C6639BD28B01BD900CBE73F /* CreateAccount.strings */; };
+		3C67EE1828B030E900EA8794 /* AuthenticateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67EE1728B030E900EA8794 /* AuthenticateUseCase.swift */; };
 		3C68042F28A535D2008F7EE5 /* ButtonKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C68042E28A535D2008F7EE5 /* ButtonKind.swift */; };
 		3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */; };
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
@@ -111,6 +112,7 @@
 		3CB0D3C728B0221C00330250 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C628B0221C00330250 /* LoginController.swift */; };
 		3CB0D3C928B0222400330250 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C828B0222400330250 /* LoginViewModel.swift */; };
 		3CB0D3CD28B024B400330250 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0D3CC28B024B400330250 /* Login.strings */; };
+		3CB0D3D228B02F6500330250 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3D128B02F6500330250 /* Credentials.swift */; };
 		3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */; };
 		3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */; };
 		3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */; };
@@ -199,6 +201,7 @@
 		3C6639B928AFDBBF00CBE73F /* FindLocalizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLocalizationUseCase.swift; sourceTree = "<group>"; };
 		3C6639BB28B00E6D00CBE73F /* CreateAddressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAddressUseCase.swift; sourceTree = "<group>"; };
 		3C6639BD28B01BD900CBE73F /* CreateAccount.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = CreateAccount.strings; sourceTree = "<group>"; };
+		3C67EE1728B030E900EA8794 /* AuthenticateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUseCase.swift; sourceTree = "<group>"; };
 		3C68042E28A535D2008F7EE5 /* ButtonKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonKind.swift; sourceTree = "<group>"; };
 		3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactoryTests.swift; sourceTree = "<group>"; };
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 		3CB0D3C628B0221C00330250 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3CB0D3C828B0222400330250 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3CB0D3CC28B024B400330250 /* Login.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Login.strings; sourceTree = "<group>"; };
+		3CB0D3D128B02F6500330250 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationSnapshot.swift; sourceTree = "<group>"; };
 		3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationControllerTests.swift; sourceTree = "<group>"; };
 		3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModelTests.swift; sourceTree = "<group>"; };
@@ -611,6 +615,8 @@
 		3C6639BF28B021E200CBE73F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3CB0D3D328B030B200330250 /* Domain */,
+				3CB0D3D028B02F5600330250 /* Models */,
 				3CB0D3C328B0220600330250 /* Login */,
 			);
 			path = Login;
@@ -959,6 +965,22 @@
 				3CB0D3C828B0222400330250 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3CB0D3D028B02F5600330250 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0D3D128B02F6500330250 /* Credentials.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3CB0D3D328B030B200330250 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3C67EE1728B030E900EA8794 /* AuthenticateUseCase.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		3CBA5B63289F422F0049F55E /* FindYourLocation */ = {
@@ -1365,6 +1387,7 @@
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
 				3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */,
 				3CB0D3C728B0221C00330250 /* LoginController.swift in Sources */,
+				3C67EE1828B030E900EA8794 /* AuthenticateUseCase.swift in Sources */,
 				3C5CD99628A8309E002C20F9 /* CreateAccountView.swift in Sources */,
 				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
@@ -1428,6 +1451,7 @@
 				3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */,
 				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,
 				3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */,
+				3CB0D3D228B02F6500330250 /* Credentials.swift in Sources */,
 				3C04157228AD873200077EF4 /* UserSession.swift in Sources */,
 				3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */,
 				3C7A438A289EDF6F00DA1E36 /* LoadingView.swift in Sources */,
