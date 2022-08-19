@@ -16,4 +16,5 @@ struct Address: Codable {
     var country: String
     var postalCode: String
     var formattedAddress: String
+    var complement: String
 }

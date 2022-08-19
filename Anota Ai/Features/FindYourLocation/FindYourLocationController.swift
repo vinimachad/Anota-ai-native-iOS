@@ -105,9 +105,5 @@ extension FindYourLocationController {
         viewModel.onSuccessGetLocalization = { [weak self] location in
             self?.delegate?.pushConfirmLocalization(location)
         }
-        
-        viewModel.onSuccessGetAuthorization = {
-            print("successo")
-        }
     }
 }

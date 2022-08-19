@@ -52,6 +52,7 @@
 		3C648DF6289DA1000091B3D8 /* Default.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DF5289DA1000091B3D8 /* Default.strings */; };
 		3C648DF8289DA1090091B3D8 /* Onboarding.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DF7289DA1090091B3D8 /* Onboarding.strings */; };
 		3C648DFA289DA1130091B3D8 /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C648DF9289DA1130091B3D8 /* Error.strings */; };
+		3C6639B828AFD9CA00CBE73F /* LocationRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6639B728AFD9CA00CBE73F /* LocationRoutes.swift */; };
 		3C68042F28A535D2008F7EE5 /* ButtonKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C68042E28A535D2008F7EE5 /* ButtonKind.swift */; };
 		3C69874F289D43FE00901CE7 /* OnboardingFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */; };
 		3C698754289D467400901CE7 /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */; };
@@ -187,6 +188,7 @@
 		3C648DF5289DA1000091B3D8 /* Default.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Default.strings; sourceTree = "<group>"; };
 		3C648DF7289DA1090091B3D8 /* Onboarding.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Onboarding.strings; sourceTree = "<group>"; };
 		3C648DF9289DA1130091B3D8 /* Error.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Error.strings; sourceTree = "<group>"; };
+		3C6639B728AFD9CA00CBE73F /* LocationRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRoutes.swift; sourceTree = "<group>"; };
 		3C68042E28A535D2008F7EE5 /* ButtonKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonKind.swift; sourceTree = "<group>"; };
 		3C69874E289D43FE00901CE7 /* OnboardingFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactoryTests.swift; sourceTree = "<group>"; };
 		3C698753289D467400901CE7 /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				3C530F1228AE7986008B602D /* UserRoutes.swift */,
+				3C6639B728AFD9CA00CBE73F /* LocationRoutes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -570,6 +573,23 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
+		3C6639B528AFD9AA00CBE73F /* ConfirmLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3C769A4C28A6B689001DA6E6 /* ConfirmLocationView.swift */,
+				3C769A4A28A6B682001DA6E6 /* ConfirmLocationController.swift */,
+				3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */,
+			);
+			path = ConfirmLocation;
+			sourceTree = "<group>";
+		};
+		3C6639B628AFD9B200CBE73F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		3C69874D289D43F000901CE7 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,9 +669,8 @@
 		3C769A4928A6B676001DA6E6 /* ConfirmLocation */ = {
 			isa = PBXGroup;
 			children = (
-				3C769A4C28A6B689001DA6E6 /* ConfirmLocationView.swift */,
-				3C769A4A28A6B682001DA6E6 /* ConfirmLocationController.swift */,
-				3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */,
+				3C6639B628AFD9B200CBE73F /* Domain */,
+				3C6639B528AFD9AA00CBE73F /* ConfirmLocation */,
 			);
 			path = ConfirmLocation;
 			sourceTree = "<group>";
@@ -1320,6 +1339,7 @@
 				3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */,
 				3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
+				3C6639B828AFD9CA00CBE73F /* LocationRoutes.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
 				3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */,
