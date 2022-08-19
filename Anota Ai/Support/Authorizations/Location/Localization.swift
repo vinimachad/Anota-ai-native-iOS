@@ -18,10 +18,12 @@ protocol LocalizationProtocol {
     func requestLocationAuthorization()
     func getAuthorizationStatus() -> CLAuthorizationStatus
     func locationServicesEnabled() -> Bool
+    func startUpdatingLocation()
 }
 
 protocol LocalizationDelegate: AnyObject {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager)
 }
 
 class Localization: NSObject {
@@ -43,7 +45,7 @@ class Localization: NSObject {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    private func startUpdatingLocation() {
+    func startUpdatingLocation() {
         if locationServicesEnabled() {
             checkStatus()
         }
@@ -53,9 +55,9 @@ class Localization: NSObject {
     
     private func checkStatus() {
         switch getAuthorizationStatus() {
-        case .notDetermined, .denied, .restricted: notAuthorizedLocalization()
+        case .denied, .restricted: notAuthorizedLocalization()
         case .authorizedAlways, .authorizedWhenInUse: authorizedLocalization()
-        @unknown default: break
+        default: break
         }
     }
     
@@ -65,7 +67,6 @@ class Localization: NSObject {
     
     private func authorizedLocalization() {
         onAuthorizedLocalization?()
-        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
     }
@@ -78,6 +79,7 @@ extension Localization: LocalizationProtocol {
     func requestLocationAuthorization() {
         requestAlwaysAuthorization()
         requestWhenInUseAuthorization()
+        locationManager.delegate = self
         startUpdatingLocation()
     }
     
@@ -99,7 +101,7 @@ extension Localization: CLLocationManagerDelegate {
         delegate?.locationManager(manager, didUpdateLocations: locations)
     }
     
-    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-        print("pause")
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        delegate?.locationManagerDidChangeAuthorization(manager)
     }
 }

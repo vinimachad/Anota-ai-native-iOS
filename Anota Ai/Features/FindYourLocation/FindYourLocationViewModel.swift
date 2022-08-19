@@ -74,7 +74,7 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
     }
     
     private func didNotAuthorizedLocalization() {
-        location.onNotAuthorizedLocalization = { [weak self] in
+        location.onNotAuthorizedLocalization = { [weak self] in            
             self?.onFailureGetAuthorization?()
         }
     }
@@ -82,10 +82,20 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
 
 extension FindYourLocationViewModel: LocalizationDelegate {
     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch location.getAuthorizationStatus() {
+        case .notDetermined: print("nao determinado")
+        case .denied, .restricted: onFailureGetAuthorization?()
+        case .authorized, .authorizedAlways, .authorizedWhenInUse:
+            location.startUpdatingLocation()
+        @unknown default: didAuthorizedLocalization()
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
         guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         updateCoordinate(coordinate)
     }
 }
-                                                                        
+

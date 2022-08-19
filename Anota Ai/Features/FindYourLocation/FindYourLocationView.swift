@@ -60,7 +60,6 @@ extension FindYourLocationView {
     private func setup() {
         setupConstraints()
         setupConfirmYourLocationButton()
-//        setupMapView()
     }
     
     private func setupConfirmYourLocationButton() {

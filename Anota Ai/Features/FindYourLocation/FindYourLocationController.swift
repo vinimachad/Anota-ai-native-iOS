@@ -48,12 +48,12 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
+        viewModel.requestLocationAuthorization()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        viewModel.requestLocationAuthorization()
     }
     
     // MARK: - Navigation
@@ -85,7 +85,9 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     
     @objc private func didConfirm() {
         navigationController?.dismiss(animated: true)
-        self.delegate?.returnNavigation()
+        if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(appSettings as URL)
+        }
     }
 }
 
@@ -102,6 +104,10 @@ extension FindYourLocationController {
         
         viewModel.onSuccessGetLocalization = { [weak self] location in
             self?.delegate?.pushConfirmLocalization(location)
+        }
+        
+        viewModel.onSuccessGetAuthorization = {
+            print("successo")
         }
     }
 }
