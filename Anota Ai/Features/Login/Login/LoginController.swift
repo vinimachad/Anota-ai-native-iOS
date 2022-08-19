@@ -10,6 +10,10 @@ import Foundation
 import Foundation
 import UIKit
 
+protocol LoginControllerDelegate: AnyObject {
+    func presentHome()
+}
+
 class LoginController<ViewModel: LoginProtocol>: UIViewController {
     
     // MARK: - Private properties
@@ -17,11 +21,13 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController {
     private let contentView: LoginView
     private var viewModel: ViewModel
     private var scrollView: ScrollView
+    private weak var delegate: LoginControllerDelegate?
     
     // MARK: - Init
     
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, delegate: LoginControllerDelegate?) {
         self.viewModel = viewModel
+        self.delegate = delegate
         contentView = LoginView()
         scrollView = ScrollView(contentView: contentView)
         super.init(nibName: nil, bundle: nil)
@@ -37,6 +43,12 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController {
     override func loadView() {
         super.loadView()
         view = scrollView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupDefaultNavigation(title: "login_title".localize(.login))
+        changeColorsOfNavigation(tintColor: .Brand.secondary, bgColor: .Shapes.shape)
     }
     
     override func viewDidLoad() {

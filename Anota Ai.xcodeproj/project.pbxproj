@@ -108,8 +108,9 @@
 		3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */; };
 		3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7D2289B0764006B3D90 /* Colors.xcassets */; };
 		3CB0D3C528B0221000330250 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C428B0221000330250 /* LoginView.swift */; };
-		3CB0D3C728B0221C00330250 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C628B0221C00330250 /* LoginViewController.swift */; };
+		3CB0D3C728B0221C00330250 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C628B0221C00330250 /* LoginController.swift */; };
 		3CB0D3C928B0222400330250 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C828B0222400330250 /* LoginViewModel.swift */; };
+		3CB0D3CD28B024B400330250 /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CB0D3CC28B024B400330250 /* Login.strings */; };
 		3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */; };
 		3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */; };
 		3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */; };
@@ -254,8 +255,9 @@
 		3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		3CA3D7D2289B0764006B3D90 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3CB0D3C428B0221000330250 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		3CB0D3C628B0221C00330250 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3CB0D3C628B0221C00330250 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3CB0D3C828B0222400330250 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3CB0D3CC28B024B400330250 /* Login.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Login.strings; sourceTree = "<group>"; };
 		3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationSnapshot.swift; sourceTree = "<group>"; };
 		3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationControllerTests.swift; sourceTree = "<group>"; };
 		3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModelTests.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */,
 				3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */,
 				3C6639BD28B01BD900CBE73F /* CreateAccount.strings */,
+				3CB0D3CC28B024B400330250 /* Login.strings */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -952,7 +955,7 @@
 			isa = PBXGroup;
 			children = (
 				3CB0D3C428B0221000330250 /* LoginView.swift */,
-				3CB0D3C628B0221C00330250 /* LoginViewController.swift */,
+				3CB0D3C628B0221C00330250 /* LoginController.swift */,
 				3CB0D3C828B0222400330250 /* LoginViewModel.swift */,
 			);
 			path = Login;
@@ -1203,6 +1206,7 @@
 				3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */,
 				3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */,
 				3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */,
+				3CB0D3CD28B024B400330250 /* Login.strings in Resources */,
 				3C6639BE28B01BD900CBE73F /* CreateAccount.strings in Resources */,
 				3C769A5A28A71730001DA6E6 /* View.xib in Resources */,
 				3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */,
@@ -1360,7 +1364,7 @@
 				3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */,
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
 				3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */,
-				3CB0D3C728B0221C00330250 /* LoginViewController.swift in Sources */,
+				3CB0D3C728B0221C00330250 /* LoginController.swift in Sources */,
 				3C5CD99628A8309E002C20F9 /* CreateAccountView.swift in Sources */,
 				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,

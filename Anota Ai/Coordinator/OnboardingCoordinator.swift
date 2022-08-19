@@ -42,16 +42,24 @@ class OnboardingCoordinator: CoordinatorProtocol {
     }
 }
 
-extension OnboardingCoordinator: OnboardingControllerDelegate {
+extension OnboardingCoordinator: OnboardingControllerDelegate  {
     
     func pushCreateAccount() {
         navigationController.pushViewController(OnboardingFactory.createAccount(delegate: self), animated: true)
     }
+    
+    func pushLogin() {
+        navigationController.pushViewController(OnboardingFactory.login(delegate: self), animated: true)
+    }
 }
 
-extension OnboardingCoordinator: CreateAccountControllerDelegate {
+extension OnboardingCoordinator: CreateAccountControllerDelegate, LoginControllerDelegate {
     
     func presetFindYourLocation() {
+        authDelegate?.userWasAuthenticated()
+    }
+    
+    func presentHome() {
         authDelegate?.userWasAuthenticated()
     }
 }

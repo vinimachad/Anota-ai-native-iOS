@@ -28,5 +28,17 @@ class LoginViewModel {
 // MARK: - LoginProtocol
 
 extension LoginViewModel: LoginProtocol {
+    func didLogin() {
+        
+    }
+    
+    func didChangePassword(_ text: String?) {
+        
+    }
+    
+    func didChangeEmail(_ text: String?) {
+        
+    }
+    
     
 }

@@ -39,4 +39,9 @@ enum OnboardingFactory {
         let viewModel = CreateAccountViewModel(createUserAccountUseCase: createUserAccountUseCase)
         return CreateAccountController(viewModel: viewModel, delegate: delegate)
     }
+    
+    static func login(delegate: LoginControllerDelegate?) -> UIViewController {
+        let viewModel = LoginViewModel()
+        return LoginController(viewModel: viewModel, delegate: delegate)
+    }
 }

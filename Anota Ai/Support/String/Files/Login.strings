@@ -1,0 +1,12 @@
+/* 
+  Login.strings
+  Anota Ai
+
+  Created by Vinicius Galhardo Machado on 19/08/22.
+  
+*/
+
+"login_title" = "Entrar";
+"password_title" = "Senha";
+"email_title"= "Email";
+"login_title_button" = "Entrar";

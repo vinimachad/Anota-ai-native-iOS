@@ -14,6 +14,7 @@ protocol OnboardingViewModelProtocol {
     var sections: [CollectionSectionProtocol] { get }
     var onExplanationWillDisplay: ((IndexPath) -> Void)? { get set }
     func didTapToCreateAccount()
+    func didTapLogin()
 }
 
 class OnboardingView: UIView {
@@ -100,12 +101,17 @@ extension OnboardingView {
         loginButton.title = "login_title_btn".localize(.onboarding)
         loginButton.titleColor = .Shapes.shape
         loginButton.backgroundColor = .Brand.secondary
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchDown)
     }
     
     // MARK: - Actions
     
     @objc private func didTapSignUp() {
         viewModel?.didTapToCreateAccount()
+    }
+    
+    @objc private func didTapLogin() {
+        viewModel?.didTapLogin()
     }
 }
 

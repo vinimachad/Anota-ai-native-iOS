@@ -59,13 +59,8 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     // MARK: - Navigation
     
     private func setupNavigation() {
-        setBackButton()
         setupDefaultNavigation(title: "your_location_title".localize(.findYourLocation), isTranslucent: true)
         changeColorsOfNavigation(tintColor: .Shapes.shape, bgColor: .clear)
-    }
-    
-    private func setBackButton() {
-        setLeftNavigationButton(action: #selector(didTapReturnNavigation))
     }
     
     private func showFailureModal() {
@@ -78,10 +73,6 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     }
     
     // MARK: - Actions
-    
-    @objc private func didTapReturnNavigation() {
-        self.delegate?.returnNavigation()
-    }
     
     @objc private func didConfirm() {
         navigationController?.dismiss(animated: true)

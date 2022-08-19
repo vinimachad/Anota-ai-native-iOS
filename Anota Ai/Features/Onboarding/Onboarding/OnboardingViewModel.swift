@@ -11,6 +11,7 @@ import CollectionDS_SDK
 
 protocol OnboardingProtocol: OnboardingViewModelProtocol {
     var onTapToCreateAccount: (() -> Void)? { get set }
+    var onTapLogin: (() -> Void)? { get set }
     func didChangeCurrentExplanation()
 }
 
@@ -20,6 +21,7 @@ class OnboardingViewModel {
     
     var onExplanationWillDisplay: ((IndexPath) -> Void)?
     var onTapToCreateAccount: (() -> Void)?
+    var onTapLogin: (() -> Void)?
     
     lazy var sections: [CollectionSectionProtocol] = {
         onboardingBuilderSections.builder()
@@ -52,5 +54,9 @@ extension OnboardingViewModel: OnboardingProtocol {
     
     func didTapToCreateAccount() {
         onTapToCreateAccount?()
+    }
+    
+    func didTapLogin() {
+        onTapLogin?()
     }
 }
