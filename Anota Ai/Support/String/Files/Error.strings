@@ -7,3 +7,4 @@
 */
 "localization_permission_error_body" = "A localização é uma permissão requerida para o nosso app.";
 "localization_permission_error_title" = "Você está escondido";
+"title_error" = "Oopss..";

@@ -22,8 +22,15 @@ enum OnboardingFactory {
     }
     
     static func confirmLocation(coordinate: CLLocationCoordinate2D, delegate: ConfirmLocationControllerDelegate?) -> UIViewController {
-        let findLocalizationUseCase = FindLocalizationUseCase(api: LocationRoutes())
-        let viewModel = ConfirmLocationViewModel(coordinate: coordinate, findLocalizationUseCase: findLocalizationUseCase)
+        let route = LocationRoutes()
+        let findLocalizationUseCase = FindLocalizationUseCase(api: route)
+        let createAddressUseCase = CreateAddressUseCase(api: route)
+        
+        let viewModel = ConfirmLocationViewModel(
+            coordinate: coordinate,
+            findLocalizationUseCase: findLocalizationUseCase,
+            createAddressUseCase: createAddressUseCase
+        )
         return ConfirmLocationController(viewModel: viewModel, delegate: delegate)
     }
     

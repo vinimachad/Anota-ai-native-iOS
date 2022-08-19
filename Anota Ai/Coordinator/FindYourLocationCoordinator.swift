@@ -20,6 +20,13 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
     // MARK: - Private properties
     
     private var navigationController = UINavigationController()
+    private weak var authDelegate: AuthenticationCoordinatorDelegate?
+    
+    // MARK: - Init
+    
+    init(delegate: AuthenticationCoordinatorDelegate?) {
+        self.authDelegate = delegate
+    }
     
     // MARK: - Start
     
@@ -44,4 +51,7 @@ extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {
 
 extension FindYourLocationCoordinator: ConfirmLocationControllerDelegate {
     
+    func presentHome() {
+        authDelegate?.userWasAuthenticated()
+    }
 }

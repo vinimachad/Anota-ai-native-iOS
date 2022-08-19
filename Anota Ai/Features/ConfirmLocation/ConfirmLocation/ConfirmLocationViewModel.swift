@@ -9,11 +9,12 @@ import Foundation
 import MapKit
 
 protocol ConfirmLocationProtocol: ConfirmLocationViewModelProtocol {
-    var onSaveAddress: (() -> Void)? { get set }
-    
-    var onStartFindLocation: (() -> Void)? { get set }
+    var onStartLoading: (() -> Void)? { get set }
     var onSuccessFindLocation: (() -> Void)? { get set }
     var onFailureFindLocation: ((String) -> Void)? { get set }
+    
+    var onSuccessCreateAddress: (() -> Void)? { get set }
+    var onFailureCreateAddress: ((String) -> Void)? { get set }
     
     func validateFields()
     func findLocateRequest()
@@ -23,7 +24,7 @@ class ConfirmLocationViewModel {
     
     // MARK: - Public properties
     
-    var onStartFindLocation: (() -> Void)?
+    var onStartLoading: (() -> Void)?
     var onSuccessFindLocation: (() -> Void)?
     var onFailureFindLocation: ((String) -> Void)?
     
@@ -31,19 +32,22 @@ class ConfirmLocationViewModel {
     var onChangeLocationDetails: (() -> Void)?
     
     var onButtonStateIsEnable: ((Bool) -> Void)?
-    var onSaveAddress: (() -> Void)?
+    var onSuccessCreateAddress: (() -> Void)?
+    var onFailureCreateAddress: ((String) -> Void)?
     
     // MARK: - Private properties
     
-    private var coordinate: CLLocationCoordinate2D
+    private var coordinate: Coordinate
     private var address = Address()
     private var findLocalizationUseCase: FindLocalizationUseCaseProtocol
+    private var createAddressUseCase: CreateAddressUseCaseProtocol
     
     // MARK: - Init
     
-    init(coordinate: CLLocationCoordinate2D, findLocalizationUseCase: FindLocalizationUseCaseProtocol) {
-        self.coordinate = coordinate
+    init(coordinate: CLLocationCoordinate2D, findLocalizationUseCase: FindLocalizationUseCaseProtocol, createAddressUseCase: CreateAddressUseCaseProtocol) {
+        self.coordinate = Coordinate(lat: String(coordinate.latitude), long: String(coordinate.longitude))
         self.findLocalizationUseCase = findLocalizationUseCase
+        self.createAddressUseCase = createAddressUseCase
         validateFields()
     }
     
@@ -63,7 +67,7 @@ class ConfirmLocationViewModel {
 extension ConfirmLocationViewModel: ConfirmLocationProtocol {
     
     var region: MKCoordinateRegion {
-        MKCoordinateRegion(center: coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
+        MKCoordinateRegion(center: coordinate.convertToLocation(), latitudinalMeters: 100, longitudinalMeters: 100)
     }
     
     var streetDetails: String {
@@ -91,16 +95,14 @@ extension ConfirmLocationViewModel: ConfirmLocationProtocol {
     }
     
     func didSaveAddress() {
-        onSaveAddress?()
+        saveAddressRequest()
     }
 }
 
 extension ConfirmLocationViewModel {
     
     func findLocateRequest() {
-        let coordinate = Coordinate(lat: String(coordinate.latitude), long: String(coordinate.longitude))
-        
-        onStartFindLocation?()
+        onStartLoading?()
         
         self.findLocalizationUseCase.execute(
             req: coordinate,
@@ -112,6 +114,22 @@ extension ConfirmLocationViewModel {
             },
             failure: { [weak self] message in
                 self?.onFailureFindLocation?(message)
+            }
+        )
+    }
+    
+    func saveAddressRequest() {
+        
+        onStartLoading?()
+        
+        self.createAddressUseCase.execute(
+            req: address,
+            success: { [weak self] in
+                UserSessionManager.shared.setUserHasAddress(true)
+                self?.onSuccessCreateAddress?()
+            },
+            failure: { [weak self] error in
+                self?.onFailureCreateAddress?(error)
             }
         )
     }

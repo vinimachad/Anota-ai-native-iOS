@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol ConfirmLocationControllerDelegate: AnyObject {
-    
+    func presentHome()
 }
 
 class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewController, Loadable {
@@ -20,6 +20,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     private let contentView: ConfirmLocationView
     private var viewModel: ViewModel
     private weak var delegate: ConfirmLocationControllerDelegate?
+    private lazy var presentingDelegate = AlertPresentationManager()
     
     // MARK: - Init
     
@@ -61,6 +62,21 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
         setupDefaultNavigation(title: "confirm_location_title".localize(.confirmLocation))
         changeColorsOfNavigation(tintColor: .Brand.secondary, bgColor: .Shapes.shape)
     }
+    
+    // MARK: - Dialog
+    
+    private func showAlert(description: String) {
+        let viewModel = AlertViewModel(
+            title: "title_error".localize(.error),
+            description: description,
+            actions: [Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
+        )
+        showModal(delegate: presentingDelegate, viewModel: viewModel)
+    }
+    
+    @objc private func didConfirm() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Bind
@@ -71,12 +87,7 @@ extension ConfirmLocationController {
         
         self.contentView.bindIn(viewModel: self.viewModel)
         
-        self.viewModel.onSaveAddress = { [weak self] in
-            
-        }
-        
-        self.viewModel.onStartFindLocation = { [weak self] in
-            print("loading")
+        self.viewModel.onStartLoading = { [weak self] in
             self?.showLoading()
         }
         
@@ -85,12 +96,18 @@ extension ConfirmLocationController {
         }
         
         self.viewModel.onFailureFindLocation = { [weak self] message in
-            print(message)
             self?.hideLoading()
+            self?.showAlert(description: message)
         }
         
-        self.viewModel.onSaveAddress = { [weak self] in
+        self.viewModel.onSuccessCreateAddress = { [weak self] in
             self?.hideLoading()
+            self?.delegate?.presentHome()
+        }
+        
+        self.viewModel.onFailureCreateAddress = { [weak self] message in
+            self?.hideLoading()
+            self?.showAlert(description: message)
         }
     }
 }

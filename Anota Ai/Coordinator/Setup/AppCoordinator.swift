@@ -52,7 +52,7 @@ class AppCoordinator {
     private func hasNotAddressValidator() -> UIViewController {
         
         if !session.userHasAddress() {
-            let coordinator = FindYourLocationCoordinator()
+            let coordinator = FindYourLocationCoordinator(delegate: self)
             childCoordinator = coordinator
             return coordinator.start()
         }
