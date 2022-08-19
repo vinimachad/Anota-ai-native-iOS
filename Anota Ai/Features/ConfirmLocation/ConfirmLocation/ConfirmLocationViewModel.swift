@@ -100,20 +100,19 @@ extension ConfirmLocationViewModel {
     func findLocateRequest() {
         let coordinate = Coordinate(lat: String(coordinate.latitude), long: String(coordinate.longitude))
         
-        DispatchQueue.global().async { [weak self] in
-            self?.onStartFindLocation?()
-            
-            self?.findLocalizationUseCase.execute(
-                req: coordinate,
-                success: { [weak self] address in
-                    self?.address = address
-                    self?.onSuccessFindLocation?()
-                    self?.onChangeLocationDetails?()
-                },
-                failure: { [weak self] message in
-                    self?.onFailureFindLocation?(message)
-                }
-            )
-        }
+        onStartFindLocation?()
+        
+        self.findLocalizationUseCase.execute(
+            req: coordinate,
+            success: { [weak self] address in
+                self?.address = address
+                
+                self?.onSuccessFindLocation?()
+                self?.onChangeLocationDetails?()
+            },
+            failure: { [weak self] message in
+                self?.onFailureFindLocation?(message)
+            }
+        )
     }
 }

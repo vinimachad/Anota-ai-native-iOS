@@ -46,13 +46,13 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
-        viewModel.findLocateRequest()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
         viewModel.validateFields()
+        self.viewModel.findLocateRequest()
     }
     
     // MARK: - Navigation
@@ -68,27 +68,29 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
 extension ConfirmLocationController {
     
     private func bind() {
-        contentView.bindIn(viewModel: viewModel)
         
-        viewModel.onSaveAddress = { [weak self] in
+        self.contentView.bindIn(viewModel: self.viewModel)
+        
+        self.viewModel.onSaveAddress = { [weak self] in
             
         }
         
-        DispatchQueue.main.async { [weak self] in
-            
-            self?.viewModel.onStartFindLocation = { [weak self] in
-                print("loading")
-                self?.showLoading()
-            }
-            
-            self?.viewModel.onFailureFindLocation = { [weak self] message in
-                print(message)
-                self?.hideLoading()
-            }
-            
-            self?.viewModel.onSaveAddress = { [weak self] in
-                self?.hideLoading()
-            }
+        self.viewModel.onStartFindLocation = { [weak self] in
+            print("loading")
+            self?.showLoading()
+        }
+        
+        self.viewModel.onSuccessFindLocation = { [weak self] in
+            self?.hideLoading()
+        }
+        
+        self.viewModel.onFailureFindLocation = { [weak self] message in
+            print(message)
+            self?.hideLoading()
+        }
+        
+        self.viewModel.onSaveAddress = { [weak self] in
+            self?.hideLoading()
         }
     }
 }

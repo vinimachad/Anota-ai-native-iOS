@@ -27,18 +27,24 @@ class FindLocalizationUseCase: FindLocalizationUseCaseProtocol {
     }
     
     func execute(req: Coordinate, success: Success, failure: Failure) {
-        api.findAddress(req: req, completion: { result in
-            switch result {
-            case .success(let res):
-                do {
-                    let address = try res.data.decode(type: Address.self)
-                    success?(address)
-                } catch {
-                    failure?("Erro ao decodar objeto")
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            self.api.findAddress(req: req, completion: { result in
+                
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let res):
+                        do {
+                            let address = try res.data.decode(type: Address.self)
+                            success?(address)
+                        } catch {
+                            failure?("Erro ao decodar objeto")
+                        }
+                    case .failure(let error):
+                        failure?(error.localizedDescription)
+                    }
                 }
-            case .failure(let error):
-                failure?(error.localizedDescription)
-            }
-        })
+            })
+        }
     }
 }
