@@ -74,6 +74,7 @@ extension LoginViewModel {
             req: credentials,
             success: { [weak self] session in
                 self?.saveUserInSession(session)
+                self?.onSuccessAuthenticate?()
             },
             failure: { [weak self] message in
                 self?.onFailureAuthenticate?(message)

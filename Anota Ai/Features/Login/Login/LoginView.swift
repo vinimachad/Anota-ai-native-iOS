@@ -80,6 +80,7 @@ extension LoginView {
     private func setupPasswordTextField() {
         passwordTextField.setTitle("password_title".localize(.login))
         passwordTextField.addTarget(self, action: #selector(didChangePassword), for: .editingChanged)
+        passwordTextField.isSecureTextEntry = true
     }
     
     private func setupLoginButton() {

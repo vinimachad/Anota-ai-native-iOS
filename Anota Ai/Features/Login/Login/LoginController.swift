@@ -14,7 +14,7 @@ protocol LoginControllerDelegate: AnyObject {
     func presentHome()
 }
 
-class LoginController<ViewModel: LoginProtocol>: UIViewController {
+class LoginController<ViewModel: LoginProtocol>: UIViewController, Loadable {
     
     // MARK: - Private properties
     
@@ -22,6 +22,7 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController {
     private var viewModel: ViewModel
     private var scrollView: ScrollView
     private weak var delegate: LoginControllerDelegate?
+    lazy private var modalPresentingDelegate = AlertPresentationManager()
     
     // MARK: - Init
     
@@ -55,6 +56,14 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController {
         super.viewDidLoad()
         bind()
     }
+    
+    private func showFailureModal(_ description: String) {
+        let action = Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: { [weak self] in
+            self?.navigationController?.dismiss(animated: true)
+        })
+        let viewModel = AlertViewModel(title: "title_error".localize(.error), description: description, actions: [action])
+        self.showModal(delegate: modalPresentingDelegate, viewModel: viewModel)
+    }
 }
 
 // MARK: - Bind
@@ -63,5 +72,19 @@ extension LoginController {
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onStartLoading = { [weak self] in
+            self?.showLoading()
+        }
+        
+        viewModel.onSuccessAuthenticate = { [weak self] in
+            self?.hideLoading()
+            self?.delegate?.presentHome()
+        }
+        
+        viewModel.onFailureAuthenticate = { [weak self] message in
+            self?.hideLoading()
+            self?.showFailureModal(message)
+        }
     }
 }
