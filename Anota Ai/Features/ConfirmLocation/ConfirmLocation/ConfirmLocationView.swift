@@ -12,9 +12,12 @@ import MapKit
 
 protocol ConfirmLocationViewModelProtocol {
     var region: MKCoordinateRegion { get }
-    var street: String { get }
+    var streetDetails: String { get }
     var city: String { get }
+    var streetNumber: String { get }
     
+    var onUpdateNumber: ((String) -> Void)? { get set }
+    var onChangeLocationDetails: (() -> Void)? { get set }
     var onButtonStateIsEnable: ((Bool) -> Void)? { get set }
     
     func didChangeNumber(text: String?)
@@ -56,11 +59,26 @@ class ConfirmLocationView: UIView {
         self.viewModel = viewModel
         
         updateMapView(region: viewModel.region)
-        streetDetailsLabel.text = viewModel.street
-        cityDetailLabel.text = viewModel.city
         
         self.viewModel?.onButtonStateIsEnable = { [weak self] isEnable in
             self?.saveAddressButton.isEnabled = isEnable
+        }
+        
+        self.viewModel?.onUpdateNumber = { [weak self] streetDetails in
+            self?.streetDetailsLabel.text = streetDetails
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            self?.viewModel?.onChangeLocationDetails = { [weak self] in
+                self?.streetDetailsLabel.text = viewModel.streetDetails
+                self?.cityDetailLabel.text = viewModel.city
+                
+                if !viewModel.streetNumber.isEmpty {
+                    self?.numberTextField.text = viewModel.streetNumber
+                    self?.saveAddressButton.isEnabled = true
+                }
+            }
         }
     }
 }

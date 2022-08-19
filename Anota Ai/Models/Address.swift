@@ -8,13 +8,13 @@
 import Foundation
 
 struct Address: Codable {
-    var streetNumber: String
-    var street: String
-    var district: String
-    var city: String
-    var state: String
-    var country: String
-    var postalCode: String
-    var formattedAddress: String
+    var streetNumber: String = ""
+    var street: String = ""
+    var district: String = ""
+    var city: String = ""
+    var state: String = ""
+    var country: String = ""
+    var postalCode: String = ""
+    var formattedAddress: String = ""
     var complement: String?
 }

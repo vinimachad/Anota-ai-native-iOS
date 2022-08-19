@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct Coordinate: Codable {
-    var name: String
-    var latitude: String
-    var longitude: String
-    var address: Address
+struct Coordinate: Encodable {
+    var lat: String
+    var long: String
 }

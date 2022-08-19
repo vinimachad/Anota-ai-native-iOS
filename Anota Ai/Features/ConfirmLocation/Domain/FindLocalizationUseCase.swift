@@ -11,7 +11,7 @@ protocol FindLocalizationUseCaseProtocol {
     typealias Success = ((Address) -> Void)?
     typealias Failure = ((String) -> Void)?
     
-    func execute(success: Success, failure: Failure)
+    func execute(req: Coordinate, success: Success, failure: Failure)
 }
 
 class FindLocalizationUseCase: FindLocalizationUseCaseProtocol {
@@ -26,8 +26,8 @@ class FindLocalizationUseCase: FindLocalizationUseCaseProtocol {
         self.api = api
     }
     
-    func execute(success: Success, failure: Failure) {
-        api.findAddress(completion: { result in
+    func execute(req: Coordinate, success: Success, failure: Failure) {
+        api.findAddress(req: req, completion: { result in
             switch result {
             case .success(let res):
                 do {

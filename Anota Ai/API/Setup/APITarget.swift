@@ -61,6 +61,7 @@ extension APITarget {
         guard let user = UserSessionManager.shared.getUserSession() else { return [:] }
 
         return [
+            "Content-type": "application/json",
             "Authorization": "Bearer \(user.refreshToken)",
             "USER_ID": user.id
         ]

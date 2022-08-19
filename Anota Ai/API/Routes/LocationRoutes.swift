@@ -8,7 +8,7 @@
 import Moya
 
 protocol LocationRoutesProtocol {
-    func findAddress(completion: @escaping Completion)
+    func findAddress(req: Coordinate, completion: @escaping Completion)
     func createAddress(req: Address, completion: @escaping Completion)
 }
 
@@ -16,7 +16,7 @@ class LocationRoutes {
     
     enum Target: APITarget {
         
-        case findAddress
+        case findAddress(Coordinate)
         case createAddress(Address)
         
         var path: String {
@@ -35,9 +35,17 @@ class LocationRoutes {
         
         var task: Task {
             switch self {
-            case .findAddress: return .requestPlain
+            case .findAddress(let req): return
+            .requestParameters(
+                parameters: ["lat": req.lat, "long": req.long],
+                encoding: URLEncoding.queryString
+            )
             case let .createAddress(req): return .requestCustomJSONEncodable(req, encoder: defaultJSONEncoder)
             }
+        }
+        
+        var headers: [String : String]? {
+            sessionHeader()
         }
     }
     
@@ -46,8 +54,8 @@ class LocationRoutes {
 
 extension LocationRoutes: LocationRoutesProtocol {
     
-    func findAddress(completion: @escaping Completion) {
-        provider.request(.findAddress, completion: completion)
+    func findAddress(req: Coordinate, completion: @escaping Completion) {
+        provider.request(.findAddress(req), completion: completion)
     }
     
     func createAddress(req: Address, completion: @escaping Completion) {
