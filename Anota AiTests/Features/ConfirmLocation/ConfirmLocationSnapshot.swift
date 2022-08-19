@@ -33,7 +33,7 @@ class ConfirmLocationSnapshot: FBSnapshotTestCase {
             longitudinalMeters: 100
         )
         viewModelMock.region = region
-        viewModelMock.street = "R. Araras, 187, São Francisco"
+        viewModelMock.streetDetails = "R. Araras, 187, São Francisco"
         viewModelMock.city = "Campo Grande - MS, 79118-040"
         sut.bindIn(viewModel: viewModelMock)
         FBSnapshotVerifyView(sut)

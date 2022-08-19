@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class OnboardingCoordinator: CoordinatorProtocol {
     
@@ -21,6 +22,11 @@ class OnboardingCoordinator: CoordinatorProtocol {
     // MARK: - Private properties
     
     private var navigationController = UINavigationController()
+    private weak var authDelegate: AuthenticationCoordinatorDelegate?
+    
+    init(authDelegate: AuthenticationCoordinatorDelegate?) {
+        self.authDelegate = authDelegate
+    }
     
     // MARK: - Start
     
@@ -30,13 +36,22 @@ class OnboardingCoordinator: CoordinatorProtocol {
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
     }
+    
+    func returnNavigation() {
+        navigationController.dismiss(animated: true)
+    }
 }
 
 extension OnboardingCoordinator: OnboardingControllerDelegate {
     
-    func presentFindYourLocation() {
-        let coordinator = FindYourLocationCoordinator()
-        navigationController.present(coordinator.start(), animated: true)
-        childCoordinator = coordinator
+    func pushCreateAccount() {
+        navigationController.pushViewController(OnboardingFactory.createAccount(delegate: self), animated: true)
+    }
+}
+
+extension OnboardingCoordinator: CreateAccountControllerDelegate {
+    
+    func presetFindYourLocation() {
+        authDelegate?.userWasAuthenticated()
     }
 }

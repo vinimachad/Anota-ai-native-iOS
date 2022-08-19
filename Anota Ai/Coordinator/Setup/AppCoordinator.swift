@@ -8,12 +8,17 @@
 import Foundation
 import UIKit
 
+protocol AuthenticationCoordinatorDelegate: AnyObject {
+    func userWasAuthenticated()
+}
+
 class AppCoordinator {
     
     // MARK: - Private properties
     
     private(set) var window: UIWindow
     private(set) var childCoordinator: CoordinatorProtocol?
+    private(set) var session = UserSessionManager.shared
     
     // MARK: - Init
     
@@ -24,15 +29,48 @@ class AppCoordinator {
     // MARK: - Start
     
     func start() {
-        window.rootViewController = startCoordinator()
+        window.rootViewController = coordinatorBySession()
         window.makeKeyAndVisible()
     }
     
     // MARK: - Start methods
     
-    private func startCoordinator() -> UIViewController {
-        let coordinator = OnboardingCoordinator()
+    private func onboardingCoordinator() -> UIViewController {
+        let coordinator = OnboardingCoordinator(authDelegate: self)
         childCoordinator = coordinator
         return coordinator.start()
+    }
+    
+    private func coordinatorBySession() -> UIViewController {
+        if session.isLoggedIn() {
+            return hasNotAddressValidator()
+        }
+        
+        return onboardingCoordinator()
+    }
+    
+    private func hasNotAddressValidator() -> UIViewController {
+        
+        if !session.userHasAddress() {
+            let coordinator = FindYourLocationCoordinator(delegate: self)
+            childCoordinator = coordinator
+            return coordinator.start()
+        }
+        
+        let vc = UIViewController()
+        vc.view.backgroundColor = .orange
+        return vc
+    }
+    
+    private func replaceRootViewController(_ viewController: UIViewController) {
+        viewController.modalTransitionStyle = .crossDissolve
+        self.window.rootViewController = viewController
+    }
+}
+
+extension AppCoordinator: AuthenticationCoordinatorDelegate {
+    
+    func userWasAuthenticated() {
+        replaceRootViewController(coordinatorBySession())
     }
 }

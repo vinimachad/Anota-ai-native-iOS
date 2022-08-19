@@ -25,6 +25,8 @@ class FindYourLocationViewModel {
     var onFailureGetAuthorization: (() -> Void)?
     var onSuccessGetLocalization: ((CLLocationCoordinate2D) -> Void)?
     
+    var onEnableConfirmLocateButton: (() -> Void)?
+    
     // MARK: - Private properties
     
     lazy var location: LocalizationProtocol = Localization()
@@ -70,11 +72,12 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
     private func didAuthorizedLocalization() {
         location.onAuthorizedLocalization = { [weak self] in
             self?.onSuccessGetAuthorization?()
+            self?.onEnableConfirmLocateButton?()
         }
     }
     
     private func didNotAuthorizedLocalization() {
-        location.onNotAuthorizedLocalization = { [weak self] in
+        location.onNotAuthorizedLocalization = { [weak self] in            
             self?.onFailureGetAuthorization?()
         }
     }
@@ -82,10 +85,20 @@ extension FindYourLocationViewModel: FindYourLocationProtocol {
 
 extension FindYourLocationViewModel: LocalizationDelegate {
     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch location.getAuthorizationStatus() {
+        case .denied, .restricted:
+            onFailureGetAuthorization?()
+        case .authorized, .authorizedAlways, .authorizedWhenInUse:
+            location.startUpdatingLocation()
+        default: break
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
         guard let coordinate: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         updateCoordinate(coordinate)
     }
 }
-                                                                        
+

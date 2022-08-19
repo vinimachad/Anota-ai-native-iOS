@@ -14,6 +14,7 @@ import CoreLocation
 protocol FindYourLocationViewModelProtocol {
     var mapViewModel: MapViewModelProtocol { get }
     var onUpdateUserCurrentLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
+    var onEnableConfirmLocateButton: (() -> Void)? { get set }
     func didConfirmLocation()
 }
 
@@ -50,6 +51,10 @@ class FindYourLocationView: UIView {
         self.viewModel?.onUpdateUserCurrentLocation = { [weak self] coordinate in
             self?.mapView.updateMapView(coordinate)
         }
+        
+        self.viewModel?.onEnableConfirmLocateButton = { [weak self] in
+            self?.confirmYourLocationButton.isEnabled = true
+        }
     }
 }
 
@@ -60,13 +65,13 @@ extension FindYourLocationView {
     private func setup() {
         setupConstraints()
         setupConfirmYourLocationButton()
-//        setupMapView()
     }
     
     private func setupConfirmYourLocationButton() {
         confirmYourLocationButton.title = "confirm_location_title_button".localize(.findYourLocation)
         confirmYourLocationButton.kind = .confirm
         confirmYourLocationButton.addTarget(self, action: #selector(didConfirmLocation), for: .touchDown)
+        confirmYourLocationButton.isEnabled = false
     }
     
     @objc private func didConfirmLocation() {

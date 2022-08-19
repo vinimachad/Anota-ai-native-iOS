@@ -17,7 +17,7 @@ class ConfirmLocationViewModelMock: ConfirmLocationProtocol {
     var invokedValidateFieldsCont = 0
     
     var region: MKCoordinateRegion = MKCoordinateRegion()
-    var street: String = ""
+    var streetDetails: String = ""
     var city: String = ""
     var onButtonStateIsEnable: ((Bool) -> Void)?
     

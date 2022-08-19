@@ -20,12 +20,18 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
     // MARK: - Private properties
     
     private var navigationController = UINavigationController()
+    private weak var authDelegate: AuthenticationCoordinatorDelegate?
+    
+    // MARK: - Init
+    
+    init(delegate: AuthenticationCoordinatorDelegate?) {
+        self.authDelegate = delegate
+    }
     
     // MARK: - Start
     
     func start() -> UIViewController {
         let vc = OnboardingFactory.findYourLocation(delegate: self)
-        navigationController.modalPresentationStyle = .pageSheet
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
     }
@@ -38,7 +44,14 @@ class FindYourLocationCoordinator: CoordinatorProtocol {
 extension FindYourLocationCoordinator: FindYourLocationControllerDelegate {
     
     func pushConfirmLocalization(_ location: CLLocationCoordinate2D) {
-        let vc = OnboardingFactory.confirmLocation(coordinate: location)
+        let vc = OnboardingFactory.confirmLocation(coordinate: location, delegate: self)
         navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+extension FindYourLocationCoordinator: ConfirmLocationControllerDelegate {
+    
+    func presentHome() {
+        authDelegate?.userWasAuthenticated()
     }
 }

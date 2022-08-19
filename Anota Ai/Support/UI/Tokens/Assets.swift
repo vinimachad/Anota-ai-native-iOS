@@ -30,5 +30,13 @@ extension UIImage {
         static var back: UIImage {
             UIImage(systemName: "chevron.backward") ?? UIImage()
         }
+        
+        static var eye: UIImage {
+            UIImage(systemName: "eye.fill") ?? UIImage()
+        }
+        
+        static var eyeSlash: UIImage {
+            UIImage(systemName: "eye.slash") ?? UIImage()
+        }
     }
 }

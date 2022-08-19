@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func setupDefaultNavigation(title: String = "", navColor: UIColor = .Shapes.shape, isTranslucent: Bool = false) {
+    func setupDefaultNavigation(title: String = "", isTranslucent: Bool = false) {
         self.title = title
         navigationController?.navigationBar.isTranslucent = isTranslucent
         setupDefaultBackButton()
@@ -30,8 +30,8 @@ extension UIViewController {
     
     func setupDefaultBackButton() {
         navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.topItem?.title = ""
     }
-    
     
     private func changeNavigationTintColor(appearance: UINavigationBarAppearance, tintColor: UIColor) {
         appearance.titleTextAttributes = [.foregroundColor: tintColor]

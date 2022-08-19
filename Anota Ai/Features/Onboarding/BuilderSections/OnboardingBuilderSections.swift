@@ -8,7 +8,7 @@
 import Foundation
 import CollectionDS_SDK
 
-class OnboardingBuilderSections {
+class OnboardingBuilderSections: BuilderSectionProtocol {
     
     // MARK: - Init
     

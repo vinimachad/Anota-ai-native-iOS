@@ -57,9 +57,13 @@ class ExplanationCell: UICollectionViewCell, CollectionViewProtocol {
 extension ExplanationCell {
     
     static func size(width: CGFloat) -> CGSize {
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let padding = sectionPadding()
         let width = width - (padding.left + padding.right)
         return CGSize(width: width, height: 498)
+    }
+    
+    static func sectionPadding() -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     private func setup() {
