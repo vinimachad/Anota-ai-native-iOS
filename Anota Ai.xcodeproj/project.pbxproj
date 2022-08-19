@@ -107,6 +107,9 @@
 		3CA3D7D0289B0686006B3D90 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */; };
 		3CA3D7D1289B0686006B3D90 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */; };
 		3CA3D7D3289B0764006B3D90 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D7D2289B0764006B3D90 /* Colors.xcassets */; };
+		3CB0D3C528B0221000330250 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C428B0221000330250 /* LoginView.swift */; };
+		3CB0D3C728B0221C00330250 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C628B0221C00330250 /* LoginViewController.swift */; };
+		3CB0D3C928B0222400330250 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0D3C828B0222400330250 /* LoginViewModel.swift */; };
 		3CBA5B66289F425F0049F55E /* FindYourLocationSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */; };
 		3CBA5B68289F426C0049F55E /* FindYourLocationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */; };
 		3CBA5B6A289F42770049F55E /* FindYourLocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */; };
@@ -250,6 +253,9 @@
 		3CA3D7CD289B0686006B3D90 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		3CA3D7D2289B0764006B3D90 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3CB0D3C428B0221000330250 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3CB0D3C628B0221C00330250 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3CB0D3C828B0222400330250 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3CBA5B65289F425F0049F55E /* FindYourLocationSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationSnapshot.swift; sourceTree = "<group>"; };
 		3CBA5B67289F426C0049F55E /* FindYourLocationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationControllerTests.swift; sourceTree = "<group>"; };
 		3CBA5B69289F42770049F55E /* FindYourLocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModelTests.swift; sourceTree = "<group>"; };
@@ -599,6 +605,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		3C6639BF28B021E200CBE73F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0D3C328B0220600330250 /* Login */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3C69874D289D43F000901CE7 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +855,7 @@
 		3CA3D7B2289AF168006B3D90 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3C6639BF28B021E200CBE73F /* Login */,
 				3C5CD99428A83090002C20F9 /* CreateAccount */,
 				3C769A4928A6B676001DA6E6 /* ConfirmLocation */,
 				3C91274E289DD668008AA594 /* FindYourLocation */,
@@ -931,6 +946,16 @@
 				3CA3D7CE289B0686006B3D90 /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3CB0D3C328B0220600330250 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3CB0D3C428B0221000330250 /* LoginView.swift */,
+				3CB0D3C628B0221C00330250 /* LoginViewController.swift */,
+				3CB0D3C828B0222400330250 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		3CBA5B63289F422F0049F55E /* FindYourLocation */ = {
@@ -1335,6 +1360,7 @@
 				3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */,
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
 				3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */,
+				3CB0D3C728B0221C00330250 /* LoginViewController.swift in Sources */,
 				3C5CD99628A8309E002C20F9 /* CreateAccountView.swift in Sources */,
 				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
@@ -1342,6 +1368,7 @@
 				3C6639BA28AFDBBF00CBE73F /* FindLocalizationUseCase.swift in Sources */,
 				3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */,
 				3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */,
+				3CB0D3C528B0221000330250 /* LoginView.swift in Sources */,
 				3C5CD9A728A837F1002C20F9 /* UILabel+Setup.swift in Sources */,
 				3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */,
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
@@ -1378,6 +1405,7 @@
 				3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */,
 				3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */,
 				3C7FA18328A93B72001A5CBE /* Fields.swift in Sources */,
+				3CB0D3C928B0222400330250 /* LoginViewModel.swift in Sources */,
 				3C530F0A28AE6F21008B602D /* Decode.swift in Sources */,
 				3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */,
 				3C6639BC28B00E6D00CBE73F /* CreateAddressUseCase.swift in Sources */,
