@@ -128,10 +128,10 @@ extension CreateAccountSectionBuilder.CreateAccountTextFields {
     
     var title: String? {
         switch self {
-        case .name: return "Nome"
-        case .lastName: return "Sobrenome"
-        case .email: return "Email"
-        case .password: return "Senha"
+        case .name: return "name_title".localize(.createAccount)
+        case .lastName: return "last_name_title".localize(.createAccount)
+        case .email: return "email_title".localize(.createAccount)
+        case .password: return "password_title".localize(.createAccount)
         }
     }
     

@@ -76,11 +76,11 @@ extension CreateAccountController {
         }
         
         viewModel.onFailureCreateUser = { [weak self] message in
-            self?.showFailureModal("Não foi possível criar sua conta", message)
+            self?.showFailureModal("not_possible_create_account_error".localize(.error), message)
         }
         
         viewModel.onFailureSaveUserInSession = { [weak self] message in
-            self?.showFailureModal("Opps...", message)
+            self?.showFailureModal("title_error".localize(.error), message)
         }
     }
 }

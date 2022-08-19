@@ -73,12 +73,12 @@ extension AddressCardCell {
     }
     
     private func setupTitleLabel() {
-        titleLabel.text = "Endereço"
+        titleLabel.text = "address_title".localize(.confirmLocation)
         titleLabel.setupLabel(type: .bold, size: 20, color: .Texts.heading)
     }
     
     private func setupSubtitleLabel() {
-        subtitleLabel.text = "Sua localização"
+        subtitleLabel.text = "your_location_title".localize(.confirmLocation)
         subtitleLabel.setupLabel(type: .medium, size: 16, color: .Texts.heading)
     }
     

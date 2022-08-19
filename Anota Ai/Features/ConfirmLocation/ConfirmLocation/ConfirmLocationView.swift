@@ -130,15 +130,15 @@ extension ConfirmLocationView {
     }
     
     private func setupTextFields() {
-        numberTextField.setTitle("Número")
-        complementTextField.setTitle("Complemento")
+        numberTextField.setTitle("number_title".localize(.confirmLocation))
+        complementTextField.setTitle("complement_title".localize(.confirmLocation))
         numberTextField.addTarget(self, action: #selector(didChangeNumber), for: .editingChanged)
         complementTextField.addTarget(self, action: #selector(didChangeComplement), for: .editingChanged)
     }
     
     private func setupSaveAddressButton() {
         saveAddressButton.kind = .primary
-        saveAddressButton.title = "Salvar endereço"
+        saveAddressButton.title = "save_address_title".localize(.confirmLocation)
         saveAddressButton.addTarget(self, action: #selector(didTapSaveAddress), for: .touchDown)
     }
     

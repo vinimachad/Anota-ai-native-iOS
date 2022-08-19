@@ -1,0 +1,13 @@
+/* 
+  CreateAccount.strings
+  Anota Ai
+
+  Created by Vinicius Galhardo Machado on 19/08/22.
+  
+*/
+
+"find_your_address_title" = "Buscar pelo seu endereço";
+"name_title" = "Nome";
+"last_name_title" = "Sobrenome";
+"email_title" = "Email";
+"password_title" = "Senha";

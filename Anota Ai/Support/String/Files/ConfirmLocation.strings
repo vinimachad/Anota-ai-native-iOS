@@ -6,3 +6,8 @@
   
 */
 "confirm_location_title" = "Confirmar localização";
+"number_title" = "Número";
+"complement_title" = "Complemento";
+"save_address_title" = "Salvar endereço";
+"address_title" = "Endereço";
+"your_location_title" = "Sua localização";

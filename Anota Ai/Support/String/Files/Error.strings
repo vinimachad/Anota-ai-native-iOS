@@ -8,3 +8,5 @@
 "localization_permission_error_body" = "A localização é uma permissão requerida para o nosso app.";
 "localization_permission_error_title" = "Você está escondido";
 "title_error" = "Oopss..";
+"not_possible_create_account_error" = "Não foi possível criar conta";
+"not_possible_save_session" = "Não foi possível salvar sua sessão";

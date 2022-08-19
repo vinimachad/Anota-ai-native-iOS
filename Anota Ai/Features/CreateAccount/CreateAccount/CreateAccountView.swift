@@ -72,7 +72,7 @@ extension CreateAccountView {
     }
     
     private func setupCreateAccountButton() {
-        createAccountButton.title = "Buscar pelo seu endereço"
+        createAccountButton.title = "find_your_address_title".localize(.createAccount)
         createAccountButton.kind = .primary
         createAccountButton.isEnabled = false
         createAccountButton.addTarget(self, action: #selector(didCreateAccount), for: .touchDown)

@@ -94,7 +94,7 @@ extension CreateAccountViewModel {
             UserSessionManager.shared.setUserHasAddress(false)
             UserSessionManager.shared.setIsLoggedIn(true)
         } catch {
-            onFailureSaveUserInSession?("Não foi possivel salvar sua sessão")
+            onFailureSaveUserInSession?("not_possible_save_session".localize(.error))
         }
     }
 }
