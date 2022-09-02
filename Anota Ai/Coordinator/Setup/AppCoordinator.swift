@@ -57,9 +57,9 @@ class AppCoordinator {
             return coordinator.start()
         }
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = .orange
-        return vc
+        let homeCoordinator = HomeCoordinator()
+        childCoordinator = homeCoordinator
+        return homeCoordinator.start()
     }
     
     private func replaceRootViewController(_ viewController: UIViewController) {
