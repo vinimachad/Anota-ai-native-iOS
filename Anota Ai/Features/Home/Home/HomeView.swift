@@ -9,10 +9,13 @@ import Foundation
 
 import UIKit
 import SnapKit
+import CollectionDS_SDK
 
-protocol HomeViewModelProtocol {}
+protocol HomeViewModelProtocol {
+    var sections: [CollectionSectionProtocol] { get }
+}
 
-class HomeView: UIView {
+class HomeView: BaseCollectionView {
     
     // MARK: - UI Components
     
@@ -36,6 +39,7 @@ class HomeView: UIView {
     
     func bindIn(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
+        collectionViewDataSource.sections = viewModel.sections
     }
 }
 

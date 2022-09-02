@@ -25,6 +25,8 @@
 		3C3A8E0B28C2531A00467F5A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0A28C2531A00467F5A /* HomeController.swift */; };
 		3C3A8E0D28C253C300467F5A /* ControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0C28C253C300467F5A /* ControllerFactoryProtocol.swift */; };
 		3C3A8E0F28C2544900467F5A /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0E28C2544900467F5A /* HomeCoordinator.swift */; };
+		3C3A8E1428C2597600467F5A /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1328C2597600467F5A /* BaseCollectionView.swift */; };
+		3C3A8E1728C25BDA00467F5A /* HomeBuilderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1628C25BDA00467F5A /* HomeBuilderSection.swift */; };
 		3C530F0A28AE6F21008B602D /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0928AE6F21008B602D /* Decode.swift */; };
 		3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0B28AE71E1008B602D /* APIHosts.swift */; };
 		3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0D28AE71E8008B602D /* APITarget.swift */; };
@@ -176,6 +178,8 @@
 		3C3A8E0A28C2531A00467F5A /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3C3A8E0C28C253C300467F5A /* ControllerFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactoryProtocol.swift; sourceTree = "<group>"; };
 		3C3A8E0E28C2544900467F5A /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		3C3A8E1328C2597600467F5A /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
+		3C3A8E1628C25BDA00467F5A /* HomeBuilderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilderSection.swift; sourceTree = "<group>"; };
 		3C530F0928AE6F21008B602D /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		3C530F0B28AE71E1008B602D /* APIHosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHosts.swift; sourceTree = "<group>"; };
 		3C530F0D28AE71E8008B602D /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 		3C3A8E0128C252DF00467F5A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3C3A8E1528C25BD000467F5A /* Builder */,
+				3C3A8E1028C2591200467F5A /* Cells */,
 				3C3A8E0528C2530500467F5A /* Home */,
 				3C3A8E0228C252E500467F5A /* Factory */,
 			);
@@ -464,6 +470,37 @@
 				3C3A8E0828C2531200467F5A /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3C3A8E1028C2591200467F5A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3C3A8E1128C2595E00467F5A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8E1228C2596500467F5A /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3C3A8E1228C2596500467F5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8E1328C2597600467F5A /* BaseCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C3A8E1528C25BD000467F5A /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8E1628C25BDA00467F5A /* HomeBuilderSection.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 		3C530F1128AE7934008B602D /* Routes */ = {
@@ -927,6 +964,7 @@
 		3CA3D7B4289AF177006B3D90 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				3C3A8E1128C2595E00467F5A /* Base */,
 				3C04156D28AD86F100077EF4 /* Session */,
 				3C7A438F289EE94800DA1E36 /* Authorizations */,
 				3C7A4383289ECD3F00DA1E36 /* Extensions */,
@@ -1452,6 +1490,7 @@
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
 				3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */,
+				3C3A8E1428C2597600467F5A /* BaseCollectionView.swift in Sources */,
 				3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */,
 				3C3A8E0928C2531200467F5A /* HomeViewModel.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
@@ -1464,6 +1503,7 @@
 				3C3A8E0B28C2531A00467F5A /* HomeController.swift in Sources */,
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
+				3C3A8E1728C25BDA00467F5A /* HomeBuilderSection.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
 				3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */,
 				3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */,
