@@ -30,6 +30,8 @@
 		3C3A8E1A28C25D2900467F5A /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1928C25D2900467F5A /* RestaurantCell.swift */; };
 		3C3A8E1C28C2603200467F5A /* RestaurantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1B28C2603200467F5A /* RestaurantCellViewModel.swift */; };
 		3C3A8E1F28C275D300467F5A /* RestaurantRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1E28C275D300467F5A /* RestaurantRoutes.swift */; };
+		3C3A8E2128C2769000467F5A /* FindRestaurantsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E2028C2769000467F5A /* FindRestaurantsUseCase.swift */; };
+		3C3A8E2428C2777500467F5A /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E2328C2777500467F5A /* Restaurant.swift */; };
 		3C530F0A28AE6F21008B602D /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0928AE6F21008B602D /* Decode.swift */; };
 		3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0B28AE71E1008B602D /* APIHosts.swift */; };
 		3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0D28AE71E8008B602D /* APITarget.swift */; };
@@ -186,6 +188,8 @@
 		3C3A8E1928C25D2900467F5A /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		3C3A8E1B28C2603200467F5A /* RestaurantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellViewModel.swift; sourceTree = "<group>"; };
 		3C3A8E1E28C275D300467F5A /* RestaurantRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRoutes.swift; sourceTree = "<group>"; };
+		3C3A8E2028C2769000467F5A /* FindRestaurantsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRestaurantsUseCase.swift; sourceTree = "<group>"; };
+		3C3A8E2328C2777500467F5A /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3C530F0928AE6F21008B602D /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		3C530F0B28AE71E1008B602D /* APIHosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHosts.swift; sourceTree = "<group>"; };
 		3C530F0D28AE71E8008B602D /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 				3C04156F28AD871300077EF4 /* User.swift */,
 				3C530F1428AE7B0B008B602D /* Address.swift */,
 				3C530F1628AE7B71008B602D /* Coordinate.swift */,
+				3C3A8E2328C2777500467F5A /* Restaurant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 		3C3A8E1D28C275C400467F5A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				3C3A8E2028C2769000467F5A /* FindRestaurantsUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1513,6 +1519,7 @@
 				3C6639B828AFD9CA00CBE73F /* LocationRoutes.swift in Sources */,
 				3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
+				3C3A8E2128C2769000467F5A /* FindRestaurantsUseCase.swift in Sources */,
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
 				3C3A8E1F28C275D300467F5A /* RestaurantRoutes.swift in Sources */,
 				3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */,
@@ -1552,6 +1559,7 @@
 				3C6639BC28B00E6D00CBE73F /* CreateAddressUseCase.swift in Sources */,
 				3C769A4F28A6B694001DA6E6 /* ConfirmLocationViewModel.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
+				3C3A8E2428C2777500467F5A /* Restaurant.swift in Sources */,
 				3C3A8E1C28C2603200467F5A /* RestaurantCellViewModel.swift in Sources */,
 				3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */,
 				3C769A4B28A6B682001DA6E6 /* ConfirmLocationController.swift in Sources */,
