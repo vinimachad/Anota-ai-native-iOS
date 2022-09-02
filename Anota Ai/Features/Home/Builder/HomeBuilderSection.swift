@@ -16,7 +16,7 @@ class HomeBuilderSection: BuilderSectionProtocol {
     private func restaurantsSection() -> CollectionSectionProtocol {
         
         return CollectionSection<RestaurantCell>(
-            items: [RestaurantCellViewModel(), RestaurantCellViewModel(), RestaurantCellViewModel(), RestaurantCellViewModel(),],
+            items: [RestaurantCellViewModel(), RestaurantCellViewModel(), RestaurantCellViewModel(), RestaurantCellViewModel()],
             interItemGap: 16,
             lineGap: 16,
             columns: 4

@@ -29,6 +29,7 @@
 		3C3A8E1728C25BDA00467F5A /* HomeBuilderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1628C25BDA00467F5A /* HomeBuilderSection.swift */; };
 		3C3A8E1A28C25D2900467F5A /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1928C25D2900467F5A /* RestaurantCell.swift */; };
 		3C3A8E1C28C2603200467F5A /* RestaurantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1B28C2603200467F5A /* RestaurantCellViewModel.swift */; };
+		3C3A8E1F28C275D300467F5A /* RestaurantRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E1E28C275D300467F5A /* RestaurantRoutes.swift */; };
 		3C530F0A28AE6F21008B602D /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0928AE6F21008B602D /* Decode.swift */; };
 		3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0B28AE71E1008B602D /* APIHosts.swift */; };
 		3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F0D28AE71E8008B602D /* APITarget.swift */; };
@@ -184,6 +185,7 @@
 		3C3A8E1628C25BDA00467F5A /* HomeBuilderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilderSection.swift; sourceTree = "<group>"; };
 		3C3A8E1928C25D2900467F5A /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		3C3A8E1B28C2603200467F5A /* RestaurantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellViewModel.swift; sourceTree = "<group>"; };
+		3C3A8E1E28C275D300467F5A /* RestaurantRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRoutes.swift; sourceTree = "<group>"; };
 		3C530F0928AE6F21008B602D /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		3C530F0B28AE71E1008B602D /* APIHosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHosts.swift; sourceTree = "<group>"; };
 		3C530F0D28AE71E8008B602D /* APITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITarget.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 		3C3A8E0128C252DF00467F5A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3C3A8E1D28C275C400467F5A /* Domain */,
 				3C3A8E1528C25BD000467F5A /* Builder */,
 				3C3A8E1028C2591200467F5A /* Cells */,
 				3C3A8E0528C2530500467F5A /* Home */,
@@ -517,11 +520,19 @@
 			path = Restaurant;
 			sourceTree = "<group>";
 		};
+		3C3A8E1D28C275C400467F5A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		3C530F1128AE7934008B602D /* Routes */ = {
 			isa = PBXGroup;
 			children = (
 				3C530F1228AE7986008B602D /* UserRoutes.swift */,
 				3C6639B728AFD9CA00CBE73F /* LocationRoutes.swift */,
+				3C3A8E1E28C275D300467F5A /* RestaurantRoutes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -1503,6 +1514,7 @@
 				3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
+				3C3A8E1F28C275D300467F5A /* RestaurantRoutes.swift in Sources */,
 				3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */,
 				3C3A8E1428C2597600467F5A /* BaseCollectionView.swift in Sources */,
 				3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */,
