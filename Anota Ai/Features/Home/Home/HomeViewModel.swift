@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CollectionDS_SDK
 
 
 protocol HomeProtocol: HomeViewModelProtocol {
@@ -16,7 +17,13 @@ class HomeViewModel {
     
     // MARK: - Public properties
     
+    lazy var sections: [CollectionSectionProtocol] = {
+        homeSectionBuilder.builder()
+    }()
+    
     // MARK: - Private properties
+    
+    private lazy var homeSectionBuilder = HomeBuilderSection()
     
     // MARK: - Init
     

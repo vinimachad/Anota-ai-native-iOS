@@ -14,10 +14,7 @@ class BaseCollectionView: UIView {
     
     // MARK: - Public properties
     
-    var setScrollDirection: UICollectionView.ScrollDirection {
-        get { collectionViewFlowLayout.scrollDirection }
-        set { collectionViewFlowLayout.scrollDirection = newValue }
-    }
+    var setScrollDirection: UICollectionView.ScrollDirection = .vertical
     
     // MARK: - UI Components
     
@@ -48,6 +45,7 @@ extension BaseCollectionView {
     private func setup() {
         setupConstraints()
         setupCollectionView()
+        backgroundColor = .Shapes.shape
     }
     
     private func setupCollectionView() {
@@ -67,6 +65,7 @@ extension BaseCollectionView {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(snp.topMargin)
             $0.horizontalEdges.equalTo(snp.horizontalEdges)
+            $0.bottom.equalTo(snp.bottomMargin)
         }
     }
     

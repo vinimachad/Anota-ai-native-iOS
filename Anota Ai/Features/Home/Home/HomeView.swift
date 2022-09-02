@@ -23,18 +23,6 @@ class HomeView: BaseCollectionView {
     
     private var viewModel: HomeViewModelProtocol?
     
-    // MARK: Init
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Bind
     
     func bindIn(viewModel: HomeViewModelProtocol) {
