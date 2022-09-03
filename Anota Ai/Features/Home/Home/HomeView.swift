@@ -12,7 +12,7 @@ import SnapKit
 import CollectionDS_SDK
 
 protocol HomeViewModelProtocol {
-    var sections: [CollectionSectionProtocol] { get }
+    var onUpdateSections: (([CollectionSectionProtocol]) -> Void)? { get set }
 }
 
 class HomeView: BaseCollectionView {
@@ -27,7 +27,10 @@ class HomeView: BaseCollectionView {
     
     func bindIn(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
-        collectionViewDataSource.sections = viewModel.sections
+        
+        self.viewModel?.onUpdateSections = { [weak self] sections in
+            self?.collectionViewDataSource.sections = sections
+        }
     }
 }
 

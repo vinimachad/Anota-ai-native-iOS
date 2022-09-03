@@ -35,6 +35,10 @@ class RestaurantRoutes {
             case .findRestaurants: return .requestPlain
             }
         }
+        
+        var headers: [String : String]? {
+            sessionHeader()
+        }
     }
     
     let provider: MoyaProvider<Target> = APIProvider<Target>().build()

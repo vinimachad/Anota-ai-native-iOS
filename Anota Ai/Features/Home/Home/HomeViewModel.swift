@@ -10,25 +10,26 @@ import CollectionDS_SDK
 
 
 protocol HomeProtocol: HomeViewModelProtocol {
-    
+    func findRestaurantsRequest()
 }
+
+
 
 class HomeViewModel {
     
     // MARK: - Public properties
     
-    lazy var sections: [CollectionSectionProtocol] = {
-        homeSectionBuilder.builder()
-    }()
+    var onUpdateSections: (([CollectionSectionProtocol]) -> Void)?
     
     // MARK: - Private properties
     
-    private lazy var homeSectionBuilder = HomeBuilderSection()
+    private var homeSectionBuilder: HomeBuilderSectionProtocol = HomeBuilderSection()
+    private var findRestaurantsUseCase: FindRestaurantsUseCaseProtocol
     
     // MARK: - Init
     
-    init() {
-        
+    init(findRestaurantsUseCase: FindRestaurantsUseCaseProtocol) {
+        self.findRestaurantsUseCase = findRestaurantsUseCase
     }
 }
 
@@ -36,4 +37,16 @@ class HomeViewModel {
 
 extension HomeViewModel: HomeProtocol {
     
+    func findRestaurantsRequest() {
+        
+        findRestaurantsUseCase.execute(
+            success: { [weak self] restaurants in
+                self?.homeSectionBuilder.appendRestaurantSection(with: restaurants)
+                self?.onUpdateSections?(self?.homeSectionBuilder.builder() ?? [])
+            },
+            failure: { [weak self] message in
+                
+            }
+        )
+    }
 }

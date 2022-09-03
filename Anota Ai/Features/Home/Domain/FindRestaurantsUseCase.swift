@@ -11,7 +11,7 @@ protocol FindRestaurantsUseCaseProtocol {
     
     typealias Callback<T: Any> = ((T) -> Void)?
     
-    func execute(success: Callback<[Restaurant]>, failure: Callback<String>)
+    func execute(success: Callback<[Restaurant]>, failure: Callback<Error>)
 }
 
 class FindRestaurantsUseCase: FindRestaurantsUseCaseProtocol {
@@ -26,7 +26,7 @@ class FindRestaurantsUseCase: FindRestaurantsUseCaseProtocol {
         self.api = api
     }
     
-    func execute(success: Callback<[Restaurant]>, failure: Callback<String>) {
+    func execute(success: Callback<[Restaurant]>, failure: Callback<Error>) {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             self?.api.findRestaurants { result in
                 
@@ -38,11 +38,11 @@ class FindRestaurantsUseCase: FindRestaurantsUseCaseProtocol {
                             let restaurants = try res.data.decode(type: [Restaurant].self)
                             success?(restaurants)
                         } catch let error {
-                            failure?(error.localizedDescription)
+                            failure?(error)
                         }
                         
                     case .failure(let error):
-                        failure?(error.localizedDescription)
+                        failure?(error)
                     }
                 }
             }

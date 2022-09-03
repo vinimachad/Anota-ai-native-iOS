@@ -8,22 +8,31 @@
 import Foundation
 import CollectionDS_SDK
 
-class HomeBuilderSection: BuilderSectionProtocol {
+protocol HomeBuilderSectionProtocol: BuilderSectionProtocol {
+    func appendRestaurantSection(with restaurants: [Restaurant])
+}
+
+class HomeBuilderSection: HomeBuilderSectionProtocol {
     
+    private var builders: [CollectionSectionProtocol] = []
     
     // MARK: - Sections
     
-    private func restaurantsSection() -> CollectionSectionProtocol {
-        
-        return CollectionSection<RestaurantCell>(
-            items: [RestaurantCellViewModel(), RestaurantCellViewModel(), RestaurantCellViewModel(), RestaurantCellViewModel()],
+    func appendRestaurantSection(with restaurants: [Restaurant]) {
+        let items = restaurants.map { RestaurantCellViewModel(previewString: $0.avatarUrl, title: $0.name) }
+        let header = HeaderTitleSupplementary.self
+        let section = CollectionSection<RestaurantCell>(
+            items: items,
             interItemGap: 16,
             lineGap: 16,
-            columns: 4
+            columns: 4,
+            headerViewModel: HeaderTitleSupplementaryViewModel(title: "Restaurante")
         )
+        
+        builders.append(section)
     }
     
     func builder() -> [CollectionSectionProtocol] {
-        [restaurantsSection()]
+        builders
     }
 }

@@ -12,7 +12,8 @@ enum HomeFactory: ControllerFactoryProtocol {
     
     static func createController() -> UIViewController {
         
-        let viewModel = HomeViewModel()
+        let useCase = FindRestaurantsUseCase(api: RestaurantRoutes())
+        let viewModel = HomeViewModel(findRestaurantsUseCase: useCase)
         return HomeController(viewModel: viewModel)
     }
 }

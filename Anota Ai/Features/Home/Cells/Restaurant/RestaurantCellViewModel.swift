@@ -9,4 +9,10 @@ import Foundation
 
 struct RestaurantCellViewModel: RestaurantCellViewModelProtocol {
     
+    var previewString: String
+    var title: String
+    
+    var previewURL: URL? {
+        URL(string: previewString)
+    }
 }

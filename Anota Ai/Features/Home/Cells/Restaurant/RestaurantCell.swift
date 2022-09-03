@@ -10,7 +10,10 @@ import Reusable
 import CollectionDS_SDK
 import SnapKit
 
-protocol RestaurantCellViewModelProtocol: CollectionViewModelProtocol {}
+protocol RestaurantCellViewModelProtocol: CollectionViewModelProtocol {
+    var previewURL: URL? { get }
+    var title: String { get  }
+}
 
 class RestaurantCell: UICollectionViewCell, CollectionViewProtocol {
     
@@ -39,6 +42,8 @@ class RestaurantCell: UICollectionViewCell, CollectionViewProtocol {
     
     func bindIn(viewModel: RestaurantCellViewModelProtocol) {
         self.viewModel = viewModel
+        self.previewImageView.imageBy(url: viewModel.previewURL)
+        self.titleLabel.text = viewModel.title
     }
 }
 
@@ -56,14 +61,13 @@ extension RestaurantCell {
         previewImageView.layer.cornerRadius = 83.5/2
         previewImageView.layer.masksToBounds = false
         previewImageView.clipsToBounds = true
-        previewImageView.contentMode = .scaleAspectFit
-        previewImageView.backgroundColor = .red
+        previewImageView.contentMode = .scaleToFill
     }
     
     private func setupTitleLabel() {
-        titleLabel.text = "Madalena"
         titleLabel.setupLabel(type: .regular, size: 16, color: .Texts.body)
         titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
     }
 }
 
@@ -72,7 +76,7 @@ extension RestaurantCell {
 extension RestaurantCell {
     
     static func size(width: CGFloat) -> CGSize {
-        return CGSize(width: width, height: 110)
+        return CGSize(width: width, height: 150)
     }
     
     static func sectionPadding() -> UIEdgeInsets {

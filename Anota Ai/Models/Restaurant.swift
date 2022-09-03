@@ -10,7 +10,8 @@ import Foundation
 struct Restaurant: Codable {
     
     var name: String
-    var avatar_url: String
+    var avatarUrl: String
     var type: String
     var price: Int
+    var id: String
 }

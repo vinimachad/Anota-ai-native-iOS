@@ -40,6 +40,7 @@ class HomeController<ViewModel: HomeProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        viewModel.findRestaurantsRequest()
     }
 }
 
