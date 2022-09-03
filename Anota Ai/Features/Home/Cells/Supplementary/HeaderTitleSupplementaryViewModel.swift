@@ -10,7 +10,7 @@ import CollectionDS_SDK
 
 struct HeaderTitleSupplementaryViewModel: HeaderTitleSupplementaryViewModelProtocol {
     
-    var title: String = "teste"
+    var title: String
     
     var cellType: UICollectionReusableView.Type {
         HeaderTitleSupplementary.self

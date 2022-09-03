@@ -20,7 +20,6 @@ class HomeBuilderSection: HomeBuilderSectionProtocol {
     
     func appendRestaurantSection(with restaurants: [Restaurant]) {
         let items = restaurants.map { RestaurantCellViewModel(previewString: $0.avatarUrl, title: $0.name) }
-        let header = HeaderTitleSupplementary.self
         let section = CollectionSection<RestaurantCell>(
             items: items,
             interItemGap: 16,

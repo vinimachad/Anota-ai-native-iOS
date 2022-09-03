@@ -63,7 +63,10 @@ extension HeaderTitleSupplementary {
         viewHierarchy()
         
         titleLabel.snp.makeConstraints {
-            $0.edges.equalTo(snp.edges)
+            $0.left.equalTo(snp.left).offset(16)
+            $0.top.equalTo(snp.top)
+            $0.right.equalTo(snp.right).offset(-16)
+            $0.bottom.equalTo(snp.bottom)
         }
     }
     
