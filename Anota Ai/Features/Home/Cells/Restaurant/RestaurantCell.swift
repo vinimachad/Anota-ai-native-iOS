@@ -65,7 +65,7 @@ extension RestaurantCell {
     }
     
     private func setupTitleLabel() {
-        titleLabel.setupLabel(type: .regular, size: 16, color: .Texts.body)
+        titleLabel.setupLabel(type: .regular, size: 14, color: .Texts.body)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
     }
@@ -76,7 +76,7 @@ extension RestaurantCell {
 extension RestaurantCell {
     
     static func size(width: CGFloat) -> CGSize {
-        return CGSize(width: width, height: 150)
+        return CGSize(width: width, height: 130)
     }
     
     static func sectionPadding() -> UIEdgeInsets {
