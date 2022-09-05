@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct Restaurant: Codable {
-    
+struct Restaurant: Codable, Identifiable {
     var name: String
     var avatarUrl: String
     var type: String

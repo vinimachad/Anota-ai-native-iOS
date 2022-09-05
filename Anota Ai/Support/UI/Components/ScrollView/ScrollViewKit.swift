@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class ScrollView: UIView {
+class ScrollViewKit: UIView {
     
     // MARK: - Private properties
     
@@ -32,7 +32,7 @@ class ScrollView: UIView {
 
 // MARK: - Setup view
 
-extension ScrollView {
+extension ScrollViewKit {
     
     private func setup() {
         setupConstraints()
@@ -42,7 +42,7 @@ extension ScrollView {
 
 // MARK: - Setup constraints
 
-extension ScrollView {
+extension ScrollViewKit {
     
     private func setupConstraints() {
         viewHierarchy()

@@ -89,7 +89,7 @@
 		3C769A4F28A6B694001DA6E6 /* ConfirmLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */; };
 		3C769A5128A6BAA1001DA6E6 /* ConfirmLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */; };
 		3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A5428A6C60F001DA6E6 /* TextField.swift */; };
-		3C769A5828A71517001DA6E6 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A5728A71517001DA6E6 /* ScrollView.swift */; };
+		3C769A5828A71517001DA6E6 /* ScrollViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C769A5728A71517001DA6E6 /* ScrollViewKit.swift */; };
 		3C769A5A28A71730001DA6E6 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C769A5928A71730001DA6E6 /* View.xib */; };
 		3C7A4382289ECB0700DA1E36 /* FindYourLocation.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */; };
 		3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */; };
@@ -109,6 +109,9 @@
 		3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA716289B105200C300B8 /* OnboardingController.swift */; };
 		3C9EA71A289B15ED00C300B8 /* ExplanationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA719289B15ED00C300B8 /* ExplanationCell.swift */; };
 		3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA71B289B1ABE00C300B8 /* ExplanationCellViewModel.swift */; };
+		3C9F46EC28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F46EB28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift */; };
+		3C9F46EE28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F46ED28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift */; };
+		3C9F46F328C3B49200E8E0C3 /* CircleRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */; };
 		3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D782289AF04B006B3D90 /* AppDelegate.swift */; };
 		3CA3D78C289AF04E006B3D90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78B289AF04E006B3D90 /* Assets.xcassets */; };
 		3CA3D78F289AF04E006B3D90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA3D78D289AF04E006B3D90 /* LaunchScreen.storyboard */; };
@@ -138,6 +141,7 @@
 		3CBBBA8C289CBB73006BFF95 /* FontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8B289CBB73006BFF95 /* FontTests.swift */; };
 		3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */; };
 		3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */; };
+		3CC4BCC228C67825002EC791 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4BCC128C67825002EC791 /* RestaurantListView.swift */; };
 		3CCA0DAE28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */; };
 		3CCED8C328C280E00042A1EF /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCED8C228C280E00042A1EF /* UIImageView+URL.swift */; };
 		3CCED8C728C282DA0042A1EF /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCED8C628C282DA0042A1EF /* Observer.swift */; };
@@ -251,7 +255,7 @@
 		3C769A4E28A6B694001DA6E6 /* ConfirmLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationViewModel.swift; sourceTree = "<group>"; };
 		3C769A5028A6BAA1001DA6E6 /* ConfirmLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ConfirmLocation.strings; sourceTree = "<group>"; };
 		3C769A5428A6C60F001DA6E6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		3C769A5728A71517001DA6E6 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		3C769A5728A71517001DA6E6 /* ScrollViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewKit.swift; sourceTree = "<group>"; };
 		3C769A5928A71730001DA6E6 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		3C7A4381289ECB0700DA1E36 /* FindYourLocation.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FindYourLocation.strings; sourceTree = "<group>"; };
 		3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
@@ -271,6 +275,9 @@
 		3C9EA716289B105200C300B8 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		3C9EA719289B15ED00C300B8 /* ExplanationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationCell.swift; sourceTree = "<group>"; };
 		3C9EA71B289B1ABE00C300B8 /* ExplanationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationCellViewModel.swift; sourceTree = "<group>"; };
+		3C9F46EB28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHomeView.swift; sourceTree = "<group>"; };
+		3C9F46ED28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHomeViewModel.swift; sourceTree = "<group>"; };
+		3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRestaurantsView.swift; sourceTree = "<group>"; };
 		3CA3D77F289AF04B006B3D90 /* Anota Ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anota Ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA3D782289AF04B006B3D90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CA3D78B289AF04E006B3D90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -304,6 +311,7 @@
 		3CBBBA8B289CBB73006BFF95 /* FontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTests.swift; sourceTree = "<group>"; };
 		3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinatorTests.swift; sourceTree = "<group>"; };
+		3CC4BCC128C67825002EC791 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CCED8C228C280E00042A1EF /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		3CCED8C628C282DA0042A1EF /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -466,6 +474,7 @@
 		3C3A8E0128C252DF00467F5A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3C9F46E828C3AFB000E8E0C3 /* SwiftUIHome */,
 				3C3A8E1D28C275C400467F5A /* Domain */,
 				3C3A8E1528C25BD000467F5A /* Builder */,
 				3C3A8E1028C2591200467F5A /* Cells */,
@@ -844,7 +853,7 @@
 		3C769A5628A7150A001DA6E6 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				3C769A5728A71517001DA6E6 /* ScrollView.swift */,
+				3C769A5728A71517001DA6E6 /* ScrollViewKit.swift */,
 				3C769A5928A71730001DA6E6 /* View.xib */,
 			);
 			path = ScrollView;
@@ -938,6 +947,25 @@
 				3C9EA71B289B1ABE00C300B8 /* ExplanationCellViewModel.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3C9F46E828C3AFB000E8E0C3 /* SwiftUIHome */ = {
+			isa = PBXGroup;
+			children = (
+				3C9F46EF28C3B45800E8E0C3 /* Subviews */,
+				3C9F46EB28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift */,
+				3C9F46ED28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift */,
+			);
+			path = SwiftUIHome;
+			sourceTree = "<group>";
+		};
+		3C9F46EF28C3B45800E8E0C3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */,
+				3CC4BCC128C67825002EC791 /* RestaurantListView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		3CA3D776289AF04B006B3D90 = {
@@ -1533,12 +1561,14 @@
 				3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */,
 				3CA3D7C5289B0146006B3D90 /* Fonts.swift in Sources */,
 				3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */,
+				3CC4BCC228C67825002EC791 /* RestaurantListView.swift in Sources */,
 				3CB0D3C728B0221C00330250 /* LoginController.swift in Sources */,
 				3C67EE1828B030E900EA8794 /* AuthenticateUseCase.swift in Sources */,
 				3C5CD99628A8309E002C20F9 /* CreateAccountView.swift in Sources */,
 				3C3A8E0428C252F500467F5A /* HomeFactory.swift in Sources */,
 				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
 				3C2CF9E428C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift in Sources */,
+				3C9F46EC28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift in Sources */,
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
 				3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */,
 				3C6639BA28AFDBBF00CBE73F /* FindLocalizationUseCase.swift in Sources */,
@@ -1566,7 +1596,7 @@
 				3C3A8E0928C2531200467F5A /* HomeViewModel.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,
-				3C769A5828A71517001DA6E6 /* ScrollView.swift in Sources */,
+				3C769A5828A71517001DA6E6 /* ScrollViewKit.swift in Sources */,
 				3C5CD99A28A830B4002C20F9 /* CreateAccountViewModel.swift in Sources */,
 				3C6D511228A896A1009883A1 /* TextFieldCell.swift in Sources */,
 				3C769A4D28A6B689001DA6E6 /* ConfirmLocationView.swift in Sources */,
@@ -1589,6 +1619,7 @@
 				3C04157028AD871300077EF4 /* User.swift in Sources */,
 				3C5CD9A528A834F8002C20F9 /* AddressCardCell.swift in Sources */,
 				3CA3D7C3289B013F006B3D90 /* Assets.swift in Sources */,
+				3C9F46F328C3B49200E8E0C3 /* CircleRestaurantsView.swift in Sources */,
 				3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */,
 				3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */,
 				3C7FA18328A93B72001A5CBE /* Fields.swift in Sources */,
@@ -1611,6 +1642,7 @@
 				3CD35D58289C41F60012480E /* Button.swift in Sources */,
 				3C3A8E1A28C25D2900467F5A /* RestaurantCell.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
+				3C9F46EE28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift in Sources */,
 				3CCED8C728C282DA0042A1EF /* Observer.swift in Sources */,
 				3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */,
 				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,

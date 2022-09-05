@@ -16,7 +16,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     
     // MARK: - Private properties
     
-    private let scrollView: ScrollView
+    private let scrollView: ScrollViewKit
     private let contentView: ConfirmLocationView
     private var viewModel: ViewModel
     private weak var delegate: ConfirmLocationControllerDelegate?
@@ -28,7 +28,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
         self.viewModel = viewModel
         self.delegate = delegate
         contentView = ConfirmLocationView()
-        self.scrollView = ScrollView(contentView: self.contentView)
+        self.scrollView = ScrollViewKit(contentView: self.contentView)
         super.init(nibName: nil, bundle: nil)
     }
     

@@ -20,7 +20,7 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController, Loadable {
     
     private let contentView: LoginView
     private var viewModel: ViewModel
-    private var scrollView: ScrollView
+    private var scrollView: ScrollViewKit
     private weak var delegate: LoginControllerDelegate?
     lazy private var modalPresentingDelegate = AlertPresentationManager()
     
@@ -30,7 +30,7 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController, Loadable {
         self.viewModel = viewModel
         self.delegate = delegate
         contentView = LoginView()
-        scrollView = ScrollView(contentView: contentView)
+        scrollView = ScrollViewKit(contentView: contentView)
         super.init(nibName: nil, bundle: nil)
     }
     

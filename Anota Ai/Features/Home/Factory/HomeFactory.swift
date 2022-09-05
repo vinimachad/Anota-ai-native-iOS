@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 enum HomeFactory: ControllerFactoryProtocol {
     
     static func createController() -> UIViewController {
         
         let useCase = FindRestaurantsUseCase(api: RestaurantRoutes())
-        let viewModel = HomeViewModel(findRestaurantsUseCase: useCase)
-        return HomeController(viewModel: viewModel)
+        let viewModel = SwiftUIHomeViewModel(findRestaurantsUseCase: useCase)
+        return UIHostingController(rootView: SwiftUIHomeView(viewModel: viewModel))
     }
 }
