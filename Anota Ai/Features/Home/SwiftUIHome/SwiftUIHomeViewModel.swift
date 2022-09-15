@@ -9,7 +9,11 @@ import Foundation
 
 class SwiftUIHomeViewModel: ObservableObject {
     
+    // MARK: - Public properties
+    
     @Published var restaurants: [Restaurant] = []
+    
+    // MARK: - Private properties
     
     private var findRestaurantsUseCase: FindRestaurantsUseCaseProtocol
     

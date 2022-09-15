@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Button: UIButton {
+class ButtonKit: UIButton {
     
     // MARK: - Computed properties
     
@@ -78,7 +78,7 @@ class Button: UIButton {
 
 // MARK: - Setup
 
-extension Button {
+extension ButtonKit {
     
     private func setup() {
         layer.cornerRadius = 48 / 2

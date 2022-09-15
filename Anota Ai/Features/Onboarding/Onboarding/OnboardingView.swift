@@ -24,8 +24,8 @@ class OnboardingView: UIView {
     private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
     private lazy var pageControl = UIPageControl()
-    private lazy var signUpButton = Button()
-    private lazy var loginButton = Button()
+    private lazy var signUpButton = ButtonKit()
+    private lazy var loginButton = ButtonKit()
     
     // MARK: - Private properties
     

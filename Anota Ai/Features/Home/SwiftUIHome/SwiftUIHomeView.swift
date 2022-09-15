@@ -14,8 +14,9 @@ struct SwiftUIHomeView: View {
     var body: some View {
         GeometryReader { _ in
             ScrollView(.vertical, showsIndicators: false) {
-                VStack {
+                VStack(alignment: .leading, spacing: 32) {
                     RestaurantListView(restaurants: viewModel.restaurants)
+                    RestaurantKindSlide()
                 }
             }
         }.padding(.horizontal)

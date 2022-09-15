@@ -25,7 +25,7 @@ class LoginView: UIView {
     private lazy var coverImageView = UIImageView()
     private lazy var emailTextField = TextField()
     private lazy var passwordTextField = TextField()
-    private lazy var loginButton = Button()
+    private lazy var loginButton = ButtonKit()
     private lazy var containerTextFields = UIView()
     
     // MARK: - Private properties

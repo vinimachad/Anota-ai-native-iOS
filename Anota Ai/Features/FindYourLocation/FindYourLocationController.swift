@@ -67,7 +67,7 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
         let viewModel = AlertViewModel(
             title: "localization_permission_error_title".localize(.error),
             description: "localization_permission_error_body".localize(.error),
-            actions: [Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
+            actions: [ButtonKit(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
         )
         showModal(delegate: transitionDelegate, viewModel: viewModel)
     }

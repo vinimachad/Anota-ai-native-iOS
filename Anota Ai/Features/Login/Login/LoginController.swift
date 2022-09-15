@@ -58,7 +58,7 @@ class LoginController<ViewModel: LoginProtocol>: UIViewController, Loadable {
     }
     
     private func showFailureModal(_ description: String) {
-        let action = Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: { [weak self] in
+        let action = ButtonKit(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: { [weak self] in
             self?.navigationController?.dismiss(animated: true)
         })
         let viewModel = AlertViewModel(title: "title_error".localize(.error), description: description, actions: [action])

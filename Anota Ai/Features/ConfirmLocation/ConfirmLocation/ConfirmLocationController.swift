@@ -69,7 +69,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
         let viewModel = AlertViewModel(
             title: "title_error".localize(.error),
             description: description,
-            actions: [Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
+            actions: [ButtonKit(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
         )
         showModal(delegate: presentingDelegate, viewModel: viewModel)
     }

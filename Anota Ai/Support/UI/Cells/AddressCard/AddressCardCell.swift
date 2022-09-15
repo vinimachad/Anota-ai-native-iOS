@@ -24,7 +24,7 @@ class AddressCardCell: UICollectionViewCell, CollectionViewProtocol {
     private lazy var subtitleLabel = UILabel()
     private lazy var streetLabel = UILabel()
     private lazy var cityLabel = UILabel()
-    private lazy var changeButton = Button()
+    private lazy var changeButton = ButtonKit()
     
     // MARK: - Private properties
     

@@ -11,12 +11,12 @@ import FBSnapshotTestCase
 
 class ButtonSnapshot: FBSnapshotTestCase {
     
-    var sut: Button!
+    var sut: ButtonKit!
     var containerView: UIView!
     
     override func setUp() {
         super.setUp()
-        sut = Button()
+        sut = ButtonKit()
         containerView = UIView()
         sut.frame = CGRect(x: 16, y: 16, width: 382, height: 48)
         containerView.frame = CGRect(x: 0, y: 0, width: 414, height: 80)

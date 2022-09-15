@@ -41,6 +41,7 @@
 		3C530F1528AE7B0B008B602D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1428AE7B0B008B602D /* Address.swift */; };
 		3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1628AE7B71008B602D /* Coordinate.swift */; };
 		3C530F1A28AED84E008B602D /* CreateUserAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C530F1928AED84E008B602D /* CreateUserAccountUseCase.swift */; };
+		3C53529C28D0EA440040B495 /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C53529B28D0EA440040B495 /* RectangleButton.swift */; };
 		3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */; };
 		3C544DBE28A2CC1A00C7CD9B /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */; };
 		3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C544DC028A2CD2000C7CD9B /* DimmingView.swift */; };
@@ -142,11 +143,12 @@
 		3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */; };
 		3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */; };
 		3CC4BCC228C67825002EC791 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4BCC128C67825002EC791 /* RestaurantListView.swift */; };
+		3CC4BCC628C69E82002EC791 /* RestaurantKindSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4BCC528C69E82002EC791 /* RestaurantKindSlide.swift */; };
 		3CCA0DAE28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */; };
 		3CCED8C328C280E00042A1EF /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCED8C228C280E00042A1EF /* UIImageView+URL.swift */; };
 		3CCED8C728C282DA0042A1EF /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCED8C628C282DA0042A1EF /* Observer.swift */; };
 		3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */; };
-		3CD35D58289C41F60012480E /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D57289C41F60012480E /* Button.swift */; };
+		3CD35D58289C41F60012480E /* ButtonKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD35D57289C41F60012480E /* ButtonKit.swift */; };
 		3CDB9E8528A1BD5B00E09283 /* AlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */; };
 		7C7FBFFD6CE3910323682ADF /* Pods_Anota_Ai_Anota_AiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325D574C226792E800AF15EA /* Pods_Anota_Ai_Anota_AiUITests.framework */; };
 		C3F92169F0B4B816E2AFA303 /* Pods_Anota_AiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB99B75D499EDAB84F4B2FF2 /* Pods_Anota_AiTests.framework */; };
@@ -207,6 +209,7 @@
 		3C530F1428AE7B0B008B602D /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		3C530F1628AE7B71008B602D /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		3C530F1928AED84E008B602D /* CreateUserAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAccountUseCase.swift; sourceTree = "<group>"; };
+		3C53529B28D0EA440040B495 /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
 		3C544DBB28A2CBB700C7CD9B /* CustomPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationManager.swift; sourceTree = "<group>"; };
 		3C544DBD28A2CC1A00C7CD9B /* CustomPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentation.swift; sourceTree = "<group>"; };
 		3C544DC028A2CD2000C7CD9B /* DimmingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingView.swift; sourceTree = "<group>"; };
@@ -312,11 +315,12 @@
 		3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CC4BCC128C67825002EC791 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
+		3CC4BCC528C69E82002EC791 /* RestaurantKindSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantKindSlide.swift; sourceTree = "<group>"; };
 		3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CCED8C228C280E00042A1EF /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		3CCED8C628C282DA0042A1EF /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		3CD35D53289C0A310012480E /* OnboardingBuilderSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilderSections.swift; sourceTree = "<group>"; };
-		3CD35D57289C41F60012480E /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		3CD35D57289C41F60012480E /* ButtonKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonKit.swift; sourceTree = "<group>"; };
 		3CDB9E8428A1BD5B00E09283 /* AlertPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationController.swift; sourceTree = "<group>"; };
 		565FEFE57ED2B49129C92078 /* Pods-Anota AiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.debug.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E1704B1D19240626C48D02 /* Pods-Anota AiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anota AiTests.release.xcconfig"; path = "Target Support Files/Pods-Anota AiTests/Pods-Anota AiTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -568,6 +572,14 @@
 				3C530F1928AED84E008B602D /* CreateUserAccountUseCase.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		3C53529A28D0EA250040B495 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				3C53529B28D0EA440040B495 /* RectangleButton.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		3C544DBA28A2CB7800C7CD9B /* Presentation */ = {
@@ -962,8 +974,8 @@
 		3C9F46EF28C3B45800E8E0C3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */,
-				3CC4BCC128C67825002EC791 /* RestaurantListView.swift */,
+				3CC4BCC428C69E3E002EC791 /* RestaurantKind */,
+				3CC4BCC328C69E34002EC791 /* Restaurant */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1220,6 +1232,23 @@
 			path = Setup;
 			sourceTree = "<group>";
 		};
+		3CC4BCC328C69E34002EC791 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */,
+				3CC4BCC128C67825002EC791 /* RestaurantListView.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		3CC4BCC428C69E3E002EC791 /* RestaurantKind */ = {
+			isa = PBXGroup;
+			children = (
+				3CC4BCC528C69E82002EC791 /* RestaurantKindSlide.swift */,
+			);
+			path = RestaurantKind;
+			sourceTree = "<group>";
+		};
 		3CCED8C428C282C10042A1EF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -1259,7 +1288,8 @@
 		3CD35D56289C41ED0012480E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				3CD35D57289C41F60012480E /* Button.swift */,
+				3C53529A28D0EA250040B495 /* SwiftUI */,
+				3CD35D57289C41F60012480E /* ButtonKit.swift */,
 				3C68042E28A535D2008F7EE5 /* ButtonKind.swift */,
 			);
 			path = Buttons;
@@ -1614,6 +1644,7 @@
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C3A8E0D28C253C300467F5A /* ControllerFactoryProtocol.swift in Sources */,
+				3CC4BCC628C69E82002EC791 /* RestaurantKindSlide.swift in Sources */,
 				3C3A8E0F28C2544900467F5A /* HomeCoordinator.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
 				3C04157028AD871300077EF4 /* User.swift in Sources */,
@@ -1639,13 +1670,14 @@
 				3C68042F28A535D2008F7EE5 /* ButtonKind.swift in Sources */,
 				3C5CD99E28A833C1002C20F9 /* CreateAccountSectionBuilder.swift in Sources */,
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
-				3CD35D58289C41F60012480E /* Button.swift in Sources */,
+				3CD35D58289C41F60012480E /* ButtonKit.swift in Sources */,
 				3C3A8E1A28C25D2900467F5A /* RestaurantCell.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
 				3C9F46EE28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift in Sources */,
 				3CCED8C728C282DA0042A1EF /* Observer.swift in Sources */,
 				3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */,
 				3C9EA71C289B1ABE00C300B8 /* ExplanationCellViewModel.swift in Sources */,
+				3C53529C28D0EA440040B495 /* RectangleButton.swift in Sources */,
 				3CD35D54289C0A310012480E /* OnboardingBuilderSections.swift in Sources */,
 				3CB0D3D228B02F6500330250 /* Credentials.swift in Sources */,
 				3C04157228AD873200077EF4 /* UserSession.swift in Sources */,

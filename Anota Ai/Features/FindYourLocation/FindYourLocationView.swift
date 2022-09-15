@@ -23,7 +23,7 @@ class FindYourLocationView: UIView {
     // MARK: - UI Components
     
     private lazy var mapView = MapView()
-    private lazy var confirmYourLocationButton = Button()
+    private lazy var confirmYourLocationButton = ButtonKit()
     
     // MARK: - Private properties
     
