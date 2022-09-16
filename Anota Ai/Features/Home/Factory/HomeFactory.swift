@@ -12,9 +12,10 @@ import SwiftUI
 enum HomeFactory: ControllerFactoryProtocol {
     
     static func createController() -> UIViewController {
-        
-        let useCase = FindRestaurantsUseCase(api: RestaurantRoutes())
-        let viewModel = SwiftUIHomeViewModel(findRestaurantsUseCase: useCase)
+        let api = RestaurantRoutes()
+        let restaurantKindsUseCase = RestaurantKindsUseCase(api: api)
+        let findRestaurantsUseCase = FindRestaurantsUseCase(api: api)
+        let viewModel = SwiftUIHomeViewModel(findRestaurantsUseCase: findRestaurantsUseCase, restaurantKindsUseCase: restaurantKindsUseCase)
         return UIHostingController(rootView: SwiftUIHomeView(viewModel: viewModel))
     }
 }

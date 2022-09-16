@@ -12,7 +12,8 @@ struct RestaurantListView: View {
     // MARK: - Properties
     
     var restaurants: [Restaurant]
-    var isVerticalList: Bool = false
+    var isVerticalList: Bool = true
+    var title: String
     
     var columns: [GridItem] = [
         GridItem(.flexible()),
@@ -25,7 +26,7 @@ struct RestaurantListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Restaurantes")
+            Text(title)
                 .font(.default(type: .bold, ofSize: 16))
                 .foregroundColor(.Texts.heading)
             
@@ -56,6 +57,6 @@ struct RestaurantListView_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantListView(restaurants: [
             Restaurant(name: "Teste", avatarUrl: "teste", type: "teste", price: 4, id: "asdasf")
-        ])
+        ], title: "Restaurantes")
     }
 }

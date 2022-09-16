@@ -94,5 +94,12 @@ extension Color {
         static var input: Color {
             Color("inputs")
         }
+        
+    }
+    
+    enum Others {
+        static var yellow: Color {
+            Color("yellow")
+        }
     }
 }

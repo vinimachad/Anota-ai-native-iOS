@@ -27,24 +27,19 @@ class FindRestaurantsUseCase: FindRestaurantsUseCaseProtocol {
     }
     
     func execute(success: Callback<[Restaurant]>, failure: Callback<Error>) {
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            self?.api.findRestaurants { result in
+        self.api.findRestaurants { result in
+            switch result {
+            case .success(let res):
                 
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let res):
-                        
-                        do {
-                            let restaurants = try res.data.decode(type: [Restaurant].self)
-                            success?(restaurants)
-                        } catch let error {
-                            failure?(error)
-                        }
-                        
-                    case .failure(let error):
-                        failure?(error)
-                    }
+                do {
+                    let restaurants = try res.data.decode(type: [Restaurant].self)
+                    success?(restaurants)
+                } catch let error {
+                    failure?(error)
                 }
+                
+            case .failure(let error):
+                failure?(error)
             }
         }
     }

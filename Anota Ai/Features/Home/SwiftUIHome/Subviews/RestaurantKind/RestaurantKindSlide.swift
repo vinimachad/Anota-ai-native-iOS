@@ -9,17 +9,19 @@ import SwiftUI
 
 struct RestaurantKindSlide: View {
     
+    var kinds: [RestaurantKind]
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Tipos de restaurantes").font(.default(type: .bold, ofSize: 16)).foregroundColor(.Texts.heading)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem()], spacing: 16) {
-                    ForEach(0..<18) { _ in
+                    ForEach(kinds) { kind in
                         Button(action: {
-                            print("teste")
+                            print(kind.id)
                         }) {
-                            Text("Hamburgueria")
+                            Text(kind.type)
                         }.buttonStyle(RectangleButton(backgroundColor: .Shapes.box))
                     }
             .padding([.vertical], 10)
@@ -31,6 +33,6 @@ struct RestaurantKindSlide: View {
 
 struct RestaurantKindSlide_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantKindSlide()
+        RestaurantKindSlide(kinds: [RestaurantKind(id: "asdasd", type: "Hamburgueria")])
     }
 }

@@ -13,19 +13,17 @@ struct SwiftUIHomeView: View {
     
     var body: some View {
         GeometryReader { _ in
+            Color.Shapes.shape.ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 32) {
-                    RestaurantListView(restaurants: viewModel.restaurants)
-                    RestaurantKindSlide()
+                    RestaurantListView(restaurants: viewModel.restaurants, isVerticalList: false, title: "Famosos por aqui")
+                    NearRestaurants(restaurants: viewModel.restaurants)
+                    RestaurantKindSlide(kinds: viewModel.restaurantKinds)
+                    RestaurantListView(restaurants: viewModel.restaurants, title: "Restaurantes")
                 }
             }
-        }.padding(.horizontal)
-            .onAppear(perform: viewModel.findRestaurantsRequest)
-    }
-}
-
-struct SwiftUIHomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIHomeView(viewModel: SwiftUIHomeViewModel(findRestaurantsUseCase: FindRestaurantsUseCase(api: RestaurantRoutes())))
+            .padding(.horizontal)
+                .onAppear(perform: viewModel.callRequests)
+        }
     }
 }
