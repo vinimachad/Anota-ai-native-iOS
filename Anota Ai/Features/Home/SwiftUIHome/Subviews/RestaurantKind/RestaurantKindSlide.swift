@@ -9,9 +9,21 @@ import SwiftUI
 
 struct RestaurantKindSlide: View {
     
-    var kinds: [RestaurantKind]
+    var state: RequestState<[RestaurantKind]>
     
     var body: some View {
+        
+        switch state {
+        case .loading: loadingView()
+        case .success(let kinds): listOf(kinds: kinds)
+        default: loadingView()
+        }
+    }
+}
+
+extension RestaurantKindSlide {
+    
+    private func listOf(kinds: [RestaurantKind]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Tipos de restaurantes").font(.default(type: .bold, ofSize: 16)).foregroundColor(.Texts.heading)
             
@@ -33,6 +45,6 @@ struct RestaurantKindSlide: View {
 
 struct RestaurantKindSlide_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantKindSlide(kinds: [RestaurantKind(id: "asdasd", type: "Hamburgueria")])
+        RestaurantKindSlide(state: .loading)
     }
 }

@@ -15,7 +15,12 @@ enum HomeFactory: ControllerFactoryProtocol {
         let api = RestaurantRoutes()
         let restaurantKindsUseCase = RestaurantKindsUseCase(api: api)
         let findRestaurantsUseCase = FindRestaurantsUseCase(api: api)
-        let viewModel = SwiftUIHomeViewModel(findRestaurantsUseCase: findRestaurantsUseCase, restaurantKindsUseCase: restaurantKindsUseCase)
+        let nearRestaurantsUseCase = NearRestaurantUseCase(api: api)
+        let viewModel = SwiftUIHomeViewModel(
+            findRestaurantsUseCase: findRestaurantsUseCase,
+            restaurantKindsUseCase: restaurantKindsUseCase,
+            nearRestaurantsUseCase: nearRestaurantsUseCase
+        )
         return UIHostingController(rootView: SwiftUIHomeView(viewModel: viewModel))
     }
 }

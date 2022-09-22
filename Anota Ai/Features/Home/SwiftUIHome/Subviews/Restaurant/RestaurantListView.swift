@@ -11,9 +11,9 @@ struct RestaurantListView: View {
     
     // MARK: - Properties
     
-    var restaurants: [Restaurant]
     var isVerticalList: Bool = true
     var title: String
+    var state: RequestState<[Restaurant]>
     
     var columns: [GridItem] = [
         GridItem(.flexible()),
@@ -25,6 +25,33 @@ struct RestaurantListView: View {
     // MARK: - Body
     
     var body: some View {
+        
+        switch state {
+        case .loading:
+            progressView()
+        case .success(let restaurants):
+            listOf(restaurants)
+        default: progressView()
+        }
+    }
+    
+    private func generateRestaurantList(_ restaurants: [Restaurant]) -> some View {
+        ForEach(restaurants) { item in
+            CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
+        }
+    }
+    
+    func progressView() -> some View {
+        HStack(alignment: .center) {
+            Spacer()
+            ProgressView()
+                .progressViewStyle(.circular)
+            Spacer()
+        }
+    }
+    
+    func listOf(_ restaurants: [Restaurant]) -> some View {
+        
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.default(type: .bold, ofSize: 16))
@@ -33,30 +60,22 @@ struct RestaurantListView: View {
             if isVerticalList {
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: columns, spacing: 16) {
-                        generateRestaurantList()
+                        generateRestaurantList(restaurants)
                     }
                 }
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {
-                        generateRestaurantList()
+                        generateRestaurantList(restaurants)
                     }
                 }
             }
-        }
-    }
-    
-    func generateRestaurantList() -> some View {
-        ForEach(restaurants) { item in
-            CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
         }
     }
 }
 
 struct RestaurantListView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantListView(restaurants: [
-            Restaurant(name: "Teste", avatarUrl: "teste", type: "teste", price: 4, id: "asdasf")
-        ], title: "Restaurantes")
+        RestaurantListView(title: "Restaurantes", state: .loading)
     }
 }

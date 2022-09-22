@@ -10,6 +10,7 @@ import Moya
 protocol RestaurantRoutesProtocol {
     func findRestaurants(completion: @escaping Completion)
     func restaurantKinds(completion: @escaping Completion)
+    func near(coordinate: Coordinate, completion: @escaping Completion)
 }
 
 class RestaurantRoutes {
@@ -18,11 +19,13 @@ class RestaurantRoutes {
         
         case findRestaurants
         case restaurantKinds
+        case near(Coordinate)
         
         var path: String {
             switch self {
             case .findRestaurants: return "restaurant"
             case .restaurantKinds: return "restaurant/kinds"
+            case .near: return "restaurant/near"
             }
         }
         
@@ -30,6 +33,7 @@ class RestaurantRoutes {
             switch self {
             case .findRestaurants: return .get
             case .restaurantKinds: return .get
+            case .near: return .get
             }
         }
         
@@ -37,6 +41,7 @@ class RestaurantRoutes {
             switch self {
             case .findRestaurants: return .requestPlain
             case .restaurantKinds: return .requestPlain
+            case .near(let coordinate): return .requestCustomJSONEncodable(coordinate, encoder: defaultJSONEncoder)
             }
         }
         
@@ -56,5 +61,9 @@ extension RestaurantRoutes: RestaurantRoutesProtocol {
     
     func restaurantKinds(completion: @escaping Completion) {
         provider.request(.restaurantKinds, completion: completion)
+    }
+    
+    func near(coordinate: Coordinate, completion: @escaping Moya.Completion) {
+        provider.request(.near(coordinate), completion: completion)
     }
 }

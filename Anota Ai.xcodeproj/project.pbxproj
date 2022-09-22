@@ -19,6 +19,11 @@
 		3C08DAC728A699B30043D78A /* LoadingSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */; };
 		3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A61A528A7EFE4000D177D /* MapView.swift */; };
 		3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0A61A828A7F3A2000D177D /* MapViewModel.swift */; };
+		3C29ACB128DCB708007D741A /* RequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB028DCB708007D741A /* RequestState.swift */; };
+		3C29ACB328DCC430007D741A /* ProgressView+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB228DCC430007D741A /* ProgressView+View.swift */; };
+		3C29ACB728DCC719007D741A /* NearRestaurantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB628DCC719007D741A /* NearRestaurantUseCase.swift */; };
+		3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */; };
+		3C29ACBD28DCD28E007D741A /* NearRestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */; };
 		3C2CF9E428C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CF9E328C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift */; };
 		3C3A8E0428C252F500467F5A /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0328C252F500467F5A /* HomeFactory.swift */; };
 		3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0628C2530C00467F5A /* HomeView.swift */; };
@@ -192,6 +197,11 @@
 		3C08DAC628A699B30043D78A /* LoadingSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSnapshot.swift; sourceTree = "<group>"; };
 		3C0A61A528A7EFE4000D177D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3C0A61A828A7F3A2000D177D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		3C29ACB028DCB708007D741A /* RequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestState.swift; sourceTree = "<group>"; };
+		3C29ACB228DCC430007D741A /* ProgressView+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressView+View.swift"; sourceTree = "<group>"; };
+		3C29ACB628DCC719007D741A /* NearRestaurantUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantUseCase.swift; sourceTree = "<group>"; };
+		3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactoryProtocol.swift; sourceTree = "<group>"; };
+		3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantCard.swift; sourceTree = "<group>"; };
 		3C2CF9E328C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleSupplementaryViewModel.swift; sourceTree = "<group>"; };
 		3C3A8E0328C252F500467F5A /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		3C3A8E0628C2530C00467F5A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -564,6 +574,7 @@
 			children = (
 				3C3A8E2028C2769000467F5A /* FindRestaurantsUseCase.swift */,
 				3CF893CA28D4BA0E00C4C8EB /* RestaurantKindsUseCase.swift */,
+				3C29ACB628DCC719007D741A /* NearRestaurantUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -898,6 +909,7 @@
 				3C7A4385289ECD5C00DA1E36 /* UIViewController+Navigation.swift */,
 				3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */,
 				3C5CD9A628A837F1002C20F9 /* UILabel+Setup.swift */,
+				3C29ACB228DCC430007D741A /* ProgressView+View.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -906,6 +918,7 @@
 			isa = PBXGroup;
 			children = (
 				3C7A4388289EDF6600DA1E36 /* Loading */,
+				3C29ACB028DCB708007D741A /* RequestState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -998,6 +1011,7 @@
 			children = (
 				3CA1612128D3A5100086BA60 /* NearRestaurants.swift */,
 				3CA1613128D3D9990086BA60 /* NearPreviewImage.swift */,
+				3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */,
 			);
 			path = NearRestaurants;
 			sourceTree = "<group>";
@@ -1120,6 +1134,7 @@
 			children = (
 				3CA3D7BE289AFEF4006B3D90 /* OnboardingFactory.swift */,
 				3C3A8E0C28C253C300467F5A /* ControllerFactoryProtocol.swift */,
+				3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1638,6 +1653,7 @@
 				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
 				3C2CF9E428C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift in Sources */,
 				3C9F46EC28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift in Sources */,
+				3C29ACBD28DCD28E007D741A /* NearRestaurantCard.swift in Sources */,
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
 				3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */,
 				3C6639BA28AFDBBF00CBE73F /* FindLocalizationUseCase.swift in Sources */,
@@ -1660,8 +1676,10 @@
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
 				3C3A8E1F28C275D300467F5A /* RestaurantRoutes.swift in Sources */,
 				3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */,
+				3C29ACB728DCC719007D741A /* NearRestaurantUseCase.swift in Sources */,
 				3C623CDA28C2B62C00578E26 /* HeaderTitleSupplementary.swift in Sources */,
 				3C3A8E1428C2597600467F5A /* BaseCollectionView.swift in Sources */,
+				3C29ACB128DCB708007D741A /* RequestState.swift in Sources */,
 				3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */,
 				3C3A8E0928C2531200467F5A /* HomeViewModel.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
@@ -1675,6 +1693,7 @@
 				3C530F1528AE7B0B008B602D /* Address.swift in Sources */,
 				3C3A8E0B28C2531A00467F5A /* HomeController.swift in Sources */,
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
+				3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
 				3C3A8E1728C25BDA00467F5A /* HomeBuilderSection.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
@@ -1682,6 +1701,7 @@
 				3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */,
 				3CA1612228D3A5100086BA60 /* NearRestaurants.swift in Sources */,
 				3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */,
+				3C29ACB328DCC430007D741A /* ProgressView+View.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
 				3C530F1A28AED84E008B602D /* CreateUserAccountUseCase.swift in Sources */,
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
