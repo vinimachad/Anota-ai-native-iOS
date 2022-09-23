@@ -24,6 +24,7 @@
 		3C29ACB728DCC719007D741A /* NearRestaurantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB628DCC719007D741A /* NearRestaurantUseCase.swift */; };
 		3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */; };
 		3C29ACBD28DCD28E007D741A /* NearRestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */; };
+		3C29ACBF28DDEEA7007D741A /* NearRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACBE28DDEEA7007D741A /* NearRequest.swift */; };
 		3C2CF9E428C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CF9E328C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift */; };
 		3C3A8E0428C252F500467F5A /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0328C252F500467F5A /* HomeFactory.swift */; };
 		3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0628C2530C00467F5A /* HomeView.swift */; };
@@ -202,6 +203,7 @@
 		3C29ACB628DCC719007D741A /* NearRestaurantUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantUseCase.swift; sourceTree = "<group>"; };
 		3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactoryProtocol.swift; sourceTree = "<group>"; };
 		3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantCard.swift; sourceTree = "<group>"; };
+		3C29ACBE28DDEEA7007D741A /* NearRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRequest.swift; sourceTree = "<group>"; };
 		3C2CF9E328C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleSupplementaryViewModel.swift; sourceTree = "<group>"; };
 		3C3A8E0328C252F500467F5A /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		3C3A8E0628C2530C00467F5A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -1345,6 +1347,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF893CD28D4BA7C00C4C8EB /* RestaurantKind.swift */,
+				3C29ACBE28DDEEA7007D741A /* NearRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1653,6 +1656,7 @@
 				3C731AC328A16D5A00BCE107 /* AlertView.swift in Sources */,
 				3C2CF9E428C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift in Sources */,
 				3C9F46EC28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift in Sources */,
+				3C29ACBF28DDEEA7007D741A /* NearRequest.swift in Sources */,
 				3C29ACBD28DCD28E007D741A /* NearRestaurantCard.swift in Sources */,
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
 				3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */,

@@ -40,7 +40,7 @@ class SwiftUIHomeViewModel: ObservableObject {
             
             self.nearRestaurantsRequest()
             self.semaphore.wait()
-            Ω
+            
             self.findRestaurantsRequest()
             self.semaphore.wait()
             
@@ -56,7 +56,7 @@ extension SwiftUIHomeViewModel {
     
     private func nearRestaurantsRequest() {
         nearRestaurantsUseCase.execute(
-            request: Coordinate(lat: "-20,437809", long: "-54,621949"),
+            request: NearRequest(lat: "-20.4377741", long: "-54.6220197", maxDistance: 10),
             success: { [weak self] restaurants in
                 self?.nearRestaurantState = .success(restaurants)
                 self?.semaphore.signal()

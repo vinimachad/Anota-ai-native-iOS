@@ -19,8 +19,8 @@ class NearRestaurantUseCase: UseCaseFactoryProtocol {
         self.api = api
     }
     
-    func execute(request: Coordinate, success: Success<[Restaurant]>?, failure: Failure?) {
-        api.near(coordinate: request, completion: { result in
+    func execute(request: NearRequest, success: Success<[Restaurant]>?, failure: Failure?) {
+        api.near(request: request, completion: { result in
             
             switch result {
             case .success(let res):

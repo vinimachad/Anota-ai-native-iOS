@@ -12,6 +12,7 @@ struct Restaurant: Codable, Identifiable {
     var avatarUrl: String
     var type: String
     var price: Int
+    var evaluation: Int?
     var id: String
 }
 
