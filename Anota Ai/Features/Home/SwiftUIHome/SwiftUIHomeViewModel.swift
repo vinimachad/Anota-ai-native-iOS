@@ -64,8 +64,9 @@ extension SwiftUIHomeViewModel {
         
         restaurantKindsUseCase.execute(
             success: { [weak self] kinds in
-                self?.restaurantKindsState = .success(kinds)
-                self?.semaphore.signal()
+                guard let self else { return }
+                self.isEmptyStateValidation(state: &self.restaurantKindsState, items: kinds)
+                self.semaphore.signal()
             }
             ,failure: { [weak self] error in
                 self?.restaurantKindsState = .failure(error.localizedDescription)
@@ -78,8 +79,9 @@ extension SwiftUIHomeViewModel {
         nearRestaurantsUseCase.execute(
             request: NearRequest(lat: "-20.4377741", long: "-54.6220197", maxDistance: 10),
             success: { [weak self] restaurants in
-                self?.nearRestaurantState = .success(restaurants)
-                self?.semaphore.signal()
+                guard let self else { return }
+                self.isEmptyStateValidation(state: &self.nearRestaurantState, items: restaurants)
+                self.semaphore.signal()
             },
             failure: { [weak self] error in
                 self?.nearRestaurantState = .failure(error.localizedDescription)
@@ -90,8 +92,9 @@ extension SwiftUIHomeViewModel {
     private func bestRatedRequest() {
         bestRatedRestaurantsUseCase.execute(
             success: { [weak self] restaurants in
-                self?.bestRatedState = .success(restaurants)
-                self?.semaphore.signal()
+                guard let self else { return }
+                self.isEmptyStateValidation(state: &self.bestRatedState, items: restaurants)
+                self.semaphore.signal()
             },
             failure: { [weak self] error in
                 self?.bestRatedState = .failure(error.localizedDescription)
@@ -104,13 +107,24 @@ extension SwiftUIHomeViewModel {
         
         findRestaurantsUseCase.execute(
             success: { [weak self] restaurants in
-                self?.restaurantState = .success(restaurants)
-                self?.semaphore.signal()
+                guard let self else { return }
+                self.isEmptyStateValidation(state: &self.restaurantState, items: restaurants)
+                self.semaphore.signal()
             },
             failure: { [weak self] message in
                 self?.restaurantState = .failure(message.localizedDescription)
                 self?.semaphore.signal()
             }
         )
+    }
+    
+    // MARK: - Private methods
+    
+    private func isEmptyStateValidation<T: Decodable>(state: inout RequestState<[T]>, items: [T]) {
+        if items.isEmpty {
+            state = .empty
+            return
+        }
+        state = .success(items)
     }
 }

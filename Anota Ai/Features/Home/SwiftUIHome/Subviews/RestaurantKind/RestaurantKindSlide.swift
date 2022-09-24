@@ -10,13 +10,14 @@ import SwiftUI
 struct RestaurantKindSlide: View {
     
     var state: RequestState<[RestaurantKind]>
+    @State private var opacity: Double = 0.2
     
     var body: some View {
         
         switch state {
-        case .loading: loadingView()
+        case .loading: generateLoadingEffect()
         case .success(let kinds): listOf(kinds: kinds)
-        default: loadingView()
+        default: EmptyView()
         }
     }
 }
@@ -40,6 +41,21 @@ extension RestaurantKindSlide {
                 }
             }
         }
+    }
+    
+    private func generateLoadingEffect() -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            RoundedRectangle(cornerRadius: 4)
+                .frame(width: 160, height: 15)
+                .foregroundColor(.Shapes.stroke)
+            HStack(spacing: 16) {
+                ForEach(0..<3) { _ in
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundColor(.Shapes.stroke)
+                        .frame(width: 150, height: 48)
+                }
+            }
+        }.shimmerEffect(opacity: opacity)
     }
 }
 

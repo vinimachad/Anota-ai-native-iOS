@@ -35,6 +35,10 @@ struct NearRestaurantCard: View {
                     .lineLimit(2)
                 
                 HStack() {
+                    Text(String(restaurant.evaluation))
+                        .foregroundColor(.Texts.body)
+                        .font(.default(type: .regular, ofSize: 12))
+                         
                     HStack(spacing: 3) {
                         ForEach(0..<restaurant.evaluationToInt(), id: \.self) { _ in
                             starsEvaluation("star.fill").foregroundColor(.Others.yellow)

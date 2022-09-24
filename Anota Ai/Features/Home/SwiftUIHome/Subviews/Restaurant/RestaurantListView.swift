@@ -22,31 +22,24 @@ struct RestaurantListView: View {
         GridItem(.flexible())
     ]
     
+    @State private var opacity: Double = 0.4
+    
     // MARK: - Body
     
     var body: some View {
         
         switch state {
         case .loading:
-            progressView()
+            generateRestaurantLoading()
         case .success(let restaurants):
             listOf(restaurants)
-        default: progressView()
+        default: EmptyView()
         }
     }
     
     private func generateRestaurantList(_ restaurants: [Restaurant]) -> some View {
         ForEach(restaurants) { item in
             CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
-        }
-    }
-    
-    func progressView() -> some View {
-        HStack(alignment: .center) {
-            Spacer()
-            ProgressView()
-                .progressViewStyle(.circular)
-            Spacer()
         }
     }
     
@@ -71,6 +64,21 @@ struct RestaurantListView: View {
                 }
             }
         }
+    }
+    
+    private func generateRestaurantLoading() -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            RoundedRectangle(cornerRadius: 4)
+                .frame(width: 160, height: 15)
+                .foregroundColor(.Shapes.stroke)
+            HStack(spacing: 16) {
+                ForEach(0..<4) { _ in
+                    Circle()
+                        .foregroundColor(.Shapes.stroke)
+                        .frame(width: 83, height: 83)
+                }
+            }
+        }.shimmerEffect(opacity: opacity)
     }
 }
 

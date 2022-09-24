@@ -88,6 +88,7 @@
 		3C6D511228A896A1009883A1 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511128A896A1009883A1 /* TextFieldCell.swift */; };
 		3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */; };
 		3C6DAECB28DF3F5E00BD9807 /* Image+Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */; };
+		3C6DAECD28DF49AA00BD9807 /* View+ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
@@ -269,6 +270,7 @@
 		3C6D511128A896A1009883A1 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Circular.swift"; sourceTree = "<group>"; };
+		3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ShimmerEffect.swift"; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -1028,6 +1030,7 @@
 			children = (
 				3CA1612B28D3D13C0086BA60 /* View+RoundCorner.swift */,
 				3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */,
+				3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -1679,6 +1682,7 @@
 				3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */,
 				3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
+				3C6DAECD28DF49AA00BD9807 /* View+ShimmerEffect.swift in Sources */,
 				3C6639B828AFD9CA00CBE73F /* LocationRoutes.swift in Sources */,
 				3C29ACC128DE0A29007D741A /* BestRatedRestaurantUseCase.swift in Sources */,
 				3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */,

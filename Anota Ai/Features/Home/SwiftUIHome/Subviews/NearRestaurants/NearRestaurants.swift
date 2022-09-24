@@ -10,16 +10,16 @@ import SwiftUI
 struct NearRestaurants: View {
     
     var state: RequestState<[Restaurant]>
+    @State private var opacity: Double = 0.2
     
     var body: some View {
         switch state {
-        case .loading: loadingView()
+        case .loading: generateLoadingEffect()
         case .success(let restaurants): listOf(restaurants)
-        default: loadingView()
+        default: EmptyView()
         }
     }
 }
-
 
 extension NearRestaurants {
     
@@ -41,6 +41,21 @@ extension NearRestaurants {
                 }.padding(.vertical, 10)
             }
         }
+    }
+    
+    private func generateLoadingEffect() -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            RoundedRectangle(cornerRadius: 4)
+                .frame(width: 160, height: 15)
+                .foregroundColor(.Shapes.stroke)
+            HStack(spacing: 16) {
+                ForEach(0..<3) { _ in
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundColor(.Shapes.stroke)
+                        .frame(width: 150, height: 180)
+                }
+            }
+        }.shimmerEffect(opacity: opacity)
     }
 }
 
