@@ -12,8 +12,12 @@ struct Restaurant: Codable, Identifiable {
     var avatarUrl: String
     var type: String
     var price: Int
-    var evaluation: Int?
+    var evaluation: Double?
     var id: String
+    
+    func evaluationToInt() -> Int {
+        Int(evaluation ?? 0)
+    }
 }
 
 extension Restaurant {

@@ -25,6 +25,7 @@
 		3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */; };
 		3C29ACBD28DCD28E007D741A /* NearRestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */; };
 		3C29ACBF28DDEEA7007D741A /* NearRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACBE28DDEEA7007D741A /* NearRequest.swift */; };
+		3C29ACC128DE0A29007D741A /* BestRatedRestaurantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C29ACC028DE0A29007D741A /* BestRatedRestaurantUseCase.swift */; };
 		3C2CF9E428C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CF9E328C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift */; };
 		3C3A8E0428C252F500467F5A /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0328C252F500467F5A /* HomeFactory.swift */; };
 		3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8E0628C2530C00467F5A /* HomeView.swift */; };
@@ -86,6 +87,7 @@
 		3C698759289D4DF000901CE7 /* OnboardingViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */; };
 		3C6D511228A896A1009883A1 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511128A896A1009883A1 /* TextFieldCell.swift */; };
 		3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */; };
+		3C6DAECB28DF3F5E00BD9807 /* Image+Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
@@ -204,6 +206,7 @@
 		3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactoryProtocol.swift; sourceTree = "<group>"; };
 		3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantCard.swift; sourceTree = "<group>"; };
 		3C29ACBE28DDEEA7007D741A /* NearRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRequest.swift; sourceTree = "<group>"; };
+		3C29ACC028DE0A29007D741A /* BestRatedRestaurantUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRatedRestaurantUseCase.swift; sourceTree = "<group>"; };
 		3C2CF9E328C39346006D7988 /* HeaderTitleSupplementaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitleSupplementaryViewModel.swift; sourceTree = "<group>"; };
 		3C3A8E0328C252F500467F5A /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		3C3A8E0628C2530C00467F5A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 		3C698758289D4DF000901CE7 /* OnboardingViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelMock.swift; sourceTree = "<group>"; };
 		3C6D511128A896A1009883A1 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
+		3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Circular.swift"; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -577,6 +581,7 @@
 				3C3A8E2028C2769000467F5A /* FindRestaurantsUseCase.swift */,
 				3CF893CA28D4BA0E00C4C8EB /* RestaurantKindsUseCase.swift */,
 				3C29ACB628DCC719007D741A /* NearRestaurantUseCase.swift */,
+				3C29ACC028DE0A29007D741A /* BestRatedRestaurantUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1022,6 +1027,7 @@
 			isa = PBXGroup;
 			children = (
 				3CA1612B28D3D13C0086BA60 /* View+RoundCorner.swift */,
+				3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -1674,10 +1680,12 @@
 				3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C6639B828AFD9CA00CBE73F /* LocationRoutes.swift in Sources */,
+				3C29ACC128DE0A29007D741A /* BestRatedRestaurantUseCase.swift in Sources */,
 				3C3A8E0728C2530C00467F5A /* HomeView.swift in Sources */,
 				3C544DC128A2CD2000C7CD9B /* DimmingView.swift in Sources */,
 				3C3A8E2128C2769000467F5A /* FindRestaurantsUseCase.swift in Sources */,
 				3C5CD9A928A83BCA002C20F9 /* AddressCardCellViewModel.swift in Sources */,
+				3C6DAECB28DF3F5E00BD9807 /* Image+Circular.swift in Sources */,
 				3C3A8E1F28C275D300467F5A /* RestaurantRoutes.swift in Sources */,
 				3C530F1028AE76EE008B602D /* APIProvider.swift in Sources */,
 				3C29ACB728DCC719007D741A /* NearRestaurantUseCase.swift in Sources */,

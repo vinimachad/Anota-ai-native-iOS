@@ -15,15 +15,17 @@ struct CircleRestaurantsView: View {
     
     var body: some View {
         VStack {
-            KFImage.url(url)
-                .resizable()
-                .fade(duration: 0.25)
-                .onProgress { receivedSize, totalSize in  }
-                .onSuccess { result in  }
-                .onFailure { error in }
-                .clipShape(Circle())
-                .frame(width: 83, height: 83, alignment: .center)
-                .scaledToFill()
+            AsyncImage(url: url) { result in
+                switch result {
+                case .success(let image):
+                    image
+                        .circleImage(width: 83, height: 83)
+                default:
+                    Image(systemName: "photo.circle.fill")
+                        .circleImage(width: 83, height: 83)
+                        .foregroundColor(.gray)
+                }
+            }
             
             Text(name)
                 .foregroundColor(.Texts.body)

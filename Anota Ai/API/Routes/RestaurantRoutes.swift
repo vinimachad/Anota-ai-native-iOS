@@ -11,6 +11,7 @@ protocol RestaurantRoutesProtocol {
     func findRestaurants(completion: @escaping Completion)
     func restaurantKinds(completion: @escaping Completion)
     func near(request: NearRequest, completion: @escaping Completion)
+    func bestRated(completion: @escaping Completion)
 }
 
 class RestaurantRoutes {
@@ -20,12 +21,14 @@ class RestaurantRoutes {
         case findRestaurants
         case restaurantKinds
         case near(NearRequest)
+        case bestRated
         
         var path: String {
             switch self {
             case .findRestaurants: return "restaurant"
             case .restaurantKinds: return "restaurant/kinds"
             case .near: return "restaurant/near"
+            case .bestRated: return "restaurant/bestRated"
             }
         }
         
@@ -34,6 +37,7 @@ class RestaurantRoutes {
             case .findRestaurants: return .get
             case .restaurantKinds: return .get
             case .near: return .get
+            case .bestRated: return .get
             }
         }
         
@@ -42,6 +46,7 @@ class RestaurantRoutes {
             case .findRestaurants: return .requestPlain
             case .restaurantKinds: return .requestPlain
             case .near(let request): return .requestParameters(parameters: request.toJson(), encoding: URLEncoding.queryString)
+            case .bestRated: return .requestPlain
             }
         }
         
@@ -65,5 +70,9 @@ extension RestaurantRoutes: RestaurantRoutesProtocol {
     
     func near(request: NearRequest, completion: @escaping Moya.Completion) {
         provider.request(.near(request), completion: completion)
+    }
+    
+    func bestRated(completion: @escaping Moya.Completion) {
+        provider.request(.bestRated, completion: completion)
     }
 }

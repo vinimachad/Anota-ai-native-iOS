@@ -14,12 +14,14 @@ class SwiftUIHomeViewModel: ObservableObject {
     @Published var restaurantKindsState: RequestState<[RestaurantKind]> = .loading
     @Published var restaurantState: RequestState<[Restaurant]> = .loading
     @Published var nearRestaurantState: RequestState<[Restaurant]> = .loading
+    @Published var bestRatedState: RequestState<[Restaurant]> = .loading
     
     // MARK: - Private properties
     
     private var findRestaurantsUseCase: FindRestaurantsUseCaseProtocol
     private var restaurantKindsUseCase: RestaurantKindsUseCaseProtocol
     private var nearRestaurantsUseCase: NearRestaurantUseCase
+    private var bestRatedRestaurantsUseCase: BestRatedRestaurantUseCase
     private let semaphore = DispatchSemaphore(value: 0)
     
     // MARK: - Init
@@ -27,25 +29,29 @@ class SwiftUIHomeViewModel: ObservableObject {
     init(
         findRestaurantsUseCase: FindRestaurantsUseCaseProtocol,
         restaurantKindsUseCase: RestaurantKindsUseCaseProtocol,
-        nearRestaurantsUseCase: NearRestaurantUseCase
+        nearRestaurantsUseCase: NearRestaurantUseCase,
+        bestRatedRestaurantsUseCase: BestRatedRestaurantUseCase
     ) {
         self.findRestaurantsUseCase = findRestaurantsUseCase
         self.restaurantKindsUseCase = restaurantKindsUseCase
         self.nearRestaurantsUseCase = nearRestaurantsUseCase
+        self.bestRatedRestaurantsUseCase = bestRatedRestaurantsUseCase
     }
     
     func callRequests() {
         
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.restaurantKindsRequest()
+            self?.semaphore.wait()
             
-            self.nearRestaurantsRequest()
-            self.semaphore.wait()
+            self?.nearRestaurantsRequest()
+            self?.semaphore.wait()
             
-            self.findRestaurantsRequest()
-            self.semaphore.wait()
+            self?.bestRatedRequest()
+            self?.semaphore.wait()
             
-            self.restaurantKindsRequest()
-            self.semaphore.wait()
+            self?.findRestaurantsRequest()
+            self?.semaphore.wait()
         }
     }
 }
@@ -53,6 +59,20 @@ class SwiftUIHomeViewModel: ObservableObject {
 // MARK: - Requests
 
 extension SwiftUIHomeViewModel {
+    
+    private func restaurantKindsRequest() {
+        
+        restaurantKindsUseCase.execute(
+            success: { [weak self] kinds in
+                self?.restaurantKindsState = .success(kinds)
+                self?.semaphore.signal()
+            }
+            ,failure: { [weak self] error in
+                self?.restaurantKindsState = .failure(error.localizedDescription)
+                self?.semaphore.signal()
+            }
+        )
+    }
     
     private func nearRestaurantsRequest() {
         nearRestaurantsUseCase.execute(
@@ -67,6 +87,19 @@ extension SwiftUIHomeViewModel {
             })
     }
     
+    private func bestRatedRequest() {
+        bestRatedRestaurantsUseCase.execute(
+            success: { [weak self] restaurants in
+                self?.bestRatedState = .success(restaurants)
+                self?.semaphore.signal()
+            },
+            failure: { [weak self] error in
+                self?.bestRatedState = .failure(error.localizedDescription)
+                self?.semaphore.signal()
+            }
+        )
+    }
+    
     private func findRestaurantsRequest() {
         
         findRestaurantsUseCase.execute(
@@ -76,20 +109,6 @@ extension SwiftUIHomeViewModel {
             },
             failure: { [weak self] message in
                 self?.restaurantState = .failure(message.localizedDescription)
-                self?.semaphore.signal()
-            }
-        )
-    }
-    
-    private func restaurantKindsRequest() {
-        
-        restaurantKindsUseCase.execute(
-            success: { [weak self] kinds in
-                self?.restaurantKindsState = .success(kinds)
-                self?.semaphore.signal()
-            }
-            ,failure: { [weak self] error in
-                self?.restaurantKindsState = .failure(error.localizedDescription)
                 self?.semaphore.signal()
             }
         )

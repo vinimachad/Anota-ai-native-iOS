@@ -35,15 +35,12 @@ struct NearRestaurantCard: View {
                     .lineLimit(2)
                 
                 HStack() {
-                    Text("1,2")
-                        .foregroundColor(.Texts.body)
-                        .font(.default(type: .regular, ofSize: 12))
                     HStack(spacing: 3) {
-                        ForEach(0..<restaurant.price, id: \.self) { _ in
-                            starsEvaluation("star.fill")
+                        ForEach(0..<restaurant.evaluationToInt(), id: \.self) { _ in
+                            starsEvaluation("star.fill").foregroundColor(.Others.yellow)
                         }
-                        ForEach(0..<5-restaurant.price, id: \.self) { _ in
-                            starsEvaluation("star")
+                        ForEach(0..<5-restaurant.evaluationToInt(), id: \.self) { _ in
+                            starsEvaluation("star").foregroundColor(.gray)
                         }
                     }
                 }
@@ -69,7 +66,6 @@ struct NearRestaurantCard: View {
         Image(systemName: image)
             .resizable()
             .frame(width: 10, height: 10, alignment: .center)
-            .foregroundColor(.Others.yellow)
     }
 }
 
