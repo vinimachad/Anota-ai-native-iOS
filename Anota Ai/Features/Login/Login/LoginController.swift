@@ -86,5 +86,10 @@ extension LoginController {
             self?.hideLoading()
             self?.showFailureModal(message)
         }
+        
+        viewModel.onFailureGetUserAddress = { [weak self] in
+            self?.hideLoading()
+            self?.delegate?.presentHome()
+        }
     }
 }

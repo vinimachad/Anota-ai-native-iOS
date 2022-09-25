@@ -12,6 +12,7 @@ protocol LoginProtocol: LoginViewModelProtocol {
     var onStartLoading: (() -> Void)? { get set }
     var onSuccessAuthenticate: (() -> Void)? { get set }
     var onFailureAuthenticate: ((String) -> Void)? { get set }
+    var onFailureGetUserAddress: (() -> Void)? { get set }
 }
 
 class LoginViewModel {
@@ -22,16 +23,19 @@ class LoginViewModel {
     var onStartLoading: (() -> Void)?
     var onSuccessAuthenticate: (() -> Void)?
     var onFailureAuthenticate: ((String) -> Void)?
+    var onFailureGetUserAddress: (() -> Void)?
     
     // MARK: - Private properties
     
     private var credentials = Credentials()
     private var authenticateUseCase: AuthenticateUseCaseProtocol
+    private var userAddressUseCase: UserAddressesUseCase
     
     // MARK: - Init
     
-    init(authenticateUseCase: AuthenticateUseCaseProtocol) {
+    init(authenticateUseCase: AuthenticateUseCaseProtocol, userAddressUseCase: UserAddressesUseCase) {
         self.authenticateUseCase = authenticateUseCase
+        self.userAddressUseCase = userAddressUseCase
     }
     
     private func validateFields() {
@@ -74,10 +78,26 @@ extension LoginViewModel {
             req: credentials,
             success: { [weak self] session in
                 self?.saveUserInSession(session)
-                self?.onSuccessAuthenticate?()
+                self?.userAddressesRequest(userId: session.id)
             },
             failure: { [weak self] message in
                 self?.onFailureAuthenticate?(message)
+            }
+        )
+    }
+    
+    func userAddressesRequest(userId: String) {
+        onStartLoading?()
+        let userAddressRequest = UserAddressRequest(userId: userId)
+        
+        self.userAddressUseCase.execute(
+            request: userAddressRequest,
+            success: { [weak self] userAddress in
+                UserSessionManager.shared.setUserHasAddress(!userAddress.isEmpty)
+                self?.onSuccessAuthenticate?()
+            },
+            failure: { [weak self] error in
+                self?.onFailureGetUserAddress?()
             }
         )
     }

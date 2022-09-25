@@ -39,6 +39,7 @@ class ConfirmLocationViewModel {
     
     private var coordinate: Coordinate
     private var address = Address()
+    private var addressRequest = AddressRequest()
     private var findLocalizationUseCase: FindLocalizationUseCaseProtocol
     private var createAddressUseCase: CreateAddressUseCaseProtocol
     
@@ -86,12 +87,14 @@ extension ConfirmLocationViewModel: ConfirmLocationProtocol {
     
     func didChangeNumber(text: String?) {
         address.streetNumber = text ?? ""
+        addressRequest.streetNumber = text ?? ""
         onUpdateNumber?(streetDetails)
         validateFields()
     }
     
     func didChangeComplement(text: String?) {
         address.complement = text ?? ""
+        addressRequest.complement = text ?? ""
     }
     
     func didSaveAddress() {
@@ -108,6 +111,7 @@ extension ConfirmLocationViewModel {
             req: coordinate,
             success: { [weak self] address in
                 self?.address = address
+                self?.addressRequest = address.toAddressRequest()
                 
                 self?.onSuccessFindLocation?()
                 self?.onChangeLocationDetails?()
@@ -123,7 +127,7 @@ extension ConfirmLocationViewModel {
         onStartLoading?()
         
         self.createAddressUseCase.execute(
-            req: address,
+            req: addressRequest,
             success: { [weak self] in
                 UserSessionManager.shared.setUserHasAddress(true)
                 self?.onSuccessCreateAddress?()

@@ -52,6 +52,14 @@ class LoginView: UIView {
         self.viewModel?.onButtonStateIsEnable = { [weak self] isEnable in
             self?.loginButton.isEnabled = isEnable
         }
+        
+        #if DEBUG
+        emailTextField.text = "viniciusgm@gmail.com"
+        passwordTextField.text = "Cachorro1"
+        viewModel.didChangeEmail("viniciusgm@gmail.com")
+        viewModel.didChangePassword("Cachorro1")
+        loginButton.isEnabled = true
+        #endif
     }
 }
 
@@ -65,6 +73,7 @@ extension LoginView {
         setupEmailTextField()
         setupPasswordTextField()
         setupLoginButton()
+        
     }
     
     private func setupCoverImageView() {

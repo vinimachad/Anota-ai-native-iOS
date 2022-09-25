@@ -77,7 +77,7 @@ extension SwiftUIHomeViewModel {
     
     private func nearRestaurantsRequest() {
         nearRestaurantsUseCase.execute(
-            request: NearRequest(lat: "-20.4377741", long: "-54.6220197", maxDistance: 10),
+            request: NearRequest(lat: "-20.4377741", long: "-54.6220197", maxDistance: 20),
             success: { [weak self] restaurants in
                 guard let self else { return }
                 self.isEmptyStateValidation(state: &self.nearRestaurantState, items: restaurants)

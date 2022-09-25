@@ -89,6 +89,8 @@
 		3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */; };
 		3C6DAECB28DF3F5E00BD9807 /* Image+Circular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */; };
 		3C6DAECD28DF49AA00BD9807 /* View+ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */; };
+		3C6DAECF28E0A33500BD9807 /* UserAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECE28E0A33500BD9807 /* UserAddresses.swift */; };
+		3C6DAED128E0A48C00BD9807 /* UserAddressesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
@@ -271,6 +273,8 @@
 		3C6D511328A896C4009883A1 /* TextFieldCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCellViewModel.swift; sourceTree = "<group>"; };
 		3C6DAECA28DF3F5E00BD9807 /* Image+Circular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Circular.swift"; sourceTree = "<group>"; };
 		3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ShimmerEffect.swift"; sourceTree = "<group>"; };
+		3C6DAECE28E0A33500BD9807 /* UserAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddresses.swift; sourceTree = "<group>"; };
+		3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressesUseCase.swift; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -1199,6 +1203,7 @@
 			isa = PBXGroup;
 			children = (
 				3CB0D3D128B02F6500330250 /* Credentials.swift */,
+				3C6DAECE28E0A33500BD9807 /* UserAddresses.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1207,6 +1212,7 @@
 			isa = PBXGroup;
 			children = (
 				3C67EE1728B030E900EA8794 /* AuthenticateUseCase.swift */,
+				3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1670,6 +1676,7 @@
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
 				3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */,
 				3C6639BA28AFDBBF00CBE73F /* FindLocalizationUseCase.swift in Sources */,
+				3C6DAED128E0A48C00BD9807 /* UserAddressesUseCase.swift in Sources */,
 				3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */,
 				3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */,
 				3CB0D3C528B0221000330250 /* LoginView.swift in Sources */,
@@ -1697,6 +1704,7 @@
 				3C3A8E1428C2597600467F5A /* BaseCollectionView.swift in Sources */,
 				3C29ACB128DCB708007D741A /* RequestState.swift in Sources */,
 				3C0A61A928A7F3A2000D177D /* MapViewModel.swift in Sources */,
+				3C6DAECF28E0A33500BD9807 /* UserAddresses.swift in Sources */,
 				3C3A8E0928C2531200467F5A /* HomeViewModel.swift in Sources */,
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,

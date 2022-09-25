@@ -46,7 +46,7 @@ extension NearRestaurants {
     private func generateLoadingEffect() -> some View {
         VStack(alignment: .leading, spacing: 12) {
             RoundedRectangle(cornerRadius: 4)
-                .frame(width: 160, height: 15)
+                .frame(width: 100, height: 15)
                 .foregroundColor(.Shapes.stroke)
             HStack(spacing: 16) {
                 ForEach(0..<3) { _ in
