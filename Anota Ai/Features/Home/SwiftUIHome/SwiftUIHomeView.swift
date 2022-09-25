@@ -16,9 +16,10 @@ struct SwiftUIHomeView: View {
             Color.Shapes.shape.ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 32) {
-                    RestaurantKindSlide(state: viewModel.restaurantKindsState)
+                    FilterListView()
+                    RestaurantKindSlideView(state: viewModel.restaurantKindsState)
                     RestaurantListView(isVerticalList: false, title: "Famosos por aqui", state: viewModel.bestRatedState)
-                    NearRestaurants(state: viewModel.nearRestaurantState)
+                    NearRestaurantsView(state: viewModel.nearRestaurantState)
                     RestaurantListView(title: "Restaurantes", state: viewModel.restaurantState)
                 }
             }

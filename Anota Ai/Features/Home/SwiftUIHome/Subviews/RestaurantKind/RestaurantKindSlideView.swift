@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RestaurantKindSlide: View {
+struct RestaurantKindSlideView: View {
     
     var state: RequestState<[RestaurantKind]>
     @State private var opacity: Double = 0.2
@@ -22,7 +22,7 @@ struct RestaurantKindSlide: View {
     }
 }
 
-extension RestaurantKindSlide {
+extension RestaurantKindSlideView {
     
     private func listOf(kinds: [RestaurantKind]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -61,6 +61,6 @@ extension RestaurantKindSlide {
 
 struct RestaurantKindSlide_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantKindSlide(state: .loading)
+        RestaurantKindSlideView(state: .loading)
     }
 }

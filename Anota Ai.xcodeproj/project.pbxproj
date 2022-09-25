@@ -91,6 +91,8 @@
 		3C6DAECD28DF49AA00BD9807 /* View+ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */; };
 		3C6DAECF28E0A33500BD9807 /* UserAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAECE28E0A33500BD9807 /* UserAddresses.swift */; };
 		3C6DAED128E0A48C00BD9807 /* UserAddressesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */; };
+		3C6DAED628E0B23B00BD9807 /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED528E0B23B00BD9807 /* FilterListView.swift */; };
+		3C6DAED828E0B2D400BD9807 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED728E0B2D400BD9807 /* FilterView.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
@@ -124,7 +126,7 @@
 		3C9F46EC28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F46EB28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift */; };
 		3C9F46EE28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F46ED28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift */; };
 		3C9F46F328C3B49200E8E0C3 /* CircleRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */; };
-		3CA1612228D3A5100086BA60 /* NearRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1612128D3A5100086BA60 /* NearRestaurants.swift */; };
+		3CA1612228D3A5100086BA60 /* NearRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1612128D3A5100086BA60 /* NearRestaurantsView.swift */; };
 		3CA1612C28D3D13C0086BA60 /* View+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1612B28D3D13C0086BA60 /* View+RoundCorner.swift */; };
 		3CA1613228D3D9990086BA60 /* NearPreviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1613128D3D9990086BA60 /* NearPreviewImage.swift */; };
 		3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA3D782289AF04B006B3D90 /* AppDelegate.swift */; };
@@ -157,7 +159,7 @@
 		3CBBBA90289CBCE6006BFF95 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */; };
 		3CBBBA92289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */; };
 		3CC4BCC228C67825002EC791 /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4BCC128C67825002EC791 /* RestaurantListView.swift */; };
-		3CC4BCC628C69E82002EC791 /* RestaurantKindSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4BCC528C69E82002EC791 /* RestaurantKindSlide.swift */; };
+		3CC4BCC628C69E82002EC791 /* RestaurantKindSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC4BCC528C69E82002EC791 /* RestaurantKindSlideView.swift */; };
 		3CCA0DAE28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */; };
 		3CCED8C328C280E00042A1EF /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCED8C228C280E00042A1EF /* UIImageView+URL.swift */; };
 		3CCED8C728C282DA0042A1EF /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCED8C628C282DA0042A1EF /* Observer.swift */; };
@@ -275,6 +277,8 @@
 		3C6DAECC28DF49AA00BD9807 /* View+ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ShimmerEffect.swift"; sourceTree = "<group>"; };
 		3C6DAECE28E0A33500BD9807 /* UserAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddresses.swift; sourceTree = "<group>"; };
 		3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressesUseCase.swift; sourceTree = "<group>"; };
+		3C6DAED528E0B23B00BD9807 /* FilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
+		3C6DAED728E0B2D400BD9807 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -308,7 +312,7 @@
 		3C9F46EB28C3AFDB00E8E0C3 /* SwiftUIHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHomeView.swift; sourceTree = "<group>"; };
 		3C9F46ED28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHomeViewModel.swift; sourceTree = "<group>"; };
 		3C9F46F228C3B49200E8E0C3 /* CircleRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRestaurantsView.swift; sourceTree = "<group>"; };
-		3CA1612128D3A5100086BA60 /* NearRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurants.swift; sourceTree = "<group>"; };
+		3CA1612128D3A5100086BA60 /* NearRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearRestaurantsView.swift; sourceTree = "<group>"; };
 		3CA1612B28D3D13C0086BA60 /* View+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundCorner.swift"; sourceTree = "<group>"; };
 		3CA1613128D3D9990086BA60 /* NearPreviewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPreviewImage.swift; sourceTree = "<group>"; };
 		3CA3D77F289AF04B006B3D90 /* Anota Ai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anota Ai.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,7 +349,7 @@
 		3CBBBA8F289CBCE6006BFF95 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CBBBA91289CC4A0006BFF95 /* OnboardingCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CC4BCC128C67825002EC791 /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
-		3CC4BCC528C69E82002EC791 /* RestaurantKindSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantKindSlide.swift; sourceTree = "<group>"; };
+		3CC4BCC528C69E82002EC791 /* RestaurantKindSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantKindSlideView.swift; sourceTree = "<group>"; };
 		3CCA0DAD28A59A6000EBDF53 /* FindYourLocationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinatorTests.swift; sourceTree = "<group>"; };
 		3CCED8C228C280E00042A1EF /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		3CCED8C628C282DA0042A1EF /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -861,6 +865,15 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		3C6DAED228E0B21900BD9807 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				3C6DAED528E0B23B00BD9807 /* FilterListView.swift */,
+				3C6DAED728E0B2D400BD9807 /* FilterView.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
 		3C731ABE28A16D3500BCE107 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1025,7 @@
 		3C9F46EF28C3B45800E8E0C3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DAED228E0B21900BD9807 /* Filters */,
 				3CA1612028D3A4FB0086BA60 /* NearRestaurants */,
 				3CC4BCC428C69E3E002EC791 /* RestaurantKind */,
 				3CC4BCC328C69E34002EC791 /* Restaurant */,
@@ -1022,7 +1036,7 @@
 		3CA1612028D3A4FB0086BA60 /* NearRestaurants */ = {
 			isa = PBXGroup;
 			children = (
-				3CA1612128D3A5100086BA60 /* NearRestaurants.swift */,
+				3CA1612128D3A5100086BA60 /* NearRestaurantsView.swift */,
 				3CA1613128D3D9990086BA60 /* NearPreviewImage.swift */,
 				3C29ACBC28DCD28E007D741A /* NearRestaurantCard.swift */,
 			);
@@ -1307,7 +1321,7 @@
 		3CC4BCC428C69E3E002EC791 /* RestaurantKind */ = {
 			isa = PBXGroup;
 			children = (
-				3CC4BCC528C69E82002EC791 /* RestaurantKindSlide.swift */,
+				3CC4BCC528C69E82002EC791 /* RestaurantKindSlideView.swift */,
 			);
 			path = RestaurantKind;
 			sourceTree = "<group>";
@@ -1685,9 +1699,11 @@
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
 				3C530F1328AE7986008B602D /* UserRoutes.swift in Sources */,
 				3CA1613228D3D9990086BA60 /* NearPreviewImage.swift in Sources */,
+				3C6DAED828E0B2D400BD9807 /* FilterView.swift in Sources */,
 				3C04157728AD8A0700077EF4 /* UserDefaults+Session.swift in Sources */,
 				3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */,
 				3C6D511428A896C4009883A1 /* TextFieldCellViewModel.swift in Sources */,
+				3C6DAED628E0B23B00BD9807 /* FilterListView.swift in Sources */,
 				3C9EA717289B105200C300B8 /* OnboardingController.swift in Sources */,
 				3C6DAECD28DF49AA00BD9807 /* View+ShimmerEffect.swift in Sources */,
 				3C6639B828AFD9CA00CBE73F /* LocationRoutes.swift in Sources */,
@@ -1723,7 +1739,7 @@
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
 				3CCED8C328C280E00042A1EF /* UIImageView+URL.swift in Sources */,
 				3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */,
-				3CA1612228D3A5100086BA60 /* NearRestaurants.swift in Sources */,
+				3CA1612228D3A5100086BA60 /* NearRestaurantsView.swift in Sources */,
 				3C530F0E28AE71E8008B602D /* APITarget.swift in Sources */,
 				3C29ACB328DCC430007D741A /* ProgressView+View.swift in Sources */,
 				3C648DF4289DA0AF0091B3D8 /* String+Localizable.swift in Sources */,
@@ -1731,7 +1747,7 @@
 				3C769A5528A6C60F001DA6E6 /* TextField.swift in Sources */,
 				3C9EA715289B104900C300B8 /* OnboardingView.swift in Sources */,
 				3C3A8E0D28C253C300467F5A /* ControllerFactoryProtocol.swift in Sources */,
-				3CC4BCC628C69E82002EC791 /* RestaurantKindSlide.swift in Sources */,
+				3CC4BCC628C69E82002EC791 /* RestaurantKindSlideView.swift in Sources */,
 				3C3A8E0F28C2544900467F5A /* HomeCoordinator.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
 				3C04157028AD871300077EF4 /* User.swift in Sources */,

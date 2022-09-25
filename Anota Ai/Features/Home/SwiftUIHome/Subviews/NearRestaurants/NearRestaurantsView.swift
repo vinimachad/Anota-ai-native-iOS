@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NearRestaurants: View {
+struct NearRestaurantsView: View {
     
     var state: RequestState<[Restaurant]>
     @State private var opacity: Double = 0.2
@@ -21,7 +21,7 @@ struct NearRestaurants: View {
     }
 }
 
-extension NearRestaurants {
+extension NearRestaurantsView {
     
     private func listOf(_ restaurants: [Restaurant]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -61,6 +61,6 @@ extension NearRestaurants {
 
 struct NearRestaurants_Previews: PreviewProvider {
     static var previews: some View {
-        NearRestaurants(state: .success(Restaurant.sampleData))
+        NearRestaurantsView(state: .success(Restaurant.sampleData))
     }
 }
