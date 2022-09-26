@@ -6,15 +6,18 @@
 //
 
 import Moya
+import Combine
 
 protocol RestaurantRoutesProtocol {
     func findRestaurants(completion: @escaping Completion)
     func restaurantKinds(completion: @escaping Completion)
     func near(request: NearRequest, completion: @escaping Completion)
-    func bestRated(completion: @escaping Completion)
+    func bestRated() -> AnyPublisher<Response, MoyaError>
 }
 
 class RestaurantRoutes {
+    
+    var cancellable: AnyCancellable?
     
     enum Target: APITarget {
         
@@ -72,7 +75,7 @@ extension RestaurantRoutes: RestaurantRoutesProtocol {
         provider.request(.near(request), completion: completion)
     }
     
-    func bestRated(completion: @escaping Moya.Completion) {
-        provider.request(.bestRated, completion: completion)
+    func bestRated() -> AnyPublisher<Response, MoyaError> {
+       return provider.requestPublisher(.bestRated)
     }
 }

@@ -17,6 +17,7 @@ struct FilterView: View {
         }) {
             Text(title)
                 .padding(.horizontal)
+                .font(.default(type: .regular))
                 .foregroundColor(.Texts.body)
         }
         .background(

@@ -15,3 +15,12 @@ extension Data {
         return try decoder.decode(type, from: self)
     }
 }
+
+extension JSONDecoder {
+    
+    static var defaultJSONDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
+}

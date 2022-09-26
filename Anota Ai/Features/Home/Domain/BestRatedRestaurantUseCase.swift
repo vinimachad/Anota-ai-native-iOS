@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class BestRatedRestaurantUseCase: UseCaseFactoryProtocol {
     
@@ -19,21 +20,20 @@ class BestRatedRestaurantUseCase: UseCaseFactoryProtocol {
         self.api = api
     }
     
-    func execute(success: Success<[Restaurant]>?, failure: Failure?) {
-        api.bestRated(completion: { result in
-            switch result {
-            case .success(let res):
-                
-                do {
-                    let restaurants = try res.data.decode(type: [Restaurant].self)
-                    success?(restaurants)
-                } catch let error {
-                    failure?(error)
+    func execute() -> AnyPublisher<[Restaurant], APIError> {
+        return api.bestRated()
+            .tryMap { response -> Data in
+                let httpURLResponse = response.response
+                guard httpURLResponse?.statusCode == 200 else {
+                    throw APIError.statusCode(httpURLResponse?.statusCode)
                 }
                 
-            case .failure(let error):
-                failure?(error)
+                return response.data
             }
-        })
+            .decode(type: [Restaurant].self, decoder: JSONDecoder.defaultJSONDecoder)
+            .mapError {
+                APIError.map($0)
+            }
+            .eraseToAnyPublisher()
     }
 }

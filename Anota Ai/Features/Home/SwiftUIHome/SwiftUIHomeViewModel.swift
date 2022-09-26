@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class SwiftUIHomeViewModel: ObservableObject {
     
@@ -15,6 +16,7 @@ class SwiftUIHomeViewModel: ObservableObject {
     @Published var restaurantState: RequestState<[Restaurant]> = .loading
     @Published var nearRestaurantState: RequestState<[Restaurant]> = .loading
     @Published var bestRatedState: RequestState<[Restaurant]> = .loading
+    @Published var filterIsInUse: Bool = false
     
     // MARK: - Private properties
     
@@ -23,6 +25,7 @@ class SwiftUIHomeViewModel: ObservableObject {
     private var nearRestaurantsUseCase: NearRestaurantUseCase
     private var bestRatedRestaurantsUseCase: BestRatedRestaurantUseCase
     private let semaphore = DispatchSemaphore(value: 0)
+    private var subscriptions = Set<AnyCancellable>()
     
     // MARK: - Init
     
@@ -90,17 +93,18 @@ extension SwiftUIHomeViewModel {
     }
     
     private func bestRatedRequest() {
-        bestRatedRestaurantsUseCase.execute(
-            success: { [weak self] restaurants in
-                guard let self else { return }
-                self.isEmptyStateValidation(state: &self.bestRatedState, items: restaurants)
+        bestRatedRestaurantsUseCase.execute()
+            .sink(receiveCompletion: { [unowned self] result in
+                switch result {
+                case .finished: break
+                case .failure(let error): bestRatedState = .failure(error.message)
+                }
                 self.semaphore.signal()
-            },
-            failure: { [weak self] error in
-                self?.bestRatedState = .failure(error.localizedDescription)
-                self?.semaphore.signal()
-            }
-        )
+            }, receiveValue: { [unowned self] restaurants in
+                self.isEmptyStateValidation(state: &bestRatedState, items: restaurants)
+                self.semaphore.signal()
+            })
+            .store(in: &subscriptions)
     }
     
     private func findRestaurantsRequest() {

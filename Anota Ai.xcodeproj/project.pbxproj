@@ -93,6 +93,8 @@
 		3C6DAED128E0A48C00BD9807 /* UserAddressesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */; };
 		3C6DAED628E0B23B00BD9807 /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED528E0B23B00BD9807 /* FilterListView.swift */; };
 		3C6DAED828E0B2D400BD9807 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAED728E0B2D400BD9807 /* FilterView.swift */; };
+		3C6DAEDB28E0B53600BD9807 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAEDA28E0B53600BD9807 /* HeaderView.swift */; };
+		3C6DAEDD28E2284C00BD9807 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DAEDC28E2284C00BD9807 /* APIError.swift */; };
 		3C731ABA28A140AE00BCE107 /* LocalizationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AB928A140AE00BCE107 /* LocalizationMock.swift */; };
 		3C731ABC28A158FE00BCE107 /* LocalizationDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */; };
 		3C731AC128A16D5100BCE107 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C731AC028A16D5100BCE107 /* AlertController.swift */; };
@@ -279,6 +281,8 @@
 		3C6DAED028E0A48C00BD9807 /* UserAddressesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddressesUseCase.swift; sourceTree = "<group>"; };
 		3C6DAED528E0B23B00BD9807 /* FilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
 		3C6DAED728E0B2D400BD9807 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		3C6DAEDA28E0B53600BD9807 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3C6DAEDC28E2284C00BD9807 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3C731AB928A140AE00BCE107 /* LocalizationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationMock.swift; sourceTree = "<group>"; };
 		3C731ABB28A158FE00BCE107 /* LocalizationDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationDelegateMock.swift; sourceTree = "<group>"; };
 		3C731AC028A16D5100BCE107 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -428,6 +432,7 @@
 				3C530F1428AE7B0B008B602D /* Address.swift */,
 				3C530F1628AE7B71008B602D /* Coordinate.swift */,
 				3C3A8E2328C2777500467F5A /* Restaurant.swift */,
+				3C6DAEDC28E2284C00BD9807 /* APIError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -874,6 +879,14 @@
 			path = Filters;
 			sourceTree = "<group>";
 		};
+		3C6DAED928E0B52600BD9807 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				3C6DAEDA28E0B53600BD9807 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		3C731ABE28A16D3500BCE107 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
@@ -1025,6 +1038,7 @@
 		3C9F46EF28C3B45800E8E0C3 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DAED928E0B52600BD9807 /* Header */,
 				3C6DAED228E0B21900BD9807 /* Filters */,
 				3CA1612028D3A4FB0086BA60 /* NearRestaurants */,
 				3CC4BCC428C69E3E002EC791 /* RestaurantKind */,
@@ -1699,6 +1713,7 @@
 				3CA3D7C7289B014A006B3D90 /* Colors.swift in Sources */,
 				3C530F1328AE7986008B602D /* UserRoutes.swift in Sources */,
 				3CA1613228D3D9990086BA60 /* NearPreviewImage.swift in Sources */,
+				3C6DAEDB28E0B53600BD9807 /* HeaderView.swift in Sources */,
 				3C6DAED828E0B2D400BD9807 /* FilterView.swift in Sources */,
 				3C04157728AD8A0700077EF4 /* UserDefaults+Session.swift in Sources */,
 				3C530F1728AE7B71008B602D /* Coordinate.swift in Sources */,
@@ -1776,6 +1791,7 @@
 				3CA3D783289AF04B006B3D90 /* AppDelegate.swift in Sources */,
 				3CD35D58289C41F60012480E /* ButtonKit.swift in Sources */,
 				3C3A8E1A28C25D2900467F5A /* RestaurantCell.swift in Sources */,
+				3C6DAEDD28E2284C00BD9807 /* APIError.swift in Sources */,
 				3CA3D7BF289AFEF4006B3D90 /* OnboardingFactory.swift in Sources */,
 				3C9F46EE28C3B0D800E8E0C3 /* SwiftUIHomeViewModel.swift in Sources */,
 				3CCED8C728C282DA0042A1EF /* Observer.swift in Sources */,
