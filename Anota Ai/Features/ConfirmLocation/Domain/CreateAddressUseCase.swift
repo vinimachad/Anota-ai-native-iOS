@@ -11,7 +11,7 @@ protocol CreateAddressUseCaseProtocol {
     typealias Success = (() -> Void)?
     typealias Failure = ((String) -> Void)?
     
-    func execute(req: Address, success: Success, failure: Failure)
+    func execute(req: AddressRequest, success: Success, failure: Failure)
 }
 
 class CreateAddressUseCase: CreateAddressUseCaseProtocol {
@@ -26,7 +26,7 @@ class CreateAddressUseCase: CreateAddressUseCaseProtocol {
         self.api = api
     }
     
-    func execute(req: Address, success: Success, failure: Failure) {
+    func execute(req: AddressRequest, success: Success, failure: Failure) {
         DispatchQueue.global().async { [weak self] in
             
             self?.api.createAddress(req: req, completion: { result in

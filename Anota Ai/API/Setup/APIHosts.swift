@@ -14,8 +14,9 @@ enum APIHosts {
         
         #if DEBUG
         urlString = "http://localhost:8080/"
+//        urlString = "https://anota-ai-staging.herokuapp.com/"
         #else
-        urlString = "http://localhost:8080/"
+        urlString = "https://anota-ai-staging.herokuapp.com/"
         #endif
         
         guard let url = URL(string: urlString) else { fatalError("URL não suportada") }

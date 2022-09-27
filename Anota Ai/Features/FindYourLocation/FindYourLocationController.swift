@@ -59,29 +59,20 @@ class FindYourLocationController<ViewModel: FindYourLocationProtocol>: UIViewCon
     // MARK: - Navigation
     
     private func setupNavigation() {
-        setBackButton()
         setupDefaultNavigation(title: "your_location_title".localize(.findYourLocation), isTranslucent: true)
         changeColorsOfNavigation(tintColor: .Shapes.shape, bgColor: .clear)
-    }
-    
-    private func setBackButton() {
-        setLeftNavigationButton(action: #selector(didTapReturnNavigation))
     }
     
     private func showFailureModal() {
         let viewModel = AlertViewModel(
             title: "localization_permission_error_title".localize(.error),
             description: "localization_permission_error_body".localize(.error),
-            actions: [Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
+            actions: [ButtonKit(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
         )
         showModal(delegate: transitionDelegate, viewModel: viewModel)
     }
     
     // MARK: - Actions
-    
-    @objc private func didTapReturnNavigation() {
-        self.delegate?.returnNavigation()
-    }
     
     @objc private func didConfirm() {
         navigationController?.dismiss(animated: true)

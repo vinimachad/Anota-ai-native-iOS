@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension UIFont {
     
@@ -22,5 +23,12 @@ extension UIFont {
         }
         
         return font
+    }
+}
+
+extension Font {
+    
+    static func `default`(type: UIFont.FontType, ofSize size: CGFloat = UIFont.labelFontSize) -> Font {
+        return Font.custom(type.rawValue, size: size)
     }
 }

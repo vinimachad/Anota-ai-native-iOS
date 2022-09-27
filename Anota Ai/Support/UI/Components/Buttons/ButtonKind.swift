@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension Button {
+extension ButtonKit {
     
     enum ButtonKind {
         case primary

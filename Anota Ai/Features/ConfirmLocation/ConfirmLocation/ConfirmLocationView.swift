@@ -35,7 +35,7 @@ class ConfirmLocationView: UIView {
     private lazy var numberTextField = TextField()
     private lazy var complementTextField = TextField()
     private lazy var textFieldContainerStackView = UIStackView()
-    private lazy var saveAddressButton = Button()
+    private lazy var saveAddressButton = ButtonKit()
     
     // MARK: - Private properties
     

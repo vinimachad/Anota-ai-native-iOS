@@ -10,6 +10,7 @@ import UIKit
 
 protocol OnboardingControllerDelegate: AnyObject {
     func pushCreateAccount()
+    func pushLogin()
 }
 
 class OnboardingController<ViewModel: OnboardingProtocol>: UIViewController {
@@ -77,6 +78,10 @@ extension OnboardingController {
         
         viewModel.onTapToCreateAccount = { [weak self] in
             self?.delegate?.pushCreateAccount()
+        }
+        
+        viewModel.onTapLogin = { [weak self] in
+            self?.delegate?.pushLogin()
         }
     }
 }

@@ -14,6 +14,7 @@ protocol OnboardingViewModelProtocol {
     var sections: [CollectionSectionProtocol] { get }
     var onExplanationWillDisplay: ((IndexPath) -> Void)? { get set }
     func didTapToCreateAccount()
+    func didTapLogin()
 }
 
 class OnboardingView: UIView {
@@ -23,8 +24,8 @@ class OnboardingView: UIView {
     private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
     private lazy var pageControl = UIPageControl()
-    private lazy var signUpButton = Button()
-    private lazy var loginButton = Button()
+    private lazy var signUpButton = ButtonKit()
+    private lazy var loginButton = ButtonKit()
     
     // MARK: - Private properties
     
@@ -100,12 +101,17 @@ extension OnboardingView {
         loginButton.title = "login_title_btn".localize(.onboarding)
         loginButton.titleColor = .Shapes.shape
         loginButton.backgroundColor = .Brand.secondary
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchDown)
     }
     
     // MARK: - Actions
     
     @objc private func didTapSignUp() {
         viewModel?.didTapToCreateAccount()
+    }
+    
+    @objc private func didTapLogin() {
+        viewModel?.didTapLogin()
     }
 }
 

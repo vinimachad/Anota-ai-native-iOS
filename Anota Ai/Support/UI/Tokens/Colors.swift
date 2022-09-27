@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension UIColor {
 
@@ -48,6 +49,57 @@ extension UIColor {
         
         static var input: UIColor {
             UIColor(named: "inputs") ?? UIColor()
+        }
+    }
+}
+
+extension Color {
+
+    enum Brand {
+        
+        static var primary: Color {
+            Color("primary")
+        }
+        
+        static var secondary: Color {
+            Color("secondary")
+        }
+    }
+    
+    enum Shapes {
+        
+        static var box: Color {
+            Color("box")
+        }
+        
+        static var shape: Color {
+            Color("shape")
+        }
+        
+        static var stroke: Color {
+            Color("stroke")
+        }
+    }
+    
+    enum Texts {
+        
+        static var body: Color {
+            Color("body")
+        }
+        
+        static var heading: Color {
+            Color("headings")
+        }
+        
+        static var input: Color {
+            Color("inputs")
+        }
+        
+    }
+    
+    enum Others {
+        static var yellow: Color {
+            Color("yellow")
         }
     }
 }

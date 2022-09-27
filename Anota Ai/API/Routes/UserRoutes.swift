@@ -9,13 +9,14 @@ import Moya
 
 protocol UserRoutesProtocol {
     func createAccount(request: UserRequest, completion: @escaping Completion)
+    func authenticate(request: Credentials, completion: @escaping Completion)
 }
 
 class UserRoutes {
     
     enum Target: APITarget {
         
-        case authenticate
+        case authenticate(Credentials)
         case createAccount(UserRequest)
         
         var path: String {
@@ -34,7 +35,7 @@ class UserRoutes {
         
         var task: Task {
             switch self {
-            case .authenticate: return .requestPlain
+            case .authenticate(let req): return .requestCustomJSONEncodable(req, encoder: defaultJSONEncoder)
             case .createAccount(let data): return .requestCustomJSONEncodable(data, encoder: defaultJSONEncoder)
             }
         }
@@ -44,6 +45,10 @@ class UserRoutes {
 }
 
 extension UserRoutes: UserRoutesProtocol {
+    
+    func authenticate(request: Credentials, completion: @escaping Completion) {
+        provider.request(.authenticate(request), completion: completion)
+    }
     
     func createAccount(request: UserRequest, completion: @escaping Completion) {
         provider.request(.createAccount(request), completion: completion)

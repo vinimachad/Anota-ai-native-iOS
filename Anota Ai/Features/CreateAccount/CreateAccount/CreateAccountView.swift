@@ -22,7 +22,7 @@ class CreateAccountView: UIView {
     
     private lazy var collectionViewFlowLayout = UICollectionViewFlowLayout()
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
-    private lazy var createAccountButton = Button()
+    private lazy var createAccountButton = ButtonKit()
     
     // MARK: - Private properties
     

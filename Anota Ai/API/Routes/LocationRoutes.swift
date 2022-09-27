@@ -9,7 +9,8 @@ import Moya
 
 protocol LocationRoutesProtocol {
     func findAddress(req: Coordinate, completion: @escaping Completion)
-    func createAddress(req: Address, completion: @escaping Completion)
+    func createAddress(req: AddressRequest, completion: @escaping Completion)
+    func userAddresses(req: UserAddressRequest, completion: @escaping Completion)
 }
 
 class LocationRoutes {
@@ -17,12 +18,14 @@ class LocationRoutes {
     enum Target: APITarget {
         
         case findAddress(Coordinate)
-        case createAddress(Address)
+        case createAddress(AddressRequest)
+        case userAddresses(UserAddressRequest)
         
         var path: String {
             switch self {
             case .findAddress: return "address"
             case .createAddress: return "address"
+            case .userAddresses: return "address/user-addresses"
             }
         }
         
@@ -30,6 +33,7 @@ class LocationRoutes {
             switch self {
             case .findAddress: return .get
             case .createAddress: return .post
+            case .userAddresses: return .get
             }
         }
         
@@ -40,6 +44,8 @@ class LocationRoutes {
                 parameters: ["lat": req.lat, "long": req.long],
                 encoding: URLEncoding.queryString
             )
+            case .userAddresses(let req):
+                return .requestParameters(parameters: req.toJson(), encoding: URLEncoding.queryString)
             case let .createAddress(req): return .requestCustomJSONEncodable(req, encoder: defaultJSONEncoder)
             }
         }
@@ -58,7 +64,11 @@ extension LocationRoutes: LocationRoutesProtocol {
         provider.request(.findAddress(req), completion: completion)
     }
     
-    func createAddress(req: Address, completion: @escaping Completion) {
+    func createAddress(req: AddressRequest, completion: @escaping Completion) {
         provider.request(.createAddress(req), completion: completion)
+    }
+    
+    func userAddresses(req: UserAddressRequest, completion: @escaping Completion) {
+        provider.request(.userAddresses(req), completion: completion)
     }
 }

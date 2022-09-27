@@ -26,7 +26,7 @@ class AlertSnapshot: FBSnapshotTestCase {
     }
     
     func test_bind_whenAllValuesIsFilled_expectValidSnapshot() {
-        let action = Button(title: "Test button")
+        let action = ButtonKit(title: "Test button")
         viewModelMock.actions = [action]
         viewModelMock.title = "Test title"
         viewModelMock.description = "Test description"

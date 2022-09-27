@@ -15,6 +15,7 @@ protocol UserSessionManagerProtocol {
     func userHasAddress() -> Bool
     func isLoggedIn() -> Bool
     func setIsLoggedIn(_ isLoggedIn: Bool)
+    func saveUserInSession(_ userSession: UserSession, failure: ((String) -> Void)?)
 }
 
 class UserSessionManager: UserSessionManagerProtocol {
@@ -53,5 +54,15 @@ class UserSessionManager: UserSessionManagerProtocol {
     
     func setUserHasAddress(_ hasAddress: Bool) {
         UserDefaults.standard.setUserHasAddress(userHasAddress: hasAddress)
+    }
+    
+    func saveUserInSession(_ userSession: UserSession, failure: ((String) -> Void)?) {
+        do {
+            try UserSessionManager.shared.createUserSession(user: userSession)
+            UserSessionManager.shared.setUserHasAddress(false)
+            UserSessionManager.shared.setIsLoggedIn(true)
+        } catch {
+            failure?("not_possible_save_session".localize(.error))
+        }
     }
 }

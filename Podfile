@@ -10,6 +10,8 @@ target 'Anota Ai' do
   pod 'IQKeyboardManagerSwift'
   pod "CollectionDS-SDK/Debug", :path => "/Users/vinimachad/Developer/mobile/CollectionDS-SDK"
   pod 'Moya'
+  pod 'Moya/Combine', '~> 15.0'
+  pod 'Kingfisher'
 
   target 'Anota AiTests' do
     inherit! :search_paths

@@ -11,5 +11,5 @@ import Foundation
 class AlertViewModelMock: AlertProtocol {
     var title: String = ""
     var description: String = ""
-    var actions: [Button] = []
+    var actions: [ButtonKit] = []
 }

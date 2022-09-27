@@ -14,6 +14,7 @@ enum LocalizableFiles: String {
     case findYourLocation = "FindYourLocation"
     case confirmLocation = "ConfirmLocation"
     case createAccount = "CreateAccount"
+    case login = "Login"
 }
 
 extension String {

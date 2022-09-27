@@ -15,9 +15,9 @@ class AlertViewModel: AlertProtocol {
     
     var title: String
     var description: String
-    var actions: [Button]
+    var actions: [ButtonKit]
     
-    init(title: String, description: String, actions: [Button]) {
+    init(title: String, description: String, actions: [ButtonKit]) {
         self.title = title
         self.description = description
         self.actions = actions

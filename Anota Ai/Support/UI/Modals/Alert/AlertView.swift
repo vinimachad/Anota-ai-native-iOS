@@ -12,7 +12,7 @@ import SnapKit
 protocol AlertViewModelProtocol {
     var title: String { get }
     var description: String { get }
-    var actions: [Button] { get }
+    var actions: [ButtonKit] { get }
 }
 
 class AlertView: UIView {

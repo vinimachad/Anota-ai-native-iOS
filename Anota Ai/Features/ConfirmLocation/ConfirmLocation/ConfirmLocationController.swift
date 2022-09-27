@@ -16,7 +16,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
     
     // MARK: - Private properties
     
-    private let scrollView: ScrollView
+    private let scrollView: ScrollViewKit
     private let contentView: ConfirmLocationView
     private var viewModel: ViewModel
     private weak var delegate: ConfirmLocationControllerDelegate?
@@ -28,7 +28,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
         self.viewModel = viewModel
         self.delegate = delegate
         contentView = ConfirmLocationView()
-        self.scrollView = ScrollView(contentView: self.contentView)
+        self.scrollView = ScrollViewKit(contentView: self.contentView)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -69,7 +69,7 @@ class ConfirmLocationController<ViewModel: ConfirmLocationProtocol>: UIViewContr
         let viewModel = AlertViewModel(
             title: "title_error".localize(.error),
             description: description,
-            actions: [Button(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
+            actions: [ButtonKit(title: "confirm_title_button".localize(.default), kind: .confirm, onTapButton: didConfirm)]
         )
         showModal(delegate: presentingDelegate, viewModel: viewModel)
     }
