@@ -7,6 +7,17 @@
 
 import Foundation
 import UIKit
+import SwiftUI
+
+extension String {
+    
+    enum Images {
+        
+        static var back: String {
+            "chevron.backward"
+        }
+    }
+}
 
 extension UIImage {
     

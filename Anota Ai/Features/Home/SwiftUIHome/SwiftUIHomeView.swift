@@ -13,24 +13,19 @@ struct SwiftUIHomeView: View {
     
     var body: some View {
         
-        NavigationView {
-            GeometryReader { _ in
-                Color.Shapes.shape.ignoresSafeArea(.all)
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 32) {
-//                        FilterListView().padding(.top, 92)
-//                        RestaurantKindSlideView(state: viewModel.restaurantKindsState)
-                        RestaurantListView(isVerticalList: false, title: "Famosos por aqui", state: viewModel.bestRatedState).padding(.top, 120)
-                        NearRestaurantsView(state: viewModel.nearRestaurantState)
-                        RestaurantListView(title: "Restaurantes", state: viewModel.restaurantState)
-                    }
+        GeometryReader { _ in
+            Color.Shapes.shape.ignoresSafeArea(.all)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 32) {
+                    RestaurantListView(isVerticalList: false, title: "Famosos por aqui", state: viewModel.bestRatedState).padding(.top, 120)
+                    NearRestaurantsView(state: viewModel.nearRestaurantState)
+                    RestaurantListView(title: "Restaurantes", state: viewModel.restaurantState)
                 }
-                .padding(.horizontal)
-                .onAppear(perform: viewModel.callRequests)
             }
+            .padding(.horizontal)
+            .onAppear(perform: viewModel.callRequests)
             .environmentObject(viewModel)
             .overlay { HeaderView() }
-            .navigationBarHidden(true)
         }
     }
 }

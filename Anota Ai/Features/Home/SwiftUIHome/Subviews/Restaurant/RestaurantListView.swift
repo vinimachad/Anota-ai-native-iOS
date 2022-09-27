@@ -39,7 +39,9 @@ struct RestaurantListView: View {
     
     private func generateRestaurantList(_ restaurants: [Restaurant]) -> some View {
         ForEach(restaurants) { item in
-            CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
+            NavigationLink(destination: RestaurantTabView(restaurant: item)) {
+                CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
+            }
         }
     }
     
@@ -79,7 +81,7 @@ struct RestaurantListView: View {
                 }
             }
         }
-//        .shimmerEffect(opacity: opacity)
+        .shimmerEffect(opacity: opacity)
     }
 }
 
