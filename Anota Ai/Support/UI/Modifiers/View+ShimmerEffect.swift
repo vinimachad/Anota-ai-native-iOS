@@ -19,7 +19,9 @@ struct ShimmerEffectMod: ViewModifier {
                 let baseAnimation = Animation.easeInOut(duration: 1)
                 let repeated = baseAnimation.repeatForever(autoreverses: true)
                 withAnimation(repeated) {
-                    opacity = 1
+                    DispatchQueue.main.async {
+                        opacity = 1
+                    }
                 }
             }
     }

@@ -118,6 +118,7 @@
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
 		3C912752289DD688008AA594 /* FindYourLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C912751289DD688008AA594 /* FindYourLocationController.swift */; };
 		3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */; };
+		3C945DB428E2771500322DC3 /* KindFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C945DB328E2771500322DC3 /* KindFilter.swift */; };
 		3C9D34CF28A175790023F77A /* UIViewController+Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */; };
 		3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D34D128A178040023F77A /* AlertPresentationManager.swift */; };
 		3C9EA713289B104100C300B8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */; };
@@ -306,6 +307,7 @@
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
 		3C912751289DD688008AA594 /* FindYourLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationController.swift; sourceTree = "<group>"; };
 		3C912753289DD68F008AA594 /* FindYourLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationViewModel.swift; sourceTree = "<group>"; };
+		3C945DB328E2771500322DC3 /* KindFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindFilter.swift; sourceTree = "<group>"; };
 		3C9D34CE28A175790023F77A /* UIViewController+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Modal.swift"; sourceTree = "<group>"; };
 		3C9D34D128A178040023F77A /* AlertPresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentationManager.swift; sourceTree = "<group>"; };
 		3C9EA712289B104100C300B8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -875,6 +877,7 @@
 			children = (
 				3C6DAED528E0B23B00BD9807 /* FilterListView.swift */,
 				3C6DAED728E0B2D400BD9807 /* FilterView.swift */,
+				3C945DB328E2771500322DC3 /* KindFilter.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -1751,6 +1754,7 @@
 				3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
 				3C3A8E1728C25BDA00467F5A /* HomeBuilderSection.swift in Sources */,
+				3C945DB428E2771500322DC3 /* KindFilter.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
 				3CCED8C328C280E00042A1EF /* UIImageView+URL.swift in Sources */,
 				3C0A61A628A7EFE4000D177D /* MapView.swift in Sources */,

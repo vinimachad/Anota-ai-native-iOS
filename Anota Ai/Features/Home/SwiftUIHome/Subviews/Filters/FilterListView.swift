@@ -12,10 +12,10 @@ struct FilterListView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
-                FilterView(title: "Preço")
-                FilterView(title: "Distancia")
-                FilterView(title: "Avaliação")
-                FilterView(title: "Filtros")
+                FilterView(kind: .price)
+                FilterView(kind: .distance)
+                FilterView(kind: .evaluation)
+                FilterView(kind: .config)
             }.padding(.vertical)
         }
     }

@@ -16,7 +16,7 @@ class SwiftUIHomeViewModel: ObservableObject {
     @Published var restaurantState: RequestState<[Restaurant]> = .loading
     @Published var nearRestaurantState: RequestState<[Restaurant]> = .loading
     @Published var bestRatedState: RequestState<[Restaurant]> = .loading
-    @Published var filterIsInUse: Bool = false
+    @Published var filterIsInUse = [KindFilter]()
     
     // MARK: - Private properties
     
@@ -63,6 +63,17 @@ class SwiftUIHomeViewModel: ObservableObject {
 
 extension SwiftUIHomeViewModel {
     
+    func filterIsInUsePublisher() {
+        $filterIsInUse
+            .removeDuplicates()
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .map { $0 }
+            .sink(receiveValue: {
+                print($0)
+            })
+            .store(in: &subscriptions)
+    }
+    
     private func restaurantKindsRequest() {
         
         restaurantKindsUseCase.execute(
@@ -102,6 +113,7 @@ extension SwiftUIHomeViewModel {
                 self.semaphore.signal()
             }, receiveValue: { [unowned self] restaurants in
                 self.isEmptyStateValidation(state: &bestRatedState, items: restaurants)
+                filterIsInUsePublisher()
                 self.semaphore.signal()
             })
             .store(in: &subscriptions)

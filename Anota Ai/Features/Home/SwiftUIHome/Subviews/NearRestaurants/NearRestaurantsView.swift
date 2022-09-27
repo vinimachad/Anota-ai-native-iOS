@@ -55,7 +55,8 @@ extension NearRestaurantsView {
                         .frame(width: 150, height: 180)
                 }
             }
-        }.shimmerEffect(opacity: opacity)
+        }
+//        .shimmerEffect(opacity: opacity)
     }
 }
 

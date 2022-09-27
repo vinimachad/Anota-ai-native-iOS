@@ -78,7 +78,8 @@ struct RestaurantListView: View {
                         .frame(width: 83, height: 83)
                 }
             }
-        }.shimmerEffect(opacity: opacity)
+        }
+//        .shimmerEffect(opacity: opacity)
     }
 }
 
