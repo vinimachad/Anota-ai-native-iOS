@@ -18,6 +18,8 @@ struct RestaurantDetailView: View {
     var body: some View {
         
         GeometryReader { _ in
+            Color.Shapes.shape
+                .ignoresSafeArea(.all)
             
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 36) {
@@ -25,14 +27,14 @@ struct RestaurantDetailView: View {
                         VStack(alignment: .leading, spacing: 0) {
                             HStack(alignment: .center) {
                                 Text(restaurant.name)
-                                    .headingFont(size: 20)
+                                    .headerTitle()
                                 Spacer()
                                 AsyncImage(url: URL(string: restaurant.avatarUrl)) { result in
                                     switch result {
-                                    case .success(let image): image.circleImage(width: 32, height: 32)
+                                    case .success(let image): image.circleImage(width: 50, height: 50)
                                     default:
                                         Image(systemName: "photo.circle.fill")
-                                            .circleImage(width: 32, height: 32)
+                                            .circleImage(width: 50, height: 50)
                                             .foregroundColor(.gray)
                                     }
                                     
@@ -40,145 +42,145 @@ struct RestaurantDetailView: View {
                                 
                             }
                             Text(restaurant.type)
-                                .bodyFont(size: 12)
+                                .subHeaderFont(color: .Texts.body, weight: .regular)
                         }
                         Text("A melhor pizzaria de Campo Grande Lorem Ipsum is simply dummy text of the printing and typesetting industry.")
-                            .bodyFont(size: 12)
+                            .bodyFont()
                     }
                     VStack(alignment: .leading, spacing: 16) {
                         Text("Detalhes")
-                            .headingFont(size: 14)
+                            .subHeaderFont()
                         VStack {
                             VStack {
                                 HStack {
                                     Text("Endereço")
-                                        .bodyFont(size: 12)
+                                        .bodyFont()
                                     Spacer()
                                     Text("R. Araras, 187, São Francisco")
-                                        .headingFont(size: 12)
+                                        .bodyFont(color: .Texts.heading, weight: .bold)
                                 }
                                 Divider()
                             }
                             VStack {
                                 HStack {
                                     Text("Preço")
-                                        .bodyFont(size: 12)
+                                        .bodyFont()
                                     Spacer()
                                     Text("Barato")
-                                        .headingFont(size: 12)
+                                        .bodyFont(color: .Texts.heading, weight: .bold)
                                 }
                                 Divider()
                             }
                             VStack {
                                 HStack {
                                     Text("Estacionamento")
-                                        .bodyFont(size: 12)
+                                        .bodyFont()
                                     Spacer()
                                     Text("Sim")
-                                        .headingFont(size: 12)
+                                        .bodyFont(color: .Texts.heading, weight: .bold)
                                 }
                                 Divider()
                             }
                             VStack {
                                 HStack {
                                     Text("Happy Hour")
-                                        .bodyFont(size: 12)
+                                        .bodyFont()
                                     Spacer()
                                     Text("Sim")
-                                        .headingFont(size: 12)
+                                        .bodyFont(color: .Texts.heading, weight: .bold)
                                 }
                                 Divider()
                             }
-                            VStack {
-                                HStack {
-                                    Text("Espaço Kids")
-                                        .bodyFont(size: 12)
-                                    Spacer()
-                                    Text("Sim")
-                                        .headingFont(size: 12)
-                                }
-                                Divider()
-                            }
-                            VStack {
-                                HStack {
-                                    Text("Couvert")
-                                        .bodyFont(size: 12)
-                                    Spacer()
-                                    Text("Sim")
-                                        .headingFont(size: 12)
-                                }
-                                Divider()
-                            }
-                            VStack {
-                                HStack {
-                                    Text("Local coberto")
-                                        .bodyFont(size: 12)
-                                    Spacer()
-                                    Text("Sim")
-                                        .headingFont(size: 12)
-                                }
-                                Divider()
-                            }
+//                            VStack {
+//                                HStack {
+//                                    Text("Espaço Kids")
+//                                        .bodyFont(size: 12)
+//                                    Spacer()
+//                                    Text("Sim")
+//                                        .headingFont(size: 12)
+//                                }
+//                                Divider()
+//                            }
+//                            VStack {
+//                                HStack {
+//                                    Text("Couvert")
+//                                        .bodyFont(size: 12)
+//                                    Spacer()
+//                                    Text("Sim")
+//                                        .headingFont(size: 12)
+//                                }
+//                                Divider()
+//                            }
+//                            VStack {
+//                                HStack {
+//                                    Text("Local coberto")
+//                                        .bodyFont(size: 12)
+//                                    Spacer()
+//                                    Text("Sim")
+//                                        .headingFont(size: 12)
+//                                }
+//                                Divider()
+//                            }
                         }
                         
                     }
                     VStack(alignment: .leading, spacing: 2) {
                         Text("Avaliações")
-                            .headingFont(size: 14)
+                            .subHeaderFont()
                         VStack(spacing: 16) {
                             HStack(alignment: .top) {
                                 Text(String(restaurant.evaluation))
-                                    .headingFont(size: 30)
+                                    .headerTitle()
                                 Spacer()
                                 VStack(alignment: .trailing, spacing: 1) {
                                     HStack {
                                         starsEvaluation(howMany: 5)
                                         ProgressView(value: 15, total: 100)
-                                            .progressViewStyle(LinearProgressViewStyle(tint: .secondary))
+                                            .progressViewStyle(LinearProgressViewStyle(tint: .Shapes.secondary))
                                             .frame(maxWidth: 130)
                                     }
                                     HStack {
                                         starsEvaluation(howMany: 4)
                                         ProgressView(value: 5, total: 100)
-                                            .progressViewStyle(LinearProgressViewStyle(tint: .secondary))
+                                            .progressViewStyle(LinearProgressViewStyle(tint: .Shapes.secondary))
                                             .frame(maxWidth: 130)
                                     }
                                     HStack {
                                         starsEvaluation(howMany: 3)
                                         ProgressView(value: 5, total: 100)
-                                            .progressViewStyle(LinearProgressViewStyle(tint: .secondary))
+                                            .progressViewStyle(LinearProgressViewStyle(tint: .Shapes.secondary))
                                             .frame(maxWidth: 130)
                                     }
                                     HStack {
                                         starsEvaluation(howMany: 2)
                                         ProgressView(value: 5, total: 100)
-                                            .progressViewStyle(LinearProgressViewStyle(tint: .secondary))
+                                            .progressViewStyle(LinearProgressViewStyle(tint: .Shapes.secondary))
                                             .frame(maxWidth: 130)
                                     }
                                     HStack {
                                         starsEvaluation(howMany: 1)
                                         ProgressView(value: 5, total: 100)
-                                            .progressViewStyle(LinearProgressViewStyle(tint: .secondary))
+                                            .progressViewStyle(LinearProgressViewStyle(tint: .Shapes.secondary))
                                             .frame(maxWidth: 130)
                                     }
                                     Text("100 Avaliações")
-                                        .bodyFont(size: 12)
+                                        .bodyFont()
                                 }
                             }
                             TabView {
                                 ForEach(0..<3) { _ in
                                     VStack(alignment: .leading, spacing: 0) {
                                         Text("Musica boa e comida deliciosa")
-                                            .headingFont(size: 12)
+                                            .subHeaderFont()
                                         HStack {
                                             starsEvaluation(howMany: 5)
                                             Spacer()
                                             Text("Vinicius")
-                                                .bodyFont(size: 12)
+                                                .bodyFont()
                                         }
                                         .padding(.bottom)
                                         Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the")
-                                            .bodyFont(size: 12)
+                                            .bodyFont()
                                     }
                                     .padding(16)
                                     .background(

@@ -79,6 +79,10 @@ extension Color {
         static var stroke: Color {
             Color("stroke")
         }
+        
+        static var secondary: Color {
+            Color("shape-secondary")
+        }
     }
     
     enum Texts {

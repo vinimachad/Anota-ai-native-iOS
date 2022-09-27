@@ -10,15 +10,31 @@ import SwiftUI
 
 extension Text {
     
-    func headingFont(size: CGFloat) -> some View {
+    func headerTitle() -> some View {
         self
-            .font(.default(type: .bold, ofSize: size))
+            .font(.title)
+            .fontWeight(.bold)
             .foregroundColor(.Texts.heading)
     }
     
-    func bodyFont(size: CGFloat) -> some View {
+    func subHeaderFont(color: Color = .Texts.heading, weight: Font.Weight = .bold) -> some View {
         self
-            .font(.default(type: .regular, ofSize: size))
-            .foregroundColor(.Texts.body)
+            .font(.title2)
+            .fontWeight(weight)
+            .foregroundColor(color)
+    }
+    
+    func thirdHeaderFont() -> some View {
+        self
+            .font(.title3)
+            .fontWeight(.bold)
+            .foregroundColor(.Texts.heading)
+    }
+    
+    func bodyFont(color: Color = .Texts.body, weight: Font.Weight = .regular) -> some View {
+        self
+            .font(.body)
+            .fontWeight(weight)
+            .foregroundColor(color)
     }
 }
