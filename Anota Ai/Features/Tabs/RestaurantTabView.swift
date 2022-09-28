@@ -18,7 +18,8 @@ struct RestaurantTabView: View {
     
     var body: some View {
         TabView {
-            RestaurantDetailView(restaurant: restaurant)
+            RestaurantDetailsFactory
+                .createView(restaurant: restaurant)
                 .tabItem({
                     Label("Detalhes", systemImage: "newspaper")
                 })

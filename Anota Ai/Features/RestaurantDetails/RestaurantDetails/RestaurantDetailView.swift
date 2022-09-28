@@ -11,30 +11,34 @@ struct RestaurantDetailView: View {
     
     // MARK: - Public properties
     
-    var restaurant: Restaurant
+    @StateObject var viewModel: RestaurantDetailViewModel
     
     // MARK: - Body
     
     var body: some View {
-        
         GeometryReader { _ in
             Color.Shapes.shape
                 .ignoresSafeArea(.all)
             
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 36) {
-                    RestaurantDetailHeaderView(restaurant: restaurant)
-                    RestaurantDetailsListView(restaurant: restaurant)
-                    RestaurantReviewsView(restaurant: restaurant)
+                    RestaurantDetailHeaderView(restaurant: viewModel.restaurant)
+                    RestaurantDetailsListView(restaurant: viewModel.restaurant)
+                    RestaurantReviewsView(restaurant: viewModel.restaurant)
                 }
                 .padding(.horizontal, 16)
             }
         }
+        .onAppear()
     }
 }
 
 struct RestaurantDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetailView(restaurant: Restaurant.sampleData[0])
+        RestaurantDetailView(viewModel: RestaurantDetailViewModel(
+            restaurant: Restaurant.sampleData[0],
+            restaurantReviewsUseCase: RestaurantReviewsUseCase(api: ReviewRoutes())
+            )
+        )
     }
 }
