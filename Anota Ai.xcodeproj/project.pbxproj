@@ -121,6 +121,7 @@
 		3C83A4D528E3A39E00A87BBD /* RestaurantDetailsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */; };
 		3C83A4D728E3A52000A87BBD /* RestaurantReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D628E3A52000A87BBD /* RestaurantReviewsView.swift */; };
 		3C83A4DA28E3A61D00A87BBD /* ReviewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D928E3A61D00A87BBD /* ReviewStatus.swift */; };
+		3C83A4DC28E48AB200A87BBD /* ReviewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4DB28E48AB200A87BBD /* ReviewRoutes.swift */; };
 		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
 		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
@@ -320,6 +321,7 @@
 		3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsListView.swift; sourceTree = "<group>"; };
 		3C83A4D628E3A52000A87BBD /* RestaurantReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewsView.swift; sourceTree = "<group>"; };
 		3C83A4D928E3A61D00A87BBD /* ReviewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewStatus.swift; sourceTree = "<group>"; };
+		3C83A4DB28E48AB200A87BBD /* ReviewRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRoutes.swift; sourceTree = "<group>"; };
 		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 				3C530F1228AE7986008B602D /* UserRoutes.swift */,
 				3C6639B728AFD9CA00CBE73F /* LocationRoutes.swift */,
 				3C3A8E1E28C275D300467F5A /* RestaurantRoutes.swift */,
+				3C83A4DB28E48AB200A87BBD /* ReviewRoutes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -1793,6 +1796,7 @@
 				3C731AC528A16DC900BCE107 /* AlertViewModel.swift in Sources */,
 				3C9D34D228A178040023F77A /* AlertPresentationManager.swift in Sources */,
 				3C6639BA28AFDBBF00CBE73F /* FindLocalizationUseCase.swift in Sources */,
+				3C83A4DC28E48AB200A87BBD /* ReviewRoutes.swift in Sources */,
 				3C6DAED128E0A48C00BD9807 /* UserAddressesUseCase.swift in Sources */,
 				3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */,
 				3C530F0C28AE71E1008B602D /* APIHosts.swift in Sources */,
