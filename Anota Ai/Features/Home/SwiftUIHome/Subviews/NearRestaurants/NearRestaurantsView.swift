@@ -56,7 +56,7 @@ extension NearRestaurantsView {
                 }
             }
         }
-//        .shimmerEffect(opacity: opacity)
+        .shimmerEffect(opacity: opacity)
     }
 }
 
