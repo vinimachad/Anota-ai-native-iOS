@@ -22,14 +22,10 @@ struct SwiftUIHomeView: View {
                     NearRestaurantsView(state: viewModel.nearRestaurantState)
                     RestaurantListView(title: "Restaurantes", state: viewModel.restaurantState)
                 }
-                .padding(.top, 32)
             }
-            .padding(.top, 66)
             .padding(.horizontal)
             .onAppear(perform: viewModel.callRequests)
             .environmentObject(viewModel)
-            .overlay { HeaderView() }
-            .navigationBarHidden(true)
         }
     }
 }

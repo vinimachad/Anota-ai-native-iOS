@@ -21,7 +21,7 @@ class RestaurantReviewsViewModel: ObservableObject {
 extension RestaurantReviewsViewModel {
     
     var evaluation: String {
-        String(restaurant.evaluation)
+        restaurant.formatEvaluation()
     }
     
     var totalReviewsFloat: CGFloat {

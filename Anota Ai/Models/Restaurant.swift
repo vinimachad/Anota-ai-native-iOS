@@ -21,6 +21,10 @@ struct Restaurant: Codable, Identifiable {
         Int(evaluation)
     }
     
+    func formatEvaluation() -> String {
+        String(format: "%.1f", evaluation)
+    }
+    
     struct Detail: Codable, Hashable {
         var title: String
         var value: String

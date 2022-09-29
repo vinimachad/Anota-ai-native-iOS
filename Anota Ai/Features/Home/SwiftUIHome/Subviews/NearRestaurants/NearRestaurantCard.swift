@@ -35,7 +35,7 @@ struct NearRestaurantCard: View {
                     .lineLimit(2)
                 
                 HStack() {
-                    Text(String(restaurant.evaluation))
+                    Text(restaurant.formatEvaluation())
                         .foregroundColor(.Texts.body)
                         .font(.default(type: .regular, ofSize: 12))
                          
