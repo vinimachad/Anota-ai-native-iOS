@@ -7,13 +7,14 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class RestaurantDetailViewModel: ObservableObject {
     
     // MARK: - Public properties
     
     @Published var restaurant: Restaurant
-    @Published var reviews = [Review]()
+    @Published var reviewsState: RequestState<[Review]> = .loading
     
     // MARK: - Private properties
     
@@ -34,12 +35,13 @@ class RestaurantDetailViewModel: ObservableObject {
         restaurantReviewsUseCase.execute(request: restaurant.id)
             .sink(receiveCompletion: { result in
                 switch result {
-                case .failure(let error): print(error)
+                case .failure(let error): self.reviewsState = .failure(error.message)
                 case .finished: break
                 }
             }, receiveValue: { [unowned self] reviews in
-                self.reviews = reviews
+                isEmptyStateValidation(state: &reviewsState, items: reviews)
             })
             .store(in: &subscriptions)
     }
 }
+   

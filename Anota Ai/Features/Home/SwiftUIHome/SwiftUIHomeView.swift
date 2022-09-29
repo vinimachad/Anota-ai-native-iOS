@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SwiftUIHomeView: View {
     
+    
     @StateObject var viewModel: SwiftUIHomeViewModel
     
     var body: some View {
@@ -17,15 +18,18 @@ struct SwiftUIHomeView: View {
             Color.Shapes.shape.ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 32) {
-                    RestaurantListView(isVerticalList: false, title: "Famosos por aqui", state: viewModel.bestRatedState).padding(.top, 120)
+                    RestaurantListView(isVerticalList: false, title: "Famosos por aqui", state: viewModel.bestRatedState)
                     NearRestaurantsView(state: viewModel.nearRestaurantState)
                     RestaurantListView(title: "Restaurantes", state: viewModel.restaurantState)
                 }
+                .padding(.top, 32)
             }
+            .padding(.top, 66)
             .padding(.horizontal)
             .onAppear(perform: viewModel.callRequests)
             .environmentObject(viewModel)
             .overlay { HeaderView() }
+            .navigationBarHidden(true)
         }
     }
 }

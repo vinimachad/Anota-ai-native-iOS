@@ -8,7 +8,13 @@
 import Foundation
 
 struct Review: Decodable, Identifiable {
-    var id: String
-    var points: Int
-    var description: String
+    var id: String = ""
+    var points: Int = 0
+    var description: String = ""
+    var title: String = ""
+    var client: Client = Client()
+    
+    struct Client: Decodable {
+        var name: String = ""
+    }
 }

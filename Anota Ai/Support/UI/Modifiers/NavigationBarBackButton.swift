@@ -11,7 +11,8 @@ import SwiftUI
 extension View {
     
     func defaultBackButton(presentationMode: Binding<PresentationMode>) -> some View {
-        self
+        
+        return self
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -13,6 +13,10 @@ struct RestaurantDetailView: View {
     
     @StateObject var viewModel: RestaurantDetailViewModel
     
+    init(viewModel: RestaurantDetailViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -24,12 +28,18 @@ struct RestaurantDetailView: View {
                 VStack(alignment: .leading, spacing: 36) {
                     RestaurantDetailHeaderView(restaurant: viewModel.restaurant)
                     RestaurantDetailsListView(restaurant: viewModel.restaurant)
-                    RestaurantReviewsView(restaurant: viewModel.restaurant)
+                    
+                    switch viewModel.reviewsState {
+                    case .success(let reviews): RestaurantReviewsView(viewModel: RestaurantReviewsViewModel(reviews: reviews, restaurant: viewModel.restaurant))
+                    default: EmptyView()
+                    }
                 }
-                .padding(.horizontal, 16)
+                .padding(16)
             }
         }
-        .onAppear()
+        .onAppear {
+            viewModel.restaurantReviewsRequest()
+        }
     }
 }
 

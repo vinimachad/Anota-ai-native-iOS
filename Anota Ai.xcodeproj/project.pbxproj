@@ -125,6 +125,7 @@
 		3C83A4DF28E48CD100A87BBD /* RestaurantReviewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4DE28E48CD100A87BBD /* RestaurantReviewsUseCase.swift */; };
 		3C83A4E228E48D5400A87BBD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4E128E48D5400A87BBD /* Review.swift */; };
 		3C83A4E528E4993600A87BBD /* RestaurantDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4E428E4993600A87BBD /* RestaurantDetailsFactory.swift */; };
+		3C83A4E928E49B9A00A87BBD /* RestaurantReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4E828E49B9A00A87BBD /* RestaurantReviewsViewModel.swift */; };
 		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
 		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
@@ -328,6 +329,7 @@
 		3C83A4DE28E48CD100A87BBD /* RestaurantReviewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewsUseCase.swift; sourceTree = "<group>"; };
 		3C83A4E128E48D5400A87BBD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		3C83A4E428E4993600A87BBD /* RestaurantDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsFactory.swift; sourceTree = "<group>"; };
+		3C83A4E828E49B9A00A87BBD /* RestaurantReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewsViewModel.swift; sourceTree = "<group>"; };
 		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
@@ -565,6 +567,8 @@
 		3C0DB14B28E39FDB008762BA /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				3C83A4E728E49B8300A87BBD /* Reviews */,
+				3C83A4E628E49B7900A87BBD /* DetailListView */,
 				3C0DB14C28E39FE3008762BA /* Header */,
 			);
 			path = Subviews;
@@ -574,8 +578,6 @@
 			isa = PBXGroup;
 			children = (
 				3C83A4D128E3A01200A87BBD /* RestaurantDetailHeaderView.swift */,
-				3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */,
-				3C83A4D628E3A52000A87BBD /* RestaurantReviewsView.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -1084,6 +1086,23 @@
 				3C83A4E428E4993600A87BBD /* RestaurantDetailsFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		3C83A4E628E49B7900A87BBD /* DetailListView */ = {
+			isa = PBXGroup;
+			children = (
+				3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */,
+			);
+			path = DetailListView;
+			sourceTree = "<group>";
+		};
+		3C83A4E728E49B8300A87BBD /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				3C83A4D628E3A52000A87BBD /* RestaurantReviewsView.swift */,
+				3C83A4E828E49B9A00A87BBD /* RestaurantReviewsViewModel.swift */,
+			);
+			path = Reviews;
 			sourceTree = "<group>";
 		};
 		3C91274E289DD668008AA594 /* FindYourLocation */ = {
@@ -1872,6 +1891,7 @@
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
 				3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */,
 				3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */,
+				3C83A4E928E49B9A00A87BBD /* RestaurantReviewsViewModel.swift in Sources */,
 				3C3A8E1728C25BDA00467F5A /* HomeBuilderSection.swift in Sources */,
 				3C945DB428E2771500322DC3 /* KindFilter.swift in Sources */,
 				3CA3D7BA289AFC10006B3D90 /* AppCoordinator.swift in Sources */,
@@ -2136,10 +2156,12 @@
 				DEVELOPMENT_TEAM = 77PUJX2KMA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anota Ai/Supporting Files/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Vamos te rastrear";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vamos te rastrear";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2164,10 +2186,12 @@
 				DEVELOPMENT_TEAM = 77PUJX2KMA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Anota Ai/Supporting Files/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Vamos te rastrear";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vamos te rastrear";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

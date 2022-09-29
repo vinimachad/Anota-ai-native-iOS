@@ -29,7 +29,15 @@ struct RestaurantTabView: View {
                     Label("Cardápio", systemImage: "menucard")
                 })
         }
+        .overlay(alignment: .top, content: {
+            Color.clear
+                .background(.thinMaterial)
+                .edgesIgnoringSafeArea(.top)
+                .frame(height: 0)
+        })
+        .navigationBarHidden(false)
         .defaultBackButton(presentationMode: presentationMode)
+        .environment(\.colorScheme, .light)
     }
 }
 

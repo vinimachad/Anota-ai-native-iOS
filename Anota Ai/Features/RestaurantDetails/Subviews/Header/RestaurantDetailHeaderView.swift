@@ -12,21 +12,24 @@ struct RestaurantDetailHeaderView: View {
     var restaurant: Restaurant
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(alignment: .center) {
+        VStack(alignment: .leading, spacing: 32) {
+            
+            HStack(alignment: .center) {
+                
+                VStack(alignment: .leading, spacing: 0) {
                     Text(restaurant.name)
                         .headerTitle()
                         .frame(maxWidth: 350, alignment: .leading)
                         .lineLimit(2)
-                    
-                    Spacer()
-                    asyncImageResult()
+                    Text(restaurant.type)
+                        .bodyFont()
                 }
-                Text(restaurant.type)
-                    .subHeaderFont(color: .Texts.body, weight: .regular)
+                
+                Spacer()
+                asyncImageResult()
             }
-            Text(restaurant.description ?? "n/d")
+            
+            Text(restaurant.description)
                 .bodyFont()
         }
     }
@@ -47,6 +50,6 @@ struct RestaurantDetailHeaderView: View {
 
 struct RestaurantDetailHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantDetailHeaderView(restaurant: Restaurant.sampleData[0])
+        RestaurantDetailHeaderView(restaurant: Restaurant.sampleData[1])
     }
 }
