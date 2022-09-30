@@ -13,6 +13,7 @@ protocol RestaurantRoutesProtocol {
     func restaurantKinds(completion: @escaping Completion)
     func near(request: NearRequest, completion: @escaping Completion)
     func bestRated() -> AnyPublisher<Response, MoyaError>
+    func menu(request: String) -> AnyPublisher<Response, MoyaError>
 }
 
 class RestaurantRoutes {
@@ -25,6 +26,7 @@ class RestaurantRoutes {
         case restaurantKinds
         case near(NearRequest)
         case bestRated
+        case menu(String)
         
         var path: String {
             switch self {
@@ -32,6 +34,7 @@ class RestaurantRoutes {
             case .restaurantKinds: return "restaurant/kinds"
             case .near: return "restaurant/near"
             case .bestRated: return "restaurant/bestRated"
+            case .menu: return "restaurant/menu"
             }
         }
         
@@ -41,6 +44,7 @@ class RestaurantRoutes {
             case .restaurantKinds: return .get
             case .near: return .get
             case .bestRated: return .get
+            case .menu: return .get
             }
         }
         
@@ -50,6 +54,7 @@ class RestaurantRoutes {
             case .restaurantKinds: return .requestPlain
             case .near(let request): return .requestParameters(parameters: request.toJson(), encoding: URLEncoding.queryString)
             case .bestRated: return .requestPlain
+            case .menu(let restaurantId): return .requestParameters(parameters: ["restaurant_id": restaurantId], encoding: URLEncoding.queryString)
             }
         }
         
@@ -77,5 +82,9 @@ extension RestaurantRoutes: RestaurantRoutesProtocol {
     
     func bestRated() -> AnyPublisher<Response, MoyaError> {
        return provider.requestPublisher(.bestRated)
+    }
+    
+    func menu(request: String) -> AnyPublisher<Response, MoyaError> {
+        provider.requestPublisher(.menu(request))
     }
 }
