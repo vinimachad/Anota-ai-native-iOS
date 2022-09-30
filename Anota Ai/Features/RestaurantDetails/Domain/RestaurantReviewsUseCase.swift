@@ -22,7 +22,7 @@ class RestaurantReviewsUseCase: RestaurantReviewsUseCaseProtocol {
         self.api = api
     }
     
-    func execute(request: String) -> AnyPublisher<[Review],APIError> {
+    func execute(request: String) -> AnyPublisher<[Review], APIError> {
         api.restaurantReviews(request: request)
             .tryMap({ req in
                 if req.statusCode != 200 {

@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @StateObject var viewModel: MenuViewModel
+    
+    init(viewModel: MenuViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
-            EmptyView()
+        EmptyView()
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(viewModel: MenuViewModel(getMenuUseCase: GetMenuUseCase(api: RestaurantRoutes())))
     }
 }

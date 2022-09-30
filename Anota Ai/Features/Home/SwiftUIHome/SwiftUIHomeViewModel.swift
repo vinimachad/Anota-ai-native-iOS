@@ -17,6 +17,7 @@ class SwiftUIHomeViewModel: ObservableObject {
     @Published var nearRestaurantState: RequestState<[Restaurant]> = .loading
     @Published var bestRatedState: RequestState<[Restaurant]> = .loading
     @Published var filterIsInUse = [KindFilter]()
+    @Published var restaurant: Restaurant?
     
     // MARK: - Private properties
     

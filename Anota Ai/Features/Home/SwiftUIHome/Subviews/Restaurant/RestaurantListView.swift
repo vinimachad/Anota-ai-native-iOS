@@ -39,7 +39,7 @@ struct RestaurantListView: View {
     
     private func generateRestaurantList(_ restaurants: [Restaurant]) -> some View {
         ForEach(restaurants) { item in
-            NavigationLink(destination: RestaurantTabView(restaurant: item)) {
+            NavigationLink(destination: RestaurantTabView()) {
                 CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
             }
         }

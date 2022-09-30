@@ -130,6 +130,8 @@
 		3C83A4EF28E737BB00A87BBD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4EE28E737BB00A87BBD /* Menu.swift */; };
 		3C83A4F128E737DC00A87BBD /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4F028E737DC00A87BBD /* Food.swift */; };
 		3C83A4F428E7393300A87BBD /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4F328E7393300A87BBD /* MenuViewModel.swift */; };
+		3C83A4F728E7593600A87BBD /* MenuFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4F628E7593600A87BBD /* MenuFactory.swift */; };
+		3C83A4F928E7596500A87BBD /* ViewFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4F828E7596500A87BBD /* ViewFactoryProtocol.swift */; };
 		3C898CB1289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */; };
 		3C91274D289DD547008AA594 /* FindYourLocationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */; };
 		3C912750289DD67D008AA594 /* FindYourLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C91274F289DD67D008AA594 /* FindYourLocationView.swift */; };
@@ -338,6 +340,8 @@
 		3C83A4EE28E737BB00A87BBD /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		3C83A4F028E737DC00A87BBD /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		3C83A4F328E7393300A87BBD /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		3C83A4F628E7593600A87BBD /* MenuFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFactory.swift; sourceTree = "<group>"; };
+		3C83A4F828E7596500A87BBD /* ViewFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactoryProtocol.swift; sourceTree = "<group>"; };
 		3C898CB0289EBBEF00FA4456 /* OnboardingControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingControllerDelegateMock.swift; sourceTree = "<group>"; };
 		3C91274C289DD547008AA594 /* FindYourLocationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationCoordinator.swift; sourceTree = "<group>"; };
 		3C91274F289DD67D008AA594 /* FindYourLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYourLocationView.swift; sourceTree = "<group>"; };
@@ -559,6 +563,7 @@
 		3C0DB14528E38F1D008762BA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				3C83A4F528E7592F00A87BBD /* Factory */,
 				3C83A4F228E7392500A87BBD /* Menu */,
 				3C83A4ED28E737B300A87BBD /* Models */,
 				3C83A4EA28E7375F00A87BBD /* Domain */,
@@ -1141,6 +1146,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		3C83A4F528E7592F00A87BBD /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3C83A4F628E7593600A87BBD /* MenuFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		3C91274E289DD668008AA594 /* FindYourLocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1350,6 +1363,7 @@
 				3CA3D7BE289AFEF4006B3D90 /* OnboardingFactory.swift */,
 				3C3A8E0C28C253C300467F5A /* ControllerFactoryProtocol.swift */,
 				3C29ACB828DCC7B4007D741A /* UseCaseFactoryProtocol.swift */,
+				3C83A4F828E7596500A87BBD /* ViewFactoryProtocol.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1965,10 +1979,12 @@
 				3C6639BC28B00E6D00CBE73F /* CreateAddressUseCase.swift in Sources */,
 				3C945DBE28E3403300322DC3 /* RestaurantDetailViewModel.swift in Sources */,
 				3C769A4F28A6B694001DA6E6 /* ConfirmLocationViewModel.swift in Sources */,
+				3C83A4F728E7593600A87BBD /* MenuFactory.swift in Sources */,
 				3CA3D7BC289AFEAF006B3D90 /* OnboardingCoordinator.swift in Sources */,
 				3C3A8E2428C2777500467F5A /* Restaurant.swift in Sources */,
 				3C3A8E1C28C2603200467F5A /* RestaurantCellViewModel.swift in Sources */,
 				3C7A4386289ECD5C00DA1E36 /* UIViewController+Navigation.swift in Sources */,
+				3C83A4F928E7596500A87BBD /* ViewFactoryProtocol.swift in Sources */,
 				3C0DB14228E35EDF008762BA /* Text+FontStyles.swift in Sources */,
 				3CF893CB28D4BA0E00C4C8EB /* RestaurantKindsUseCase.swift in Sources */,
 				3C769A4B28A6B682001DA6E6 /* ConfirmLocationController.swift in Sources */,
