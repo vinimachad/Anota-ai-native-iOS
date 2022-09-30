@@ -20,7 +20,7 @@ struct SwiftUIHomeView: View {
                 VStack(alignment: .leading, spacing: 32) {
                     RestaurantListView(isVerticalList: false, title: "Famosos por aqui", state: viewModel.bestRatedState)
                     NearRestaurantsView(state: viewModel.nearRestaurantState)
-                    RestaurantListView(title: "Restaurantes", state: viewModel.restaurantState)
+                    RestaurantListView(isVerticalList: true, title: "Restaurantes", state: viewModel.restaurantState)
                 }
             }
             .padding(.horizontal)

@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-enum RestaurantDetailsFactory {
+enum RestaurantDetailsFactory: ViewFactoryProtocol {
     
-    static func createView(restaurant: Restaurant) -> some View {
+    static func createView() -> some View {
+        let restaurant = RestaurantManager.shared.getSelectedRestaurant()
         let reviewRoutes = ReviewRoutes()
         let restaurantReviewsUseCase = RestaurantReviewsUseCase(api: reviewRoutes)
         let viewModel = RestaurantDetailViewModel(restaurant: restaurant, restaurantReviewsUseCase: restaurantReviewsUseCase)

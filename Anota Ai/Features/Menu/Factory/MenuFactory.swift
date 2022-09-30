@@ -11,6 +11,7 @@ import SwiftUI
 enum MenuFactory: ViewFactoryProtocol {
     
     static func createView() -> some View {
+        let restaurant = RestaurantManager.shared.getSelectedRestaurant()
         let restaurantRoutes = RestaurantRoutes()
         let getMenuUseCase = GetMenuUseCase(api: restaurantRoutes)
         let viewModel = MenuViewModel(getMenuUseCase: getMenuUseCase)

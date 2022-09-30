@@ -13,6 +13,13 @@ struct NearRestaurantCard: View {
     
     var restaurant: Restaurant
     
+    // MARK: - Init
+    
+    init(restaurant: Restaurant) {
+        self.restaurant = restaurant
+        RestaurantManager.shared.setSelectedRestaurant(restaurant)
+    }
+    
     // MARK: - Body
     
     var body: some View {
