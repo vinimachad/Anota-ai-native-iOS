@@ -12,7 +12,7 @@ class MenuViewModel: ObservableObject {
     
     // MARK: Public properties
     
-    @Published var menuState: RequestState<[Food]> = .loading
+    @Published var menuState: RequestState<[FoodSection]> = .loading
     @Published var searchFood: String = ""
     
     // MARK: Private properties
@@ -20,6 +20,8 @@ class MenuViewModel: ObservableObject {
     private var getMenuUseCase: any GetMenuUseCaseProtocol
     private var subscriptions = Set<AnyCancellable>()
     private var restaurant: Restaurant
+    private var foodTypes = [String]()
+    private var foodSections = [FoodSection]()
     
     // MARK: Init
     
@@ -41,9 +43,28 @@ extension MenuViewModel {
                     }
                 },
                 receiveValue: { [unowned self] menu in
-                    isEmptyStateValidation(state: &menuState, items: menu.foods)
+                    mergeTypes(foods: menu.foods)
                 }
             )
             .store(in: &subscriptions)
+    }
+    
+    private func mergeTypes(foods: [Food]) {
+        foods.forEach { food in
+            if !foodTypes.contains(food.type) {
+                foodTypes.append(food.type)
+            }
+        }
+    
+        foodTypes.forEach { type in
+            let foods = foods.filter { $0.type == type }
+            var section = FoodSection(title: type, foods: foods)
+            
+            if !foodSections.contains(where: { $0.title == section.title }) {
+                foodSections.append(section)
+            }
+        }
+        
+        isEmptyStateValidation(state: &menuState, items: foodSections)
     }
 }

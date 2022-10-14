@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SwiftUIHomeView: View {
     
-    
     @StateObject var viewModel: SwiftUIHomeViewModel
     
     var body: some View {

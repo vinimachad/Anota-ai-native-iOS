@@ -20,16 +20,15 @@ struct MenuView: View {
         
         VStack {
             switch viewModel.menuState {
-            case .success(let foods): successView(foods: foods)
+            case .success(let sections): successView(sections: sections)
             case .loading: loadingView()
             default: EmptyView()
             }
-        }.onAppear {
-            viewModel.getMenuRequest()
         }
+        .onAppear { viewModel.getMenuRequest() }
     }
     
-    func successView(foods: [Food]) -> some View {
+    func successView(sections: [FoodSection]) -> some View {
         
         GeometryReader { _ in
             Color.Shapes.shape
@@ -49,25 +48,31 @@ struct MenuView: View {
                     
                     LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
                         
-                        ForEach(foods) { food in
-                            HStack(alignment: .center, spacing: 4) {
-                                VStack(alignment: .leading) {
-                                    Text(food.name)
-                                        .bodyFont(color: .Texts.heading, weight: .bold)
-                                        .lineLimit(2)
-                                    Text(food.description)
-                                        .bodyFont()
-                                        .lineLimit(3)
-                                    Text("R$ \(food.price)")
-                                        .bodyFont(color: .Texts.heading, weight: .medium)
-                                        .padding(.top, 1)
-                                }
-                                Spacer()
-                                AsyncImage(url: URL(string: food.previewUrl)) { result in
-                                    resultOfImageState(result)
-                                }
-                            }
+                        ForEach(sections) { section in
+                            Text(section.title.capitalized)
+                                .thirdHeaderFont()
+                                .padding(.top)
                             Divider()
+                            ForEach(section.foods) { food in
+                                HStack(alignment: .center, spacing: 4) {
+                                    VStack(alignment: .leading) {
+                                        Text(food.name)
+                                            .bodyFont(color: .Texts.heading, weight: .medium)
+                                            .lineLimit(2)
+                                        Text(food.description)
+                                            .bodyFont()
+                                            .lineLimit(3)
+                                        Text("R$ \(food.price)")
+                                            .bodyFont(color: .Texts.heading, weight: .medium)
+                                            .padding(.top, 1)
+                                    }
+                                    Spacer()
+                                    AsyncImage(url: URL(string: food.previewUrl)) { result in
+                                        resultOfImageState(result)
+                                    }
+                                }
+                                Divider()
+                            }
                         }
                     }
                 }

@@ -14,7 +14,7 @@ enum RequestState<T: Any> {
     case success(T)
 }
 
-func isEmptyStateValidation<T: Decodable>(state: inout RequestState<[T]>, items: [T]) {
+func isEmptyStateValidation<T: Any>(state: inout RequestState<[T]>, items: [T]) {
     if items.isEmpty {
         state = .empty
         return

@@ -12,6 +12,7 @@ struct RestaurantTabView: View {
     // MARK: - Public properties
     
     @Environment(\.presentationMode) var presentationMode
+    
     var restaurant: Restaurant
     
     private var factory: RestaurantTabViewFactory
