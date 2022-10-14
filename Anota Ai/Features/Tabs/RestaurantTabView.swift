@@ -12,19 +12,27 @@ struct RestaurantTabView: View {
     // MARK: - Public properties
     
     @Environment(\.presentationMode) var presentationMode
+    var restaurant: Restaurant
+    
+    private var factory: RestaurantTabViewFactory
+    
+    init(restaurant: Restaurant) {
+        self.restaurant = restaurant
+        self.factory = RestaurantTabViewFactory(restaurant: restaurant)
+    }
     
     // MARK: - Body
     
     var body: some View {
         TabView {
-            RestaurantDetailsFactory
-                .createView()
+            factory
+                .makeRestaurantDetailsView()
                 .tabItem({
                     Label("Detalhes", systemImage: "newspaper")
                 })
             
-            MenuFactory
-                .createView()
+            factory
+                .makeMenuView()
                 .tabItem({
                     Label("Cardápio", systemImage: "menucard")
                 })
@@ -43,6 +51,6 @@ struct RestaurantTabView: View {
 
 struct RestaurantTabView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantTabView()
+        RestaurantTabView(restaurant: Restaurant.sampleData[0])
     }
 }

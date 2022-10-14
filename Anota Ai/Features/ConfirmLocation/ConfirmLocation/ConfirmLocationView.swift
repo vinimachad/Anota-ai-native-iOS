@@ -32,8 +32,8 @@ class ConfirmLocationView: UIView {
     private lazy var mapView = MapView()
     private lazy var streetDetailsLabel = UILabel()
     private lazy var cityDetailLabel = UILabel()
-    private lazy var numberTextField = TextField()
-    private lazy var complementTextField = TextField()
+    private lazy var numberTextField = TextFieldComponent()
+    private lazy var complementTextField = TextFieldComponent()
     private lazy var textFieldContainerStackView = UIStackView()
     private lazy var saveAddressButton = ButtonKit()
     

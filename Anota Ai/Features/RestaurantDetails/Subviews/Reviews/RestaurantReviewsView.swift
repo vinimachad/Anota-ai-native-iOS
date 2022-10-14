@@ -63,7 +63,7 @@ extension RestaurantReviewsView {
         TabView() {
             ForEach(viewModel.reviews) { review in
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(review.title)
+                    Text(review.title ?? "")
                         .bodyFont(color: .Texts.heading, weight: .bold)
                         .lineLimit(1)
                     HStack {

@@ -13,6 +13,7 @@ enum APIError: Error {
     case other(String)
     
     static func map(_ error: Error) -> APIError {
+        print(error)
         return .other(error.localizedDescription)
     }
     

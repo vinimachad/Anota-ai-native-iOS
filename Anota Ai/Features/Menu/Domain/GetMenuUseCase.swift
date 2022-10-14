@@ -24,15 +24,20 @@ class GetMenuUseCase: GetMenuUseCaseProtocol {
     
     func execute(request: String) -> AnyPublisher<Menu, APIError> {
         api.menu(request: request)
-            .tryMap { res in
-                if res.statusCode != 200 {
-                    throw APIError.statusCode(res.statusCode)
+            .tryMap({ req in
+                if req.statusCode != 200 {
+                    throw APIError.statusCode(req.statusCode)
                 }
-                
-                return res.data
-            }
+                return req.data
+            })
             .decode(type: Menu.self, decoder: JSONDecoder.defaultJSONDecoder)
-            .mapError { APIError.map($0) }
+            .mapError({APIError.map($0)})
             .eraseToAnyPublisher()
+    }
+}
+
+class GetMenuUseCaseMock: GetMenuUseCaseProtocol {
+    func execute(request: String) -> AnyPublisher<Menu, APIError> {
+        return Result.Publisher(Menu.sample).eraseToAnyPublisher()
     }
 }

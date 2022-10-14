@@ -42,8 +42,7 @@ struct RestaurantListView: View {
     private func generateRestaurantList(_ restaurants: [Restaurant]) -> some View {
          
         ForEach(restaurants) { item in
-            RestaurantManager.shared.setSelectedRestaurant(item)
-            return NavigationLink(destination: RestaurantTabView()) {
+            NavigationLink(destination: RestaurantTabView(restaurant: item)) {
                 CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
             }
         }

@@ -16,12 +16,50 @@ struct MenuView: View {
     }
     
     var body: some View {
-        EmptyView()
+        
+        
+        VStack {
+            switch viewModel.menuState {
+            case .success(let foods): successView(foods: foods)
+            case .loading: loadingView()
+            default: EmptyView()
+            }
+        }.onAppear {
+            viewModel.getMenuRequest()
+        }
+    }
+    
+    func successView(foods: [Food]) -> some View {
+        ScrollView {
+            
+            VStack(alignment: .leading) {
+                TextField("User name (email address)",text: $viewModel.searchFood)
+                    .frame(height: 48)
+                    .background(Color.Shapes.box)
+                
+                LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
+                    
+                    ForEach(foods) { food in
+                        VStack(alignment: .leading) {
+                            Text(food.name)
+                            Text(food.description)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        MenuView(viewModel: MenuViewModel(getMenuUseCase: GetMenuUseCase(api: RestaurantRoutes())))
+        let viewModel = MenuViewModel(
+            getMenuUseCase: GetMenuUseCaseMock(),
+            restaurant: Restaurant.sampleData[0]
+        )
+        viewModel.menuState = .success([])
+        
+        return MenuView(viewModel: viewModel)
     }
 }

@@ -23,8 +23,8 @@ class LoginView: UIView {
     // MARK: - UI Components
     
     private lazy var coverImageView = UIImageView()
-    private lazy var emailTextField = TextField()
-    private lazy var passwordTextField = TextField()
+    private lazy var emailTextField = TextFieldComponent()
+    private lazy var passwordTextField = TextFieldComponent()
     private lazy var loginButton = ButtonKit()
     private lazy var containerTextFields = UIView()
     

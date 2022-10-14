@@ -13,18 +13,11 @@ struct NearRestaurantCard: View {
     
     var restaurant: Restaurant
     
-    // MARK: - Init
-    
-    init(restaurant: Restaurant) {
-        self.restaurant = restaurant
-        RestaurantManager.shared.setSelectedRestaurant(restaurant)
-    }
-    
     // MARK: - Body
     
     var body: some View {
         
-        NavigationLink(destination: RestaurantTabView()) {
+        NavigationLink(destination: RestaurantTabView(restaurant: restaurant)) {
             VStack(alignment: .leading, spacing: 8) {
                 AsyncImage(url: URL(string: restaurant.avatarUrl)) { result in
                     resultOfImageState(result)

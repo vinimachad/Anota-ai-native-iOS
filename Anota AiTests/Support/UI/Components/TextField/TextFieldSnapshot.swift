@@ -11,12 +11,12 @@ import FBSnapshotTestCase
 
 class TextFieldSnapshot: FBSnapshotTestCase {
     
-    var sut: TextField!
+    var sut: TextFieldComponent!
     var containerView: UIView!
     
     override func setUp() {
         super.setUp()
-        sut = TextField()
+        sut = TextFieldComponent()
         containerView = UIView()
         sut.frame = CGRect(x: 16, y: 16, width: 382, height: 48)
         containerView.frame = CGRect(x: 0, y: 0, width: 414, height: 80)

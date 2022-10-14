@@ -11,7 +11,7 @@ struct Review: Decodable, Identifiable {
     var id: String = ""
     var points: Int = 0
     var description: String = ""
-    var title: String = ""
+    var title: String? = ""
     var client: Client = Client()
     
     struct Client: Decodable {
