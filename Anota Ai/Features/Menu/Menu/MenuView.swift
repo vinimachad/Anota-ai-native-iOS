@@ -16,26 +16,13 @@ struct MenuView: View {
     }
     
     var body: some View {
-        
-        
-        VStack {
-            switch viewModel.menuState {
-            case .success(let sections): successView(sections: sections)
-            case .loading: loadingView()
-            default: EmptyView()
-            }
-        }
-        .onAppear { viewModel.getMenuRequest() }
-    }
-    
-    func successView(sections: [FoodSection]) -> some View {
-        
         GeometryReader { _ in
             Color.Shapes.shape
                 .ignoresSafeArea(.all)
             
             ScrollView {
                 VStack(alignment: .leading) {
+                    
                     TextField("Busque pelo seu prato", text: $viewModel.searchFood)
                     .padding()
                     .foregroundColor(.Texts.body)
@@ -45,39 +32,59 @@ struct MenuView: View {
                             .cornerRadius(8)
                     )
                     .padding(.bottom, 32)
+                    .textInputAutocapitalization(.never)
                     
                     LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
-                        
-                        ForEach(sections) { section in
-                            Text(section.title.capitalized)
-                                .thirdHeaderFont()
-                                .padding(.top)
-                            Divider()
-                            ForEach(section.foods) { food in
-                                HStack(alignment: .center, spacing: 4) {
-                                    VStack(alignment: .leading) {
-                                        Text(food.name)
-                                            .bodyFont(color: .Texts.heading, weight: .medium)
-                                            .lineLimit(2)
-                                        Text(food.description)
-                                            .bodyFont()
-                                            .lineLimit(3)
-                                        Text("R$ \(food.price)")
-                                            .bodyFont(color: .Texts.heading, weight: .medium)
-                                            .padding(.top, 1)
-                                    }
-                                    Spacer()
-                                    AsyncImage(url: URL(string: food.previewUrl)) { result in
-                                        resultOfImageState(result)
-                                    }
-                                }
-                                Divider()
+                        if viewModel.searchFood.count > 3 {
+                            switch viewModel.searchFoodState {
+                            case .success(let foods): foodCell(foods: foods)
+                            default: EmptyView()
+                            }
+                        } else {
+                            switch viewModel.menuState {
+                            case .success(let sections): successViewWithSection(sections: sections)
+                            case .loading: loadingView()
+                            default: EmptyView()
                             }
                         }
                     }
                 }
                 .padding()
             }
+        }
+        .onAppear { viewModel.getMenuRequest() }
+    }
+    
+    func successViewWithSection(sections: [FoodSection]) -> some View {
+        ForEach(sections) { section in
+            Text(section.title.capitalized)
+                .thirdHeaderFont()
+                .padding(.top)
+            Divider()
+            foodCell(foods: section.foods)
+        }
+    }
+    
+    private func foodCell(foods: [Food]) -> some View {
+        ForEach(foods) { food in
+            HStack(alignment: .center, spacing: 4) {
+                VStack(alignment: .leading) {
+                    Text(food.name)
+                        .bodyFont(color: .Texts.heading, weight: .medium)
+                        .lineLimit(2)
+                    Text(food.description)
+                        .bodyFont()
+                        .lineLimit(3)
+                    Text("R$ \(food.price)")
+                        .bodyFont(color: .Texts.heading, weight: .medium)
+                        .padding(.top, 1)
+                }
+                Spacer()
+                AsyncImage(url: URL(string: food.previewUrl)) { result in
+                    resultOfImageState(result)
+                }
+            }
+            Divider()
         }
     }
     
