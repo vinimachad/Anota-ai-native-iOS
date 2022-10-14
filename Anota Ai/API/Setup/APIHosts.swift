@@ -13,8 +13,8 @@ enum APIHosts {
         let urlString: String
         
         #if DEBUG
-        urlString = "http://localhost:8080/"
-//        urlString = "https://anota-ai-staging.herokuapp.com/"
+//        urlString = "http://localhost:8080/"
+        urlString = "https://anota-ai-staging.herokuapp.com/"
         #else
 //        urlString = "https://anota-ai-staging.herokuapp.com/"
         #endif

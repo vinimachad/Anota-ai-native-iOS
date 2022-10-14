@@ -14,6 +14,13 @@ extension View {
         
         return self
             .navigationBarBackButtonHidden(true)
+            .environment(\.colorScheme, .light)
+            .overlay(alignment: .top, content: {
+                Color.clear
+                    .background(.thinMaterial)
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(height: 0)
+            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
