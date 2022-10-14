@@ -33,20 +33,57 @@ struct MenuView: View {
         ScrollView {
             
             VStack(alignment: .leading) {
-                TextField("User name (email address)",text: $viewModel.searchFood)
-                    .frame(height: 48)
-                    .background(Color.Shapes.box)
+                TextField("Busque pelo seu prato", text: $viewModel.searchFood)
+                .padding()
+                .foregroundColor(.Texts.body)
+                .frame(height: 48)
+                .background(
+                    Color(uiColor: .systemGray6)
+                        .cornerRadius(8)
+                )
+                .padding(.bottom, 32)
                 
                 LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
                     
                     ForEach(foods) { food in
-                        VStack(alignment: .leading) {
-                            Text(food.name)
-                            Text(food.description)
+                        HStack(alignment: .center, spacing: 4) {
+                            VStack(alignment: .leading) {
+                                Text(food.name)
+                                    .bodyFont(color: .Texts.heading, weight: .bold)
+                                    .lineLimit(2)
+                                Text(food.description)
+                                    .bodyFont()
+                                    .lineLimit(3)
+                                Text("R$ \(food.price)")
+                                    .bodyFont(color: .Texts.heading, weight: .medium)
+                                    .padding(.top, 1)
+                            }
+                            Spacer()
+                            AsyncImage(url: URL(string: food.previewUrl)) { result in
+                                resultOfImageState(result)
+                            }
                         }
+                        Divider()
                     }
                 }
             }
+            .padding()
+        }
+    }
+    
+    private func resultOfImageState(_ result: AsyncImagePhase) -> some View {
+        switch result {
+        case .success(let image): return image
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 100)
+                .cornerRadius(4)
+        default:
+            return Image(systemName: "photo")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 100)
+                .cornerRadius(4)
         }
     }
 }
