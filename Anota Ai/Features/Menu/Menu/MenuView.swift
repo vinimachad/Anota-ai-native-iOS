@@ -19,11 +19,8 @@ struct MenuView: View {
         GeometryReader { _ in
             Color.Shapes.shape
                 .ignoresSafeArea(.all)
-            
-            ScrollView {
-                VStack(alignment: .leading) {
-                    
-                    TextField("Busque pelo seu prato", text: $viewModel.searchFood)
+            VStack {
+                TextField("Busque pelo seu prato", text: $viewModel.searchFood)
                     .padding()
                     .foregroundColor(.Texts.body)
                     .frame(height: 48)
@@ -31,26 +28,57 @@ struct MenuView: View {
                         Color(uiColor: .systemGray6)
                             .cornerRadius(8)
                     )
-                    .padding(.bottom, 32)
+                    .padding()
                     .textInputAutocapitalization(.never)
-                    
-                    LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
-                        if viewModel.searchFood.count > 3 {
-                            switch viewModel.searchFoodState {
-                            case .success(let foods): foodCell(foods: foods)
-                            default: EmptyView()
-                            }
-                        } else {
-                            switch viewModel.menuState {
-                            case .success(let sections): successViewWithSection(sections: sections)
-                            case .loading: loadingView()
-                            default: EmptyView()
+                
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: [GridItem()], alignment: .bottom, spacing: 0) {
+                            ForEach(viewModel.foodTypes, id: \.self) { type in
+                                Button(action: {
+                                    proxy.scrollTo(type)
+                                    viewModel.selectedFood = type
+                                }) {
+                                    Text(type.capitalized)
+                                        .foregroundColor(viewModel.foodIsSelected(type) ? .Brand.primary : Color(uiColor: .systemGray))
+                                        .bodyFont(weight: .medium)
+                                }
+                                .id(type)
+                                .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
+                                .background(
+                                    viewModel.selectedFood == type ? segmentedLine(color: .Brand.primary, height: 2) : segmentedLine(color: Color(uiColor: .clear)),
+                                    alignment: .bottomLeading
+                               )
                             }
                         }
-                    }
+                    }.background(
+                        segmentedLine(color: Color(uiColor: .systemGray3)),
+                        alignment: .bottomLeading
+                    )
                 }
-                .padding()
-            }
+                .padding(.horizontal, -16)
+                .frame(height: 60)
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        
+                        LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
+                            if viewModel.searchFood.count > 0 {
+                                switch viewModel.searchFoodState {
+                                case .success(let foods): foodCell(foods: foods)
+                                default: EmptyView()
+                                }
+                            } else {
+                                switch viewModel.menuState {
+                                case .success(let sections): successViewWithSection(sections: sections)
+                                case .loading: loadingView()
+                                default: EmptyView()
+                                }
+                            }
+                        }
+                    }.padding()
+                }
+            }.padding(.vertical)
         }
         .onAppear { viewModel.getMenuRequest() }
     }
@@ -103,6 +131,12 @@ struct MenuView: View {
                 .cornerRadius(4)
         }
     }
+    
+    private func segmentedLine(color: Color, height: CGFloat = 1) -> some View {
+        Rectangle()
+            .fill(color)
+            .frame(height: height)
+    }
 }
 
 struct MenuView_Previews: PreviewProvider {
@@ -112,7 +146,9 @@ struct MenuView_Previews: PreviewProvider {
             getMenuUseCase: GetMenuUseCaseMock(),
             restaurant: Restaurant.sampleData[0]
         )
-        viewModel.menuState = .success([])
+        viewModel.menuState = .success([
+            FoodSection(title: "Pizza", foods: [Food.sample])
+        ])
         
         return MenuView(viewModel: viewModel)
     }

@@ -1072,6 +1072,13 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		3C7D02A6290083F300F35F8F /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
 		3C7FA18128A93B66001A5CBE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1564,6 +1571,7 @@
 		3CD35D55289C41E90012480E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C7D02A6290083F300F35F8F /* SegmentedControl */,
 				3C0A61A728A7EFE7000D177D /* MapView */,
 				3C769A5628A7150A001DA6E6 /* ScrollView */,
 				3C769A5328A6C602001DA6E6 /* TextField */,

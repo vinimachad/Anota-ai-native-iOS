@@ -15,13 +15,14 @@ class MenuViewModel: ObservableObject {
     @Published var menuState: RequestState<[FoodSection]> = .loading
     @Published var searchFoodState: RequestState<[Food]> = .empty
     @Published var searchFood: String = ""
+    @Published var foodTypes = ["Todos"]
+    @Published var selectedFood: String = "Todos"
     
     // MARK: Private properties
     
     private var getMenuUseCase: any GetMenuUseCaseProtocol
     private var subscriptions = Set<AnyCancellable>()
     private var restaurant: Restaurant
-    private var foodTypes = [String]()
     private var foodSections = [FoodSection]()
     private var subscription = Set<AnyCancellable>()
     
@@ -53,13 +54,16 @@ class MenuViewModel: ObservableObject {
                     foods.append(contentsOf: filteredFoods)
                 }
                 
-                
                 isEmptyStateValidation(state: &searchFoodState, items: foods)
             }.store(in: &subscription)
     }
 }
 
 extension MenuViewModel {
+    
+    func foodIsSelected(_ type: String) -> Bool {
+        selectedFood == type
+    }
     
     func getMenuRequest() {
         getMenuUseCase.execute(request: restaurant.id)
