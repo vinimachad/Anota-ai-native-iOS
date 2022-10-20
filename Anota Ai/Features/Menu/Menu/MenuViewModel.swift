@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class MenuViewModel: ObservableObject {
     
@@ -17,6 +18,7 @@ class MenuViewModel: ObservableObject {
     @Published var searchFood: String = ""
     @Published var foodTypes = [String]()
     @Published var selectedFood: String = "Todos"
+    @Published var searchBarIsHide: Bool = false
     
     // MARK: Private properties
     
@@ -53,6 +55,24 @@ extension MenuViewModel {
                 }
             )
             .store(in: &subscriptions)
+    }
+    
+    func hideSearchBarValidation(with reader: GeometryProxy) {
+        let yAxis = reader.frame(in: .global).minY
+        
+        if yAxis < 0 && !searchBarIsHide {
+            
+            DispatchQueue.main.async {
+                withAnimation{ self.searchBarIsHide = true }
+            }
+        }
+        
+        if yAxis > 0 && searchBarIsHide {
+            
+            DispatchQueue.main.async {
+                withAnimation{ self.searchBarIsHide = false }
+            }
+        }
     }
 }
 

@@ -16,15 +16,21 @@ struct MenuView: View {
     }
     
     var body: some View {
-        GeometryReader { _ in
+        ZStack {
             Color.Shapes.shape
                 .ignoresSafeArea(.all)
             
             VStack {
-                SwiftUITextField(text: $viewModel.searchFood, placeholder: "Busque pelo seu prato...")
+                if !viewModel.searchBarIsHide {
+                    SwiftUITextField(text: $viewModel.searchFood, placeholder: "Busque pelo seu prato...")
+                }
                 SegmentedControlView(items: $viewModel.foodTypes, selectedItem: $viewModel.selectedFood)
                 ScrollView {
                     VStack(alignment: .leading) {
+                        GeometryReader { reader -> AnyView in
+                            viewModel.hideSearchBarValidation(with: reader)
+                            return AnyView(EmptyView())
+                        }
                         
                         LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
                             if viewModel.searchFood.count > 0 {
