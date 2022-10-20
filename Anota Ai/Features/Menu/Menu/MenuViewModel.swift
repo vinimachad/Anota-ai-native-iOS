@@ -32,21 +32,8 @@ class MenuViewModel: ObservableObject {
         self.getMenuUseCase = getMenuUseCase
         self.restaurant = restaurant
         
-        $searchFood
-            .removeDuplicates()
-            .map { searchValue -> String? in
-                self.valueIsLessThanOneShowSections(searchValue: searchValue)
-            }
-            .compactMap { $0 }
-            .sink { [unowned self] searchText in
-                self.showSearchedFoods(with: searchText)
-            }
-            .store(in: &subscription)
-        
-        $selectedFood
-            .sink { [unowned self] selectedFood in
-                self.showSelectedSectionValidation(with: selectedFood)
-            }.store(in: &subscription)
+        self.searchFoodsPublisher()
+        self.selectedFoodPublisher()
     }
 }
 
@@ -73,6 +60,13 @@ extension MenuViewModel {
 
 extension MenuViewModel {
     
+    private func selectedFoodPublisher() {
+        $selectedFood
+            .sink { [unowned self] selectedFood in
+                self.showSelectedSectionValidation(with: selectedFood)
+            }.store(in: &subscription)
+    }
+    
     private func showSelectedSectionValidation(with selectedSection: String) {
         if !foodSections.isEmpty {
             if selectedSection == "Todos" {
@@ -96,6 +90,18 @@ extension MenuViewModel {
 // MARK: - Methods to search foods
 
 extension MenuViewModel {
+    
+    private func searchFoodsPublisher() {
+        $searchFood
+            .removeDuplicates()
+            .map { searchValue -> String? in
+                self.valueIsLessThanOneShowSections(searchValue: searchValue)
+            }
+            .compactMap { $0 }
+            .sink { [unowned self] searchText in
+                self.showSearchedFoods(with: searchText)
+            }.store(in: &subscription)
+    }
     
     private func valueIsLessThanOneShowSections(searchValue: String) -> String? {
         if searchValue.count < 1 {

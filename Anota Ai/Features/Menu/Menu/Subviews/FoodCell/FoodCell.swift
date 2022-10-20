@@ -37,14 +37,14 @@ struct FoodCell: View {
         case .success(let image): return image
                 .resizable()
                 .scaledToFit()
-                .frame(maxWidth: 100)
                 .cornerRadius(4)
+                .frame(maxWidth: 100, maxHeight: 100)
         default:
             return Image(systemName: "photo")
                 .resizable()
                 .scaledToFit()
-                .frame(maxWidth: 100)
                 .cornerRadius(4)
+                .frame(maxWidth: 100)
         }
     }
 }
