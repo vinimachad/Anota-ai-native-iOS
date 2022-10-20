@@ -56,6 +56,11 @@ extension MenuViewModel {
             )
             .store(in: &subscriptions)
     }
+}
+
+// MARK: - View updates
+
+extension MenuViewModel {
     
     func hideSearchBarValidation(with reader: GeometryProxy) {
         let yAxis = reader.frame(in: .global).minY
