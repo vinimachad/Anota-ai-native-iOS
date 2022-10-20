@@ -25,4 +25,8 @@ struct RestaurantTabViewFactory {
         let viewModel = MenuViewModel(getMenuUseCase: getMenuUseCase, restaurant: restaurant)
         return MenuView(viewModel: viewModel)
     }
+    
+    func makeGoToRestaurant() -> some View {
+        return Text("RestaurantRoute")
+    }
 }

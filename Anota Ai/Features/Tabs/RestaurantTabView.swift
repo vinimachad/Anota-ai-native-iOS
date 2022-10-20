@@ -33,6 +33,13 @@ struct RestaurantTabView: View {
                 })
             
             factory
+                .makeGoToRestaurant()
+                .tabItem({
+                    Label("Rota do restaurante",
+                          systemImage: "map.fill")
+                })
+            
+            factory
                 .makeMenuView()
                 .tabItem({
                     Label("Cardápio", systemImage: "menucard")
