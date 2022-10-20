@@ -19,45 +19,17 @@ struct MenuView: View {
         GeometryReader { _ in
             Color.Shapes.shape
                 .ignoresSafeArea(.all)
+            
             VStack {
-                
                 SwiftUITextField(text: $viewModel.searchFood, placeholder: "Busque pelo seu prato...")
-                
-                ScrollViewReader { proxy in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHGrid(rows: [GridItem()], alignment: .bottom, spacing: 0) {
-                            ForEach(viewModel.foodTypes, id: \.self) { type in
-                                Button(action: {
-                                    proxy.scrollTo(type)
-                                    viewModel.selectedFood = type
-                                }) {
-                                    Text(type.capitalized)
-                                        .foregroundColor(viewModel.foodIsSelected(type) ? .Brand.primary : Color(uiColor: .systemGray))
-                                        .bodyFont(weight: .medium)
-                                }
-                                .id(type)
-                                .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
-                                .background(
-                                    viewModel.selectedFood == type ? segmentedLine(color: .Brand.primary, height: 2) : segmentedLine(color: Color(uiColor: .clear)),
-                                    alignment: .bottomLeading
-                               )
-                            }
-                        }
-                    }.background(
-                        segmentedLine(color: Color(uiColor: .systemGray3)),
-                        alignment: .bottomLeading
-                    )
-                }
-                .padding(.horizontal, -16)
-                .frame(height: 60)
-                
+                SegmentedControlView(items: $viewModel.foodTypes, selectedItem: $viewModel.selectedFood)
                 ScrollView {
                     VStack(alignment: .leading) {
                         
                         LazyVGrid(columns: [GridItem()], alignment: .leading, spacing: 16) {
                             if viewModel.searchFood.count > 0 {
                                 switch viewModel.searchFoodState {
-                                case .success(let foods): foodCell(foods: foods)
+                                case .success(let foods): listFoodCell(foods: foods)
                                 default: EmptyView()
                                 }
                             } else {
@@ -81,53 +53,14 @@ struct MenuView: View {
                 .thirdHeaderFont()
                 .padding(.top)
             Divider()
-            foodCell(foods: section.foods)
+            listFoodCell(foods: section.foods)
         }
     }
     
-    private func foodCell(foods: [Food]) -> some View {
+    private func listFoodCell(foods: [Food]) -> some View {
         ForEach(foods) { food in
-            HStack(alignment: .center, spacing: 4) {
-                VStack(alignment: .leading) {
-                    Text(food.name)
-                        .bodyFont(color: .Texts.heading, weight: .medium)
-                        .lineLimit(2)
-                    Text(food.description)
-                        .bodyFont()
-                        .lineLimit(3)
-                    Text("R$ \(food.price)")
-                        .bodyFont(color: .Texts.heading, weight: .medium)
-                        .padding(.top, 1)
-                }
-                Spacer()
-                AsyncImage(url: URL(string: food.previewUrl)) { result in
-                    resultOfImageState(result)
-                }
-            }
-            Divider()
+            FoodCell(food: food)
         }
-    }
-    
-    private func resultOfImageState(_ result: AsyncImagePhase) -> some View {
-        switch result {
-        case .success(let image): return image
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 100)
-                .cornerRadius(4)
-        default:
-            return Image(systemName: "photo")
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 100)
-                .cornerRadius(4)
-        }
-    }
-    
-    private func segmentedLine(color: Color, height: CGFloat = 1) -> some View {
-        Rectangle()
-            .fill(color)
-            .frame(height: height)
     }
 }
 

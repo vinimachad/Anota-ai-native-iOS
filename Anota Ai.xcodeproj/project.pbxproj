@@ -118,6 +118,8 @@
 		3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4391289EE96E00DA1E36 /* Localization.swift */; };
 		3C7D02A328F9D5F600F35F8F /* FoodSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D02A228F9D5F600F35F8F /* FoodSection.swift */; };
 		3C7D02AC2900DB3300F35F8F /* SwiftUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D02AB2900DB3300F35F8F /* SwiftUITextField.swift */; };
+		3C7D02AE2900DDCA00F35F8F /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D02AD2900DDCA00F35F8F /* SegmentedControlView.swift */; };
+		3C7D02B02900E1FA00F35F8F /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D02AF2900E1FA00F35F8F /* FoodCell.swift */; };
 		3C7FA18328A93B72001A5CBE /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FA18228A93B72001A5CBE /* Fields.swift */; };
 		3C83A4D228E3A01200A87BBD /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D128E3A01200A87BBD /* RestaurantDetailHeaderView.swift */; };
 		3C83A4D528E3A39E00A87BBD /* RestaurantDetailsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */; };
@@ -330,6 +332,8 @@
 		3C7A4391289EE96E00DA1E36 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		3C7D02A228F9D5F600F35F8F /* FoodSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSection.swift; sourceTree = "<group>"; };
 		3C7D02AB2900DB3300F35F8F /* SwiftUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextField.swift; sourceTree = "<group>"; };
+		3C7D02AD2900DDCA00F35F8F /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
+		3C7D02AF2900E1FA00F35F8F /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		3C7FA18228A93B72001A5CBE /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 		3C83A4D128E3A01200A87BBD /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsListView.swift; sourceTree = "<group>"; };
@@ -1078,6 +1082,7 @@
 		3C7D02A6290083F300F35F8F /* SegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
+				3C7D02AD2900DDCA00F35F8F /* SegmentedControlView.swift */,
 			);
 			path = SegmentedControl;
 			sourceTree = "<group>";
@@ -1155,16 +1160,17 @@
 		3C83A50428E7736700A87BBD /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				3C83A50528E7736E00A87BBD /* ListFoods */,
+				3C83A50528E7736E00A87BBD /* FoodCell */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
 		};
-		3C83A50528E7736E00A87BBD /* ListFoods */ = {
+		3C83A50528E7736E00A87BBD /* FoodCell */ = {
 			isa = PBXGroup;
 			children = (
+				3C7D02AF2900E1FA00F35F8F /* FoodCell.swift */,
 			);
-			path = ListFoods;
+			path = FoodCell;
 			sourceTree = "<group>";
 		};
 		3C83A50828E8AAE200A87BBD /* Factories */ = {
@@ -1954,6 +1960,7 @@
 				3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */,
 				3C83A4FD28E7606300A87BBD /* RestaurantListViewModel.swift in Sources */,
 				3C06AD3D289C72F500E7621F /* Explanations.swift in Sources */,
+				3C7D02AE2900DDCA00F35F8F /* SegmentedControlView.swift in Sources */,
 				3C0DB14728E38F28008762BA /* MenuView.swift in Sources */,
 				3C83A4F128E737DC00A87BBD /* Food.swift in Sources */,
 				3C769A5828A71517001DA6E6 /* ScrollViewKit.swift in Sources */,
@@ -1986,6 +1993,7 @@
 				3C3A8E0D28C253C300467F5A /* ControllerFactoryProtocol.swift in Sources */,
 				3CC4BCC628C69E82002EC791 /* RestaurantKindSlideView.swift in Sources */,
 				3C83A4D728E3A52000A87BBD /* RestaurantReviewsView.swift in Sources */,
+				3C7D02B02900E1FA00F35F8F /* FoodCell.swift in Sources */,
 				3C3A8E0F28C2544900467F5A /* HomeCoordinator.swift in Sources */,
 				3C912754289DD68F008AA594 /* FindYourLocationViewModel.swift in Sources */,
 				3C04157028AD871300077EF4 /* User.swift in Sources */,
