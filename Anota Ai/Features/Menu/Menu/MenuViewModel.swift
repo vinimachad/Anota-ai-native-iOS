@@ -45,23 +45,12 @@ class MenuViewModel: ObservableObject {
         
         $selectedFood
             .sink { [unowned self] selectedFood in
-                if !foodSections.isEmpty {
-                    if selectedFood == "Todos" {
-                        isEmptyStateValidation(state: &menuState, items: foodSections)
-                        return 
-                    }
-                    let selectedSection = foodSections.filter { $0.title == selectedFood }
-                    menuState = .success(selectedSection)
-                }
+                self.showSelectedSectionValidation(with: selectedFood)
             }.store(in: &subscription)
     }
 }
 
 extension MenuViewModel {
-    
-    func foodIsSelected(_ type: String) -> Bool {
-        selectedFood == type
-    }
     
     func getMenuRequest() {
         getMenuUseCase.execute(request: restaurant.id)
@@ -77,6 +66,30 @@ extension MenuViewModel {
                 }
             )
             .store(in: &subscriptions)
+    }
+}
+
+// MARK: - Methods to select section from segmented
+
+extension MenuViewModel {
+    
+    private func showSelectedSectionValidation(with selectedSection: String) {
+        if !foodSections.isEmpty {
+            if selectedSection == "Todos" {
+                showAllSections(with: selectedSection)
+                return
+            }
+            showSelectedSection(with: selectedSection)
+        }
+    }
+    
+    private func showSelectedSection(with selectedSection: String) {
+        let section = foodSections.filter { $0.title == selectedSection }
+        menuState = .success(section)
+    }
+    
+    private func showAllSections(with selectedSection: String) {
+        isEmptyStateValidation(state: &menuState, items: foodSections)
     }
 }
 
