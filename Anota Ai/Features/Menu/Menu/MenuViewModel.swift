@@ -15,7 +15,7 @@ class MenuViewModel: ObservableObject {
     @Published var menuState: RequestState<[FoodSection]> = .loading
     @Published var searchFoodState: RequestState<[Food]> = .empty
     @Published var searchFood: String = ""
-    @Published var foodTypes = ["Todos"]
+    @Published var foodTypes = [String]()
     @Published var selectedFood: String = "Todos"
     
     // MARK: Private properties
@@ -138,6 +138,21 @@ extension MenuViewModel {
         isEmptyStateValidation(state: &menuState, items: foodSections)
     }
     
+    private func appendIfFoodContainsFoodType(foods: [Food]) {
+        appendIntoFoodTypeNotContainTodos()
+        foods.forEach { food in
+            if !foodTypes.contains(food.type) {
+                foodTypes.append(food.type)
+            }
+        }
+    }
+    
+    private func appendIntoFoodTypeNotContainTodos() {
+        if !foodTypes.contains("Todos") {
+            foodTypes.append("Todos")
+        }
+    }
+    
     private func generateFoodSection(with foods: [Food]) {
         foodTypes.forEach { type in
             let foods = getFoodsByType(foods, type: type)
@@ -157,13 +172,5 @@ extension MenuViewModel {
     
     private func getFoodsByType(_ foods: [Food], type: String) -> [Food] {
         foods.filter { $0.type == type }
-    }
-    
-    private func appendIfFoodContainsFoodType(foods: [Food]) {
-        foods.forEach { food in
-            if !foodTypes.contains(food.type) {
-                foodTypes.append(food.type)
-            }
-        }
     }
 }
