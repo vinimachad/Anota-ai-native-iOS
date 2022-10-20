@@ -117,6 +117,7 @@
 		3C7A438C289EDF7D00DA1E36 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A438B289EDF7D00DA1E36 /* Loadable.swift */; };
 		3C7A4392289EE96E00DA1E36 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7A4391289EE96E00DA1E36 /* Localization.swift */; };
 		3C7D02A328F9D5F600F35F8F /* FoodSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D02A228F9D5F600F35F8F /* FoodSection.swift */; };
+		3C7D02AC2900DB3300F35F8F /* SwiftUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D02AB2900DB3300F35F8F /* SwiftUITextField.swift */; };
 		3C7FA18328A93B72001A5CBE /* Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7FA18228A93B72001A5CBE /* Fields.swift */; };
 		3C83A4D228E3A01200A87BBD /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D128E3A01200A87BBD /* RestaurantDetailHeaderView.swift */; };
 		3C83A4D528E3A39E00A87BBD /* RestaurantDetailsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */; };
@@ -328,6 +329,7 @@
 		3C7A438B289EDF7D00DA1E36 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		3C7A4391289EE96E00DA1E36 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		3C7D02A228F9D5F600F35F8F /* FoodSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSection.swift; sourceTree = "<group>"; };
+		3C7D02AB2900DB3300F35F8F /* SwiftUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITextField.swift; sourceTree = "<group>"; };
 		3C7FA18228A93B72001A5CBE /* Fields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fields.swift; sourceTree = "<group>"; };
 		3C83A4D128E3A01200A87BBD /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		3C83A4D428E3A39E00A87BBD /* RestaurantDetailsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsListView.swift; sourceTree = "<group>"; };
@@ -1005,6 +1007,7 @@
 			isa = PBXGroup;
 			children = (
 				3C769A5428A6C60F001DA6E6 /* TextFieldComponent.swift */,
+				3C7D02AB2900DB3300F35F8F /* SwiftUITextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -1960,6 +1963,7 @@
 				3CA1612C28D3D13C0086BA60 /* View+RoundCorner.swift in Sources */,
 				3C769A4D28A6B689001DA6E6 /* ConfirmLocationView.swift in Sources */,
 				3C530F1528AE7B0B008B602D /* Address.swift in Sources */,
+				3C7D02AC2900DB3300F35F8F /* SwiftUITextField.swift in Sources */,
 				3C3A8E0B28C2531A00467F5A /* HomeController.swift in Sources */,
 				3C544DBC28A2CBB700C7CD9B /* CustomPresentationManager.swift in Sources */,
 				3C29ACB928DCC7B4007D741A /* UseCaseFactoryProtocol.swift in Sources */,

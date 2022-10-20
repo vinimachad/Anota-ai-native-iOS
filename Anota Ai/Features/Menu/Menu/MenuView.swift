@@ -20,16 +20,8 @@ struct MenuView: View {
             Color.Shapes.shape
                 .ignoresSafeArea(.all)
             VStack {
-                TextField("Busque pelo seu prato", text: $viewModel.searchFood)
-                    .padding()
-                    .foregroundColor(.Texts.body)
-                    .frame(height: 48)
-                    .background(
-                        Color(uiColor: .systemGray6)
-                            .cornerRadius(8)
-                    )
-                    .padding()
-                    .textInputAutocapitalization(.never)
+                
+                SwiftUITextField(text: $viewModel.searchFood, placeholder: "Busque pelo seu prato...")
                 
                 ScrollViewReader { proxy in
                     ScrollView(.horizontal, showsIndicators: false) {
