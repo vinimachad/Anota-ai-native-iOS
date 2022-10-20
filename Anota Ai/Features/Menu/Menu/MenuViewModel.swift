@@ -34,28 +34,14 @@ class MenuViewModel: ObservableObject {
         
         $searchFood
             .removeDuplicates()
-            .map({ (string) -> String? in
-                if string.count < 1 {
-                    isEmptyStateValidation(state: &self.menuState, items: self.foodSections)
-                    return nil
-                }
-                
-                return string
-            })
-            .compactMap{ $0 }
-            .sink { _ in
-            } receiveValue: { [self] (searchField) in
-                var foods = [Food]()
-                
-                foodSections.forEach {
-                    let filteredFoods = $0.foods.filter {
-                        $0.name.contains(searchField)
-                    }
-                    foods.append(contentsOf: filteredFoods)
-                }
-                
-                isEmptyStateValidation(state: &searchFoodState, items: foods)
-            }.store(in: &subscription)
+            .map { searchValue -> String? in
+                self.valueIsLessThanOneShowSections(searchValue: searchValue)
+            }
+            .compactMap { $0 }
+            .sink { [unowned self] searchText in
+                self.showSearchedFoods(with: searchText)
+            }
+            .store(in: &subscription)
     }
 }
 
@@ -80,23 +66,73 @@ extension MenuViewModel {
             )
             .store(in: &subscriptions)
     }
+}
+
+// MARK: - Methods to search foods
+
+extension MenuViewModel {
+    
+    private func valueIsLessThanOneShowSections(searchValue: String) -> String? {
+        if searchValue.count < 1 {
+            isEmptyStateValidation(state: &self.menuState, items: self.foodSections)
+            return nil
+        }
+        
+        return searchValue
+    }
+    
+    private func showSearchedFoods(with searchText: String) {
+        var foods = [Food]()
+        
+        foodSections.forEach {
+            let filteredFoods = filterFoodsBySearch(with: $0.foods, searchText: searchText)
+            foods.append(contentsOf: filteredFoods)
+        }
+        
+        isEmptyStateValidation(state: &searchFoodState, items: foods)
+    }
+    
+    private func filterFoodsBySearch(with foods: [Food], searchText: String) -> [Food] {
+        foods.filter { $0.name.contains(searchText) }
+    }
+}
+
+// MARK: Methods to generate Sections
+
+extension MenuViewModel {
     
     private func mergeTypes(foods: [Food]) {
+        appendIfFoodContainsFoodType(foods: foods)
+        generateFoodSection(with: foods)
+        isEmptyStateValidation(state: &menuState, items: foodSections)
+    }
+    
+    private func generateFoodSection(with foods: [Food]) {
+        foodTypes.forEach { type in
+            let foods = getFoodsByType(foods, type: type)
+            let section = FoodSection(title: type, foods: foods)
+            
+            appendIfNotExistsOtherSectionWithSameTitle(section: section)
+        }
+        
+        foodSections.removeAll(where: { $0.title == "Todos" })
+    }
+    
+    private func appendIfNotExistsOtherSectionWithSameTitle(section: FoodSection) {
+        if !foodSections.contains(where: { $0.title == section.title }) {
+            foodSections.append(section)
+        }
+    }
+    
+    private func getFoodsByType(_ foods: [Food], type: String) -> [Food] {
+        foods.filter { $0.type == type }
+    }
+    
+    private func appendIfFoodContainsFoodType(foods: [Food]) {
         foods.forEach { food in
             if !foodTypes.contains(food.type) {
                 foodTypes.append(food.type)
             }
         }
-        
-        foodTypes.forEach { type in
-            let foods = foods.filter { $0.type == type }
-            let section = FoodSection(title: type, foods: foods)
-            
-            if !foodSections.contains(where: { $0.title == section.title }) {
-                foodSections.append(section)
-            }
-        }
-        
-        isEmptyStateValidation(state: &menuState, items: foodSections)
     }
 }
