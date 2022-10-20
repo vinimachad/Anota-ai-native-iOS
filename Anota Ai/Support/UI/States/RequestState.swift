@@ -13,3 +13,11 @@ enum RequestState<T: Any> {
     case failure(String)
     case success(T)
 }
+
+func isEmptyStateValidation<T: Any>(state: inout RequestState<[T]>, items: [T]) {
+    if items.isEmpty {
+        state = .empty
+        return
+    }
+    state = .success(items)
+}

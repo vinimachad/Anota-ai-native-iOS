@@ -16,5 +16,8 @@ extension View {
                 .progressViewStyle(.circular)
             Spacer()
         }
+        .background(Color.Shapes.shape)
+        .edgesIgnoringSafeArea(.all)
+        .frame(height: 0)
     }
 }

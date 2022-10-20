@@ -1,5 +1,5 @@
 //
-//  TextField.swift
+//  TextFieldComponent.swift
 //  Anota Ai
 //
 //  Created by Vinicius Galhardo Machado on 12/08/22.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SkyFloatingLabelTextField
 
-class TextField: SkyFloatingLabelTextField {
+class TextFieldComponent: SkyFloatingLabelTextField {
 
     // MARK: - Init
 
@@ -34,7 +34,7 @@ class TextField: SkyFloatingLabelTextField {
 
 // MARK: - Setup
 
-extension TextField {
+extension TextFieldComponent {
 
     private func setup() {
         lineColor = .Shapes.stroke

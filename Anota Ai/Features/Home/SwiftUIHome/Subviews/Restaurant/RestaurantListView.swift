@@ -15,14 +15,16 @@ struct RestaurantListView: View {
     var title: String
     var state: RequestState<[Restaurant]>
     
-    var columns: [GridItem] = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    @StateObject var viewModel: RestaurantListViewModel
     
-    @State private var opacity: Double = 0.4
+    // MARK: - Init
+    
+    init(isVerticalList: Bool, title: String, state: RequestState<[Restaurant]>) {
+        self.isVerticalList = isVerticalList
+        self.title = title
+        self.state = state
+        _viewModel = StateObject(wrappedValue: RestaurantListViewModel())
+    }
     
     // MARK: - Body
     
@@ -38,8 +40,11 @@ struct RestaurantListView: View {
     }
     
     private func generateRestaurantList(_ restaurants: [Restaurant]) -> some View {
+         
         ForEach(restaurants) { item in
-            CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
+            NavigationLink(destination: RestaurantTabView(restaurant: item)) {
+                CircleRestaurantsView(url: URL(string: item.avatarUrl), name: item.name)
+            }
         }
     }
     
@@ -52,7 +57,7 @@ struct RestaurantListView: View {
             
             if isVerticalList {
                 ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: columns, spacing: 16) {
+                    LazyVGrid(columns: viewModel.columns, spacing: 16) {
                         generateRestaurantList(restaurants)
                     }
                 }
@@ -79,12 +84,12 @@ struct RestaurantListView: View {
                 }
             }
         }
-//        .shimmerEffect(opacity: opacity)
+        .shimmerEffect(opacity: viewModel.opacity)
     }
 }
 
 struct RestaurantListView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantListView(title: "Restaurantes", state: .loading)
+        RestaurantListView(isVerticalList: true, title: "Restaurantes", state: .success(Restaurant.sampleData))
     }
 }

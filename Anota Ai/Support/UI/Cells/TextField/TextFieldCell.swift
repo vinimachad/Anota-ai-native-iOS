@@ -23,7 +23,7 @@ class TextFieldCell: UICollectionViewCell, CollectionViewProtocol {
     
     // MARK: - UI Components
     
-    private lazy var textField = TextField()
+    private lazy var textField = TextFieldComponent()
     
     // MARK: - Private properties
     

@@ -31,6 +31,7 @@ class AppCoordinator {
     func start() {
         window.rootViewController = coordinatorBySession()
         window.makeKeyAndVisible()
+        window.overrideUserInterfaceStyle = .light
     }
     
     // MARK: - Start methods

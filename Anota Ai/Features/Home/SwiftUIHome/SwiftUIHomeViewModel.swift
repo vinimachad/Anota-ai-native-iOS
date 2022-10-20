@@ -17,6 +17,7 @@ class SwiftUIHomeViewModel: ObservableObject {
     @Published var nearRestaurantState: RequestState<[Restaurant]> = .loading
     @Published var bestRatedState: RequestState<[Restaurant]> = .loading
     @Published var filterIsInUse = [KindFilter]()
+    @Published var restaurant: Restaurant?
     
     // MARK: - Private properties
     
@@ -79,7 +80,7 @@ extension SwiftUIHomeViewModel {
         restaurantKindsUseCase.execute(
             success: { [weak self] kinds in
                 guard let self else { return }
-                self.isEmptyStateValidation(state: &self.restaurantKindsState, items: kinds)
+                isEmptyStateValidation(state: &self.restaurantKindsState, items: kinds)
                 self.semaphore.signal()
             }
             ,failure: { [weak self] error in
@@ -94,7 +95,7 @@ extension SwiftUIHomeViewModel {
             request: NearRequest(lat: "-20.4377741", long: "-54.6220197", maxDistance: 20),
             success: { [weak self] restaurants in
                 guard let self else { return }
-                self.isEmptyStateValidation(state: &self.nearRestaurantState, items: restaurants)
+                isEmptyStateValidation(state: &self.nearRestaurantState, items: restaurants)
                 self.semaphore.signal()
             },
             failure: { [weak self] error in
@@ -112,7 +113,7 @@ extension SwiftUIHomeViewModel {
                 }
                 self.semaphore.signal()
             }, receiveValue: { [unowned self] restaurants in
-                self.isEmptyStateValidation(state: &bestRatedState, items: restaurants)
+                isEmptyStateValidation(state: &bestRatedState, items: restaurants)
                 filterIsInUsePublisher()
                 self.semaphore.signal()
             })
@@ -124,7 +125,7 @@ extension SwiftUIHomeViewModel {
         findRestaurantsUseCase.execute(
             success: { [weak self] restaurants in
                 guard let self else { return }
-                self.isEmptyStateValidation(state: &self.restaurantState, items: restaurants)
+                isEmptyStateValidation(state: &self.restaurantState, items: restaurants)
                 self.semaphore.signal()
             },
             failure: { [weak self] message in
@@ -132,15 +133,5 @@ extension SwiftUIHomeViewModel {
                 self?.semaphore.signal()
             }
         )
-    }
-    
-    // MARK: - Private methods
-    
-    private func isEmptyStateValidation<T: Decodable>(state: inout RequestState<[T]>, items: [T]) {
-        if items.isEmpty {
-            state = .empty
-            return
-        }
-        state = .success(items)
     }
 }
