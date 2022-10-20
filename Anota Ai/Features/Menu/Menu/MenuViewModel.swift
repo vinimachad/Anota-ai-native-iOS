@@ -42,6 +42,18 @@ class MenuViewModel: ObservableObject {
                 self.showSearchedFoods(with: searchText)
             }
             .store(in: &subscription)
+        
+        $selectedFood
+            .sink { [unowned self] selectedFood in
+                if !foodSections.isEmpty {
+                    if selectedFood == "Todos" {
+                        isEmptyStateValidation(state: &menuState, items: foodSections)
+                        return 
+                    }
+                    let selectedSection = foodSections.filter { $0.title == selectedFood }
+                    menuState = .success(selectedSection)
+                }
+            }.store(in: &subscription)
     }
 }
 
